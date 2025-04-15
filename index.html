@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.22">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Elke Michlmayr">
+
+<title>Life cycle impact assessment for a district heating project with seasonal storage</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7b4406b7675125bc2ba204020e191172.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-be9206a58a27969b3ea3001da8f26fef.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Life cycle impact assessment for a district heating project with seasonal storage</h1>
+<p class="subtitle lead">A case study analysis for a project based in Bracht, Hessen, Germany</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Elke Michlmayr </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="abstract" class="level1">
+<h1>Abstract</h1>
+<p>A Life Cycle Impact Assessment (LCIA) is performed for a solar district heating community project in Bracht, Rauschenberg, Germany.</p>
+</section>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Heating is an important topic for energy consumption since it amounts to roughly half of the consumed energy in the EU. Currently, 60% of that energy is generated from fossil fuels as stated in <span class="citation" data-cites="euroheat2023">Euroheat &amp; Power (<a href="#ref-euroheat2023" role="doc-biblioref">2023</a>)</span>. District heating is a setup where one heating generator plant serves many households connected via pipes. District heating works in two ways: Either to utilise surplus heat from sources such as waste incineration plants for heating purposes in residential areas and service centres as described by <span class="citation" data-cites="sfoe2020">Swiss Federal Office of Energy (<a href="#ref-sfoe2020" role="doc-biblioref">2020</a>)</span>), or to use a dedicated source of energy, e.g.&nbsp;biomass or solar thermal collectors. There are 6000 existing district heating systems across the EU according to <span class="citation" data-cites="euroheat2023">Euroheat &amp; Power (<a href="#ref-euroheat2023" role="doc-biblioref">2023</a>)</span>. Process heating uses a similar setup but is targeted at industrial purposes, which usually require higher heat temperature.</p>
+<p>Solar thermal collectors (STCs) are devices that absorb solar radiation and convert it into heat. There are different types of solar thermal collectors, including flat plate solar collectors, unglazed water collectors, and evacuated tube solar collectors. They are combined with heat pumps to bridge the gap between solar field produced water temperature and district heating delivery system required temperature as explained in <span class="citation" data-cites="wikipedia2020">Wikipedia (<a href="#ref-wikipedia2020" role="doc-biblioref">2025</a>)</span>. According to <span class="citation" data-cites="iea2024">Weiss &amp; Spörk-Dür (<a href="#ref-iea2024" role="doc-biblioref">2024</a>)</span>, there are more than 300 large scale district heating systems globally that are powered with STCs, and more than 1200 STC systems that provide industrial process heat.</p>
+<p>STCs are a mature technology. In 2023, the total operational solar thermal capacity reached 560 GWth, which covers roughly 800 km2 of collector area (see <span class="citation" data-cites="iea2024">Weiss &amp; Spörk-Dür (<a href="#ref-iea2024" role="doc-biblioref">2024</a>)</span>). STC-provided capacity varies seasonally depending on available sunlight. Sometimes STCs are used only for parts of the year, e.g.&nbsp;to enable turning off a biomass-powered plant in the summer since it would run at extremely low capacity. STCs can be combined with a short term heat storage acting as buffer or a seasonal heat storage tank (e.g.&nbsp;underground hot water basin) to store extra heat from the hot season for the cold season, which incurs heat losses. If space restrictions require such a setup (or if land is cheaper), the geographical location of an STC can be remote from consumers and plants via pipelines (e.g., 4 km in Priština as described in <span class="citation" data-cites="euroheat2023">Euroheat &amp; Power (<a href="#ref-euroheat2023" role="doc-biblioref">2023</a>)</span>). However, there is a trade-off since the remote location required laying the necessary pipes underground.</p>
+<p>In scientific literature, LCA case studies exist for the district heating system in Milan (see <span class="citation" data-cites="famiglietti2021environmental">Famiglietti et al. (<a href="#ref-famiglietti2021environmental" role="doc-biblioref">2021</a>)</span>) and Marseille (see <span class="citation" data-cites="vauchez2023life">Vauchez et al. (<a href="#ref-vauchez2023life" role="doc-biblioref">2023</a>)</span>). LCA, in particular the ReCiPe method, has been used to assess the environmental impact of different STC powered district heating configurations by <span class="citation" data-cites="abokersh2020framework">Abokersh et al. (<a href="#ref-abokersh2020framework" role="doc-biblioref">2020</a>)</span>. The outcome was that larger systems that serve many households have a lower environmental impact per energy unit served.</p>
+<p><span class="citation" data-cites="solano2023life">Solano et al. (<a href="#ref-solano2023life" role="doc-biblioref">2023</a>)</span> provide an LCA study of a STC plant connected to the Geneva district heat network and find that there is no LCA data available for the coupling of large scale solar thermal installations and district heating networks, and provides suggested numbers that could be used to complement district heat production routes in the KBOB database.</p>
+<p>For the community project in Bracht, while the economic viability of the project in comparison to energetic renovation was analysed by <span class="citation" data-cites="kelch2024comparison">Kelch et al. (<a href="#ref-kelch2024comparison" role="doc-biblioref">2024</a>)</span>, the environmental impact has not yet been studied in detail. This is the subject of the given study.</p>
+</section>
+<section id="methodology-and-research-questions" class="level1">
+<h1>Methodology and research questions</h1>
+<p>The foreground data is collected from various online sources and combined with background data from the Ecoinvent v3 (see <span class="citation" data-cites="wernet2016ecoinvent">Wernet et al. (<a href="#ref-wernet2016ecoinvent" role="doc-biblioref">2016</a>)</span>) and UVEK databases [TBD <em>How to cite?</em>]. The environmental impact is assessed using the Environmental Footprint (EF) method (see EC2021EF) at the midpoint level, and the Ecological Scarcity 2021 v1.04 method (see <span class="citation" data-cites="FOEN2021">Federal Office for the Environment (FOEN) (<a href="#ref-FOEN2021" role="doc-biblioref">2021</a>)</span>) with UVEK weighting set at the single score level. The LCIA is performed using the SimaPro 9.6.0.1 software (see <span class="citation" data-cites="SimaPro2024">PRé Sustainability (<a href="#ref-SimaPro2024" role="doc-biblioref">2024</a>)</span>).</p>
+<p>The research questions are formulated as follows:</p>
+<ol type="1">
+<li><p>How does the STC based system with seasonal heat storage compare to other heating technologies in terms of environmental impact? The comparison will include district heating from other sources that would be available in small communities (such as a heat pump or wood chips), and consumer side heating installations such as oil or gas boilers. The hypothesis is that the STC based system will have a lower environmental impact compared to other district heating setups and to fossil energy based consumer installations.</p></li>
+<li><p>What is the environmental impact contribution of the seasonal heat storage unit for the production, construction, and use stages in the life cycle? The benefits of the STC based system with a seasonal heat storage component included will be assessed in comparison to the same system without seasonal heat storage under several assumed loss coefficients for the storage component (sensitivity analysis). The hypothesis is that the seasonal storage component will lower the environmental impact.</p></li>
+<li><p>What is the relevance of the additional electricity required in the setup (amounting to 6% of overall energy consumed) and the supplemental biomass boiler (amounting to 26% of overall energy consumed) with respect to the overall environmental impact? The hypothesis is that the additional electricity and biomass required will amount to a sizable part of the overall environmental impact.</p></li>
+</ol>
+</section>
+<section id="goal-and-scope" class="level1">
+<h1>Goal and scope</h1>
+<p>The goal and scope definition of an LCA provides a description of the product system and its system boundaries, and a functional unit.</p>
+<p>The district heating project that is the topic of this analysis is led by a cooperative comprising future household consumers and the local council. The project setup consists of a solar thermal collector field, a seasonal storage unit also called Pit Thermal Energy Storage (PTES), a heat pump which is using power from the grid, a buffer storage unit, a backup biomass combustion unit that if required can be used as an alternative source of heat (for the cases where there is no availability of heat from neither the solar collector nor the storage), and a distribution network for the customer households (see <a href="#fig-bracht-overview" class="quarto-xref">Figure&nbsp;1</a>). A receiver unit is installed in each participating household. There are at least 180 consumer households expected, which is roughly 60% of all households in the community.</p>
+<div id="fig-bracht-overview" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-border="true">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bracht-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/bracht_overview.png" class="img-fluid figure-img" style="width:75.0%" data-fig-border="true">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bracht-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Overview of system setup for the Bracht district heating. Source: University of Kassel
+</figcaption>
+</figure>
+</div>
+<p>The functional unit is 1 kWh of thermal energy provided to the consumer directly at the consumer site during the heating period. The lifetime of the installation is assumed to be 50 years. The system diagram shown in <a href="#fig-system-diagram" class="quarto-xref">Figure&nbsp;2</a> describes the product system and its boundaries.</p>
+<div id="fig-system-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-border="true">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-system-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/system_diagram.png" class="img-fluid figure-img" style="width:80.0%" data-fig-border="true">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-system-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: System diagram
+</figcaption>
+</figure>
+</div>
+<p>System deconstruction was modeled for the solar thermal collector field and the seasonal storage unit only. <em>TBD Is this acceptable? It’s counted per weight, so the 15t of steel will be the majority, and that is covered</em>.</p>
+</section>
+<section id="life-cycle-inventory-tbd-move-to-appendix" class="level1">
+<h1>Life Cycle Inventory (<em>TBD</em> <em>move to Appendix?</em>)</h1>
+<p>There is a lot of information available on the project website by <span class="citation" data-cites="bracht2025">City of Rauschenberg (<a href="#ref-bracht2025" role="doc-biblioref">2025c</a>)</span>. The website has been used as a resource to gather the life cycle inventory data for the five relevant components that are described in the following: solar thermal collector field, seasonal storage unit, heat preparation, distribution infrastructure, and consumer installations.</p>
+<p>The planned lifetime for the Bracht plant is 50 years. The assumed individual component lifetimes and the resulting relevant multipliers are shown in <a href="#tbl-component-lifetimes" class="quarto-xref">Table&nbsp;1</a>. The assumed individual component lifetimes are in line with the assumptions used in <span class="citation" data-cites="bracht2022">Kelch et al. (<a href="#ref-bracht2022" role="doc-biblioref">2022</a>)</span>.</p>
+<div id="tbl-component-lifetimes" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Assumed component lifetimes">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-component-lifetimes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1
+</figcaption>
+<div aria-describedby="tbl-component-lifetimes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Years</th>
+<th>Multiplier</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Solar thermal collector</td>
+<td>30</td>
+<td>1.666667</td>
+<td><span class="citation" data-cites="grosse2017long">(<a href="#ref-grosse2017long" role="doc-biblioref">Große et al., 2017</a>)</span></td>
+</tr>
+<tr class="even">
+<td>Seasonal storage unit</td>
+<td>30</td>
+<td>1.666667</td>
+<td><span class="citation" data-cites="bracht2022">(<a href="#ref-bracht2022" role="doc-biblioref">Kelch et al., 2022</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>Heat pump</td>
+<td>20</td>
+<td>2.5</td>
+<td><span class="citation" data-cites="wolf2017integration">(<a href="#ref-wolf2017integration" role="doc-biblioref">Wolf, 2017</a>)</span></td>
+</tr>
+<tr class="even">
+<td>Heat buffer storage</td>
+<td>20</td>
+<td>2.5</td>
+<td><span class="citation" data-cites="grosse2017long">(<a href="#ref-grosse2017long" role="doc-biblioref">Große et al., 2017</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>Heat installation facility</td>
+<td>50</td>
+<td>1</td>
+<td><span class="citation" data-cites="vdi2012vdi">(<a href="#ref-vdi2012vdi" role="doc-biblioref">VDI, 2012</a>)</span></td>
+</tr>
+<tr class="even">
+<td>Heat exchange station at consumer</td>
+<td>20</td>
+<td>2.5</td>
+<td><span class="citation" data-cites="bracht2022">(<a href="#ref-bracht2022" role="doc-biblioref">Kelch et al., 2022</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>Heat transport network</td>
+<td>50</td>
+<td>1</td>
+<td><span class="citation" data-cites="bracht2022">(<a href="#ref-bracht2022" role="doc-biblioref">Kelch et al., 2022</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<section id="solar-thermal-collector" class="level2">
+<h2 class="anchored" data-anchor-id="solar-thermal-collector">Solar thermal collector</h2>
+<p>The relevant data for the solar thermal collector can be found in <a href="#tbl-component-stc" class="quarto-xref">Table&nbsp;2</a>.</p>
+<div id="tbl-component-stc" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Sources for solar thermal collector specification">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-component-stc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2
+</figcaption>
+<div aria-describedby="tbl-component-stc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 52%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Value</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Size</td>
+<td>11’638 <span class="math inline">\(m^2\)</span> (855 x 13.6 <span class="math inline">\(m^2\)</span>)</td>
+<td><span class="citation" data-cites="viessmann2024">(<a href="#ref-viessmann2024" role="doc-biblioref">Viessmann Climate Solutions, 2024</a>)</span></td>
+</tr>
+<tr class="even">
+<td>Type</td>
+<td>Flat-plate collectors Vitosol 100-F XF13 Viessmann</td>
+<td><span class="citation" data-cites="viessmann2024">(<a href="#ref-viessmann2024" role="doc-biblioref">Viessmann Climate Solutions, 2024</a>)</span> <span class="citation" data-cites="viessmann2021">(<a href="#ref-viessmann2021" role="doc-biblioref">Viessmann Climate Solutions, 2021</a>)</span> <span class="citation" data-cites="tuev2021">(<a href="#ref-tuev2021" role="doc-biblioref">TÜV Rheinland, 2021</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>Land use</td>
+<td>23.500 <span class="math inline">\(m^2\)</span></td>
+<td><span class="citation" data-cites="viessmann2024">(<a href="#ref-viessmann2024" role="doc-biblioref">Viessmann Climate Solutions, 2024</a>)</span></td>
+</tr>
+<tr class="even">
+<td>Mounting infrastructure material</td>
+<td>15 t steel</td>
+<td><span class="citation" data-cites="bracht2025">(<a href="#ref-bracht2025" role="doc-biblioref">City of Rauschenberg, 2025c</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>Collector weight</td>
+<td>50 kg / <span class="math inline">\(m^2\)</span></td>
+<td>Own assumption</td>
+</tr>
+<tr class="even">
+<td>Production country</td>
+<td>China</td>
+<td>Own assumption</td>
+</tr>
+<tr class="odd">
+<td>Transport per container ship</td>
+<td>8000 km</td>
+<td>Own assumption</td>
+</tr>
+<tr class="even">
+<td>Transport per lorry</td>
+<td>1000 km</td>
+<td>Own assumption</td>
+</tr>
+<tr class="odd">
+<td>Total transport km per container ship</td>
+<td>(11638 <span class="math inline">\(m^2\)</span> * 50 kg / <span class="math inline">\(m^2\)</span> * 1.666667 + 15000 kg) / 1000 * 8000 km = 7’878’668 tkm</td>
+<td>Calculation</td>
+</tr>
+<tr class="even">
+<td>Total transport km per lorry</td>
+<td>(11638 <span class="math inline">\(m^2\)</span> * 50 kg / <span class="math inline">\(m^2\)</span> * 1.666667 + 15000 kg) / 1000 * 1000 km = 984’834 tkm</td>
+<td>Calculation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="seasonal-storage-unit" class="level2">
+<h2 class="anchored" data-anchor-id="seasonal-storage-unit">Seasonal storage unit</h2>
+<p>The relevant data for the seasonal storage unit can be found in <a href="#tbl-component-ssu" class="quarto-xref">Table&nbsp;3</a>. A picture of the floating cover can be found in <a href="#fig-floating-cover" class="quarto-xref">Figure&nbsp;3</a>.</p>
+<div id="fig-floating-cover" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-floating-cover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/floating_cover.jpg" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-floating-cover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Floating cover profile. Source: Bracht community.
+</figcaption>
+</figure>
+</div>
+<div id="tbl-component-ssu" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Sources for seasonal storage unit specification">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-component-ssu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3
+</figcaption>
+<div aria-describedby="tbl-component-ssu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 52%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Value</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Volume</td>
+<td>26’600 <span class="math inline">\(m^3\)</span></td>
+<td><a href="#fig-bracht-overview" class="quarto-xref">Figure&nbsp;1</a></td>
+</tr>
+<tr class="even">
+<td>Resource: water</td>
+<td>26’600 <span class="math inline">\(m^3\)</span> filled from local source</td>
+<td><span class="citation" data-cites="bracht2025floating">(<a href="#ref-bracht2025floating" role="doc-biblioref">City of Rauschenberg, 2025b</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>Cover: layer 1 and 10</td>
+<td>Polyethylen (HDPE) sealing membranes 1.5 mm, 0.5 kg / <span class="math inline">\(m^2\)</span></td>
+<td><span class="citation" data-cites="bracht2025floating">(<a href="#ref-bracht2025floating" role="doc-biblioref">City of Rauschenberg, 2025b</a>)</span>, weight own assumption</td>
+</tr>
+<tr class="even">
+<td>Cover: layer 2 and 9</td>
+<td>Fleece (0.1 kg / <span class="math inline">\(m^2\)</span>) laminated plastic grid (HDPE, 0.25 kg / <span class="math inline">\(m^2\)</span>)</td>
+<td><span class="citation" data-cites="bracht2025floating">(<a href="#ref-bracht2025floating" role="doc-biblioref">City of Rauschenberg, 2025b</a>)</span>, weight own assumption</td>
+</tr>
+<tr class="odd">
+<td>Cover: layer 3</td>
+<td>Foam glass, 8.33 kg / <span class="math inline">\(m^2\)</span></td>
+<td><span class="citation" data-cites="bracht2025floating">(<a href="#ref-bracht2025floating" role="doc-biblioref">City of Rauschenberg, 2025b</a>)</span></td>
+</tr>
+<tr class="even">
+<td>Cover: layer 4</td>
+<td>Polyurethane (bauder foam): 3.125 kg / $m^</td>
+<td><span class="citation" data-cites="bracht2025floating">(<a href="#ref-bracht2025floating" role="doc-biblioref">City of Rauschenberg, 2025b</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>Cover: layer 5</td>
+<td>Airing gap made of plastic grid, 0.25 kg / <span class="math inline">\(m^2\)</span></td>
+<td><span class="citation" data-cites="bracht2025floating">(<a href="#ref-bracht2025floating" role="doc-biblioref">City of Rauschenberg, 2025b</a>)</span>, weight own assumption</td>
+</tr>
+<tr class="even">
+<td>Cover: layer 6</td>
+<td>Polystyrene (XPS), 3 kg / <span class="math inline">\(m^2\)</span></td>
+<td><span class="citation" data-cites="bracht2025floating">(<a href="#ref-bracht2025floating" role="doc-biblioref">City of Rauschenberg, 2025b</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>Cover: layer 7+8</td>
+<td>Airing gap made of plastic grid (HDPE), 0.5 kg / <span class="math inline">\(m^2\)</span></td>
+<td><span class="citation" data-cites="bracht2025floating">(<a href="#ref-bracht2025floating" role="doc-biblioref">City of Rauschenberg, 2025b</a>)</span>, weight own assumption</td>
+</tr>
+<tr class="even">
+<td>Floating cover dimensions</td>
+<td>70 m x 70 m = 4900 <span class="math inline">\(m^2\)</span></td>
+<td><span class="citation" data-cites="bracht2025ground">(<a href="#ref-bracht2025ground" role="doc-biblioref">Top Agrar, 2025</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>Floating cover weight</td>
+<td>2 * (0.5 + 0.1 + 0.25) + 8.33 + 3.125 + 0.25 + 3 + 0.5 = 16.905 kg / <span class="math inline">\(m^2\)</span></td>
+<td>Calculation</td>
+</tr>
+<tr class="even">
+<td>Ground liner</td>
+<td>Polyethylen (HDPE), 5 kg / <span class="math inline">\(m^2\)</span></td>
+<td><span class="citation" data-cites="bracht2025floating">(<a href="#ref-bracht2025floating" role="doc-biblioref">City of Rauschenberg, 2025b</a>)</span>, weight own assumption</td>
+</tr>
+<tr class="odd">
+<td>Ground liner dimensions</td>
+<td>Bottom 20 m x 20 m, vertical height ca. 12 m, surface area ca. 5400 <span class="math inline">\(m^2\)</span></td>
+<td><span class="citation" data-cites="bracht2025ground">(<a href="#ref-bracht2025ground" role="doc-biblioref">Top Agrar, 2025</a>)</span></td>
+</tr>
+<tr class="even">
+<td>Ground liner weight</td>
+<td>5 kg / <span class="math inline">\(m^2\)</span></td>
+<td>Calculation</td>
+</tr>
+<tr class="odd">
+<td>Production country</td>
+<td>China</td>
+<td>Own assumption</td>
+</tr>
+<tr class="even">
+<td>Transport per container ship</td>
+<td>8000 km</td>
+<td>Own assumption</td>
+</tr>
+<tr class="odd">
+<td>Transport per lorry</td>
+<td>1000 km</td>
+<td>Own assumption</td>
+</tr>
+<tr class="even">
+<td>Required construction process</td>
+<td>Excavator 26.600 <span class="math inline">\(m^3\)</span></td>
+<td>Own assumption</td>
+</tr>
+<tr class="odd">
+<td>Total transport km per container ship</td>
+<td>(((4900 <span class="math inline">\(m^2\)</span> * 16.905 kg / <span class="math inline">\(m^2\)</span>) + (5400 <span class="math inline">\(m^2\)</span> * 5 kg / <span class="math inline">\(m^2\)</span>)) * 1.666667) / 1000 * 8000 km = 1’464’460 tkm</td>
+<td>Calculation</td>
+</tr>
+<tr class="even">
+<td>Total transport km per lorry</td>
+<td>(((4900 <span class="math inline">\(m^2\)</span> * 16.905 kg / <span class="math inline">\(m^2\)</span>) + (5400 <span class="math inline">\(m^2\)</span> * 5 kg / <span class="math inline">\(m^2\)</span>)) * 1.666667) / 1000 * 1000 km = 183’058 tkm</td>
+<td>Calculation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="heat-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="heat-preparation">Heat preparation</h2>
+<p>The relevant data for the heat preparation unit can be found in <a href="#tbl-component-hp" class="quarto-xref">Table&nbsp;4</a>.</p>
+<div id="tbl-component-hp" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Sources for seasonal storage unit specification">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-component-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4
+</figcaption>
+<div aria-describedby="tbl-component-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 55%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Value</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Type of heat pump</td>
+<td>2 Carrier Aquaforce 61XWH-ZE heat pump with 630 kW max electrical input power each</td>
+<td><span class="citation" data-cites="viessmann2024">(<a href="#ref-viessmann2024" role="doc-biblioref">Viessmann Climate Solutions, 2024</a>)</span> <span class="citation" data-cites="carrier2025floating">(<a href="#ref-carrier2025floating" role="doc-biblioref">Carrier Klimatisierungs- und Heizsysteme - Deutschland, 2025</a>)</span></td>
+</tr>
+<tr class="even">
+<td>Electricity requirements</td>
+<td>209 MWh per year</td>
+<td>Own calculation, see <a href="#sec-loss-coefficients" class="quarto-xref">Section&nbsp;5.4</a> for details</td>
+</tr>
+<tr class="odd">
+<td>Buffer storage</td>
+<td>ca. 200 <span class="math inline">\(m^3\)</span> = 200’000 l</td>
+<td><a href="#fig-bracht-overview" class="quarto-xref">Figure&nbsp;1</a></td>
+</tr>
+<tr class="even">
+<td>Biomass boiler</td>
+<td>Mawera boiler with 700 kW thermal power</td>
+<td><span class="citation" data-cites="viessmann2024">(<a href="#ref-viessmann2024" role="doc-biblioref">Viessmann Climate Solutions, 2024</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>Controller</td>
+<td>Vitocontrol 200-M</td>
+<td><span class="citation" data-cites="viessmann2024">(<a href="#ref-viessmann2024" role="doc-biblioref">Viessmann Climate Solutions, 2024</a>)</span> <span class="citation" data-cites="viessmann2025">(<a href="#ref-viessmann2025" role="doc-biblioref">Viessmann Climate Solutions, 2025</a>)</span></td>
+</tr>
+<tr class="even">
+<td>Heat installation facility</td>
+<td>50 <span class="math inline">\(m^2\)</span></td>
+<td>Own assumption</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-loss-coefficients" class="level2">
+<h2 class="anchored" data-anchor-id="sec-loss-coefficients">Electrical power requirement and loss coefficient assumptions</h2>
+<p>Several estimations of annual collector output can be found in the relevant performance data from <span class="citation" data-cites="tuev2021">TÜV Rheinland (<a href="#ref-tuev2021" role="doc-biblioref">2021</a>)</span> for the solar thermal collectors used in this project. They are based on geographical location and on the desired output temperature. The geographically closest matching entry is 5283 kWh per collector per year for the Würzburg location and 75 degrees output. For the given 855 collectors this amounts to an estimated 4.517 MWh per year.</p>
+<p>The Bracht documentation <span class="citation" data-cites="bracht2025faq">City of Rauschenberg (<a href="#ref-bracht2025faq" role="doc-biblioref">2025a</a>)</span> states that in total, 2.700 MWh per year are expected to reach consumer households. This means that the assumed loss coefficients for the storage unit and in the pipes together is estimated to amount to a significant factor of 40% loss. The electrical power that reaches consumer households is generated to 67% from what the solar thermal collectors generated for storage (2258 MWh), to 26% from biomass (904 MWh), and to 6% from the grid (209 MWh) using the percentage distribution given in <a href="#fig-bracht-overview" class="quarto-xref">Figure&nbsp;1</a>. There is no detailed information how the expected loss was estimated. However, based on the published numbers and an assumed 20% loss coefficient in the pipes, the resulting expected loss in the seasonal storage unit can be calculated at 50%. These assumptions were used in the modelling. Further discussion of loss coefficients and a related sensitivity analysis can be found in <a href="#sec-sensitive" class="quarto-xref">Section&nbsp;7.1</a>.</p>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<p>The results for comparing the solar thermal based district network heat it to other forms of district heating that are available in small communities such as wood chips (biomass), geothermal heat pump or diesel cogeneration, and also to the usually available consumer side heating installations such as a oil or gas boiler are shown in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;4</a> and <a href="#fig-ef-midpoints" class="quarto-xref">Figure&nbsp;5</a>.</p>
+<div id="fig-es-single-score" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-es-single-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pwrg_solar_es_single_score.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-es-single-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Comparison to other energy sources for district heating (wood chips, heatpump) and consumer installations (gas, oil), based on the Ecological Scarcity method at the single score level
+</figcaption>
+</figure>
+</div>
+<div id="fig-ef-midpoints" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ef-midpoints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pwrg_solar_ef_midpoints.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ef-midpoints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Damage assessment using the Ecological Footprint Method
+</figcaption>
+</figure>
+</div>
+<p>Note that in <a href="#fig-ef-midpoints" class="quarto-xref">Figure&nbsp;5</a>, the “Water use” category was excluded to avoid incorrect results caused by modelling issues in the underlying UVEK data.</p>
+<div id="fig-network-pie" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-network-pie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pwrg_solar_network_pie.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-network-pie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Relative influence of the system components using the Ecological Scarcity 2021 v1.04 method with UVEK weighting set
+</figcaption>
+</figure>
+</div>
+<p>The relative influence of the district heating system components can be seen in <a href="#fig-network-pie" class="quarto-xref">Figure&nbsp;6</a>.</p>
+</section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p>As shown in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;4</a>, the STC based district heating with seasonal heat storage compares positively to other heating technologies in terms of environmental impact. Based on the analysis using the Ecological Scarcity method, it shows a lower environmental impact compared to other district heating setups and to fossil energy based consumer installations.</p>
+<p>TBD describe <a href="#fig-ef-midpoints" class="quarto-xref">Figure&nbsp;5</a></p>
+<p><a href="#fig-network-pie" class="quarto-xref">Figure&nbsp;6</a> reveals that the environmental impact contribution of the seasonal heat storage unit are minimal. The only component that is listed is the Polystyrene from the floating cover of the seasonal heat storage unit, which amounts to 2% of the overall impact. The seasonal storage component lowers the environmental impact very significantly since it avoids using more heat from wood chips and electricity, which are the two biggest contributors to overall environmental impact. The plan for this research was to assess the impact of not using a seasonal storage component in the setup. However, the results shown in <a href="#fig-network-pie" class="quarto-xref">Figure&nbsp;6</a> make it very clear that the seasonal storage component is essential for the overall system while its environmental impact is minimal. Therefore, the effects of not using a seasonal storage component in the setup were not analysed further.</p>
+<p>The additional electricity and biomass required were expected to play a big role with respect to the overall environmental impact. But it is surprising to see that these two are the biggest contributors. The electricity use can not be avoided since it is required to run the heat pump. Its impact can be lowered by using green energy <em>TBD should it be assessed too? (It’s clear that using green energy will make the results much better)</em>. The opportunities and effects of using less biomass by lowering heat loss coefficients is assessed in detail in <a href="#sec-sensitive" class="quarto-xref">Section&nbsp;7.1</a>.</p>
+<section id="sec-sensitive" class="level2">
+<h2 class="anchored" data-anchor-id="sec-sensitive">Loss coefficients and sensitivity analysis</h2>
+<p>Heat is harder to transport than electrical power since even good insulation can not avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling.</p>
+<p>As summarized by <span class="citation" data-cites="werner2017international">Werner (<a href="#ref-werner2017international" role="doc-biblioref">2017</a>)</span>, the relevant parameters affecting heat loss in the pipes are the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The cited loss coefficient numbers for pipe loss range between 5% and 35%. The Bracht setup has a long transmission distance of 8800 meters because of the rural setup, and a planned operating temperature of 85 degrees Celsius. Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss is realistic. The open source modelling tool Energy Transition Model (see <span class="citation" data-cites="etm2025">Quintel (<a href="#ref-etm2025" role="doc-biblioref">2025</a>)</span>) suggests 15% as a sensible default for modelling heat loss in the pipes of modern district heating networks based on real world numbers. Note that in the comparison in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;4</a>, the data for the other energy sources for district heating (wood chips, heatpump) used a 5% to 10% assumption which means that the solar thermal data with the 20% assumption is disadvantaged in the comparison.</p>
+<p>If the heat loss in the Bracht pipes could be lowered to 10% by using a lower operating temperature, that would result in efficiency savings of 335 MWh per year which would in turn not require production from the biomass boiler. This is significant since it amounts to roughly one third of the energy coming from biomass. <a href="#fig-es-sensitivity-pipes" class="quarto-xref">Figure&nbsp;7</a> shows that this results in a reduction from 39 to 34 Ecopoints per MJ of district heat, which amounts to a 12% reduction. The main impact factor changed is in the “Main air pollutants and Particulate Matter (PM)” category.</p>
+<div id="fig-es-sensitivity-pipes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-es-sensitivity-pipes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pwrg_solar_es_sensitivity_pipes.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-es-sensitivity-pipes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Potential savings when halfing heat loss in pipes
+</figcaption>
+</figure>
+</div>
+<p><span class="citation" data-cites="penttinen2021optimal">Penttinen et al. (<a href="#ref-penttinen2021optimal" role="doc-biblioref">2021</a>)</span> report a 26% loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model (see <span class="citation" data-cites="etm2025">Quintel (<a href="#ref-etm2025" role="doc-biblioref">2025</a>)</span>) suggests 30% as a sensible default for modelling heat loss in the storage unit. <span class="citation" data-cites="xiang2022comprehensive">Xiang et al. (<a href="#ref-xiang2022comprehensive" role="doc-biblioref">2022</a>)</span> provide a comprehensive review and find that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover. The assumption for Bracht, which is 50% loss, seems to be on the conservative side. If it can be lowered to 30%, which seems feasible given the scientific results cited, that would cancel out the entirety of energy from biomass required. This would reduce the environmental impact from 39 to 26 Ecopoints per MJ of district heat, which is a reduction of 33%, as shown in <a href="#fig-es-sensitivity-storage" class="quarto-xref">Figure&nbsp;8</a>.</p>
+<div id="fig-es-sensitivity-storage" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-es-sensitivity-storage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pwrg_solar_es_sensitivity_storage.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-es-sensitivity-storage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Potential savings when lowering heat loss in storage from 50% to 30%
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>A case study life cycle assessment was performed for the solar district heating community project in Bracht, Rauschenberg, Germany. The results compare favorably to other heating technologies in terms of environmental impact. To further improve, the recommendations are (1) to consider a lower operating temperature for the system to achieve better overall efficiency through avoided heat losses, (2) to use green energy for running the heat pump, and (3) to lower the amount of biomass burnt by improving the heat loss coefficients for storage unit and transmission pipes.</p>
+</section>
+<section id="appendix" class="level1">
+<h1>Appendix</h1>
+<section id="time-planning" class="level2">
+<h2 class="anchored" data-anchor-id="time-planning">Time planning</h2>
+<p><a href="#fig-time-plan" class="quarto-xref">Figure&nbsp;9</a> documents the time plan that was followed for this project.</p>
+<div id="fig-time-plan" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-time-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/time_plan.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-time-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Gantt chart used for time planning.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="references" class="level1 unnumbered">
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-abokersh2020framework" class="csl-entry" role="listitem">
+Abokersh, M. H., Vallès, M., Cabeza, L. F., &amp; Boer, D. (2020). A framework for the optimal integration of solar assisted district heating in different urban sized communities: A robust machine learning approach incorporating global sensitivity analysis. <em>Applied Energy</em>, <em>267</em>, 114903.
+</div>
+<div id="ref-carrier2025floating" class="csl-entry" role="listitem">
+Carrier Klimatisierungs- und Heizsysteme - Deutschland. (2025). <em><span class="nocase">AquaForce - Hochtemperatur Wasser/Wasser-Wärmepumpe mit Kältemittel HFO R-1234ze</span></em>. <a href="https://www.carrier.com/commercial/de/de/produkte/heizung/wasser-wasser-waermepumpen/61xwhze/" class="uri">https://www.carrier.com/commercial/de/de/produkte/heizung/wasser-wasser-waermepumpen/61xwhze/</a>.
+</div>
+<div id="ref-bracht2025faq" class="csl-entry" role="listitem">
+City of Rauschenberg. (2025a). <em><span class="nocase">Solarwärme Bracht eG, FAQ und häufig gestellte Fragen</span></em>. <a href="https://www.solarwaerme-bracht.de/faq/" class="uri">https://www.solarwaerme-bracht.de/faq/</a>.
+</div>
+<div id="ref-bracht2025floating" class="csl-entry" role="listitem">
+City of Rauschenberg. (2025b). <em><span class="nocase">Solarwärme Bracht eG, Genossenschaftsunterlagen: Floating Cover</span></em>. <a href="https://www.solarwaerme-bracht.de/unterlagen-der-genossenschaft/" class="uri">https://www.solarwaerme-bracht.de/unterlagen-der-genossenschaft/</a>.
+</div>
+<div id="ref-bracht2025" class="csl-entry" role="listitem">
+City of Rauschenberg. (2025c). <em><span class="nocase">Solarwärme Bracht eG, Stadtteile Bracht und Bracht-Siedlung</span></em>. <a href="https://www.solarwaerme-bracht.de/" class="uri">https://www.solarwaerme-bracht.de/</a>.
+</div>
+<div id="ref-euroheat2023" class="csl-entry" role="listitem">
+Euroheat &amp; Power. (2023). <em>28/03/2023: The rise of solar district heating</em>. <a href="https://www.youtube.com/watch?v=ngNgVxTT2y4" class="uri">https://www.youtube.com/watch?v=ngNgVxTT2y4</a>.
+</div>
+<div id="ref-famiglietti2021environmental" class="csl-entry" role="listitem">
+Famiglietti, J., Gerevini, L., Spirito, G., Pozzi, M., Dénarié, A., Scoccia, R., &amp; Motta, M. (2021). Environmental life cycle assessment scenarios for a district heating network. An italian case study. <em>Energy Reports</em>, <em>7</em>, 368–379.
+</div>
+<div id="ref-FOEN2021" class="csl-entry" role="listitem">
+Federal Office for the Environment (FOEN). (2021). <em>Swiss eco-factors 2021 according to the ecological scarcity method: Methodological fundamentals and their application in switzerland</em>. <a href="https://www.bafu.admin.ch/bafu/en/home/topics/economy-consumption/economy-and-consumption-publications/publications-economy-and-consumption/eco-factors-switzerland.html">https://www.bafu.admin.ch/bafu/en/home/topics/economy-consumption/economy-and-consumption-publications/publications-economy-and-consumption/eco-factors-switzerland.html</a>
+</div>
+<div id="ref-grosse2017long" class="csl-entry" role="listitem">
+Große, R., Binder, C., Wöll, S., Geyer, R., &amp; Robbi, S. (2017). <em>Long term (2050) projections of techno-economic performance of large-scale heating and cooling in the EU</em>. Publications Office of the European Union.
+</div>
+<div id="ref-bracht2022" class="csl-entry" role="listitem">
+Kelch, J., Kusyy, O., Orozaliev, J., &amp; Vajen, K. (2022). <em>Abschlussbericht weiterentwicklung und optimierung des konzepts einer solaren nahwärmeversorgung für ländliche gebiete am beispiel von bracht-dorf</em> (Technical Report EF960 0039/2021 20008503). Universität Kassel.
+</div>
+<div id="ref-kelch2024comparison" class="csl-entry" role="listitem">
+Kelch, J., Kusyy, O., Zipplies, J., Orozaliev, J., &amp; Vajen, K. (2024). Comparison of solar district heating and renovation of buildings as measures for decarbonization of heat supply in rural areas. <em>Solar Energy Advances</em>, <em>4</em>, 100060.
+</div>
+<div id="ref-penttinen2021optimal" class="csl-entry" role="listitem">
+Penttinen, P., Vimpari, J., &amp; Junnila, S. (2021). Optimal seasonal heat storage in a district heating system with waste incineration. <em>Energies</em>, <em>14</em>(12), 3522.
+</div>
+<div id="ref-SimaPro2024" class="csl-entry" role="listitem">
+PRé Sustainability. (2024). <em>SimaPro 9.6 database manual: Methods library</em>. <a href="https://simapro.com/wp-content/uploads/2024/04/DatabaseManualMethods.pdf">https://simapro.com/wp-content/uploads/2024/04/DatabaseManualMethods.pdf</a>
+</div>
+<div id="ref-etm2025" class="csl-entry" role="listitem">
+Quintel. (2025). <em><span>Energy Transition Model (ETM)</span></em>. <a href="https://energytransitionmodel.com/scenario/supply/heat_ht/transport-and-distribution-losses" class="uri">https://energytransitionmodel.com/scenario/supply/heat_ht/transport-and-distribution-losses</a>.
+</div>
+<div id="ref-solano2023life" class="csl-entry" role="listitem">
+Solano, J., Frossard, M., Lasvaux, S., &amp; Duret, A. (2023). Life cycle assessment of the new solar thermal power plant SolarCAD II connected to a district heating network in geneva, switzerland. <em>Journal of Physics: Conference Series</em>, <em>2600</em>, 152005.
+</div>
+<div id="ref-sfoe2020" class="csl-entry" role="listitem">
+Swiss Federal Office of Energy. (2020). <em>District heat</em>. <a href="https://www.bfe.admin.ch/bfe/en/home/supply/energy-efficiency/district-heat.html" class="uri">https://www.bfe.admin.ch/bfe/en/home/supply/energy-efficiency/district-heat.html</a>.
+</div>
+<div id="ref-bracht2025ground" class="csl-entry" role="listitem">
+Top Agrar. (2025). <em><span class="nocase">Hessisches Dorf baut riesiges Wasserbecken für eigene Solarthermieanlage</span></em>. <a href="https://www.topagrar.com/energie/news/hessisches-dorf-baut-riesiges-wasserbecken-fur-eigene-solarthermieanlage-20010847.html
+" class="uri">https://www.topagrar.com/energie/news/hessisches-dorf-baut-riesiges-wasserbecken-fur-eigene-solarthermieanlage-20010847.html
+</a>.
+</div>
+<div id="ref-tuev2021" class="csl-entry" role="listitem">
+TÜV Rheinland. (2021). <em>Annex to solar keymark certificate</em>. <a href="https://www.dincertco.de/logos/011-7S3003%20F.pdf" class="uri">https://www.dincertco.de/logos/011-7S3003%20F.pdf</a>.
+</div>
+<div id="ref-vauchez2023life" class="csl-entry" role="listitem">
+Vauchez, M., Famiglietti, J., Autelitano, K., Colombert, M., Scoccia, R., &amp; Motta, M. (2023). Life cycle assessment of district heating infrastructures: A comparison of pipe typologies in france. <em>Energies</em>, <em>16</em>(9), 3912.
+</div>
+<div id="ref-vdi2012vdi" class="csl-entry" role="listitem">
+VDI, V. (2012). <em><span class="nocase">VDI 2067 Blatt 1" Wirtschaftlichkeit geb<span class="nocase">ä</span>udetechnischer Anlagen-Grundlagen und Kostenberechnung</span></em>. D<span>ü</span>sseldorf.
+</div>
+<div id="ref-viessmann2021" class="csl-entry" role="listitem">
+Viessmann Climate Solutions. (2021). <em><span class="nocase">Großflächen-Solarthermie für die Nah- und Fernwärme</span></em>. <a href="https://energiekonsens.de/media/pages/media/6a0997554c-1640096559/2-viessmann-nah-und-fernwaerme-mit-solarthermie.pdf" class="uri">https://energiekonsens.de/media/pages/media/6a0997554c-1640096559/2-viessmann-nah-und-fernwaerme-mit-solarthermie.pdf</a>.
+</div>
+<div id="ref-viessmann2024" class="csl-entry" role="listitem">
+Viessmann Climate Solutions. (2024). <em><span class="nocase">Energiewende: Solarthermie und Erdspeicher decken rund 70 Prozent des Wärmebedarfs im hessischen Bracht</span></em>. <a href="https://www.viessmann-climatesolutions.com/de/newsroom/unternehmen/erstes-klimaneutrales-mit-solarwaerme-versorgtes-dorf.html" class="uri">https://www.viessmann-climatesolutions.com/de/newsroom/unternehmen/erstes-klimaneutrales-mit-solarwaerme-versorgtes-dorf.html</a>.
+</div>
+<div id="ref-viessmann2025" class="csl-entry" role="listitem">
+Viessmann Climate Solutions. (2025). <em><span class="nocase">Regelungsprogramm für Mittel- und Großkessel</span></em>. <a href="https://www.viessmann.de/de/loesungen/gewerbe-und-industrie/regelung-mittelkessel-grosskessel.html" class="uri">https://www.viessmann.de/de/loesungen/gewerbe-und-industrie/regelung-mittelkessel-grosskessel.html</a>.
+</div>
+<div id="ref-iea2024" class="csl-entry" role="listitem">
+Weiss, W., &amp; Spörk-Dür, M. (2024). <em>Solar heat world wide</em> (White Paper DOI: 10.18777/ieashc-shww-2024-0001). International Energy Agency. <a href="https://www.iea-shc.org/Data/Sites/1/publications/Solar-Heat-Worldwide-2024.pdf">https://www.iea-shc.org/Data/Sites/1/publications/Solar-Heat-Worldwide-2024.pdf</a>
+</div>
+<div id="ref-werner2017international" class="csl-entry" role="listitem">
+Werner, S. (2017). International review of district heating and cooling. <em>Energy</em>, <em>137</em>, 617–631.
+</div>
+<div id="ref-wernet2016ecoinvent" class="csl-entry" role="listitem">
+Wernet, G., Bauer, C., Steubing, B., Reinhard, J., Moreno-Ruiz, E., &amp; Weidema, B. (2016). The ecoinvent database version 3 (part i): Overview and methodology. <em>The International Journal of Life Cycle Assessment</em>, <em>21</em>, 1218–1230.
+</div>
+<div id="ref-wikipedia2020" class="csl-entry" role="listitem">
+Wikipedia. (2025). <em>Solar thermal collector</em>. <a href="https://en.wikipedia.org/wiki/Solar_thermal_collector" class="uri">https://en.wikipedia.org/wiki/Solar_thermal_collector</a>.
+</div>
+<div id="ref-wolf2017integration" class="csl-entry" role="listitem">
+Wolf, S. (2017). <em><span class="nocase">Integration von W<span class="nocase">ä</span>rmepumpen in industrielle Produktionssysteme: Potenziale und Instrumente zur Potenzialerschlie<span class="nocase">ß</span>ung</span></em>.
+</div>
+<div id="ref-xiang2022comprehensive" class="csl-entry" role="listitem">
+Xiang, Y., Xie, Z., Furbo, S., Wang, D., Gao, M., &amp; Fan, J. (2022). A comprehensive review on pit thermal energy storage: Technical elements, numerical approaches and recent applications. <em>Journal of Energy Storage</em>, <em>55</em>, 105716.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
