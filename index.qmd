@@ -1,0 +1,203 @@
+---
+title: Life cycle impact assessment for a district heating project with seasonal storage
+subtitle: A case study analysis for a project based in Bracht, Hessen, Germany
+author: Elke Michlmayr
+format:
+  html:
+    code-fold: true
+  pdf:
+    number-sections: true
+    cite-method: biblatex
+execute:
+  warning: false
+  message: false
+lang: en
+bibliography: bibliography.bib
+csl: apa.csl
+keep-tex: true
+---
+
+# Abstract
+
+A Life Cycle Impact Assessment (LCIA) is performed for a solar district heating community project in Bracht, Rauschenberg, Germany.
+
+# Introduction
+
+Heating is an important topic for energy consumption since it amounts to roughly half of the consumed energy in the EU. Currently, 60% of that energy is generated from fossil fuels as stated in @euroheat2023. District heating is a setup where one heating generator plant serves many households connected via pipes. District heating works in two ways: Either to utilise surplus heat from sources such as waste incineration plants for heating purposes in residential areas and service centres as described by @sfoe2020), or to use a dedicated source of energy, e.g. biomass or solar thermal collectors. There are 6000 existing district heating systems across the EU according to @euroheat2023. Process heating uses a similar setup but is targeted at industrial purposes, which usually require higher heat temperature.
+
+Solar thermal collectors (STCs) are devices that absorb solar radiation and convert it into heat. There are different types of solar thermal collectors, including flat plate solar collectors, unglazed water collectors, and evacuated tube solar collectors. They are combined with heat pumps to bridge the gap between solar field produced water temperature and district heating delivery system required temperature as explained in @wikipedia2020. According to @iea2024, there are more than 300 large scale district heating systems globally that are powered with STCs, and more than 1200 STC systems that provide industrial process heat.
+
+STCs are a mature technology. In 2023, the total operational solar thermal capacity reached 560 GWth, which covers roughly 800 km2 of collector area (see @iea2024). STC-provided capacity varies seasonally depending on available sunlight. Sometimes STCs are used only for parts of the year, e.g. to enable turning off a biomass-powered plant in the summer since it would run at extremely low capacity. STCs can be combined with a short term heat storage acting as buffer or a seasonal heat storage tank (e.g. underground hot water basin) to store extra heat from the hot season for the cold season, which incurs heat losses. If space restrictions require such a setup (or if land is cheaper), the geographical location of an STC can be remote from consumers and plants via pipelines (e.g., 4 km in Priština as described in @euroheat2023). However, there is a trade-off since the remote location required laying the necessary pipes underground.
+
+In scientific literature, LCA case studies exist for the district heating system in Milan (see @famiglietti2021environmental) and Marseille (see @vauchez2023life). LCA, in particular the ReCiPe method, has been used to assess the environmental impact of different STC powered district heating configurations by @abokersh2020framework. The outcome was that larger systems that serve many households have a lower environmental impact per energy unit served.
+
+@solano2023life provide an LCA study of a STC plant connected to the Geneva district heat network and find that there is no LCA data available for the coupling of large scale solar thermal installations and district heating networks, and provides suggested numbers that could be used to complement district heat production routes in the KBOB database.
+
+For the community project in Bracht, while the economic viability of the project in comparison to energetic renovation was analysed by @kelch2024comparison, the environmental impact has not yet been studied in detail. This is the subject of the given study.
+
+# Methodology and research questions
+
+The foreground data is collected from various online sources and combined with background data from the Ecoinvent v3 (see @wernet2016ecoinvent) and UVEK databases \[TBD *How to cite?*\]. The environmental impact is assessed using the Environmental Footprint (EF) method (see EC2021EF) at the midpoint level, and the Ecological Scarcity 2021 v1.04 method  (see @FOEN2021) with UVEK weighting set at the single score level. The LCIA is performed using the SimaPro 9.6.0.1 software (see @SimaPro2024). 
+
+The research questions are formulated as follows:
+
+(1) How does the STC based system with seasonal heat storage compare to other heating technologies in terms of environmental impact? The comparison will include district heating from other sources that would be available in small communities (such as a heat pump or wood chips), and consumer side heating installations such as oil or gas boilers. The hypothesis is that the STC based system will have a lower environmental impact compared to other district heating setups and to fossil energy based consumer installations.
+
+(2) What is the environmental impact contribution of the seasonal heat storage unit for the production, construction, and use stages in the life cycle? The benefits of the STC based system with a seasonal heat storage component included will be assessed in comparison to the same system without seasonal heat storage under several assumed loss coefficients for the storage component (sensitivity analysis). The hypothesis is that the seasonal storage component will lower the environmental impact.
+
+(3) What is the relevance of the additional electricity required in the setup (amounting to 6% of overall energy consumed) and the supplemental biomass boiler (amounting to 26% of overall energy consumed) with respect to the overall environmental impact? The hypothesis is that the additional electricity and biomass required will amount to a sizable part of the overall environmental impact.
+
+# Goal and scope
+
+The goal and scope definition of an LCA provides a description of the product system and its system boundaries, and a functional unit.
+
+The district heating project that is the topic of this analysis is led by a cooperative comprising future household consumers and the local council. The project setup consists of a solar thermal collector field, a seasonal storage unit also called Pit Thermal Energy Storage (PTES), a heat pump which is using power from the grid, a buffer storage unit, a backup biomass combustion unit that if required can be used as an alternative source of heat (for the cases where there is no availability of heat from neither the solar collector nor the storage), and a distribution network for the customer households (see @fig-bracht-overview). A receiver unit is installed in each participating household. There are at least 180 consumer households expected, which is roughly 60% of all households in the community.
+
+![Overview of system setup for the Bracht district heating. Source: University of Kassel](img/bracht_overview.png){#fig-bracht-overview width="75%" fig-border="true"}
+
+The functional unit is 1 kWh of thermal energy provided to the consumer directly at the consumer site during the heating period. The lifetime of the installation is assumed to be 50 years. The system diagram shown in @fig-system-diagram describes the product system and its boundaries.
+
+![System diagram](img/system_diagram.png){#fig-system-diagram width="80%" fig-border="true"}
+
+System deconstruction was modeled for the solar thermal collector field and the seasonal storage unit only. *TBD Is this acceptable? It's counted per weight, so the 15t of steel will be the majority, and that is covered*.
+
+# Life Cycle Inventory (*TBD* *move to Appendix?*)
+
+There is a lot of information available on the project website by @bracht2025. The website has been used as a resource to gather the life cycle inventory data for the five relevant components that are described in the following: solar thermal collector field, seasonal storage unit, heat preparation, distribution infrastructure, and consumer installations.
+
+The planned lifetime for the Bracht plant is 50 years. The assumed individual component lifetimes and the resulting relevant multipliers are shown in @tbl-component-lifetimes. The assumed individual component lifetimes are in line with the assumptions used in @bracht2022.
+
+::: {#tbl-component-lifetimes .table caption="Assumed component lifetimes"}
+| Component                         | Years | Multiplier | Source                 |
+|---------------------------|--------------|--------------|------------------|
+| Solar thermal collector           | 30    | 1.666667   | [@grosse2017long]      |
+| Seasonal storage unit             | 30    | 1.666667   | [@bracht2022]          |
+| Heat pump                         | 20    | 2.5        | [@wolf2017integration] |
+| Heat buffer storage               | 20    | 2.5        | [@grosse2017long]      |
+| Heat installation facility        | 50    | 1          | [@vdi2012vdi]          |
+| Heat exchange station at consumer | 20    | 2.5        | [@bracht2022]          |
+| Heat transport network            | 50    | 1          | [@bracht2022]          |
+:::
+
+## Solar thermal collector
+
+The relevant data for the solar thermal collector can be found in @tbl-component-stc.
+
+::: {#tbl-component-stc .table caption="Sources for solar thermal collector specification"}
+| Dimension | Value | Source |
+|-----------------|--------------------------------------|-----------------|
+| Size | 11'638 $m^2$ (855 x 13.6 $m^2$) | [@viessmann2024] |
+| Type | Flat-plate collectors Vitosol 100-F XF13 Viessmann | [@viessmann2024] [@viessmann2021] [@tuev2021] |
+| Land use | 23.500 $m^2$ | [@viessmann2024] |
+| Mounting infrastructure material | 15 t steel | [@bracht2025] |
+| Collector weight | 50 kg / $m^2$ | Own assumption |
+| Production country | China | Own assumption |
+| Transport per container ship | 8000 km | Own assumption |
+| Transport per lorry | 1000 km | Own assumption |
+| Total transport km per container ship | (11638 $m^2$ \* 50 kg / $m^2$ \* 1.666667 + 15000 kg) / 1000 \* 8000 km = 7'878'668 tkm | Calculation |
+| Total transport km per lorry | (11638 $m^2$ \* 50 kg / $m^2$ \* 1.666667 + 15000 kg) / 1000 \* 1000 km = 984'834 tkm | Calculation |
+:::
+
+## Seasonal storage unit
+
+The relevant data for the seasonal storage unit can be found in @tbl-component-ssu. A picture of the floating cover can be found in @fig-floating-cover.
+
+![Floating cover profile. Source: Bracht community.](img/floating_cover.jpg){#fig-floating-cover width="50%"}
+
+::: {#tbl-component-ssu .table caption="Sources for seasonal storage unit specification"}
+| Dimension | Value | Source |
+|-----------------|--------------------------------------|-----------------|
+| Volume | 26'600 $m^3$ | [@fig-bracht-overview] |
+| Resource: water | 26'600 $m^3$ filled from local source | [@bracht2025floating] |
+| Cover: layer 1 and 10 | Polyethylen (HDPE) sealing membranes 1.5 mm, 0.5 kg / $m^2$ | [@bracht2025floating], weight own assumption |
+| Cover: layer 2 and 9 | Fleece (0.1 kg / $m^2$) laminated plastic grid (HDPE, 0.25 kg / $m^2$) | [@bracht2025floating], weight own assumption |
+| Cover: layer 3 | Foam glass, 8.33 kg / $m^2$ | [@bracht2025floating] |
+| Cover: layer 4 | Polyurethane (bauder foam): 3.125 kg / \$m\^ | [@bracht2025floating] |
+| Cover: layer 5 | Airing gap made of plastic grid, 0.25 kg / $m^2$ | [@bracht2025floating], weight own assumption |
+| Cover: layer 6 | Polystyrene (XPS), 3 kg / $m^2$ | [@bracht2025floating] |
+| Cover: layer 7+8 | Airing gap made of plastic grid (HDPE), 0.5 kg / $m^2$ | [@bracht2025floating], weight own assumption |
+| Floating cover dimensions | 70 m x 70 m = 4900 $m^2$ | [@bracht2025ground] |
+| Floating cover weight | 2 \* (0.5 + 0.1 + 0.25) + 8.33 + 3.125 + 0.25 + 3 + 0.5 = 16.905 kg / $m^2$ | Calculation |
+| Ground liner | Polyethylen (HDPE), 5 kg / $m^2$ | [@bracht2025floating], weight own assumption |
+| Ground liner dimensions | Bottom 20 m x 20 m, vertical height ca. 12 m, surface area ca. 5400 $m^2$ | [@bracht2025ground] |
+| Ground liner weight | 5 kg / $m^2$ | Calculation |
+| Production country | China | Own assumption |
+| Transport per container ship | 8000 km | Own assumption |
+| Transport per lorry | 1000 km | Own assumption |
+| Required construction process | Excavator 26.600 $m^3$ | Own assumption |
+| Total transport km per container ship | (((4900 $m^2$ \* 16.905 kg / $m^2$) + (5400 $m^2$ \* 5 kg / $m^2$)) \* 1.666667) / 1000 \* 8000 km = 1'464'460 tkm | Calculation |
+| Total transport km per lorry | (((4900 $m^2$ \* 16.905 kg / $m^2$) + (5400 $m^2$ \* 5 kg / $m^2$)) \* 1.666667) / 1000 \* 1000 km = 183'058 tkm | Calculation |
+:::
+
+## Heat preparation
+
+The relevant data for the heat preparation unit can be found in @tbl-component-hp.
+
+::: {#tbl-component-hp .table caption="Sources for seasonal storage unit specification"}
+| Dimension | Value | Source |
+|----------------|----------------------------------------|----------------|
+| Type of heat pump | 2 Carrier Aquaforce 61XWH-ZE heat pump with 630 kW max electrical input power each | [@viessmann2024] [@carrier2025floating] |
+| Electricity requirements | 209 MWh per year | Own calculation, see @sec-loss-coefficients for details |
+| Buffer storage | ca. 200 $m^3$ = 200'000 l | [@fig-bracht-overview] |
+| Biomass boiler | Mawera boiler with 700 kW thermal power | [@viessmann2024] |
+| Controller | Vitocontrol 200-M | [@viessmann2024] [@viessmann2025] |
+| Heat installation facility | 50 $m^2$ | Own assumption |
+:::
+
+## Electrical power requirement and loss coefficient assumptions {#sec-loss-coefficients}
+
+Several estimations of annual collector output can be found in the relevant performance data from @tuev2021 for the solar thermal collectors used in this project. They are based on geographical location and on the desired output temperature. The geographically closest matching entry is 5283 kWh per collector per year for the Würzburg location and 75 degrees output. For the given 855 collectors this amounts to an estimated 4.517 MWh per year.
+
+The Bracht documentation @bracht2025faq states that in total, 2.700 MWh per year are expected to reach consumer households. This means that the assumed loss coefficients for the storage unit and in the pipes together is estimated to amount to a significant factor of 40% loss. The electrical power that reaches consumer households is generated to 67% from what the solar thermal collectors generated for storage (2258 MWh), to 26% from biomass (904 MWh), and to 6% from the grid (209 MWh) using the percentage distribution given in @fig-bracht-overview. There is no detailed information how the expected loss was estimated. However, based on the published numbers and an assumed 20% loss coefficient in the pipes, the resulting expected loss in the seasonal storage unit can be calculated at 50%. These assumptions were used in the modelling. Further discussion of loss coefficients and a related sensitivity analysis can be found in @sec-sensitive.
+
+# Results
+
+The results for comparing the solar thermal based district network heat it to other forms of district heating that are available in small communities such as wood chips (biomass), geothermal heat pump or diesel cogeneration, and also to the usually available consumer side heating installations such as a oil or gas boiler are shown in @fig-es-single-score and @fig-ef-midpoints.
+
+![Comparison to other energy sources for district heating (wood chips, heatpump) and consumer installations (gas, oil), based on the Ecological Scarcity method at the single score level](img/pwrg_solar_es_single_score.png){#fig-es-single-score width="100%"}
+
+![Damage assessment using the Ecological Footprint Method](img/pwrg_solar_ef_midpoints.png){#fig-ef-midpoints width="100%"}
+
+Note that in @fig-ef-midpoints, the "Water use" category was excluded to avoid incorrect results caused by modelling issues in the underlying UVEK data.
+
+![Relative influence of the system components using the Ecological Scarcity 2021 v1.04 method with UVEK weighting set](img/pwrg_solar_network_pie.png){#fig-network-pie width="100%"}
+
+The relative influence of the district heating system components can be seen in @fig-network-pie.
+
+# Discussion
+
+As shown in @fig-es-single-score, the STC based district heating with seasonal heat storage compares positively to other heating technologies in terms of environmental impact. Based on the analysis using the Ecological Scarcity method, it shows a lower environmental impact compared to other district heating setups and to fossil energy based consumer installations.
+
+TBD describe @fig-ef-midpoints
+
+@fig-network-pie reveals that the environmental impact contribution of the seasonal heat storage unit are minimal. The only component that is listed is the Polystyrene from the floating cover of the seasonal heat storage unit, which amounts to 2% of the overall impact. The seasonal storage component lowers the environmental impact very significantly since it avoids using more heat from wood chips and electricity, which are the two biggest contributors to overall environmental impact. The plan for this research was to assess the impact of not using a seasonal storage component in the setup. However, the results shown in @fig-network-pie make it very clear that the seasonal storage component is essential for the overall system while its environmental impact is minimal. Therefore, the effects of not using a seasonal storage component in the setup were not analysed further.
+
+The additional electricity and biomass required were expected to play a big role with respect to the overall environmental impact. But it is surprising to see that these two are the biggest contributors. The electricity use can not be avoided since it is required to run the heat pump. Its impact can be lowered by using green energy *TBD should it be assessed too? (It's clear that using green energy will make the results much better)*. The opportunities and effects of using less biomass by lowering heat loss coefficients is assessed in detail in @sec-sensitive.
+
+## Loss coefficients and sensitivity analysis {#sec-sensitive}
+
+Heat is harder to transport than electrical power since even good insulation can not avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling.
+
+As summarized by @werner2017international, the relevant parameters affecting heat loss in the pipes are the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The cited loss coefficient numbers for pipe loss range between 5% and 35%. The Bracht setup has a long transmission distance of 8800 meters because of the rural setup, and a planned operating temperature of 85 degrees Celsius. Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss is realistic. The open source modelling tool Energy Transition Model (see @etm2025) suggests 15% as a sensible default for modelling heat loss in the pipes of modern district heating networks based on real world numbers. Note that in the comparison in @fig-es-single-score, the data for the other energy sources for district heating (wood chips, heatpump) used a 5% to 10% assumption which means that the solar thermal data with the 20% assumption is disadvantaged in the comparison.
+
+If the heat loss in the Bracht pipes could be lowered to 10% by using a lower operating temperature, that would result in efficiency savings of 335 MWh per year which would in turn not require production from the biomass boiler. This is significant since it amounts to roughly one third of the energy coming from biomass. @fig-es-sensitivity-pipes shows that this results in a reduction from 39 to 34 Ecopoints per MJ of district heat, which amounts to a 12% reduction. The main impact factor changed is in the "Main air pollutants and Particulate Matter (PM)" category.
+
+![Potential savings when halfing heat loss in pipes](img/pwrg_solar_es_sensitivity_pipes.png){#fig-es-sensitivity-pipes width="100%"}
+
+@penttinen2021optimal report a 26% loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model (see @etm2025) suggests 30% as a sensible default for modelling heat loss in the storage unit. @xiang2022comprehensive provide a comprehensive review and find that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover. The assumption for Bracht, which is 50% loss, seems to be on the conservative side. If it can be lowered to 30%, which seems feasible given the scientific results cited, that would cancel out the entirety of energy from biomass required. This would reduce the environmental impact from 39 to 26 Ecopoints per MJ of district heat, which is a reduction of 33%, as shown in @fig-es-sensitivity-storage.
+
+![Potential savings when lowering heat loss in storage from 50% to 30%](img/pwrg_solar_es_sensitivity_storage.png){#fig-es-sensitivity-storage width="100%"}
+
+# Conclusion
+
+A case study life cycle assessment was performed for the solar district heating community project in Bracht, Rauschenberg, Germany. The results compare favorably to other heating technologies in terms of environmental impact. To further improve, the recommendations are (1) to consider a lower operating temperature for the system to achieve better overall efficiency through avoided heat losses, (2) to use green energy for running the heat pump, and (3) to lower the amount of biomass burnt by improving the heat loss coefficients for storage unit and transmission pipes.
+
+# Appendix
+
+## Time planning
+
+@fig-time-plan documents the time plan that was followed for this project.
+
+![Gantt chart used for time planning.](img/time_plan.png){#fig-time-plan width="100%"}
+
+# References
