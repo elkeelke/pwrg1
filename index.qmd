@@ -36,7 +36,7 @@ For the community project in Bracht, while the economic viability of the project
 
 # Methodology and research questions
 
-The foreground data is collected from various online sources and combined with background data from the Ecoinvent v3 (see @wernet2016ecoinvent) and UVEK databases \[TBD *How to cite?*\]. The environmental impact is assessed using the Environmental Footprint (EF) method (see EC2021EF) at the midpoint level, and the Ecological Scarcity 2021 v1.04 method  (see @FOEN2021) with UVEK weighting set at the single score level. The LCIA is performed using the SimaPro 9.6.0.1 software (see @SimaPro2024). 
+The foreground data is collected from various online sources and combined with background data from the Ecoinvent v3 (see @wernet2016ecoinvent) and UVEK databases \[TBD *How to cite?*\]. The environmental impact is assessed using the Environmental Footprint (EF) method (see @EC2021EF) at the midpoint level, and the Ecological Scarcity 2021 v1.04 method  (see @FOEN2021) with UVEK weighting set at the single score level. The LCIA is performed using the SimaPro 9.6.0.1 software (see @SimaPro2024). 
 
 The research questions are formulated as follows:
 
