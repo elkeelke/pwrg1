@@ -36,7 +36,7 @@ For the community project in Bracht, while the economic viability of the project
 
 # Methodology and research questions
 
-The foreground data is collected from various online sources and combined with background data from the Ecoinvent v3 by @wernet2016ecoinvent and UVEK databases \[TBD *How to cite?*\]. The environmental impact is assessed using the mid-point level Environmental Footprint (EF) method recommended in @ec2021EF, and the Ecological Scarcity 2021 v1.04 method defined in @FOEN2021 at the single score level (with UVEK weighting set). The LCIA is performed using the SimaPro 9.6.0.1 software provided by @SimaPro2024. 
+The foreground data is collected from various online sources and combined with background data from the Ecoinvent v3 database by @wernet2016ecoinvent and from the FOEN LCI database DQRv2:2025 database by @FOEN2025. The environmental impact is assessed using the mid-point level Environmental Footprint (EF) method recommended in @ec2021EF, and the Ecological Scarcity 2021 v1.04 method defined in @FOEN2021 at the single score level (with FOEN LCI weighting set). The LCIA is performed using the SimaPro 9.6.0.1 software provided by @SimaPro2024. 
 
 The research questions are formulated as follows:
 
@@ -66,7 +66,7 @@ System deconstruction was modeled for the solar thermal collector field and the 
 
 *TBD My Simapro process is in the wrong category by mistake. I think I need to re-create everything to fix it. Is it ok to leave as is since it doesn't seem to hurt, or are there any consequences I am not aware of?*
 
-# Life Cycle Inventory (*TBD* *move to Appendix?*)
+# Life Cycle Inventory
 
 There is a lot of information available on the project website by @bracht2025. The website has been used as a resource to gather the life cycle inventory data for the five relevant components that are described in the following: solar thermal collector field, seasonal storage unit, heat preparation, distribution infrastructure, and consumer installations.
 
@@ -84,7 +84,73 @@ The planned lifetime for the Bracht plant is 50 years. The assumed individual co
 | Heat transport network            | 50    | 1          | [@bracht2022]          |
 :::
 
-## Solar thermal collector
+TBD Mostly in the supporting information and add a summary table here.
+
+## Electrical power requirements and loss coefficient assumptions {#sec-loss-coefficients}
+
+Several estimations of annual collector output can be found in the relevant performance data from @tuev2021 for the solar thermal collectors used in this project. They are based on geographical location and on the desired output temperature. The geographically closest matching entry is 5283 kWh per collector per year for the Würzburg location and 75 degrees output. For the given 855 collectors this amounts to an estimated 4.517 MWh per year.
+
+The Bracht documentation @bracht2025faq states that in total, 2.700 MWh per year are expected to reach consumer households. This means that the assumed loss coefficients for the storage unit and in the pipes together is estimated to amount to a significant factor of 40% loss. The electrical power that reaches consumer households is generated to 67% from what the solar thermal collectors generated for storage (2258 MWh), to 26% from biomass (904 MWh), and to 6% from the grid (209 MWh) using the percentage distribution given in @fig-bracht-overview. There is no detailed information how the expected loss was estimated. However, based on the published numbers and an assumed 20% loss coefficient in the pipes, the resulting expected loss in the seasonal storage unit can be calculated at 50%. These assumptions were used in the modelling. Further discussion of loss coefficients and a related sensitivity analysis can be found in @sec-sensitive.
+
+# Results
+
+The results for comparing the solar thermal based district network heat it to other forms of district heating (DH) that are available in small communities such as wood chips (biomass), geothermal heat pump, and also to the usually available consumer side heating installations (CI) such as a oil or gas boiler are shown in @fig-es-single-score and @fig-ef-midpoints.
+
+![Comparison to other energy sources for district heating (wood chips, heatpump) and consumer installations (gas, oil), based on the Ecological Scarcity 2021 v1.04 method with FOEN LCI weighting set at the single score level.](img/pwrg_solar_es_single_score.png){#fig-es-single-score width="100%"}
+
+![Damage assessment using the Environmental Footprint Method, visualized as relative impacts in comparison.](img/pwrg_solar_ef_midpoints.png){#fig-ef-midpoints width="100%"}
+
+Note that in @fig-ef-midpoints, the "Water use" category was excluded to avoid incorrect results caused by modelling issues in the underlying FOEN LCI data.
+
+TBD Focus: Climate change, PM, Eutrophication marine, Res. use minerals + maybe fossil
+
+
+![Relative influence of the system components using the Ecological Scarcity 2021 v1.04 method with FOEN LCI weighting set at the single score level.](img/pwrg_solar_network_pie.png){#fig-network-pie width="100%"}
+
+The relative influence of the district heating system components can be seen in @fig-network-pie. TBD add for all midpoints (like for the lawns but with components instead of phases)
+
+TBD expectation: heat storage should be 2x heat pump
+How much HDPE in kg?
+Compare with weight of heat pump
+
+
+# Discussion
+
+As shown in @fig-es-single-score, the Bracht setup compares positively to other heating technologies in terms of environmental impact. Based on the analysis using the Ecological Scarcity 2021 v1.04 method with FOEN LCI weighting set, it shows a lower environmental impact compared to other relevant district heating setups and to fossil energy based consumer installations. The results visualize that the Bracht system fares better in the "Main air pollutants and Particulate Matter (PM)" category in comparison to a completely wood chips based energy source for district heating, while the impact from the biomass energy used in the Bracht system is still visible in the results. The geothermal based district heating would perform better if there wasn't as much radioactive waste to deposit. The gas and oil based customer installations compare the least well in the selection because of the high impacts in the global warming category.
+
+Related results are shown in @fig-ef-midpoints when looking at the Environmental Footprint Method. Again the wood chips based energy source for district heating fares worst in the particulate matter category. It is also returning the worst results for land use, euthrophication (marine and terrestrial), human toxicity (cancer), and photochemical ozone formation. The oil burner returns the worst results for acidification, climate change, freshwater ecotoxicity, human toxicity (non-cancer), and fossil resource use. The gas burner shows bad results for climate change and ozone depletion. The geothermal heat pump district heating is performing badly for euthrophication (freshwater) and for ionising radiation. The solar thermal based district heating returns the worst results for resource use (minerals and metals).
+
+@fig-network-pie reveals that the environmental impact contribution of the seasonal heat storage unit are minimal. The only component that is listed is the Polystyrene from the floating cover of the seasonal heat storage unit, which amounts to 2% of the overall impact. The seasonal storage component lowers the environmental impact very significantly since it avoids using more heat from wood chips and electricity, which are the two biggest contributors to overall environmental impact. The plan for this research was to assess the impact of not using a seasonal storage component in the setup. However, the results shown in @fig-network-pie make it very clear that the seasonal storage component is essential for the overall system while its environmental impact is minimal. Therefore, the effects of not using a seasonal storage component in the setup were not analysed further.
+
+The additional electricity and biomass required were expected to play a big role with respect to the overall environmental impact. But it is surprising to see that these two are the biggest contributors. The electricity use can not be avoided since it is required to run the heat pump. Its impact can be lowered by using green energy *TBD should it be assessed too? (It's clear that using green energy will make the results much better. Electricity modelling currently very simple, using "electricity mix, winter 2018/CH")*. The opportunities and effects of using less biomass by lowering heat loss coefficients is assessed in detail in @sec-sensitive.
+
+## Loss coefficients and sensitivity analysis {#sec-sensitive}
+
+Heat is harder to transport than electrical power since even good insulation cannot avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling.
+
+As summarized by @werner2017international, the relevant parameters affecting heat loss in the pipes are the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The cited loss coefficient numbers for pipe loss range between 5% and 35%. The Bracht setup has a long transmission distance of 8800 meters because of the rural setup, and a planned operating temperature of 85 degrees Celsius. Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss is realistic. The open source modelling tool Energy Transition Model by @etm2025 suggests 15% as a sensible default for modelling heat loss in the pipes of modern district heating networks based on real world numbers. Note that in the comparison in @fig-es-single-score, the data for the other energy sources for district heating (wood chips, heatpump) used a 5% to 10% assumption which means that the solar thermal data with the 20% assumption is disadvantaged in the comparison.
+
+If the heat loss in the Bracht pipes could be lowered to 10% by using a lower operating temperature, that would result in efficiency savings of 335 MWh per year which would in turn not require production from the biomass boiler. This is significant since it amounts to roughly one third of the energy coming from biomass. @fig-es-sensitivity-pipes shows that this results in a reduction from 39 to 34 Ecopoints per MJ of district heat, which amounts to a 12% reduction. The main impact factor changed is in the "Main air pollutants and Particulate Matter (PM)" category.
+
+![Potential savings when halfing heat loss in pipes.](img/pwrg_solar_es_sensitivity_pipes.png){#fig-es-sensitivity-pipes width="100%"}
+
+@penttinen2021optimal report a 26% loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model by @etm2025 suggests 30% as a sensible default for modelling heat loss in the storage unit. @xiang2022comprehensive provide a comprehensive review and find that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover. The assumption for Bracht, which is 50% loss, seems to be on the conservative side. If it can be lowered to 30%, which seems feasible given the scientific results cited, that would cancel out the entirety of energy from biomass required. This would reduce the environmental impact from 39 to 26 Ecopoints per MJ of district heat, which is a reduction of 33%, as shown in @fig-es-sensitivity-storage.
+
+![Potential savings when lowering heat loss in storage from 50% to 30%.](img/pwrg_solar_es_sensitivity_storage.png){#fig-es-sensitivity-storage width="100%"}
+
+# Conclusion
+
+A case study life cycle assessment was performed for the solar district heating community project in Bracht, Rauschenberg, Germany. The results compare favorably to other heating technologies in terms of environmental impact. To further improve, the recommendations are (1) to consider a lower operating temperature for the system to achieve better overall efficiency through avoided heat losses, (2) to use green energy for running the heat pump, and (3) to lower or event completely remove the amount of biomass burnt by improving the heat loss coefficients for storage unit and transmission pipes.
+
+# Supporting information
+
+In this section, the supporting information related to the life cycle inventory and to project organization is collected. 
+
+## Life Cycle Inventory
+
+TBD add the Simapro processed used
+
+### Solar thermal collector
 
 The relevant data for the solar thermal collector can be found in @tbl-component-stc.
 
@@ -103,7 +169,7 @@ The relevant data for the solar thermal collector can be found in @tbl-component
 | Total transport km per lorry | (11638 $m^2$ \* 50 kg / $m^2$ \* 1.666667 + 15000 kg) / 1000 \* 1000 km = 984'834 tkm | Calculation |
 :::
 
-## Seasonal storage unit
+### Seasonal storage unit
 
 The relevant data for the seasonal storage unit can be found in @tbl-component-ssu. A picture of the floating cover can be found in @fig-floating-cover.
 
@@ -134,7 +200,7 @@ The relevant data for the seasonal storage unit can be found in @tbl-component-s
 | Total transport km per lorry | (((4900 $m^2$ \* 16.905 kg / $m^2$) + (5400 $m^2$ \* 5 kg / $m^2$)) \* 1.666667) / 1000 \* 1000 km = 183'058 tkm | Calculation |
 :::
 
-## Heat preparation
+### Heat preparation
 
 The relevant data for the heat preparation unit can be found in @tbl-component-hp.
 
@@ -149,57 +215,11 @@ The relevant data for the heat preparation unit can be found in @tbl-component-h
 | Heat installation facility | 50 $m^2$ | Own assumption |
 :::
 
-## Electrical power requirement and loss coefficient assumptions {#sec-loss-coefficients}
+## Project organization
 
-Several estimations of annual collector output can be found in the relevant performance data from @tuev2021 for the solar thermal collectors used in this project. They are based on geographical location and on the desired output temperature. The geographically closest matching entry is 5283 kWh per collector per year for the Würzburg location and 75 degrees output. For the given 855 collectors this amounts to an estimated 4.517 MWh per year.
+In this section, the time plan and the meeting notes are documented.
 
-The Bracht documentation @bracht2025faq states that in total, 2.700 MWh per year are expected to reach consumer households. This means that the assumed loss coefficients for the storage unit and in the pipes together is estimated to amount to a significant factor of 40% loss. The electrical power that reaches consumer households is generated to 67% from what the solar thermal collectors generated for storage (2258 MWh), to 26% from biomass (904 MWh), and to 6% from the grid (209 MWh) using the percentage distribution given in @fig-bracht-overview. There is no detailed information how the expected loss was estimated. However, based on the published numbers and an assumed 20% loss coefficient in the pipes, the resulting expected loss in the seasonal storage unit can be calculated at 50%. These assumptions were used in the modelling. Further discussion of loss coefficients and a related sensitivity analysis can be found in @sec-sensitive.
-
-# Results
-
-The results for comparing the solar thermal based district network heat it to other forms of district heating (DH) that are available in small communities such as wood chips (biomass), geothermal heat pump, and also to the usually available consumer side heating installations (CI) such as a oil or gas boiler are shown in @fig-es-single-score and @fig-ef-midpoints.
-
-![Comparison to other energy sources for district heating (wood chips, heatpump) and consumer installations (gas, oil), based on the Ecological Scarcity 2021 v1.04 method with UVEK weighting set at the single score level.](img/pwrg_solar_es_single_score.png){#fig-es-single-score width="100%"}
-
-![Damage assessment using the Environmental Footprint Method, visualized as relative impacts in comparison.](img/pwrg_solar_ef_midpoints.png){#fig-ef-midpoints width="100%"}
-
-Note that in @fig-ef-midpoints, the "Water use" category was excluded to avoid incorrect results caused by modelling issues in the underlying UVEK data.
-
-![Relative influence of the system components using the Ecological Scarcity 2021 v1.04 method with UVEK weighting set at the single score level.](img/pwrg_solar_network_pie.png){#fig-network-pie width="100%"}
-
-The relative influence of the district heating system components can be seen in @fig-network-pie.
-
-# Discussion
-
-As shown in @fig-es-single-score, the Bracht setup compares positively to other heating technologies in terms of environmental impact. Based on the analysis using the Ecological Scarcity 2021 v1.04 method with UVEK weighting set, it shows a lower environmental impact compared to other relevant district heating setups and to fossil energy based consumer installations. The results visualize that the Bracht system fares better in the "Main air pollutants and Particulate Matter (PM)" category in comparison to a completely wood chips based energy source for district heating, while the impact from the biomass energy used in the Bracht system is still visible in the results. The geothermal based district heating would perform better if there wasn't as much radioactive waste to deposit. The gas and oil based customer installations compare the least well in the selection because of the high impacts in the global warming category.
-
-Related results are shown in @fig-ef-midpoints when looking at the Environmental Footprint Method. Again the wood chips based energy source for district heating fares worst in the particulate matter category. It is also returning the worst results for land use, euthrophication (marine and terrestrial), human toxicity (cancer), and photochemical ozone formation. The oil burner returns the worst results for acidification, climate change, freshwater ecotoxicity, human toxicity (non-cancer), and fossil resource use. The gas burner shows bad results for climate change and ozone depletion. The geothermal heat pump district heating is performing badly for euthrophication (freshwater) and for ionising radiation. The solar thermal based district heating returns the worst results for resource use (minerals and metals).
-
-@fig-network-pie reveals that the environmental impact contribution of the seasonal heat storage unit are minimal. The only component that is listed is the Polystyrene from the floating cover of the seasonal heat storage unit, which amounts to 2% of the overall impact. The seasonal storage component lowers the environmental impact very significantly since it avoids using more heat from wood chips and electricity, which are the two biggest contributors to overall environmental impact. The plan for this research was to assess the impact of not using a seasonal storage component in the setup. However, the results shown in @fig-network-pie make it very clear that the seasonal storage component is essential for the overall system while its environmental impact is minimal. Therefore, the effects of not using a seasonal storage component in the setup were not analysed further.
-
-The additional electricity and biomass required were expected to play a big role with respect to the overall environmental impact. But it is surprising to see that these two are the biggest contributors. The electricity use can not be avoided since it is required to run the heat pump. Its impact can be lowered by using green energy *TBD should it be assessed too? (It's clear that using green energy will make the results much better. Electricity modelling currently very simple, using "electricity mix, winter 2018/CH")*. The opportunities and effects of using less biomass by lowering heat loss coefficients is assessed in detail in @sec-sensitive.
-
-## Loss coefficients and sensitivity analysis {#sec-sensitive}
-
-Heat is harder to transport than electrical power since even good insulation cannot avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling.
-
-As summarized by @werner2017international, the relevant parameters affecting heat loss in the pipes are the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The cited loss coefficient numbers for pipe loss range between 5% and 35%. The Bracht setup has a long transmission distance of 8800 meters because of the rural setup, and a planned operating temperature of 85 degrees Celsius. Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss is realistic. The open source modelling tool Energy Transition Model by @etm2025 suggests 15% as a sensible default for modelling heat loss in the pipes of modern district heating networks based on real world numbers. Note that in the comparison in @fig-es-single-score, the data for the other energy sources for district heating (wood chips, heatpump) used a 5% to 10% assumption which means that the solar thermal data with the 20% assumption is disadvantaged in the comparison.
-
-If the heat loss in the Bracht pipes could be lowered to 10% by using a lower operating temperature, that would result in efficiency savings of 335 MWh per year which would in turn not require production from the biomass boiler. This is significant since it amounts to roughly one third of the energy coming from biomass. @fig-es-sensitivity-pipes shows that this results in a reduction from 39 to 34 Ecopoints per MJ of district heat, which amounts to a 12% reduction. The main impact factor changed is in the "Main air pollutants and Particulate Matter (PM)" category.
-
-![Potential savings when halfing heat loss in pipes.](img/pwrg_solar_es_sensitivity_pipes.png){#fig-es-sensitivity-pipes width="100%"}
-
-@penttinen2021optimal report a 26% loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model by @etm2025 suggests 30% as a sensible default for modelling heat loss in the storage unit. @xiang2022comprehensive provide a comprehensive review and find that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover. The assumption for Bracht, which is 50% loss, seems to be on the conservative side. If it can be lowered to 30%, which seems feasible given the scientific results cited, that would cancel out the entirety of energy from biomass required. This would reduce the environmental impact from 39 to 26 Ecopoints per MJ of district heat, which is a reduction of 33%, as shown in @fig-es-sensitivity-storage.
-
-![Potential savings when lowering heat loss in storage from 50% to 30%.](img/pwrg_solar_es_sensitivity_storage.png){#fig-es-sensitivity-storage width="100%"}
-
-# Conclusion
-
-A case study life cycle assessment was performed for the solar district heating community project in Bracht, Rauschenberg, Germany. The results compare favorably to other heating technologies in terms of environmental impact. To further improve, the recommendations are (1) to consider a lower operating temperature for the system to achieve better overall efficiency through avoided heat losses, (2) to use green energy for running the heat pump, and (3) to lower or event completely remove the amount of biomass burnt by improving the heat loss coefficients for storage unit and transmission pipes.
-
-# Appendix
-
-## Time planning
+### Time planning
 
 @fig-time-plan documents the time plan that was followed for this project. The live version can be found [here](https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303). Access is given upon request.
 
@@ -207,9 +227,7 @@ A case study life cycle assessment was performed for the solar district heating 
 
 *TBD: Are the dates for defense colloquium for Mario and Sarah defined yet?*
 
-*TBD: Is July 8 correct for the presentation?*
-
-## Meeting notes
+### Meeting notes
 
 The notes for the meetings can be found [here](https://docs.google.com/document/d/1ckpCeTboJK6gfoXQi750jMr5Y85_x3PROEDG1IKEM4E/edit?tab=t.0#heading=h.ibakwauq0483). Access is given upon request.
 
