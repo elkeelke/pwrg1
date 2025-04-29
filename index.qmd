@@ -199,9 +199,9 @@ A case study life cycle assessment was performed for the solar district heating 
 
 ![Gantt chart used for time planning.](img/time_plan.png){#fig-time-plan width="100%"}
 
-TBD: Are the dates for defense colloquium for Mario and Sarah defined yet?
+*TBD: Are the dates for defense colloquium for Mario and Sarah defined yet?*
 
-TBD: Is July 8 correct?
+*TBD: Is July 8 correct for the presentation?*
 
 ## Meeting notes
 
