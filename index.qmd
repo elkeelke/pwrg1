@@ -64,6 +64,8 @@ System deconstruction was modeled for the solar thermal collector field and the 
 
 *TBD Modelling deconstruction but not recycling (same as for OEBLM). I didn't find an entry for plastic recycling*
 
+*TBD My Simapro process is in the wrong category by mistake. I think I need to re-create everything to fix it. Is it ok to leave as is since it doesn't seem to hurt, or are there any consequences I am not aware of?*
+
 # Life Cycle Inventory (*TBD* *move to Appendix?*)
 
 There is a lot of information available on the project website by @bracht2025. The website has been used as a resource to gather the life cycle inventory data for the five relevant components that are described in the following: solar thermal collector field, seasonal storage unit, heat preparation, distribution infrastructure, and consumer installations.
@@ -159,7 +161,6 @@ The results for comparing the solar thermal based district network heat it to ot
 
 ![Comparison to other energy sources for district heating (wood chips, heatpump) and consumer installations (gas, oil), based on the Ecological Scarcity 2021 v1.04 method with UVEK weighting set at the single score level.](img/pwrg_solar_es_single_score.png){#fig-es-single-score width="100%"}
 
-
 ![Damage assessment using the Environmental Footprint Method, visualized as relative impacts in comparison.](img/pwrg_solar_ef_midpoints.png){#fig-ef-midpoints width="100%"}
 
 Note that in @fig-ef-midpoints, the "Water use" category was excluded to avoid incorrect results caused by modelling issues in the underlying UVEK data.
@@ -176,7 +177,7 @@ Related results are shown in @fig-ef-midpoints when looking at Environmental Foo
 
 @fig-network-pie reveals that the environmental impact contribution of the seasonal heat storage unit are minimal. The only component that is listed is the Polystyrene from the floating cover of the seasonal heat storage unit, which amounts to 2% of the overall impact. The seasonal storage component lowers the environmental impact very significantly since it avoids using more heat from wood chips and electricity, which are the two biggest contributors to overall environmental impact. The plan for this research was to assess the impact of not using a seasonal storage component in the setup. However, the results shown in @fig-network-pie make it very clear that the seasonal storage component is essential for the overall system while its environmental impact is minimal. Therefore, the effects of not using a seasonal storage component in the setup were not analysed further.
 
-The additional electricity and biomass required were expected to play a big role with respect to the overall environmental impact. But it is surprising to see that these two are the biggest contributors. The electricity use can not be avoided since it is required to run the heat pump. Its impact can be lowered by using green energy *TBD should it be assessed too? (It's clear that using green energy will make the results much better)*. The opportunities and effects of using less biomass by lowering heat loss coefficients is assessed in detail in @sec-sensitive.
+The additional electricity and biomass required were expected to play a big role with respect to the overall environmental impact. But it is surprising to see that these two are the biggest contributors. The electricity use can not be avoided since it is required to run the heat pump. Its impact can be lowered by using green energy *TBD should it be assessed too? (It's clear that using green energy will make the results much better. Electricity modelling currently very simple, using "electricity mix, winter 2018/CH")*. The opportunities and effects of using less biomass by lowering heat loss coefficients is assessed in detail in @sec-sensitive.
 
 ## Loss coefficients and sensitivity analysis {#sec-sensitive}
 
