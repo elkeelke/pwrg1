@@ -52,13 +52,17 @@ The goal and scope definition of an LCA provides a description of the product sy
 
 The district heating project that is the topic of this analysis is led by a cooperative comprising future household consumers and the local council. The project setup consists of a solar thermal collector field, a seasonal storage unit also called Pit Thermal Energy Storage (PTES), a heat pump which is using power from the grid, a buffer storage unit, a backup biomass combustion unit that if required can be used as an alternative source of heat (for the cases where there is no availability of heat from neither the solar collector nor the storage), and a distribution network for the customer households (see @fig-bracht-overview). A receiver unit is installed in each participating household. There are at least 180 consumer households expected, which is roughly 60% of all households in the community.
 
-![Overview of system setup for the Bracht district heating. Source: University of Kassel](img/bracht_overview.png){#fig-bracht-overview width="75%" fig-border="true"}
+![Overview of system setup for the Bracht district heating. Source: University of Kassel.](img/bracht_overview.png){#fig-bracht-overview width="75%" fig-border="true"}
 
-The functional unit is 1 kWh of thermal energy provided to the consumer directly at the consumer site during the heating period. The lifetime of the installation is assumed to be 50 years. The system diagram shown in @fig-system-diagram describes the product system and its boundaries.
+The functional unit is 1 kWh of thermal energy (kWh~th~) provided to the consumer directly at the consumer site during the heating period. The lifetime of the installation is assumed to be 50 years. The system diagram shown in @fig-system-diagram describes the product system and its boundaries.
 
-![System diagram](img/system_diagram.png){#fig-system-diagram width="80%" fig-border="true"}
+*TBD: Simapro process uses MJ (like the ones used for comparison), doublecheck that this is correct*
+
+![System diagram, with functional unit.](img/system_diagram.png){#fig-system-diagram width="80%" fig-border="true"}
 
 System deconstruction was modeled for the solar thermal collector field and the seasonal storage unit only. *TBD Is this acceptable? It's counted per weight, so the 15t of steel will be the majority, and that is covered*.
+
+*TBD Modelling deconstruction but not recycling (same as for OEBLM). I didn't find an entry for plastic recycling*
 
 # Life Cycle Inventory (*TBD* *move to Appendix?*)
 
@@ -151,15 +155,16 @@ The Bracht documentation @bracht2025faq states that in total, 2.700 MWh per year
 
 # Results
 
-The results for comparing the solar thermal based district network heat it to other forms of district heating that are available in small communities such as wood chips (biomass), geothermal heat pump, and also to the usually available consumer side heating installations such as a oil or gas boiler are shown in @fig-es-single-score and @fig-ef-midpoints.
+The results for comparing the solar thermal based district network heat it to other forms of district heating (DH) that are available in small communities such as wood chips (biomass), geothermal heat pump, and also to the usually available consumer side heating installations (CI) such as a oil or gas boiler are shown in @fig-es-single-score and @fig-ef-midpoints.
 
-![Comparison to other energy sources for district heating (wood chips, heatpump) and consumer installations (gas, oil), based on the Ecological Scarcity 2021 v1.04 method with UVEK weighting set at the single score level](img/pwrg_solar_es_single_score.png){#fig-es-single-score width="100%"}
+![Comparison to other energy sources for district heating (wood chips, heatpump) and consumer installations (gas, oil), based on the Ecological Scarcity 2021 v1.04 method with UVEK weighting set at the single score level.](img/pwrg_solar_es_single_score.png){#fig-es-single-score width="100%"}
 
-![Damage assessment using the Environmental Footprint Method](img/pwrg_solar_ef_midpoints.png){#fig-ef-midpoints width="100%"}
+
+![Damage assessment using the Environmental Footprint Method, visualized as relative impacts in comparison.](img/pwrg_solar_ef_midpoints.png){#fig-ef-midpoints width="100%"}
 
 Note that in @fig-ef-midpoints, the "Water use" category was excluded to avoid incorrect results caused by modelling issues in the underlying UVEK data.
 
-![Relative influence of the system components using the Ecological Scarcity 2021 v1.04 method with UVEK weighting set at the single score level](img/pwrg_solar_network_pie.png){#fig-network-pie width="100%"}
+![Relative influence of the system components using the Ecological Scarcity 2021 v1.04 method with UVEK weighting set at the single score level.](img/pwrg_solar_network_pie.png){#fig-network-pie width="100%"}
 
 The relative influence of the district heating system components can be seen in @fig-network-pie.
 
@@ -181,11 +186,11 @@ As summarized by @werner2017international, the relevant parameters affecting hea
 
 If the heat loss in the Bracht pipes could be lowered to 10% by using a lower operating temperature, that would result in efficiency savings of 335 MWh per year which would in turn not require production from the biomass boiler. This is significant since it amounts to roughly one third of the energy coming from biomass. @fig-es-sensitivity-pipes shows that this results in a reduction from 39 to 34 Ecopoints per MJ of district heat, which amounts to a 12% reduction. The main impact factor changed is in the "Main air pollutants and Particulate Matter (PM)" category.
 
-![Potential savings when halfing heat loss in pipes](img/pwrg_solar_es_sensitivity_pipes.png){#fig-es-sensitivity-pipes width="100%"}
+![Potential savings when halfing heat loss in pipes.](img/pwrg_solar_es_sensitivity_pipes.png){#fig-es-sensitivity-pipes width="100%"}
 
 @penttinen2021optimal report a 26% loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model (see @etm2025) suggests 30% as a sensible default for modelling heat loss in the storage unit. @xiang2022comprehensive provide a comprehensive review and find that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover. The assumption for Bracht, which is 50% loss, seems to be on the conservative side. If it can be lowered to 30%, which seems feasible given the scientific results cited, that would cancel out the entirety of energy from biomass required. This would reduce the environmental impact from 39 to 26 Ecopoints per MJ of district heat, which is a reduction of 33%, as shown in @fig-es-sensitivity-storage.
 
-![Potential savings when lowering heat loss in storage from 50% to 30%](img/pwrg_solar_es_sensitivity_storage.png){#fig-es-sensitivity-storage width="100%"}
+![Potential savings when lowering heat loss in storage from 50% to 30%.](img/pwrg_solar_es_sensitivity_storage.png){#fig-es-sensitivity-storage width="100%"}
 
 # Conclusion
 
@@ -195,7 +200,7 @@ A case study life cycle assessment was performed for the solar district heating 
 
 ## Time planning
 
-@fig-time-plan documents the time plan that was followed for this project.
+@fig-time-plan documents the time plan that was followed for this project. The live version can be found [here](https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303). Access is given upon request.
 
 ![Gantt chart used for time planning.](img/time_plan.png){#fig-time-plan width="100%"}
 
