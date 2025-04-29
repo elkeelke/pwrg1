@@ -36,7 +36,7 @@ For the community project in Bracht, while the economic viability of the project
 
 # Methodology and research questions
 
-The foreground data is collected from various online sources and combined with background data from the Ecoinvent v3 database by @wernet2016ecoinvent and from the FOEN LCI database DQRv2:2025 database by @FOEN2025. The environmental impact is assessed using the mid-point level Environmental Footprint (EF) method recommended in @ec2021EF, and the Ecological Scarcity 2021 v1.04 method defined in @FOEN2021 at the single score level (with FOEN LCI weighting set). The LCIA is performed using the SimaPro 9.6.0.1 software provided by @SimaPro2024. 
+The foreground data is collected from various online sources and combined with background data from the Ecoinvent v3 database by @wernet2016ecoinvent and from the UVEK LCI database DQRv2:2025 database by @FOEN2025. The environmental impact is assessed using the mid-point level Environmental Footprint (EF) method recommended in @ec2021EF, and the Ecological Scarcity 2021 v1.04 method defined in @FOEN2021 at the single score level (with UVEK LCI weighting set). The LCIA is performed using the SimaPro 9.6.0.1 software provided by @SimaPro2024. 
 
 The research questions are formulated as follows:
 
@@ -96,16 +96,16 @@ The Bracht documentation @bracht2025faq states that in total, 2.700 MWh per year
 
 The results for comparing the solar thermal based district network heat it to other forms of district heating (DH) that are available in small communities such as wood chips (biomass), geothermal heat pump, and also to the usually available consumer side heating installations (CI) such as a oil or gas boiler are shown in @fig-es-single-score and @fig-ef-midpoints.
 
-![Comparison to other energy sources for district heating (wood chips, heatpump) and consumer installations (gas, oil), based on the Ecological Scarcity 2021 v1.04 method with FOEN LCI weighting set at the single score level.](img/pwrg_solar_es_single_score.png){#fig-es-single-score width="100%"}
+![Comparison to other energy sources for district heating (wood chips, heatpump) and consumer installations (gas, oil), based on the Ecological Scarcity 2021 v1.04 method with UVEK LCI weighting set at the single score level.](img/pwrg_solar_es_single_score.png){#fig-es-single-score width="100%"}
 
 ![Damage assessment using the Environmental Footprint Method, visualized as relative impacts in comparison.](img/pwrg_solar_ef_midpoints.png){#fig-ef-midpoints width="100%"}
 
-Note that in @fig-ef-midpoints, the "Water use" category was excluded to avoid incorrect results caused by modelling issues in the underlying FOEN LCI data.
+Note that in @fig-ef-midpoints, the "Water use" category was excluded to avoid incorrect results caused by modelling issues in the underlying UVEK LCI data.
 
 TBD Focus: Climate change, PM, Eutrophication marine, Res. use minerals + maybe fossil
 
 
-![Relative influence of the system components using the Ecological Scarcity 2021 v1.04 method with FOEN LCI weighting set at the single score level.](img/pwrg_solar_network_pie.png){#fig-network-pie width="100%"}
+![Relative influence of the system components using the Ecological Scarcity 2021 v1.04 method with UVEK LCI weighting set at the single score level.](img/pwrg_solar_network_pie.png){#fig-network-pie width="100%"}
 
 The relative influence of the district heating system components can be seen in @fig-network-pie. TBD add for all midpoints (like for the lawns but with components instead of phases)
 
@@ -116,7 +116,7 @@ Compare with weight of heat pump
 
 # Discussion
 
-As shown in @fig-es-single-score, the Bracht setup compares positively to other heating technologies in terms of environmental impact. Based on the analysis using the Ecological Scarcity 2021 v1.04 method with FOEN LCI weighting set, it shows a lower environmental impact compared to other relevant district heating setups and to fossil energy based consumer installations. The results visualize that the Bracht system fares better in the "Main air pollutants and Particulate Matter (PM)" category in comparison to a completely wood chips based energy source for district heating, while the impact from the biomass energy used in the Bracht system is still visible in the results. The geothermal based district heating would perform better if there wasn't as much radioactive waste to deposit. The gas and oil based customer installations compare the least well in the selection because of the high impacts in the global warming category.
+As shown in @fig-es-single-score, the Bracht setup compares positively to other heating technologies in terms of environmental impact. Based on the analysis using the Ecological Scarcity 2021 v1.04 method with UVEK LCI weighting set, it shows a lower environmental impact compared to other relevant district heating setups and to fossil energy based consumer installations. The results visualize that the Bracht system fares better in the "Main air pollutants and Particulate Matter (PM)" category in comparison to a completely wood chips based energy source for district heating, while the impact from the biomass energy used in the Bracht system is still visible in the results. The geothermal based district heating would perform better if there wasn't as much radioactive waste to deposit. The gas and oil based customer installations compare the least well in the selection because of the high impacts in the global warming category.
 
 Related results are shown in @fig-ef-midpoints when looking at the Environmental Footprint Method. Again the wood chips based energy source for district heating fares worst in the particulate matter category. It is also returning the worst results for land use, euthrophication (marine and terrestrial), human toxicity (cancer), and photochemical ozone formation. The oil burner returns the worst results for acidification, climate change, freshwater ecotoxicity, human toxicity (non-cancer), and fossil resource use. The gas burner shows bad results for climate change and ozone depletion. The geothermal heat pump district heating is performing badly for euthrophication (freshwater) and for ionising radiation. The solar thermal based district heating returns the worst results for resource use (minerals and metals).
 
