@@ -14,7 +14,6 @@ execute:
 lang: en
 bibliography: bibliography.bib
 csl: apa.csl
-keep-tex: true
 ---
 
 # Abstract
@@ -176,7 +175,7 @@ The additional electricity and biomass required were expected to play a big role
 
 ## Loss coefficients and sensitivity analysis {#sec-sensitive}
 
-Heat is harder to transport than electrical power since even good insulation can not avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling.
+Heat is harder to transport than electrical power since even good insulation cannot avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling.
 
 As summarized by @werner2017international, the relevant parameters affecting heat loss in the pipes are the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The cited loss coefficient numbers for pipe loss range between 5% and 35%. The Bracht setup has a long transmission distance of 8800 meters because of the rural setup, and a planned operating temperature of 85 degrees Celsius. Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss is realistic. The open source modelling tool Energy Transition Model (see @etm2025) suggests 15% as a sensible default for modelling heat loss in the pipes of modern district heating networks based on real world numbers. Note that in the comparison in @fig-es-single-score, the data for the other energy sources for district heating (wood chips, heatpump) used a 5% to 10% assumption which means that the solar thermal data with the 20% assumption is disadvantaged in the comparison.
 
@@ -199,5 +198,13 @@ A case study life cycle assessment was performed for the solar district heating 
 @fig-time-plan documents the time plan that was followed for this project.
 
 ![Gantt chart used for time planning.](img/time_plan.png){#fig-time-plan width="100%"}
+
+TBD: Are the dates for defense colloquium for Mario and Sarah defined yet?
+
+TBD: Is July 8 correct?
+
+## Meeting notes
+
+The notes for the meetings can be found [here](https://docs.google.com/document/d/1ckpCeTboJK6gfoXQi750jMr5Y85_x3PROEDG1IKEM4E/edit?tab=t.0#heading=h.ibakwauq0483). Access is given upon request.
 
 # References
