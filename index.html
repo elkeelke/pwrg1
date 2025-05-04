@@ -346,7 +346,7 @@ Figure&nbsp;4: Damage assessment using the Environmental Footprint Method, visua
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>long_csv_normalized<span class="sc">$</span><span class="st">`</span><span class="at">Damage category</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="fu">str_wrap</span>(long_csv_normalized<span class="sc">$</span><span class="st">`</span><span class="at">Damage category</span><span class="st">`</span>, <span class="at">width =</span> <span class="dv">20</span>)</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(long_csv_normalized, <span class="fu">aes</span>(<span class="at">x =</span> Type, <span class="at">y =</span> pct, <span class="at">fill =</span> Type)) <span class="sc">+</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(<span class="st">`</span><span class="at">Damage category</span><span class="st">`</span>), <span class="at">switch =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
@@ -371,7 +371,7 @@ Figure&nbsp;4: Damage assessment using the Environmental Footprint Method, visua
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/pwrg_solar_ef_midpoints_faceted.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ggsave("img/pwrg_solar_ef_midpoints_faceted.png")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>TBD Focus: Climate change, PM, Eutrophication marine, Res. use minerals + maybe fossil</p>
