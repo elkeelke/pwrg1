@@ -21,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -136,7 +171,7 @@ window.Quarto = {
 </section>
 <section id="methodology-and-research-questions" class="level1">
 <h1>Methodology and research questions</h1>
-<p>The foreground data is collected from various online sources and combined with background data from the Ecoinvent v3 by <span class="citation" data-cites="wernet2016ecoinvent">Wernet et al. (<a href="#ref-wernet2016ecoinvent" role="doc-biblioref">2016</a>)</span> and UVEK databases [TBD <em>How to cite?</em>]. The environmental impact is assessed using the mid-point level Environmental Footprint (EF) method recommended in <span class="citation" data-cites="ec2021EF">European Commission (<a href="#ref-ec2021EF" role="doc-biblioref">2021</a>)</span>, and the Ecological Scarcity 2021 v1.04 method defined in <span class="citation" data-cites="FOEN2021">Federal Office for the Environment (FOEN) (<a href="#ref-FOEN2021" role="doc-biblioref">2021</a>)</span> at the single score level (with UVEK weighting set). The LCIA is performed using the SimaPro 9.6.0.1 software provided by <span class="citation" data-cites="SimaPro2024">PRé Sustainability (<a href="#ref-SimaPro2024" role="doc-biblioref">2024</a>)</span>.</p>
+<p>The foreground data is collected from various online sources and combined with background data from the Ecoinvent v3 database by <span class="citation" data-cites="wernet2016ecoinvent">Wernet et al. (<a href="#ref-wernet2016ecoinvent" role="doc-biblioref">2016</a>)</span> and from the UVEK LCI database DQRv2:2025 database by <span class="citation" data-cites="FOEN2025">Federal Office for the Environment (FOEN) (<a href="#ref-FOEN2025" role="doc-biblioref">2025</a>)</span>. The environmental impact is assessed using the mid-point level Environmental Footprint (EF) method recommended in <span class="citation" data-cites="ec2021EF">European Commission (<a href="#ref-ec2021EF" role="doc-biblioref">2021</a>)</span>, and the Ecological Scarcity 2021 v1.04 method defined in <span class="citation" data-cites="FOEN2021">Federal Office for the Environment (FOEN) (<a href="#ref-FOEN2021" role="doc-biblioref">2021</a>)</span> at the single score level (with UVEK LCI weighting set). The LCIA is performed using the SimaPro 9.6.0.1 software provided by <span class="citation" data-cites="SimaPro2024">PRé Sustainability (<a href="#ref-SimaPro2024" role="doc-biblioref">2024</a>)</span>.</p>
 <p>The research questions are formulated as follows:</p>
 <ol type="1">
 <li><p>How does the STC based system with seasonal heat storage compare to other heating technologies in terms of environmental impact? The comparison will include district heating from other sources that would be available in small communities (such as a heat pump or wood chips), and consumer side heating installations such as oil or gas boilers. The hypothesis is that the STC based system will have a lower environmental impact compared to other district heating setups and to fossil energy based consumer installations.</p></li>
@@ -174,8 +209,8 @@ Figure&nbsp;2: System diagram, with functional unit.
 <p><em>TBD Modelling deconstruction but not recycling (same as for OEBLM). I didn’t find an entry for plastic recycling</em></p>
 <p><em>TBD My Simapro process is in the wrong category by mistake. I think I need to re-create everything to fix it. Is it ok to leave as is since it doesn’t seem to hurt, or are there any consequences I am not aware of?</em></p>
 </section>
-<section id="life-cycle-inventory-tbd-move-to-appendix" class="level1">
-<h1>Life Cycle Inventory (<em>TBD</em> <em>move to Appendix?</em>)</h1>
+<section id="life-cycle-inventory" class="level1">
+<h1>Life Cycle Inventory</h1>
 <p>There is a lot of information available on the project website by <span class="citation" data-cites="bracht2025">City of Rauschenberg (<a href="#ref-bracht2025" role="doc-biblioref">2025c</a>)</span>. The website has been used as a resource to gather the life cycle inventory data for the five relevant components that are described in the following: solar thermal collector field, seasonal storage unit, heat preparation, distribution infrastructure, and consumer installations.</p>
 <p>The planned lifetime for the Bracht plant is 50 years. The assumed individual component lifetimes and the resulting relevant multipliers are shown in <a href="#tbl-component-lifetimes" class="quarto-xref">Table&nbsp;1</a>. The assumed individual component lifetimes are in line with the assumptions used in <span class="citation" data-cites="bracht2022">Kelch et al. (<a href="#ref-bracht2022" role="doc-biblioref">2022</a>)</span>.</p>
 <div id="tbl-component-lifetimes" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Assumed component lifetimes">
@@ -247,8 +282,152 @@ Table&nbsp;1
 </div>
 </figure>
 </div>
-<section id="solar-thermal-collector" class="level2">
-<h2 class="anchored" data-anchor-id="solar-thermal-collector">Solar thermal collector</h2>
+<p>TBD Mostly in the supporting information and add a summary table here.</p>
+<section id="sec-loss-coefficients" class="level2">
+<h2 class="anchored" data-anchor-id="sec-loss-coefficients">Electrical power requirements and loss coefficient assumptions</h2>
+<p>Several estimations of annual collector output can be found in the relevant performance data from <span class="citation" data-cites="tuev2021">TÜV Rheinland (<a href="#ref-tuev2021" role="doc-biblioref">2021</a>)</span> for the solar thermal collectors used in this project. They are based on geographical location and on the desired output temperature. The geographically closest matching entry is 5283 kWh per collector per year for the Würzburg location and 75 degrees output. For the given 855 collectors this amounts to an estimated 4.517 MWh per year.</p>
+<p>The Bracht documentation <span class="citation" data-cites="bracht2025faq">City of Rauschenberg (<a href="#ref-bracht2025faq" role="doc-biblioref">2025a</a>)</span> states that in total, 2.700 MWh per year are expected to reach consumer households. This means that the assumed loss coefficients for the storage unit and in the pipes together is estimated to amount to a significant factor of 40% loss. The electrical power that reaches consumer households is generated to 67% from what the solar thermal collectors generated for storage (2258 MWh), to 26% from biomass (904 MWh), and to 6% from the grid (209 MWh) using the percentage distribution given in <a href="#fig-bracht-overview" class="quarto-xref">Figure&nbsp;1</a>. There is no detailed information how the expected loss was estimated. However, based on the published numbers and an assumed 20% loss coefficient in the pipes, the resulting expected loss in the seasonal storage unit can be calculated at 50%. These assumptions were used in the modelling. Further discussion of loss coefficients and a related sensitivity analysis can be found in <a href="#sec-sensitive" class="quarto-xref">Section&nbsp;7.1</a>.</p>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<p>The results for comparing the solar thermal based district network heat it to other forms of district heating (DH) that are available in small communities such as wood chips (biomass), geothermal heat pump, and also to the usually available consumer side heating installations (CI) such as a oil or gas boiler are shown in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;3</a> and <a href="#fig-ef-midpoints" class="quarto-xref">Figure&nbsp;4</a>.</p>
+<div id="fig-es-single-score" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-es-single-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pwrg_solar_es_single_score.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-es-single-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Comparison to other energy sources for district heating (wood chips, heatpump) and consumer installations (gas, oil), based on the Ecological Scarcity 2021 v1.04 method with UVEK LCI weighting set at the single score level.
+</figcaption>
+</figure>
+</div>
+<div id="fig-ef-midpoints" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ef-midpoints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pwrg_solar_ef_midpoints_faceted.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ef-midpoints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Damage assessment using the Environmental Footprint Method, visualized as relative impacts in comparison.
+</figcaption>
+</figure>
+</div>
+<p>Note that in <a href="#fig-ef-midpoints" class="quarto-xref">Figure&nbsp;4</a>, the “Water use” category was excluded to avoid incorrect results caused by modelling issues in the underlying UVEK LCI data.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(googlesheets4)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#gs4_auth()</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>), <span class="at">each =</span> <span class="dv">5</span>),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">category =</span> <span class="fu">rep</span>(LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>], <span class="at">times =</span> <span class="dv">3</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">25</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">18</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">20</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>csv <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">"data/PWRG results solar - EF damage assessment.csv"</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>, ]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>long_csv <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(csv, <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(<span class="st">"Damage category"</span>, <span class="st">"Unit"</span>), <span class="at">names_to =</span> <span class="st">"Type"</span>, <span class="at">values_to =</span> <span class="st">"Value"</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>long_csv_normalized <span class="ot">&lt;-</span> long_csv <span class="sc">|&gt;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Damage category</span><span class="st">`</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Climate change"</span>, <span class="st">"Particulate matter"</span>, <span class="st">"Eutrophication, marine"</span>, <span class="st">"Land use"</span>, <span class="st">"Resource use, minerals and metals"</span>, <span class="st">"Resource use, fossils"</span>)) <span class="sc">|&gt;</span>  </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="st">`</span><span class="at">Damage category</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct =</span> Value <span class="sc">/</span> <span class="fu">max</span>(Value) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(long_csv_normalized, <span class="fu">aes</span>(<span class="at">x =</span> Type, <span class="at">y =</span> pct, <span class="at">fill =</span> Type)) <span class="sc">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(<span class="st">`</span><span class="at">Damage category</span><span class="st">`</span>), <span class="at">switch =</span> <span class="st">"y"</span>, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Relative impact in %"</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.placement =</span> <span class="st">"outside"</span>,</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text.y.left =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> <span class="dv">0</span>), </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">20</span>),</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"grey95"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/pwrg_solar_ef_midpoints_faceted.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>TBD Focus: Climate change, PM, Eutrophication marine, Res. use minerals + maybe fossil</p>
+<div id="fig-network-pie" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-network-pie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pwrg_solar_network_pie.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-network-pie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Relative influence of the system components using the Ecological Scarcity 2021 v1.04 method with UVEK LCI weighting set at the single score level.
+</figcaption>
+</figure>
+</div>
+<p>The relative influence of the district heating system components can be seen in <a href="#fig-network-pie" class="quarto-xref">Figure&nbsp;5</a>. TBD add for all midpoints (like for the lawns but with components instead of phases)</p>
+<p>TBD expectation: heat storage should be 2x heat pump How much HDPE in kg? Compare with weight of heat pump</p>
+</section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p>As shown in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;3</a>, the Bracht setup compares positively to other heating technologies in terms of environmental impact. Based on the analysis using the Ecological Scarcity 2021 v1.04 method with UVEK LCI weighting set, it shows a lower environmental impact compared to other relevant district heating setups and to fossil energy based consumer installations. The results visualize that the Bracht system fares better in the “Main air pollutants and Particulate Matter (PM)” category in comparison to a completely wood chips based energy source for district heating, while the impact from the biomass energy used in the Bracht system is still visible in the results. The geothermal based district heating would perform better if there wasn’t as much radioactive waste to deposit. The gas and oil based customer installations compare the least well in the selection because of the high impacts in the global warming category.</p>
+<p>Related results are shown in <a href="#fig-ef-midpoints" class="quarto-xref">Figure&nbsp;4</a> when looking at the Environmental Footprint Method. Again the wood chips based energy source for district heating fares worst in the particulate matter category. It is also returning the worst results for land use, euthrophication (marine and terrestrial), human toxicity (cancer), and photochemical ozone formation. The oil burner returns the worst results for acidification, climate change, freshwater ecotoxicity, human toxicity (non-cancer), and fossil resource use. The gas burner shows bad results for climate change and ozone depletion. The geothermal heat pump district heating is performing badly for euthrophication (freshwater) and for ionising radiation. The solar thermal based district heating returns the worst results for resource use (minerals and metals).</p>
+<p><a href="#fig-network-pie" class="quarto-xref">Figure&nbsp;5</a> reveals that the environmental impact contribution of the seasonal heat storage unit are minimal. The only component that is listed is the Polystyrene from the floating cover of the seasonal heat storage unit, which amounts to 2% of the overall impact. The seasonal storage component lowers the environmental impact very significantly since it avoids using more heat from wood chips and electricity, which are the two biggest contributors to overall environmental impact. The plan for this research was to assess the impact of not using a seasonal storage component in the setup. However, the results shown in <a href="#fig-network-pie" class="quarto-xref">Figure&nbsp;5</a> make it very clear that the seasonal storage component is essential for the overall system while its environmental impact is minimal. Therefore, the effects of not using a seasonal storage component in the setup were not analysed further.</p>
+<p>The additional electricity and biomass required were expected to play a big role with respect to the overall environmental impact. But it is surprising to see that these two are the biggest contributors. The electricity use can not be avoided since it is required to run the heat pump. Its impact can be lowered by using green energy <em>TBD should it be assessed too? (It’s clear that using green energy will make the results much better. Electricity modelling currently very simple, using “electricity mix, winter 2018/CH”)</em>. The opportunities and effects of using less biomass by lowering heat loss coefficients is assessed in detail in <a href="#sec-sensitive" class="quarto-xref">Section&nbsp;7.1</a>.</p>
+<section id="sec-sensitive" class="level2">
+<h2 class="anchored" data-anchor-id="sec-sensitive">Loss coefficients and sensitivity analysis</h2>
+<p>Heat is harder to transport than electrical power since even good insulation cannot avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling.</p>
+<p>As summarized by <span class="citation" data-cites="werner2017international">Werner (<a href="#ref-werner2017international" role="doc-biblioref">2017</a>)</span>, the relevant parameters affecting heat loss in the pipes are the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The cited loss coefficient numbers for pipe loss range between 5% and 35%. The Bracht setup has a long transmission distance of 8800 meters because of the rural setup, and a planned operating temperature of 85 degrees Celsius. Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss is realistic. The open source modelling tool Energy Transition Model by <span class="citation" data-cites="etm2025">Quintel (<a href="#ref-etm2025" role="doc-biblioref">2025</a>)</span> suggests 15% as a sensible default for modelling heat loss in the pipes of modern district heating networks based on real world numbers. Note that in the comparison in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;3</a>, the data for the other energy sources for district heating (wood chips, heatpump) used a 5% to 10% assumption which means that the solar thermal data with the 20% assumption is disadvantaged in the comparison.</p>
+<p>If the heat loss in the Bracht pipes could be lowered to 10% by using a lower operating temperature, that would result in efficiency savings of 335 MWh per year which would in turn not require production from the biomass boiler. This is significant since it amounts to roughly one third of the energy coming from biomass. <a href="#fig-es-sensitivity-pipes" class="quarto-xref">Figure&nbsp;6</a> shows that this results in a reduction from 39 to 34 Ecopoints per MJ of district heat, which amounts to a 12% reduction. The main impact factor changed is in the “Main air pollutants and Particulate Matter (PM)” category.</p>
+<div id="fig-es-sensitivity-pipes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-es-sensitivity-pipes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pwrg_solar_es_sensitivity_pipes.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-es-sensitivity-pipes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Potential savings when halfing heat loss in pipes.
+</figcaption>
+</figure>
+</div>
+<p><span class="citation" data-cites="penttinen2021optimal">Penttinen et al. (<a href="#ref-penttinen2021optimal" role="doc-biblioref">2021</a>)</span> report a 26% loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model by <span class="citation" data-cites="etm2025">Quintel (<a href="#ref-etm2025" role="doc-biblioref">2025</a>)</span> suggests 30% as a sensible default for modelling heat loss in the storage unit. <span class="citation" data-cites="xiang2022comprehensive">Xiang et al. (<a href="#ref-xiang2022comprehensive" role="doc-biblioref">2022</a>)</span> provide a comprehensive review and find that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover. The assumption for Bracht, which is 50% loss, seems to be on the conservative side. If it can be lowered to 30%, which seems feasible given the scientific results cited, that would cancel out the entirety of energy from biomass required. This would reduce the environmental impact from 39 to 26 Ecopoints per MJ of district heat, which is a reduction of 33%, as shown in <a href="#fig-es-sensitivity-storage" class="quarto-xref">Figure&nbsp;7</a>.</p>
+<div id="fig-es-sensitivity-storage" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-es-sensitivity-storage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pwrg_solar_es_sensitivity_storage.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-es-sensitivity-storage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Potential savings when lowering heat loss in storage from 50% to 30%.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>A case study life cycle assessment was performed for the solar district heating community project in Bracht, Rauschenberg, Germany. The results compare favorably to other heating technologies in terms of environmental impact. To further improve, the recommendations are (1) to consider a lower operating temperature for the system to achieve better overall efficiency through avoided heat losses, (2) to use green energy for running the heat pump, and (3) to lower or event completely remove the amount of biomass burnt by improving the heat loss coefficients for storage unit and transmission pipes.</p>
+</section>
+<section id="supporting-information" class="level1">
+<h1>Supporting information</h1>
+<p>In this section, the supporting information related to the life cycle inventory and to project organization is collected.</p>
+<section id="life-cycle-inventory-1" class="level2">
+<h2 class="anchored" data-anchor-id="life-cycle-inventory-1">Life Cycle Inventory</h2>
+<p>TBD add the Simapro processed used</p>
+<section id="solar-thermal-collector" class="level3">
+<h3 class="anchored" data-anchor-id="solar-thermal-collector">Solar thermal collector</h3>
 <p>The relevant data for the solar thermal collector can be found in <a href="#tbl-component-stc" class="quarto-xref">Table&nbsp;2</a>.</p>
 <div id="tbl-component-stc" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Sources for solar thermal collector specification">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -326,16 +505,16 @@ Table&nbsp;2
 </figure>
 </div>
 </section>
-<section id="seasonal-storage-unit" class="level2">
-<h2 class="anchored" data-anchor-id="seasonal-storage-unit">Seasonal storage unit</h2>
-<p>The relevant data for the seasonal storage unit can be found in <a href="#tbl-component-ssu" class="quarto-xref">Table&nbsp;3</a>. A picture of the floating cover can be found in <a href="#fig-floating-cover" class="quarto-xref">Figure&nbsp;3</a>.</p>
+<section id="seasonal-storage-unit" class="level3">
+<h3 class="anchored" data-anchor-id="seasonal-storage-unit">Seasonal storage unit</h3>
+<p>The relevant data for the seasonal storage unit can be found in <a href="#tbl-component-ssu" class="quarto-xref">Table&nbsp;3</a>. A picture of the floating cover can be found in <a href="#fig-floating-cover" class="quarto-xref">Figure&nbsp;8</a>.</p>
 <div id="fig-floating-cover" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-floating-cover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/floating_cover.jpg" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-floating-cover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Floating cover profile. Source: Bracht community.
+Figure&nbsp;8: Floating cover profile. Source: Bracht community.
 </figcaption>
 </figure>
 </div>
@@ -465,8 +644,8 @@ Table&nbsp;3
 </figure>
 </div>
 </section>
-<section id="heat-preparation" class="level2">
-<h2 class="anchored" data-anchor-id="heat-preparation">Heat preparation</h2>
+<section id="heat-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="heat-preparation">Heat preparation</h3>
 <p>The relevant data for the heat preparation unit can be found in <a href="#tbl-component-hp" class="quarto-xref">Table&nbsp;4</a>.</p>
 <div id="tbl-component-hp" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Sources for seasonal storage unit specification">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -496,7 +675,7 @@ Table&nbsp;4
 <tr class="even">
 <td>Electricity requirements</td>
 <td>209 MWh per year</td>
-<td>Own calculation, see <a href="#sec-loss-coefficients" class="quarto-xref">Section&nbsp;5.4</a> for details</td>
+<td>Own calculation, see <a href="#sec-loss-coefficients" class="quarto-xref">Section&nbsp;5.1</a> for details</td>
 </tr>
 <tr class="odd">
 <td>Buffer storage</td>
@@ -524,90 +703,12 @@ Table&nbsp;4
 </figure>
 </div>
 </section>
-<section id="sec-loss-coefficients" class="level2">
-<h2 class="anchored" data-anchor-id="sec-loss-coefficients">Electrical power requirement and loss coefficient assumptions</h2>
-<p>Several estimations of annual collector output can be found in the relevant performance data from <span class="citation" data-cites="tuev2021">TÜV Rheinland (<a href="#ref-tuev2021" role="doc-biblioref">2021</a>)</span> for the solar thermal collectors used in this project. They are based on geographical location and on the desired output temperature. The geographically closest matching entry is 5283 kWh per collector per year for the Würzburg location and 75 degrees output. For the given 855 collectors this amounts to an estimated 4.517 MWh per year.</p>
-<p>The Bracht documentation <span class="citation" data-cites="bracht2025faq">City of Rauschenberg (<a href="#ref-bracht2025faq" role="doc-biblioref">2025a</a>)</span> states that in total, 2.700 MWh per year are expected to reach consumer households. This means that the assumed loss coefficients for the storage unit and in the pipes together is estimated to amount to a significant factor of 40% loss. The electrical power that reaches consumer households is generated to 67% from what the solar thermal collectors generated for storage (2258 MWh), to 26% from biomass (904 MWh), and to 6% from the grid (209 MWh) using the percentage distribution given in <a href="#fig-bracht-overview" class="quarto-xref">Figure&nbsp;1</a>. There is no detailed information how the expected loss was estimated. However, based on the published numbers and an assumed 20% loss coefficient in the pipes, the resulting expected loss in the seasonal storage unit can be calculated at 50%. These assumptions were used in the modelling. Further discussion of loss coefficients and a related sensitivity analysis can be found in <a href="#sec-sensitive" class="quarto-xref">Section&nbsp;7.1</a>.</p>
 </section>
-</section>
-<section id="results" class="level1">
-<h1>Results</h1>
-<p>The results for comparing the solar thermal based district network heat it to other forms of district heating (DH) that are available in small communities such as wood chips (biomass), geothermal heat pump, and also to the usually available consumer side heating installations (CI) such as a oil or gas boiler are shown in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;4</a> and <a href="#fig-ef-midpoints" class="quarto-xref">Figure&nbsp;5</a>.</p>
-<div id="fig-es-single-score" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-es-single-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/pwrg_solar_es_single_score.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-es-single-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Comparison to other energy sources for district heating (wood chips, heatpump) and consumer installations (gas, oil), based on the Ecological Scarcity 2021 v1.04 method with UVEK weighting set at the single score level.
-</figcaption>
-</figure>
-</div>
-<div id="fig-ef-midpoints" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ef-midpoints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/pwrg_solar_ef_midpoints.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ef-midpoints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Damage assessment using the Environmental Footprint Method, visualized as relative impacts in comparison.
-</figcaption>
-</figure>
-</div>
-<p>Note that in <a href="#fig-ef-midpoints" class="quarto-xref">Figure&nbsp;5</a>, the “Water use” category was excluded to avoid incorrect results caused by modelling issues in the underlying UVEK data.</p>
-<div id="fig-network-pie" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-network-pie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/pwrg_solar_network_pie.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-network-pie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Relative influence of the system components using the Ecological Scarcity 2021 v1.04 method with UVEK weighting set at the single score level.
-</figcaption>
-</figure>
-</div>
-<p>The relative influence of the district heating system components can be seen in <a href="#fig-network-pie" class="quarto-xref">Figure&nbsp;6</a>.</p>
-</section>
-<section id="discussion" class="level1">
-<h1>Discussion</h1>
-<p>As shown in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;4</a>, the Bracht setup compares positively to other heating technologies in terms of environmental impact. Based on the analysis using the Ecological Scarcity 2021 v1.04 method with UVEK weighting set, it shows a lower environmental impact compared to other relevant district heating setups and to fossil energy based consumer installations. The results visualize that the Bracht system fares better in the “Main air pollutants and Particulate Matter (PM)” category in comparison to a completely wood chips based energy source for district heating, while the impact from the biomass energy used in the Bracht system is still visible in the results. The geothermal based district heating would perform better if there wasn’t as much radioactive waste to deposit. The gas and oil based customer installations compare the least well in the selection because of the high impacts in the global warming category.</p>
-<p>Related results are shown in <a href="#fig-ef-midpoints" class="quarto-xref">Figure&nbsp;5</a> when looking at the Environmental Footprint Method. Again the wood chips based energy source for district heating fares worst in the particulate matter category. It is also returning the worst results for land use, euthrophication (marine and terrestrial), human toxicity (cancer), and photochemical ozone formation. The oil burner returns the worst results for acidification, climate change, freshwater ecotoxicity, human toxicity (non-cancer), and fossil resource use. The gas burner shows bad results for climate change and ozone depletion. The geothermal heat pump district heating is performing badly for euthrophication (freshwater) and for ionising radiation. The solar thermal based district heating returns the worst results for resource use (minerals and metals).</p>
-<p><a href="#fig-network-pie" class="quarto-xref">Figure&nbsp;6</a> reveals that the environmental impact contribution of the seasonal heat storage unit are minimal. The only component that is listed is the Polystyrene from the floating cover of the seasonal heat storage unit, which amounts to 2% of the overall impact. The seasonal storage component lowers the environmental impact very significantly since it avoids using more heat from wood chips and electricity, which are the two biggest contributors to overall environmental impact. The plan for this research was to assess the impact of not using a seasonal storage component in the setup. However, the results shown in <a href="#fig-network-pie" class="quarto-xref">Figure&nbsp;6</a> make it very clear that the seasonal storage component is essential for the overall system while its environmental impact is minimal. Therefore, the effects of not using a seasonal storage component in the setup were not analysed further.</p>
-<p>The additional electricity and biomass required were expected to play a big role with respect to the overall environmental impact. But it is surprising to see that these two are the biggest contributors. The electricity use can not be avoided since it is required to run the heat pump. Its impact can be lowered by using green energy <em>TBD should it be assessed too? (It’s clear that using green energy will make the results much better. Electricity modelling currently very simple, using “electricity mix, winter 2018/CH”)</em>. The opportunities and effects of using less biomass by lowering heat loss coefficients is assessed in detail in <a href="#sec-sensitive" class="quarto-xref">Section&nbsp;7.1</a>.</p>
-<section id="sec-sensitive" class="level2">
-<h2 class="anchored" data-anchor-id="sec-sensitive">Loss coefficients and sensitivity analysis</h2>
-<p>Heat is harder to transport than electrical power since even good insulation cannot avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling.</p>
-<p>As summarized by <span class="citation" data-cites="werner2017international">Werner (<a href="#ref-werner2017international" role="doc-biblioref">2017</a>)</span>, the relevant parameters affecting heat loss in the pipes are the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The cited loss coefficient numbers for pipe loss range between 5% and 35%. The Bracht setup has a long transmission distance of 8800 meters because of the rural setup, and a planned operating temperature of 85 degrees Celsius. Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss is realistic. The open source modelling tool Energy Transition Model by <span class="citation" data-cites="etm2025">Quintel (<a href="#ref-etm2025" role="doc-biblioref">2025</a>)</span> suggests 15% as a sensible default for modelling heat loss in the pipes of modern district heating networks based on real world numbers. Note that in the comparison in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;4</a>, the data for the other energy sources for district heating (wood chips, heatpump) used a 5% to 10% assumption which means that the solar thermal data with the 20% assumption is disadvantaged in the comparison.</p>
-<p>If the heat loss in the Bracht pipes could be lowered to 10% by using a lower operating temperature, that would result in efficiency savings of 335 MWh per year which would in turn not require production from the biomass boiler. This is significant since it amounts to roughly one third of the energy coming from biomass. <a href="#fig-es-sensitivity-pipes" class="quarto-xref">Figure&nbsp;7</a> shows that this results in a reduction from 39 to 34 Ecopoints per MJ of district heat, which amounts to a 12% reduction. The main impact factor changed is in the “Main air pollutants and Particulate Matter (PM)” category.</p>
-<div id="fig-es-sensitivity-pipes" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-es-sensitivity-pipes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/pwrg_solar_es_sensitivity_pipes.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-es-sensitivity-pipes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Potential savings when halfing heat loss in pipes.
-</figcaption>
-</figure>
-</div>
-<p><span class="citation" data-cites="penttinen2021optimal">Penttinen et al. (<a href="#ref-penttinen2021optimal" role="doc-biblioref">2021</a>)</span> report a 26% loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model by <span class="citation" data-cites="etm2025">Quintel (<a href="#ref-etm2025" role="doc-biblioref">2025</a>)</span> suggests 30% as a sensible default for modelling heat loss in the storage unit. <span class="citation" data-cites="xiang2022comprehensive">Xiang et al. (<a href="#ref-xiang2022comprehensive" role="doc-biblioref">2022</a>)</span> provide a comprehensive review and find that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover. The assumption for Bracht, which is 50% loss, seems to be on the conservative side. If it can be lowered to 30%, which seems feasible given the scientific results cited, that would cancel out the entirety of energy from biomass required. This would reduce the environmental impact from 39 to 26 Ecopoints per MJ of district heat, which is a reduction of 33%, as shown in <a href="#fig-es-sensitivity-storage" class="quarto-xref">Figure&nbsp;8</a>.</p>
-<div id="fig-es-sensitivity-storage" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-es-sensitivity-storage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/pwrg_solar_es_sensitivity_storage.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-es-sensitivity-storage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Potential savings when lowering heat loss in storage from 50% to 30%.
-</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
-<p>A case study life cycle assessment was performed for the solar district heating community project in Bracht, Rauschenberg, Germany. The results compare favorably to other heating technologies in terms of environmental impact. To further improve, the recommendations are (1) to consider a lower operating temperature for the system to achieve better overall efficiency through avoided heat losses, (2) to use green energy for running the heat pump, and (3) to lower or event completely remove the amount of biomass burnt by improving the heat loss coefficients for storage unit and transmission pipes.</p>
-</section>
-<section id="appendix" class="level1">
-<h1>Appendix</h1>
-<section id="time-planning" class="level2">
-<h2 class="anchored" data-anchor-id="time-planning">Time planning</h2>
+<section id="project-organization" class="level2">
+<h2 class="anchored" data-anchor-id="project-organization">Project organization</h2>
+<p>In this section, the time plan and the meeting notes are documented.</p>
+<section id="time-planning" class="level3">
+<h3 class="anchored" data-anchor-id="time-planning">Time planning</h3>
 <p><a href="#fig-time-plan" class="quarto-xref">Figure&nbsp;9</a> documents the time plan that was followed for this project. The live version can be found <a href="https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303">here</a>. Access is given upon request.</p>
 <div id="fig-time-plan" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -620,11 +721,11 @@ Figure&nbsp;9: Gantt chart used for time planning.
 </figure>
 </div>
 <p><em>TBD: Are the dates for defense colloquium for Mario and Sarah defined yet?</em></p>
-<p><em>TBD: Is July 8 correct for the presentation?</em></p>
 </section>
-<section id="meeting-notes" class="level2">
-<h2 class="anchored" data-anchor-id="meeting-notes">Meeting notes</h2>
+<section id="meeting-notes" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-notes">Meeting notes</h3>
 <p>The notes for the meetings can be found <a href="https://docs.google.com/document/d/1ckpCeTboJK6gfoXQi750jMr5Y85_x3PROEDG1IKEM4E/edit?tab=t.0#heading=h.ibakwauq0483">here</a>. Access is given upon request.</p>
+</section>
 </section>
 </section>
 <section id="references" class="level1 unnumbered">
@@ -659,6 +760,9 @@ Famiglietti, J., Gerevini, L., Spirito, G., Pozzi, M., Dénarié, A., Scoccia, R
 </div>
 <div id="ref-FOEN2021" class="csl-entry" role="listitem">
 Federal Office for the Environment (FOEN). (2021). <em>Swiss eco-factors 2021 according to the ecological scarcity method: Methodological fundamentals and their application in switzerland</em>. <a href="https://www.bafu.admin.ch/bafu/en/home/topics/economy-consumption/economy-and-consumption-publications/publications-economy-and-consumption/eco-factors-switzerland.html">https://www.bafu.admin.ch/bafu/en/home/topics/economy-consumption/economy-and-consumption-publications/publications-economy-and-consumption/eco-factors-switzerland.html</a>
+</div>
+<div id="ref-FOEN2025" class="csl-entry" role="listitem">
+Federal Office for the Environment (FOEN). (2025). <em>UVEK LCI database DQRv2:2025</em>.
 </div>
 <div id="ref-grosse2017long" class="csl-entry" role="listitem">
 Große, R., Binder, C., Wöll, S., Geyer, R., &amp; Robbi, S. (2017). <em>Long term (2050) projections of techno-economic performance of large-scale heating and cooling in the EU</em>. Publications Office of the European Union.
