@@ -608,7 +608,7 @@ Table&nbsp;4
 </section>
 <section id="sec-sima" class="level2">
 <h2 class="anchored" data-anchor-id="sec-sima">SimaPro Data</h2>
-<p><a href="#fig-sima-pro-data" class="quarto-xref">Figure&nbsp;9</a> shows the processes and parameters that were used for modelling in SimaPro.</p>
+<p><a href="#tbl-sima-parameters" class="quarto-xref">Table&nbsp;5</a> and <a href="#tbl-sima-calc-parameters" class="quarto-xref">Table&nbsp;6</a> show the parameters and calculated parameter that were defined as helpers for modelling the solar thermal based district heating process in Simpapro. The data for process itself is shown in <a href="#fig-sima-pro-data" class="quarto-xref">Figure&nbsp;9</a>.</p>
 <div id="tbl-sima-parameters" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Parameters defined in SimaPro">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-sima-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -709,12 +709,12 @@ Table&nbsp;5
 </div>
 </figure>
 </div>
-<div id="tbl-sima-parameters" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Calculated parameters defined in SimaPro">
+<div id="tbl-sima-calc-parameters" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Calculated parameters defined in SimaPro">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-sima-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-sima-calc-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;6
 </figcaption>
-<div aria-describedby="tbl-sima-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-sima-calc-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -731,17 +731,17 @@ Table&nbsp;6
 <tbody>
 <tr class="odd">
 <td>STC_prod_MJ_lifetime</td>
-<td>STC_prod_MWh_per_a<em>Lifetime</em>MWhtoMJ</td>
+<td>STC_prod_MWh_per_a xy* Lifetime * MWhtoMJ</td>
 <td>The total production from the STC over the plant lifetime in MJ</td>
 </tr>
 <tr class="even">
 <td>STC_weight_t_total</td>
-<td>(STC_size_m2<em>STC_weight_per_m2</em>Mult30To50 + Steel_kg)/1000</td>
+<td>(STC_size_m2 * STC_weight_per_m2 * Mult30To50 + Steel_kg) / 1000</td>
 <td>The total transport weight of the STC over the plant lifetime in tons</td>
 </tr>
 <tr class="odd">
 <td>SSU_ground_m2</td>
-<td>SSU_bottom_m2 + 4*SSU_side_m2</td>
+<td>SSU_bottom_m2 + 4 * SSU_side_m2</td>
 <td>The total size of the SSU that is touching the ground on the bottom and sides in sqm</td>
 </tr>
 </tbody>
