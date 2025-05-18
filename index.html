@@ -615,97 +615,7 @@ Table&nbsp;4
 Table&nbsp;5
 </figcaption>
 <div aria-describedby="tbl-sima-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 11%">
-<col style="width: 61%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Value</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Plant_size_m2</td>
-<td>23500</td>
-<td>The total size of the plant in sqm</td>
-</tr>
-<tr class="even">
-<td>STC_size_m2</td>
-<td>11638</td>
-<td>The total size of the STC panels in sqm</td>
-</tr>
-<tr class="odd">
-<td>STC_weight_per_m2</td>
-<td>50</td>
-<td>The weight of the STC per sqm</td>
-</tr>
-<tr class="even">
-<td>STC_prod_MWh_per_a</td>
-<td>2700</td>
-<td>Production from the STC per year in MWh</td>
-</tr>
-<tr class="odd">
-<td>Lifetime</td>
-<td>50</td>
-<td>The lifetime of the plant</td>
-</tr>
-<tr class="even">
-<td>MWhtoMJ</td>
-<td>3600</td>
-<td>Conversion from MWh to MJ</td>
-</tr>
-<tr class="odd">
-<td>Mult30To50</td>
-<td>1.666666667</td>
-<td>Multiplier for components with 30 years lifetime</td>
-</tr>
-<tr class="even">
-<td>Mult20To50</td>
-<td>2.5</td>
-<td>Multiplier for components with 20 years lifetime</td>
-</tr>
-<tr class="odd">
-<td>SSU_volume_m3</td>
-<td>26600</td>
-<td>The volume of the SSU</td>
-</tr>
-<tr class="even">
-<td>SSU_top_m2</td>
-<td>4900</td>
-<td>The size of the SSU at the top (floating cover) in sqm</td>
-</tr>
-<tr class="odd">
-<td>SSU_side_m2</td>
-<td>5250</td>
-<td>The size of the SSU at each of the four sides in sqm</td>
-</tr>
-<tr class="even">
-<td>SSU_bottom_m2</td>
-<td>5400</td>
-<td>The size of the SSU at the ground in sqm</td>
-</tr>
-<tr class="odd">
-<td>Steel_kg</td>
-<td>15000</td>
-<td>The weight of the required steel for the STC foundation</td>
-</tr>
-<tr class="even">
-<td>Freight_ship_dist_km</td>
-<td>8000</td>
-<td>The transport distance per freight ship in km</td>
-</tr>
-<tr class="odd">
-<td>Lorry_dist_km</td>
-<td>1000</td>
-<td>The transport distance per lorry in km</td>
-</tr>
-</tbody>
-</table>
+<p>|——————–|———|———————————————–+ | Name | Value | Comment | +===========+========+=========+===============================================+ | Plant_size_m2 | 23500 | The total size of the plant in sqm | | STC_size_m2 | 11638 | The total size of the STC panels in sqm | | STC_weight_per_m2 | 50 | The weight of the STC per sqm | | STC_prod_MWh_per_a | 2700 | Production from the STC per year in MWh | | Lifetime | 50 | The lifetime of the plant | | MWhtoMJ | 3600 | Conversion from MWh to MJ | | Mult30To50 | 1.666666667 | Multiplier for components with 30 years lifetime | | Mult20To50 | 2.5 | Multiplier for components with 20 years lifetime | | SSU_volume_m3 | 26600 | The volume of the SSU | | SSU_top_m2 | 4900 | The size of the SSU at the top (floating cover) in sqm | | SSU_side_m2 | 5250 | The size of the SSU at each of the four sides in sqm | | SSU_bottom_m2 | 5400 | The size of the SSU at the ground in sqm | | Steel_kg | 15000 | The weight of the required steel for the STC foundation | | Freight_ship_dist_km | 8000 | The transport distance per freight ship in km | | Lorry_dist_km | 1000 | The transport distance per lorry in km | |——————–|———|———————————————–+</p>
 </div>
 </figure>
 </div>
@@ -717,9 +627,9 @@ Table&nbsp;6
 <div aria-describedby="tbl-sima-calc-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 35%">
-<col style="width: 43%">
+<col style="width: 24%">
+<col style="width: 33%">
+<col style="width: 41%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -731,7 +641,7 @@ Table&nbsp;6
 <tbody>
 <tr class="odd">
 <td>STC_prod_MJ_lifetime</td>
-<td>STC_prod_MWh_per_a xy* Lifetime * MWhtoMJ</td>
+<td>STC_prod_MWh_per_a * Lifetime * MWhtoMJ</td>
 <td>The total production from the STC over the plant lifetime in MJ</td>
 </tr>
 <tr class="even">
