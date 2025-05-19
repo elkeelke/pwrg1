@@ -245,7 +245,7 @@ Table&nbsp;1
 </div>
 </figure>
 </div>
-<p><em>TBD Mostly in the supporting information and add a summary table here.</em></p>
+<p>The detailed life cycle inventory information can be found in the supporting information appendix in <a href="#sec-lci" class="quarto-xref">Section&nbsp;9.1</a>.</p>
 <section id="sec-loss-coefficients" class="level2">
 <h2 class="anchored" data-anchor-id="sec-loss-coefficients">Electrical power requirements and loss coefficient assumptions</h2>
 <p>Several estimations of annual collector output can be found in the relevant performance data from <span class="citation" data-cites="tuev2021">TÜV Rheinland (<a href="#ref-tuev2021" role="doc-biblioref">2021</a>)</span> for the solar thermal collectors used in this project. They are based on geographical location and on the desired output temperature. The geographically closest matching entry is 5283 kWh per collector per year for the Würzburg location and 75 degrees output. For the given 855 collectors this amounts to an estimated 4.517 MWh per year.</p>
@@ -617,9 +617,9 @@ Table&nbsp;5
 <div aria-describedby="tbl-sima-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 26%">
+<col style="width: 29%">
 <col style="width: 11%">
-<col style="width: 61%">
+<col style="width: 59%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -630,22 +630,22 @@ Table&nbsp;5
 </thead>
 <tbody>
 <tr class="odd">
-<td>Plant_size_m2</td>
+<td>Plant-size-m2</td>
 <td>23500</td>
 <td>The total size of the plant in sqm</td>
 </tr>
 <tr class="even">
-<td>STC_size_m2</td>
+<td>STC-size-m2</td>
 <td>11638</td>
 <td>The total size of the STC panels in sqm</td>
 </tr>
 <tr class="odd">
-<td>STC_weight_per_m2</td>
+<td>STC-weight-per-m2</td>
 <td>50</td>
 <td>The weight of the STC per sqm</td>
 </tr>
 <tr class="even">
-<td>STC_prod_MWh_per_a</td>
+<td>STC-prod-MWh-per-a</td>
 <td>2700</td>
 <td>Production from the STC per year in MWh</td>
 </tr>
@@ -670,37 +670,37 @@ Table&nbsp;5
 <td>Multiplier for components with 20 years lifetime</td>
 </tr>
 <tr class="odd">
-<td>SSU_volume_m3</td>
+<td>SSU-volume-m3</td>
 <td>26600</td>
 <td>The volume of the SSU</td>
 </tr>
 <tr class="even">
-<td>SSU_top_m2</td>
+<td>SSU-top-m2</td>
 <td>4900</td>
 <td>The size of the SSU at the top (floating cover) in sqm</td>
 </tr>
 <tr class="odd">
-<td>SSU_side_m2</td>
+<td>SSU-side-m2</td>
 <td>5250</td>
 <td>The size of the SSU at each of the four sides in sqm</td>
 </tr>
 <tr class="even">
-<td>SSU_bottom_m2</td>
+<td>SSU-bottom-m2</td>
 <td>5400</td>
 <td>The size of the SSU at the ground in sqm</td>
 </tr>
 <tr class="odd">
-<td>Steel_kg</td>
+<td>Steel-kg</td>
 <td>15000</td>
 <td>The weight of the required steel for the STC foundation</td>
 </tr>
 <tr class="even">
-<td>Freight_ship_dist_km</td>
+<td>Freight-ship-dist-km</td>
 <td>8000</td>
 <td>The transport distance per freight ship in km</td>
 </tr>
 <tr class="odd">
-<td>Lorry_dist_km</td>
+<td>Lorry-dist-km</td>
 <td>1000</td>
 <td>The transport distance per lorry in km</td>
 </tr>
@@ -717,9 +717,9 @@ Table&nbsp;6
 <div aria-describedby="tbl-sima-calc-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 24%">
-<col style="width: 32%">
-<col style="width: 42%">
+<col style="width: 26%">
+<col style="width: 31%">
+<col style="width: 41%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -730,18 +730,18 @@ Table&nbsp;6
 </thead>
 <tbody>
 <tr class="odd">
-<td>STC_prod_MJ_lifetime</td>
-<td>STC_prod_MWh_per_a * Lifetime * MWhtoMJ</td>
+<td>STC-prod-MJ-lifetime</td>
+<td>STC-prod-MWh-per-a * Lifetime * MWhtoMJ</td>
 <td>The total production from the STC over the plant lifetime in MJ</td>
 </tr>
 <tr class="even">
-<td>STC_weight_t_total</td>
-<td>(STC_size_m2 * STC_weight_per_m2 * Mult30To50 + Steel_kg) / 1000</td>
+<td>STC-weight-t-total</td>
+<td>(STC-size-m2 * STC-weight-per-m2 * Mult30To50 + Steel-kg) / 1000</td>
 <td>The total transport weight of the STC over the plant lifetime in tons</td>
 </tr>
 <tr class="odd">
-<td>SSU_ground_m2</td>
-<td>SSU_bottom_m2 + 4 * SSU_side_m2</td>
+<td>SSU-ground-m2</td>
+<td>SSU-bottom-m2 + 4 * SSU-side-m2</td>
 <td>The total size of the SSU that is touching the ground on the bottom and sides in sqm</td>
 </tr>
 </tbody>
@@ -779,7 +779,7 @@ Figure&nbsp;10: Gantt chart used for time planning.
 </section>
 <section id="meeting-notes" class="level3">
 <h3 class="anchored" data-anchor-id="meeting-notes">Meeting notes</h3>
-<p>The notes for the meetings can be found <a href="https://docs.google.com/document/d/1ckpCeTboJK6gfoXQi750jMr5Y85_x3PROEDG1IKEM4E/edit?tab=t.0#heading=h.ibakwauq0483">here</a>. Access is given upon request.</p>
+<p>The notes for the meetings can be found <a href="https://docs.google.com/document/d/1ckpCeTboJK6gfoXQi750jMr5Y85-x3PROEDG1IKEM4E/edit?tab=t.0#heading=h.ibakwauq0483">here</a>. Access is given upon request.</p>
 </section>
 </section>
 </section>
