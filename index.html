@@ -158,7 +158,7 @@ Figure&nbsp;1: Overview of system setup for the Bracht district heating. Source:
 </figcaption>
 </figure>
 </div>
-<p>The functional unit is 1 MegaJoule (MJ) of thermal energy provided to the consumer directly at the consumer site during the heating period. Using MJ instead of kilowatt-hours of thermal energy (kWh<sub>th</sub>) ensures consistency with the UVEK processes for other forms of district heating in SimaPro that the comparison will be performed against.</p>
+<p>The functional unit is defined to be 1 MegaJoule (MJ) of thermal energy provided to the consumer directly at the consumer site during the heating period. Using MJ instead of kilowatt-hours of thermal energy (kWh<sub>th</sub>) ensures consistency with the UVEK processes for other forms of district heating in SimaPro that the comparison will be performed against.</p>
 <p>The lifetime of the installation is assumed to be 50 years. The system diagram shown in <a href="#fig-system-diagram" class="quarto-xref">Figure&nbsp;2</a> describes the product system and its boundaries.</p>
 <div id="fig-system-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-border="true">
 <figure class="quarto-float quarto-float-fig figure">
@@ -245,7 +245,7 @@ Table&nbsp;1
 </div>
 </figure>
 </div>
-<p>The detailed life cycle inventory information can be found in the supporting information appendix in <a href="#sec-lci" class="quarto-xref">Section&nbsp;9.1</a>.</p>
+<p>The detailed life cycle inventory information for solar thermal collector, seasonal storage unit, and heat preparation (including heat pump, buffer storage, installation facility, and consumer installation) can be found in the supporting information appendix in <a href="#sec-lci" class="quarto-xref">Section&nbsp;9.1</a>. The heat transport network was modeled based on existing UVEK LCI data.</p>
 <section id="sec-loss-coefficients" class="level2">
 <h2 class="anchored" data-anchor-id="sec-loss-coefficients">Electrical power requirements and loss coefficient assumptions</h2>
 <p>Several estimations of annual collector output can be found in the relevant performance data from <span class="citation" data-cites="tuev2021"><a href="#ref-tuev2021" role="doc-biblioref">[20]</a></span> for the solar thermal collectors used in this project. They are based on geographical location and on the desired output temperature. The geographically closest matching entry is 5283 kWh per collector per year for the Würzburg location and 75 degrees output. For the given 855 collectors this amounts to an estimated 4.517 MWh per year.</p>
@@ -287,7 +287,6 @@ Figure&nbsp;5: Relative influence of the system components using the Ecological 
 </figure>
 </div>
 <p>The relative influence of the district heating system components can be seen in <a href="#fig-network-pie" class="quarto-xref">Figure&nbsp;5</a>. <em>TBD add for all midpoints (like for the lawns but with components instead of phases)</em></p>
-<p><em>TBD expectation: heat storage should be 2x heat pump</em> How much HDPE in kg? Compare with weight of heat pump</p>
 </section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
@@ -487,7 +486,7 @@ Table&nbsp;3
 </tr>
 <tr class="odd">
 <td>Ground liner</td>
-<td>Polyethylen (HDPE), 5 kg / <span class="math inline">\(m^2\)</span></td>
+<td>Polyethylen (HDPE), 2.5mm, 2.5 kg / <span class="math inline">\(m^2\)</span></td>
 <td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[28]</a></span>, weight own assumption</td>
 </tr>
 <tr class="even">
@@ -632,7 +631,7 @@ Table&nbsp;5
 <tr class="odd">
 <td>Lifetime</td>
 <td>50</td>
-<td>The lifetime of the plant</td>
+<td>The lifetime of the plant in years</td>
 </tr>
 <tr class="even">
 <td>MWhtoMJ</td>
