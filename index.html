@@ -294,8 +294,8 @@ Figure&nbsp;5: Comparison of environmental impact of Bracht community district h
 </figcaption>
 </figure>
 </div>
-<p>To address the second research question, a comparison of the environmental impact of the heat generated from the STC based system with seasonal heat storage to other heating technologies is performed. <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a> shows the results for comparing the environmental impacts of solar thermal based district network heat to other forms of district heating (DH) available in small communities such as wood chips (biomass), geothermal heat pump, and to the usually available consumer side heating installations (CI) such as a oil or gas boiler. This was assessed using the Ecological Scarcity 2021 v1.04 method at the single score level with UVEK LCI weighting set.</p>
-<p><em>As shown in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a>, the Bracht setup compares positively to other heating technologies in terms of environmental impact. Based on the analysis using the Ecological Scarcity 2021 v1.04 method with UVEK LCI weighting set, it shows a lower environmental impact compared to other relevant district heating setups and to fossil energy based consumer installations. The results visualize that the Bracht system fares better in the “Main air pollutants and Particulate Matter (PM)” category in comparison to a completely wood chips based energy source for district heating, while the impact from the biomass energy used in the Bracht system is still visible in the results. The geothermal based district heating would perform better if there wasn’t as much radioactive waste to deposit. The gas and oil based customer installations compare the least well in the selection because of the high impacts in the global warming category.</em></p>
+<p>To address the second research question, a comparison of the environmental impact of the heat generated from the STC based district heating system with seasonal heat storage to other heating technologies is performed. <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a> shows the results for comparing the environmental impacts of solar thermal based district network heat to other forms of district heating (DH) available in small communities with energy sources such as wood chips (biomass) or geothermal heat pump, and to the usually available consumer side heating installations (CI) such as a oil or gas boiler. This was assessed using the Ecological Scarcity 2021 v1.04 method at the single score level with UVEK LCI weighting set. The results are shown in environmental impact points per kWh of heat.</p>
+<p>The result is that the heat produced by the Bracht plant shows the second lowest environmental impact compared to the other heating technologies. The largest contributor is the “Global warming” category. As already shown in <a href="#fig-ef-network-pie" class="quarto-xref">Figure&nbsp;4</a>, this is caused mostly by the electricity requirements, and to a lesser extent by the seasonal storage unit and the solar thermal collectors. The lowest environmental impact is returned for the district heating system based on wood chips as the energy source.</p>
 <div id="fig-ef-midpoints" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ef-midpoints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -324,30 +324,6 @@ Figure&nbsp;6: Damage assessment using the Environmental Footprint Method, visua
 </section>
 <section id="sec-sensitive" class="level2">
 <h2 class="anchored" data-anchor-id="sec-sensitive">Sensitivity analysis: Loss coefficients</h2>
-<p>Heat is harder to transport than electrical power since even good insulation cannot avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling.</p>
-<p>As summarized in <span class="citation" data-cites="werner2017international"><a href="#ref-werner2017international" role="doc-biblioref">[22]</a></span>, the relevant parameters affecting heat loss in the pipes are the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The cited loss coefficient numbers for pipe loss range between 5% and 35%. The Bracht setup has a long transmission distance of 8800 meters because of the rural setup, and a planned operating temperature of 85 degrees Celsius. Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss is realistic. The open source modelling tool Energy Transition Model <span class="citation" data-cites="etm2025"><a href="#ref-etm2025" role="doc-biblioref">[23]</a></span> suggests 15% as a sensible default for modelling heat loss in the pipes of modern district heating networks based on real world numbers. Note that in the comparison in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a>, the data for the other energy sources for district heating (wood chips, heatpump) used a 5% to 10% assumption which means that the solar thermal data with the 20% assumption is disadvantaged in the comparison.</p>
-<p>If the heat loss in the Bracht pipes could be lowered to 10% by using a lower operating temperature, that would result in efficiency savings of 335 MWh per year which would in turn not require production from the biomass boiler. This is significant since it amounts to roughly one third of the energy coming from biomass. <a href="#fig-es-sensitivity-pipes" class="quarto-xref">Figure&nbsp;7</a> shows that this results in a reduction from 39 to 34 Ecopoints per MJ of district heat, which amounts to a 12% reduction. The main impact factor changed is in the “Main air pollutants and Particulate Matter (PM)” category.</p>
-<div id="fig-es-sensitivity-pipes" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-es-sensitivity-pipes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/pwrg_solar_es_sensitivity_pipes.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-es-sensitivity-pipes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Potential savings when halfing heat loss in pipes.
-</figcaption>
-</figure>
-</div>
-<p>In <span class="citation" data-cites="penttinen2021optimal"><a href="#ref-penttinen2021optimal" role="doc-biblioref">[24]</a></span>, the authors report a 26% loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model <span class="citation" data-cites="etm2025"><a href="#ref-etm2025" role="doc-biblioref">[23]</a></span> suggests 30% as a sensible default for modelling heat loss in the storage unit. This study <span class="citation" data-cites="xiang2022comprehensive"><a href="#ref-xiang2022comprehensive" role="doc-biblioref">[25]</a></span> provides a comprehensive review and finds that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover. The assumption for Bracht, which is 50% loss, seems to be on the conservative side. If it can be lowered to 30%, which seems feasible given the scientific results cited, that would cancel out the entirety of energy from biomass required. This would reduce the environmental impact from 39 to 26 Ecopoints per MJ of district heat, which is a reduction of 33%, as shown in <a href="#fig-es-sensitivity-storage" class="quarto-xref">Figure&nbsp;8</a>.</p>
-<div id="fig-es-sensitivity-storage" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-es-sensitivity-storage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/pwrg_solar_es_sensitivity_storage.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-es-sensitivity-storage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Potential savings when lowering heat loss in storage from 50% to 30%.
-</figcaption>
-</figure>
-</div>
 </section>
 </section>
 <section id="conclusion" class="level1">
@@ -386,17 +362,17 @@ Table&nbsp;2
 <tr class="odd">
 <td>Size</td>
 <td>11’638 <span class="math inline">\(m^2\)</span> (855 x 13.6 <span class="math inline">\(m^2\)</span>)</td>
-<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[26]</a></span></td>
+<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[22]</a></span></td>
 </tr>
 <tr class="even">
 <td>Type</td>
 <td>Flat-plate collectors Vitosol 100-F XF13 Viessmann</td>
-<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[26]</a></span> <span class="citation" data-cites="viessmann2021"><a href="#ref-viessmann2021" role="doc-biblioref">[27]</a></span> <span class="citation" data-cites="tuev2021"><a href="#ref-tuev2021" role="doc-biblioref">[20]</a></span></td>
+<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[22]</a></span> <span class="citation" data-cites="viessmann2021"><a href="#ref-viessmann2021" role="doc-biblioref">[23]</a></span> <span class="citation" data-cites="tuev2021"><a href="#ref-tuev2021" role="doc-biblioref">[20]</a></span></td>
 </tr>
 <tr class="odd">
 <td>Land use</td>
 <td>23.500 <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[26]</a></span></td>
+<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[22]</a></span></td>
 </tr>
 <tr class="even">
 <td>Mounting infrastructure material</td>
@@ -431,14 +407,14 @@ Table&nbsp;2
 </section>
 <section id="seasonal-storage-unit-ssu" class="level3">
 <h3 class="anchored" data-anchor-id="seasonal-storage-unit-ssu">Seasonal storage unit (SSU)</h3>
-<p>The relevant data for the seasonal storage unit can be found in <a href="#tbl-component-ssu" class="quarto-xref">Table&nbsp;3</a>. A picture of the floating cover can be found in <a href="#fig-floating-cover" class="quarto-xref">Figure&nbsp;9</a>.</p>
+<p>The relevant data for the seasonal storage unit can be found in <a href="#tbl-component-ssu" class="quarto-xref">Table&nbsp;3</a>. A picture of the floating cover can be found in <a href="#fig-floating-cover" class="quarto-xref">Figure&nbsp;7</a>.</p>
 <div id="fig-floating-cover" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-floating-cover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/floating_cover.jpg" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-floating-cover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Floating cover profile. Source: Bracht community.
+Figure&nbsp;7: Floating cover profile. Source: Bracht community.
 </figcaption>
 </figure>
 </div>
@@ -470,42 +446,42 @@ Table&nbsp;3
 <tr class="even">
 <td>Resource: water</td>
 <td>26’600 <span class="math inline">\(m^3\)</span> filled from local source</td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[28]</a></span></td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[24]</a></span></td>
 </tr>
 <tr class="odd">
 <td>Cover layer 1, 10</td>
 <td>Polyethylen (HDPE) sealing membranes 1.5 mm, 1.5 kg / <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[28]</a></span>, estimated weight</td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[24]</a></span>, estimated weight</td>
 </tr>
 <tr class="even">
 <td>Cover layer 2, 9</td>
 <td>Fleece (0.1 kg / <span class="math inline">\(m^2\)</span>) laminated plastic grid (HDPE, 0.5 kg / <span class="math inline">\(m^2\)</span>)</td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[28]</a></span>, estimated weight</td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[24]</a></span>, estimated weight</td>
 </tr>
 <tr class="odd">
 <td>Cover layer 3</td>
 <td>Foam glass, 8.33 kg / <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[28]</a></span></td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[24]</a></span></td>
 </tr>
 <tr class="even">
 <td>Cover layer 4</td>
 <td>Polyurethane (bauder foam): 3.125 kg / <span class="math inline">\(m\^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[28]</a></span></td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[24]</a></span></td>
 </tr>
 <tr class="odd">
 <td>Cover layer 5, 7, 8</td>
 <td>Airing gap made of plastic grid, 0.5 kg / <span class="math inline">\(m^2\)</span> each</td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[28]</a></span>, estimated weight</td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[24]</a></span>, estimated weight</td>
 </tr>
 <tr class="even">
 <td>Cover layer 6</td>
 <td>Polystyrene (XPS), 3 kg / <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[28]</a></span></td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[24]</a></span></td>
 </tr>
 <tr class="odd">
 <td>Floating cover dimensions</td>
 <td>70 m x 70 m = 4900 <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025ground"><a href="#ref-bracht2025ground" role="doc-biblioref">[29]</a></span></td>
+<td><span class="citation" data-cites="bracht2025ground"><a href="#ref-bracht2025ground" role="doc-biblioref">[25]</a></span></td>
 </tr>
 <tr class="even">
 <td>Floating cover weight</td>
@@ -515,12 +491,12 @@ Table&nbsp;3
 <tr class="odd">
 <td>Ground liner</td>
 <td>Polyethylen (HDPE), 2.5mm, 2.5 kg / <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[28]</a></span>, estimated weight</td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[24]</a></span>, estimated weight</td>
 </tr>
 <tr class="even">
 <td>Ground liner dimensions</td>
 <td>Bottom 20 m x 20 m, vertical height 15 m, surface area on each of the four sides 5250 <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025ground"><a href="#ref-bracht2025ground" role="doc-biblioref">[29]</a></span></td>
+<td><span class="citation" data-cites="bracht2025ground"><a href="#ref-bracht2025ground" role="doc-biblioref">[25]</a></span></td>
 </tr>
 <tr class="odd">
 <td>Ground liner weight</td>
@@ -579,7 +555,7 @@ Table&nbsp;4
 <tr class="odd">
 <td>Heat pump</td>
 <td>2x Carrier Aquaforce 61XWH-ZE (630 kW max electrical input power)</td>
-<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[26]</a></span> <span class="citation" data-cites="carrier2025floating"><a href="#ref-carrier2025floating" role="doc-biblioref">[30]</a></span></td>
+<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[22]</a></span> <span class="citation" data-cites="carrier2025floating"><a href="#ref-carrier2025floating" role="doc-biblioref">[26]</a></span></td>
 </tr>
 <tr class="even">
 <td>Electricity requirements</td>
@@ -594,12 +570,12 @@ Table&nbsp;4
 <tr class="even">
 <td>Biomass boiler</td>
 <td>Mawera boiler with 700 kW thermal power</td>
-<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[26]</a></span></td>
+<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[22]</a></span></td>
 </tr>
 <tr class="odd">
 <td>Controller</td>
 <td>Vitocontrol 200-M</td>
-<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[26]</a></span> <span class="citation" data-cites="viessmann2025"><a href="#ref-viessmann2025" role="doc-biblioref">[31]</a></span></td>
+<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[22]</a></span> <span class="citation" data-cites="viessmann2025"><a href="#ref-viessmann2025" role="doc-biblioref">[27]</a></span></td>
 </tr>
 <tr class="even">
 <td>Heat installation facility</td>
@@ -615,7 +591,7 @@ Table&nbsp;4
 </section>
 <section id="sec-sima" class="level2">
 <h2 class="anchored" data-anchor-id="sec-sima">SimaPro Data</h2>
-<p><a href="#tbl-sima-parameters" class="quarto-xref">Table&nbsp;5</a> and <a href="#tbl-sima-calc-parameters" class="quarto-xref">Table&nbsp;6</a> show the parameters and calculated parameters that were defined as helpers for modelling the solar thermal based district heating process in Simpapro. The data for the process itself is shown in <a href="#fig-sima-pro-data" class="quarto-xref">Figure&nbsp;10</a>.</p>
+<p><a href="#tbl-sima-parameters" class="quarto-xref">Table&nbsp;5</a> and <a href="#tbl-sima-calc-parameters" class="quarto-xref">Table&nbsp;6</a> show the parameters and calculated parameters that were defined as helpers for modelling the solar thermal based district heating process in Simpapro. The data for the process itself is shown in <a href="#fig-sima-pro-data" class="quarto-xref">Figure&nbsp;8</a>.</p>
 <div id="tbl-sima-parameters" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Parameters defined in SimaPro">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-sima-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -762,7 +738,7 @@ Table&nbsp;6
 <img src="img/simapro.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sima-pro-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: SimaPro data excerpt.
+Figure&nbsp;8: SimaPro data excerpt.
 </figcaption>
 </figure>
 </div>
@@ -772,14 +748,14 @@ Figure&nbsp;10: SimaPro data excerpt.
 <p>In this section, the time plan and the meeting notes are documented.</p>
 <section id="time-planning" class="level3">
 <h3 class="anchored" data-anchor-id="time-planning">Time planning</h3>
-<p><a href="#fig-time-plan" class="quarto-xref">Figure&nbsp;11</a> documents the time plan that was followed for this project. The live version can be found <a href="https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303">here</a>. Access is given upon request.</p>
+<p><a href="#fig-time-plan" class="quarto-xref">Figure&nbsp;9</a> documents the time plan that was followed for this project. The live version can be found <a href="https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303">here</a>. Access is given upon request.</p>
 <div id="fig-time-plan" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-time-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/time_plan.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-time-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Gantt chart used for time planning.
+Figure&nbsp;9: Gantt chart used for time planning.
 </figcaption>
 </figure>
 </div>
@@ -859,37 +835,25 @@ Figure&nbsp;11: Gantt chart used for time planning.
 <div id="ref-bracht2025faq" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[21] </div><div class="csl-right-inline">City of Rauschenberg, <span>“<span class="nocase">Solarwärme Bracht eG, FAQ und häufig gestellte Fragen</span>.”</span> <a href="https://www.solarwaerme-bracht.de/faq/" class="uri">https://www.solarwaerme-bracht.de/faq/</a>, 2025.</div>
 </div>
-<div id="ref-werner2017international" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[22] </div><div class="csl-right-inline">S. Werner, <span>“International review of district heating and cooling,”</span> <em>Energy</em>, vol. 137, pp. 617–631, 2017.</div>
-</div>
-<div id="ref-etm2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[23] </div><div class="csl-right-inline">Quintel, <span>“<span>Energy Transition Model (ETM)</span>.”</span> <a href="https://energytransitionmodel.com/scenario/supply/heat_ht/transport-and-distribution-losses" class="uri">https://energytransitionmodel.com/scenario/supply/heat_ht/transport-and-distribution-losses</a>, 2025.</div>
-</div>
-<div id="ref-penttinen2021optimal" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[24] </div><div class="csl-right-inline">P. Penttinen, J. Vimpari, and S. Junnila, <span>“Optimal seasonal heat storage in a district heating system with waste incineration,”</span> <em>Energies</em>, vol. 14, no. 12, p. 3522, 2021.</div>
-</div>
-<div id="ref-xiang2022comprehensive" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[25] </div><div class="csl-right-inline">Y. Xiang, Z. Xie, S. Furbo, D. Wang, M. Gao, and J. Fan, <span>“A comprehensive review on pit thermal energy storage: Technical elements, numerical approaches and recent applications,”</span> <em>Journal of Energy Storage</em>, vol. 55, p. 105716, 2022.</div>
-</div>
 <div id="ref-viessmann2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[26] </div><div class="csl-right-inline">Viessmann Climate Solutions, <span>“<span class="nocase">Energiewende: Solarthermie und Erdspeicher decken rund 70 Prozent des Wärmebedarfs im hessischen Bracht</span>.”</span> <a href="https://www.viessmann-climatesolutions.com/de/newsroom/unternehmen/erstes-klimaneutrales-mit-solarwaerme-versorgtes-dorf.html" class="uri">https://www.viessmann-climatesolutions.com/de/newsroom/unternehmen/erstes-klimaneutrales-mit-solarwaerme-versorgtes-dorf.html</a>, 2024.</div>
+<div class="csl-left-margin">[22] </div><div class="csl-right-inline">Viessmann Climate Solutions, <span>“<span class="nocase">Energiewende: Solarthermie und Erdspeicher decken rund 70 Prozent des Wärmebedarfs im hessischen Bracht</span>.”</span> <a href="https://www.viessmann-climatesolutions.com/de/newsroom/unternehmen/erstes-klimaneutrales-mit-solarwaerme-versorgtes-dorf.html" class="uri">https://www.viessmann-climatesolutions.com/de/newsroom/unternehmen/erstes-klimaneutrales-mit-solarwaerme-versorgtes-dorf.html</a>, 2024.</div>
 </div>
 <div id="ref-viessmann2021" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[27] </div><div class="csl-right-inline">Viessmann Climate Solutions, <span>“<span class="nocase">Großflächen-Solarthermie für die Nah- und Fernwärme</span>.”</span> <a href="https://energiekonsens.de/media/pages/media/6a0997554c-1640096559/2-viessmann-nah-und-fernwaerme-mit-solarthermie.pdf" class="uri">https://energiekonsens.de/media/pages/media/6a0997554c-1640096559/2-viessmann-nah-und-fernwaerme-mit-solarthermie.pdf</a>, 2021.</div>
+<div class="csl-left-margin">[23] </div><div class="csl-right-inline">Viessmann Climate Solutions, <span>“<span class="nocase">Großflächen-Solarthermie für die Nah- und Fernwärme</span>.”</span> <a href="https://energiekonsens.de/media/pages/media/6a0997554c-1640096559/2-viessmann-nah-und-fernwaerme-mit-solarthermie.pdf" class="uri">https://energiekonsens.de/media/pages/media/6a0997554c-1640096559/2-viessmann-nah-und-fernwaerme-mit-solarthermie.pdf</a>, 2021.</div>
 </div>
 <div id="ref-bracht2025floating" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[28] </div><div class="csl-right-inline">City of Rauschenberg, <span>“<span class="nocase">Solarwärme Bracht eG, Genossenschaftsunterlagen: Floating Cover</span>.”</span> <a href="https://www.solarwaerme-bracht.de/unterlagen-der-genossenschaft/" class="uri">https://www.solarwaerme-bracht.de/unterlagen-der-genossenschaft/</a>, 2025.</div>
+<div class="csl-left-margin">[24] </div><div class="csl-right-inline">City of Rauschenberg, <span>“<span class="nocase">Solarwärme Bracht eG, Genossenschaftsunterlagen: Floating Cover</span>.”</span> <a href="https://www.solarwaerme-bracht.de/unterlagen-der-genossenschaft/" class="uri">https://www.solarwaerme-bracht.de/unterlagen-der-genossenschaft/</a>, 2025.</div>
 </div>
 <div id="ref-bracht2025ground" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[29] </div><div class="csl-right-inline">Top Agrar, <span>“<span class="nocase">Hessisches Dorf baut riesiges Wasserbecken für eigene Solarthermieanlage</span>.”</span> <a href="https://www.topagrar.com/energie/news/hessisches-dorf-baut-riesiges-wasserbecken-fur-eigene-solarthermieanlage-20010847.html
+<div class="csl-left-margin">[25] </div><div class="csl-right-inline">Top Agrar, <span>“<span class="nocase">Hessisches Dorf baut riesiges Wasserbecken für eigene Solarthermieanlage</span>.”</span> <a href="https://www.topagrar.com/energie/news/hessisches-dorf-baut-riesiges-wasserbecken-fur-eigene-solarthermieanlage-20010847.html
 " class="uri">https://www.topagrar.com/energie/news/hessisches-dorf-baut-riesiges-wasserbecken-fur-eigene-solarthermieanlage-20010847.html
 </a>, 2025.</div>
 </div>
 <div id="ref-carrier2025floating" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[30] </div><div class="csl-right-inline">Carrier Klimatisierungs- und Heizsysteme - Deutschland, <span>“<span class="nocase">AquaForce - Hochtemperatur Wasser/Wasser-Wärmepumpe mit Kältemittel HFO R-1234ze</span>.”</span> <a href="https://www.carrier.com/commercial/de/de/produkte/heizung/wasser-wasser-waermepumpen/61xwhze/" class="uri">https://www.carrier.com/commercial/de/de/produkte/heizung/wasser-wasser-waermepumpen/61xwhze/</a>, 2025.</div>
+<div class="csl-left-margin">[26] </div><div class="csl-right-inline">Carrier Klimatisierungs- und Heizsysteme - Deutschland, <span>“<span class="nocase">AquaForce - Hochtemperatur Wasser/Wasser-Wärmepumpe mit Kältemittel HFO R-1234ze</span>.”</span> <a href="https://www.carrier.com/commercial/de/de/produkte/heizung/wasser-wasser-waermepumpen/61xwhze/" class="uri">https://www.carrier.com/commercial/de/de/produkte/heizung/wasser-wasser-waermepumpen/61xwhze/</a>, 2025.</div>
 </div>
 <div id="ref-viessmann2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[31] </div><div class="csl-right-inline">Viessmann Climate Solutions, <span>“<span class="nocase">Regelungsprogramm für Mittel- und Großkessel</span>.”</span> <a href="https://www.viessmann.de/de/loesungen/gewerbe-und-industrie/regelung-mittelkessel-grosskessel.html" class="uri">https://www.viessmann.de/de/loesungen/gewerbe-und-industrie/regelung-mittelkessel-grosskessel.html</a>, 2025.</div>
+<div class="csl-left-margin">[27] </div><div class="csl-right-inline">Viessmann Climate Solutions, <span>“<span class="nocase">Regelungsprogramm für Mittel- und Großkessel</span>.”</span> <a href="https://www.viessmann.de/de/loesungen/gewerbe-und-industrie/regelung-mittelkessel-grosskessel.html" class="uri">https://www.viessmann.de/de/loesungen/gewerbe-und-industrie/regelung-mittelkessel-grosskessel.html</a>, 2025.</div>
 </div>
 </div></section></div></main>
 <!-- /main column -->
