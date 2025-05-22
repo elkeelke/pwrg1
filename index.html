@@ -141,7 +141,7 @@ window.Quarto = {
 <ol type="1">
 <li><p>What is the relevance of the additional electricity required in the setup (amounting to 6% of overall energy consumed) and the supplemental biomass boiler (amounting to 26% of overall energy consumed) with respect to the overall environmental impact? The hypothesis is that the additional electricity and biomass required will amount to a sizable part of the overall environmental impact.</p></li>
 <li><p>How does the STC based system with seasonal heat storage compare to other heating technologies in terms of environmental impact? The comparison will include district heating from other sources that would be available in small communities (such as a heat pump or wood chips), and consumer side heating installations such as oil or gas boilers. The hypothesis is that the STC based system will have a lower environmental impact compared to other district heating setups and to fossil energy based consumer installations.</p></li>
-<li><p>What is the environmental impact contribution of the seasonal heat storage unit for the production, construction, and use stages in the life cycle? The benefits of the STC based system with a seasonal heat storage component included will be assessed in comparison to the same system without seasonal heat storage under several assumed loss coefficients for the storage component (sensitivity analysis). The hypothesis is that the seasonal storage component will lower the environmental impact.</p></li>
+<li><p>What is the environmental impact contribution of the seasonal heat storage unit for the production, construction, and use stages in the life cycle? A sensitivity analysis will be performance to assess the benefits of the STC based system with a seasonal heat storage component included under several assumed loss coefficients for the storage component and the transport pipes system.</p></li>
 </ol>
 </section>
 <section id="goal-and-scope" class="level1">
@@ -254,7 +254,7 @@ Table&nbsp;1
 <p>Several estimations of annual collector output can be found in the relevant performance data from <span class="citation" data-cites="tuev2021"><a href="#ref-tuev2021" role="doc-biblioref">[20]</a></span> for the solar thermal collectors used in this project. They are based on geographical location and on the desired output temperature. The geographically closest matching entry is 5.283 kWh per collector per year for the Würzburg location and 75 degrees output. For the given 855 collectors, this leads to an estimate of 4.517 MWh per year.</p>
 <p>The Bracht documentation <span class="citation" data-cites="bracht2025faq"><a href="#ref-bracht2025faq" role="doc-biblioref">[21]</a></span> states that in total, 2.700 MWh per year are expected to reach consumer households. This means that the assumed loss coefficients for the storage unit and in the pipes together is estimated to amount to a significant factor of 40% loss.</p>
 <p>The electrical power is generated to 67% from the solar thermal collectors and stored (2.258 MWh), to 26% from biomass (904 MWh), and to 6% from the grid (209 MWh). This is the percentage distribution included in <a href="#fig-bracht-overview" class="quarto-xref">Figure&nbsp;1</a>.</p>
-<p>There is no detailed information how the expected loss was estimated. However, based on the published numbers and an assumed 20% loss coefficient in the pipes, the resulting expected loss in the seasonal storage unit can be calculated at 50%. These assumptions were used in the modelling. Further discussion of loss coefficients and a related sensitivity analysis can be found in <a href="#sec-sensitive" class="quarto-xref">Section&nbsp;7.3</a>.</p>
+<p>There is no detailed information how the expected loss was estimated. However, based on the published numbers and an assumed 20% loss coefficient in the pipes, the resulting expected loss in the seasonal storage unit can be calculated at 50%. These assumptions were used in the modelling. Further discussion of loss coefficients and a related sensitivity analysis can be found in <strong>?@sec-sensitive</strong>.</p>
 </section>
 </section>
 <section id="results" class="level1">
@@ -283,7 +283,7 @@ Figure&nbsp;4: Relative environmental impact of Bracht community district heatin
 </figure>
 </div>
 <p>To summarize, the electricity and biomass required to power and supplement the system play the dominant roles with respect to the overall environmental impact.</p>
-<p>The electricity use can not be avoided since it is required to run the heat pump. Its impact can be lowered by using green energy, which will be investigated in the following comparisons. The opportunities and effects of using less biomass by lowering heat loss coefficients are assessed in <a href="#sec-sensitive" class="quarto-xref">Section&nbsp;7.3</a>.</p>
+<p>The electricity use can not be avoided since it is required to run the heat pump. Its impact can be lowered by using green energy, which will be investigated in <a href="#sec-sensitive-elec" class="quarto-xref">Section&nbsp;7.2</a>. The opportunities and effects of using less biomass by lowering heat loss coefficients are assessed in <a href="#sec-sensitive-loss" class="quarto-xref">Section&nbsp;7.3</a>.</p>
 <div id="fig-es-single-score" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-es-single-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -294,8 +294,6 @@ Figure&nbsp;5: Comparison of environmental impact of Bracht community district h
 </figcaption>
 </figure>
 </div>
-<p>To address the second research question, a comparison of the environmental impact of the heat generated from the STC based district heating system with seasonal heat storage to other heating technologies is performed. <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a> shows the results for comparing the environmental impacts of solar thermal based district network heat to other forms of district heating (DH) available in small communities with energy sources such as wood chips (biomass) or geothermal heat pump, and to the usually available consumer side heating installations (CI) such as a oil or gas boiler. This was assessed using the Ecological Scarcity 2021 v1.04 method at the single score level with UVEK LCI weighting set. The results are shown in environmental impact points per kWh of heat.</p>
-<p>The result is that the heat produced by the Bracht plant shows the second lowest environmental impact compared to the other heating technologies. The largest contributor is the “Global warming” category. As already shown in <a href="#fig-ef-network-pie" class="quarto-xref">Figure&nbsp;4</a>, this is caused mostly by the electricity requirements, and to a lesser extent by the seasonal storage unit and the solar thermal collectors. The lowest environmental impact is returned for the district heating system based on wood chips as the energy source.</p>
 <div id="fig-ef-midpoints" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ef-midpoints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -306,6 +304,8 @@ Figure&nbsp;6: Damage assessment using the Environmental Footprint Method, visua
 </figcaption>
 </figure>
 </div>
+<p>To address the second research question, a comparison of the environmental impact of the heat generated from the STC based district heating system with seasonal heat storage to other heating technologies is performed. <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a> shows the results for comparing the environmental impacts of solar thermal based district network heat to other forms of district heating (DH) available in small communities with energy sources such as wood chips (biomass) or geothermal heat pump, and to the usually available consumer side heating installations (CI) such as a oil or gas boiler. This was assessed using the Ecological Scarcity 2021 v1.04 method at the single score level with UVEK LCI weighting set. The results are shown in environmental impact points per kWh of heat.</p>
+<p>The result is that the heat produced by the Bracht plant shows the second lowest environmental impact compared to the other heating technologies. The largest contributor is the “Global warming” category. As already shown in <a href="#fig-ef-network-pie" class="quarto-xref">Figure&nbsp;4</a>, this is caused mostly by the electricity requirements, and to a lesser extent by the seasonal storage unit and the solar thermal collectors. The lowest environmental impact is returned for the district heating system based on wood chips as the energy source.</p>
 <p><a href="#fig-ef-midpoints" class="quarto-xref">Figure&nbsp;6</a> provides the individual results for the most relevant damage categories. These confirm that oil and gas boilers have a very high impact in the damage category climate change (which is equivalent to global warming in the Ecological Scarcity methods), and reveals that they the highest in fossil resource use. District heating with wood chips as the energy source has the relative worst impact in three categories: marine eutrophication, land use, and particulate matter (PM). While the latter was visible in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a> and has a sizeable impact on the overall single score, the former two have no significant effect. The district heating systems with solar thermal based and geothermal energy source have the highest results for the metal and minerals resource use.</p>
 </section>
 <section id="discussion" class="level1">
@@ -321,9 +321,13 @@ Figure&nbsp;6: Damage assessment using the Environmental Footprint Method, visua
 </section>
 <section id="sec-sensitive-elec" class="level2">
 <h2 class="anchored" data-anchor-id="sec-sensitive-elec">Sensitivity analysis: Source of electricity</h2>
+<p>This is for the first research question</p>
+<p><em>TBD: Add results for a couple of different electricity sources</em></p>
 </section>
-<section id="sec-sensitive" class="level2">
-<h2 class="anchored" data-anchor-id="sec-sensitive">Sensitivity analysis: Loss coefficients</h2>
+<section id="sec-sensitive-loss" class="level2">
+<h2 class="anchored" data-anchor-id="sec-sensitive-loss">Sensitivity analysis: Loss coefficients</h2>
+<p>This is for the third research question</p>
+<p><em>TBD: Add results for lower loss in pipes and lower loss in SSU</em></p>
 </section>
 </section>
 <section id="conclusion" class="level1">
