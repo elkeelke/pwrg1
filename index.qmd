@@ -136,16 +136,18 @@ Data availability was generally satisfactory with one notable exception for the 
 
 Worth mentioning is that the UVEK data for the transport system district heat has a lifetime assumption of 30 years whereas the Bracht setup assumes 50 years. This is acceptable since with 6.6 %, the heat transport system showed only minor impact on the overall results (see @fig-network-pie).
 
+Note that there was a problem with the weights for the damage category *Water resources, net balance* in the UVEK LCI weighting set that required excluding this category from the analysis. 
+
 <!-- Biomass: other uses such as CO2 storage or trees growing are prevented -->
 
 ## Sensitivity analysis: Source of electricity {#sec-sensitive-elec}
 
-This is an additionally performed analysis for the first research question
+@fig-es-single-score has shown that the dominant environmental impact is from electricity. For the default mode, the Electricity (ENTSO-E) production mix @FOEN2025 was assumed. In this section, the potential savings by using lower-emitting electricity are assessed. Since the electricity is required during the winter months where it is much harder to produce compared to the summer months, the relevant UVEK-supplied data for running storage pumps in Austria, Germany, France, Italy, and Switzerland were used for the analysis. The results are shown in @fig-elec-sens. 
 
-- Winter electricity
-- Future production mix (to plan ahead)
+<!-- Future production mix (to plan ahead) -->
 
-*TBD: Add results for a couple of different electricity sources*
+![Comparison of environmental impact of Bracht community district heating network to other energy sources for district heating (wood chips, heat pump), and to other types consumer installations (gas, oil). This analysis is based on the Ecological Scarcity 2021 v1.04 method at the single score level, with UVEK LCI weighting set.](img/pwrg_elec_sens.png){#fig-elec-sens width="80%"}
+
 
 ## Sensitivity analysis: Loss coefficients {#sec-sensitive-loss}
 
@@ -160,11 +162,11 @@ However, the open source modelling tool Energy Transition Model @etm2025 suggest
 
 In @penttinen2021optimal, the authors report a 26% loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model @etm2025 suggests 30% as a sensible default for modelling heat loss in the storage unit. Another study @xiang2022comprehensive provides a comprehensive review and finds that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover. 
 
-Given these reference numbers from literature, the 50% loss assumption for Bracht is on the conservative side. We assume that it can be lowered to 30% based on two different scenarios (1) without any changes in the setup but an understanding that the original assumptions were not accurate, and (2) by using twice the cover for the top of seasonal storage unit and therefore better insulation (with the sides and the bottom unchanged). 
+Given these reference numbers from literature, the 50% loss assumption for Bracht is on the conservative side. For the sensitivity analysis, the assumption made is that it can be lowered to 30% based on two different scenarios: (1) without any changes in the setup but an understanding that the original assumptions were not accurate, and (2) by using twice the cover for the top of seasonal storage unit and therefore better insulation.  The sides and the bottom of the seasonal storage unit remain unchanged.
 
-For both scenarios the result would be a higher amount energy supplied from the seasonal storage unit (3.160 MWh), and consequently an increase in electrical energy requirement for the heat pump (293 MWh). We perform a rough estimate of the heightened energy requirements based on using the same factor between energy from the seasonal storage unit and energy from electricity as in the original assumptions (see @sec-loss-coefficients): 209 MWh divided by 2.258 MWh, which returns a 9 % electricity requirement factor. With an assumed 20% heat loss in the pipes as in the default assumptions, a remaining amount of 2.764 MWh of energy is available for consumers. Therefore, no supplemental energy from biomass would be required. 
+In both scenarios, a higher amount of energy is supplied from the seasonal storage unit (3.160 MWh). That consequently results in an increase of electrical energy requirements for the heat pump. A rough estimate of the heightened energy requirements was performed based on using the same factor between energy from the seasonal storage unit and energy from electricity as in the original assumptions (see @sec-loss-coefficients): 209 MWh divided by 2.258 MWh, which returns a 9 % electricity requirement factor. This results in a 293 MWh electricity demand for the heat pump. With an assumed 20% heat loss in the pipes as in the default assumptions, a remaining amount of 2.764 MWh of energy is available for consumers. This meets the consumer heating demands of 2.700 MWh and therefore, no supplemental energy from biomass is required. 
 
-For scenario (1 - no changes), a 15 % reduction from 170 Pt per kWh of heat to 146 Pt per kWh of heat can be achieved. For scenario (2 - double cover), a 9 % reduction to to 155[^note] Pt per kWh of heat can be achieved.
+For scenario *(1 - no changes)*, a 15 % reduction from 170 Pt per kWh of heat to 146 Pt per kWh of heat can be achieved. For scenario *(2 - double cover)*, a 9 % reduction to 155[^note] Pt per kWh of heat can be achieved.
 
 [^note]: This is coincidentally the same result as in @sec-pipe-loss.
 
