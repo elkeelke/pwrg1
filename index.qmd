@@ -146,7 +146,7 @@ Note that there was a problem with the weights for the damage category *Water re
 
 <!-- Future production mix (to plan ahead) -->
 
-![Comparison of environmental impact of Bracht community district heating network to other energy sources for district heating (wood chips, heat pump), and to other types consumer installations (gas, oil). This analysis is based on the Ecological Scarcity 2021 v1.04 method at the single score level, with UVEK LCI weighting set.](img/pwrg_elec_sens.png){#fig-elec-sens width="80%"}
+![Comparison of environmental impact depending on source of electricity, using UVEK-supplied data for running storage pumps in Austria, Germany, France, Italy, and Switzerland in winter. This analysis is based on the Ecological Scarcity 2021 v1.04 method at the single score level, with UVEK LCI weighting set.](img/pwrg_elec_sens.png){#fig-elec-sens width="80%"}
 
 
 ## Sensitivity analysis: Loss coefficients {#sec-sensitive-loss}
