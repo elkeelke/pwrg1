@@ -1,0 +1,8 @@
+Component,Climate change,Particulate matter ,"Eutrophication, marine",Land use,"Resource use, minerals/metals","Resource use, fossils"
+Electricity,0.00987,1.29E-10,7.35E-06,0.0161,1.08E-09,0.187
+Biomass,0.00175,5.29E-09,2.20E-05,1.54,4.59E-09,0.0298
+Solar thermal field,0.00271959,1.43E-10,4.42E-06,0.0157247,1.23E-07,0.040304
+Seasonal storage,0.00307737,7.03E-11,1.42E-06,0.001686893,1.12E-09,0.0388101
+Heat transport,0.000899,3.23E-11,0,0.00363,2.33E-09,0.0412
+Heat preparation,0.0015284,5.39E-11,8.13E-07,0.006628,1.08E-07,0.011117
+Other,1.10E-04,1.19E-11,3.14E-07,0.0006751,2.68E-08,0.001266

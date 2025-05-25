@@ -1,0 +1,153 @@
+---
+title: "Charts"
+format: html
+---
+
+## Libraries
+```{r}
+library(readr)
+library(tidyr)
+library(ggplot2)
+library(dplyr)
+library(stringr)
+library(RColorBrewer)
+library(ggrepel)
+```
+
+## ES single score bar chart
+```{r}
+#es <- read_delim("data/PWRG results solar - Sheet7 - edit.csv")[1:7, ]
+es <- read_delim("data/PWRG results solar - ES single score.csv")[1:7, ]
+
+long_es <- pivot_longer(es, cols = -c("Impact category"), names_to = "Type", values_to = "Value")
+
+long_es <- long_es |>
+  mutate(
+    Type = ifelse(Type == "DH: Geothermal heat pump", "DH: Geothermal", Type),
+  )
+
+long_es_ordered <- long_es |>
+  group_by(Type) |>
+  summarise(total = sum(Value)) |>
+  arrange(total) |>
+  pull(Type)
+long_es$Type <- factor(long_es$Type, levels = long_es_ordered)
+
+ggplot(long_es, aes(x = Type, y = Value, fill = reorder(`Impact category`, Value))) +
+  geom_bar(stat = "identity") +  # Use 'identity' to plot actual values
+  labs(x = "",
+       y = "Pt per kWh",
+       fill = "Impact category") +
+  #scale_fill_viridis_d(option = "viridis") +
+  scale_fill_brewer(palette = "Blues") +
+  theme_minimal() #+
+  #theme(axis.text.x = element_text(angle = 90, hjust = 1))
+ggsave("img/pwrg_solar_es_single_score.png")
+```
+
+## EF midpoints faceted bar chart showing relative impact
+```{r}
+ef <- read_delim("data/PWRG results solar - EF damage assessment.csv")[1:15, ]
+
+long_ef <- pivot_longer(ef, cols = -c("Damage category", "Unit"), names_to = "Type", values_to = "Value")
+
+long_ef_normalized <- long_ef |>
+  filter(`Damage category` %in% c("Climate change", "Particulate matter", "Eutrophication, marine", "Land use", "Resource use, minerals/metals", "Resource use, fossils")) |>  
+  group_by(`Damage category`) |>
+  mutate(
+    pct = Value / max(Value) * 100,
+    Type = ifelse(Type == "DH: Geothermal heat pump", "DH: Geothermal", Type),
+    #`Damage category` = ifelse(`Damage category` == "Resource use, minerals/metals", "RU: minerals, metals", `Damage category`),
+    #`Damage category` = ifelse(`Damage category` == "Resource use, fossils", "RU: fossils", `Damage category`),
+  )
+
+long_ef_normalized$`Damage category` <- str_wrap(long_ef_normalized$`Damage category`, width = 20)
+
+ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
+  geom_col(width = 0.9) +
+  facet_grid(rows = vars(`Damage category`), switch = "y") +
+  labs(
+    x = "",
+    y = "Relative impact in %",
+  ) +
+  theme_minimal() +
+  theme(
+    strip.placement = "outside",
+    strip.text.y.left = element_text(angle = 90, size = 9, hjust = 0.5, vjust = 0.5), 
+    plot.margin = margin(20, 0, 20, 0),
+    strip.background = element_rect(fill = "grey95", color = "black", linewidth = 0.5),
+    legend.position = "bottom",
+  ) +
+  scale_fill_brewer(palette = "Greens") +
+  coord_flip()
+ggsave("img/pwrg_solar_ef_midpoints_faceted.png")
+```
+
+## Pie chart Network
+```{r}
+data <- read_delim("data/PWRG 1_ ES level 1 - Copy of Copy of level1.csv")
+
+data$Component <- factor(data$Component, levels = data$Component[order(data$Value, decreasing = TRUE)])
+
+data$percentage <- data$Value / sum(data$Value) * 100
+data$label <- ifelse(data$percentage >= 15, 
+                     paste0(data$Component, ": ", round(data$percentage, 1), "%"), 
+                     data$label <- ifelse(data$percentage >= 5, 
+                                          paste0(round(data$percentage, 1), "%"), 
+                                          ""))
+
+# Create the pie chart without the circle outline
+ggplot(data, aes(x = "", y = Value, fill = Component)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar(theta = "y") +  # Converts bar chart to pie chart
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),  # Hide x-axis labels
+        axis.title.x = element_blank(),  # Hide x-axis title
+        axis.text.y = element_blank(),  # Hide y-axis labels
+        axis.title.y = element_blank(),  # Hide y-axis title
+        axis.ticks = element_blank(),    # Remove axis ticks
+        panel.grid = element_blank(),    # Remove grid lines
+        panel.border = element_blank(),
+        legend.title = element_text(size = 12),  # Title of the legend
+        legend.text = element_text(size = 10)    # Items in the legend
+        )  + # Remove border
+  geom_text(aes(label = label), 
+            position = position_stack(vjust = 0.5),
+            hjust = 0.5,
+            size = 5
+            ) +
+  scale_fill_brewer(palette = "Reds")
+ggsave("img/pwrg_solar_network_pie.png")
+```
+
+```{r}
+ef_level1 <- read_delim("data/EF level 1.csv")[1:7, ]
+long_ef_level1 <- pivot_longer(ef_level1, cols = -c("Component"), names_to = "Damage category", values_to = "Value")
+
+df_ef <- long_ef_level1 |>
+  group_by(`Damage category`) |>
+  mutate(
+    fraction = Value / sum(Value),
+    ymax = cumsum(fraction),
+    ymin = lag(ymax, default = 0),
+    label_pos = (ymax + ymin) / 2,
+    label = ifelse(fraction >= 0.15, paste0(Component, "\n", round(fraction * 100), "%"), "")
+  )
+
+ggplot(df_ef, aes(ymax = ymax, ymin = ymin, xmax = 4, xmin = 3, fill = Component)) +
+  geom_rect() +
+  geom_text(aes(x = 3.5, y = label_pos, label = label), size = 4) +
+  coord_polar(theta = "y") +
+  facet_wrap(~`Damage category`) +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),  # Hide x-axis labels
+        axis.title.x = element_blank(),  # Hide x-axis title
+        axis.text.y = element_blank(),  # Hide y-axis labels
+        axis.title.y = element_blank(),  # Hide y-axis title        
+        axis.ticks = element_blank(),    # Remove axis ticks
+        panel.grid = element_blank(),    # Remove grid lines
+        panel.border = element_blank())  + # Remove border
+  scale_fill_brewer(palette = "Oranges")
+ggsave("img/pwrg_solar_ef_network_pie_faceted.png")
+```
+
