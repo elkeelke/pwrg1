@@ -124,13 +124,13 @@ As before, @fig-ef-midpoints provides the individual results for the most releva
 
 # Interpretation and discussion
 
-This chapter discusses the results introduced in @sec-results. They revealed that the district heating system based on solar thermal energy and seasonal storage compares favorably to other means of heating. However, in the given modelling, with limitations as documented in @sec-model-limitation, it exhibits higher environmental impact compared to the district heating system based on wood chips as the energy sources. The electricity and the supplemental biomass required were found to be the two top single contributors to the overall results. To understand the saving potential from using less or lower-emitting energy resources, sensitivity analyses for source of electricity (see @sec-sensitive-elec) and loss coefficients for the heat loss in the seasonal storage unit and the transport pipes (see third research question and @sec-sensitive-loss) will be presented.
+This chapter discusses the results introduced in @sec-results. They revealed that the district heating system based on solar thermal energy and seasonal storage compares favorably to other means of heating. However, in the given modelling, with limitations as documented in @sec-model-limitation, it exhibits higher environmental impact compared to the district heating system based on wood chips as the energy sources. The electricity and the supplemental biomass required were found to be the two top single contributors to the overall results. To understand the saving potential from using lower-emitting (see @sec-sensitive-elec) or less energy resources (see third research question and @sec-sensitive-loss), sensitivity analyses for source of electricity and loss coefficients for the heat loss in the seasonal storage unit and the transport pipes will be performed.
 
 ## Modeling limitations {#sec-model-limitation}
 
 The detailed data of the SimaPro process named *district heat, at consumer, solar thermal, 1MW/MJ/RER U* that was defined for this analysis can be found in @fig-sima-pro-data. 
 
-The UVEK data for the other energy sources for district heating (wood chips, heat pump) used a 5% to 10% assumption which means that the solar thermal data with the 20% assumption as described in @sec-loss-coefficients is disadvantaged in the comparison in @fig-es-single-score. The effect of these assumptions on the results will be investigated in @sec-sensitive-loss.
+The UVEK data for the other energy sources for district heating (wood chips, heat pump) used an 11 % assumption which means that the solar thermal data with the 20% assumption as described in @sec-loss-coefficients is disadvantaged in the comparison in @fig-es-single-score. The effect of these assumptions on the results will be investigated in @sec-sensitive-loss.
 
 Data availability was generally satisfactory with one notable exception for the modelling of the heat pumps used in the system (see @sec-hp for specifications). There are two heat pumps with 630 kW max electrical input power each used in the system, but in the UVEK data, the largest sized heat pump available has a maximum of 50 kW power. The best possible assumption in this situation was that the two large heat pump have the same impact as 25 units of the 50 kW heat pump, but this is likely leading an overestimation of the resource use for minerals and metals. This is acceptable since with 6.1 %, the heat preparation system which includes the heat pump showed only minor impact on the overall results (see @fig-network-pie).
 
@@ -151,13 +151,30 @@ This is an additionally performed analysis for the first research question
 
 Heat is harder to transport than electrical power since even good insulation cannot avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling.
 
-As summarized in @werner2017international, the relevant parameters affecting heat loss in the pipes are the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The cited loss coefficient numbers for pipe loss range between 5% and 35%. The Bracht setup has a long transmission distance of 8800 meters because of the rural setup, and a planned operating temperature of 85 degrees Celsius. Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss is realistic. The open source modelling tool Energy Transition Model @etm2025 suggests 15% as a sensible default for modelling heat loss in the pipes of modern district heating networks based on real world numbers. 
+### Pipe heat loss {#sec-pipe-loss}
 
-*TBD: Add results for lower loss in pipes and lower loss in SSU*
+As summarized in @werner2017international, the relevant parameters affecting heat loss in the pipes are the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The cited loss coefficient numbers for pipe loss range between 5% and 35%. The Bracht setup has a long transmission distance of 8.800 meters because of the rural setup, and a planned operating temperature of 85 degrees Celsius. Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss for the given modeling is a realistic number. 
+However, the open source modelling tool Energy Transition Model @etm2025 suggests 15% as a sensible default for modelling heat loss in the pipes of modern district heating networks based on real world numbers, and the UVEK assumptions for district heating are also lower with 11%. Using the UVEK assumption for the Bracht setup would result in efficiency savings of approximately 300 MWh per year, leading to a reduction from 170 Pt per kWh of heat to 155 Pt per kWh of heat (9% reduction) which is lower environmental impact compared to the district heating with wood chips as the energy source. The main impact factors changed are the *Climate change* and the *Main air pollutants and Particulate Matter (PM)* category.
+
+### Seasonal storage unit heat loss
+
+In @penttinen2021optimal, the authors report a 26% loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model @etm2025 suggests 30% as a sensible default for modelling heat loss in the storage unit. Another study @xiang2022comprehensive provides a comprehensive review and finds that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover. 
+
+Given these reference numbers from literature, the 50% loss assumption for Bracht is on the conservative side. We assume that it can be lowered to 30% based on two different scenarios (1) without any changes in the setup but an understanding that the original assumptions were not accurate, and (2) by using twice the cover for the top of seasonal storage unit and therefore better insulation (with the sides and the bottom unchanged). 
+
+For both scenarios the result would be a higher amount energy supplied from the seasonal storage unit (3.160 MWh), and consequently an increase in electrical energy requirement for the heat pump (293 MWh). We perform a rough estimate of the heightened energy requirements based on using the same factor between energy from the seasonal storage unit and energy from electricity as in the original assumptions (see @sec-loss-coefficients): 209 MWh divided by 2.258 MWh, which returns a 9 % electricity requirement factor. With an assumed 20% heat loss in the pipes as in the default assumptions, a remaining amount of 2.764 MWh of energy is available for consumers. Therefore, no supplemental energy from biomass would be required. 
+
+For scenario (1 - no changes), a 15 % reduction from 170 Pt per kWh of heat to 146 Pt per kWh of heat can be achieved. For scenario (2 - double cover), a 9 % reduction to to 155[^note] Pt per kWh of heat can be achieved.
+
+[^note]: This is coincidentally the same result as in @sec-pipe-loss.
 
 # Conclusion
 
-A case study life cycle assessment was performed for the solar district heating community project in Bracht, Rauschenberg, Germany. The results compare favorably to other heating technologies in terms of environmental impact. To further improve, the recommendations are (1) to consider a lower operating temperature for the system to achieve better overall efficiency through avoided heat losses, (2) to use green energy for running the heat pump, and (3) to lower or event completely remove the amount of biomass burnt by improving the heat loss coefficients for storage unit and transmission pipes.
+A case study life cycle assessment was performed for the solar district heating community project in Bracht, Rauschenberg, Germany. 
+
+The results compare favorably to other heating technologies in terms of environmental impact, but the solar thermal based district heating is not the best available options without further improvements. To further improve, the recommendations are to use green energy for running the heat pump, and to lower or event completely remove the amount of biomass burnt by improving the heat loss coefficients for storage unit and transmission pipes with better insulation.
+
+<!-- by considering a lower operating temperature for the system -->
 
 # Supporting information
 
@@ -281,6 +298,13 @@ kable(df, format = "latex", escape = TRUE) |> kable-styling(latex-options = c("s
 :::
 
 ![SimaPro data excerpt.](img/simapro.png){#fig-sima-pro-data width="100%"}
+
+For the comparison, the following SimaPro processes were employed (all of them part of the UVEK dataset):
+
+* *district heat, at consumer, borehole heat pump, 50kW/MJ/CH U*
+* *district heat, at consumer, wood chips in industrial furnace, 1MW/MJ/CH U*
+* *heat, light fuel oil, at boiler 10kW, average/CH U*
+* *heat, natural gas, at boiler condensating modulating, 15kW/CH U*
 
 ## Project organization {#sec-project}
 
