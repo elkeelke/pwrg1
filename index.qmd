@@ -127,7 +127,9 @@ TBD
 ## Modeling limitations
 
 - Winter electricity
-- Heatpump 24x: Could be causing too much resource use for minerals and metals
+- Future production mix (to plan ahead)
+- Biomass: other uses (CO2 storage, trees growing)
+- Heat pump 24x: Could be causing too much resource use for minerals and metals
 - Transport network lifetime 30 years / 50 years: Not dominant
 
 ## Sensitivity analysis: Source of electricity {#sec-sensitive-elec}

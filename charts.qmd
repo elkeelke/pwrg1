@@ -34,14 +34,19 @@ long_es_ordered <- long_es |>
 long_es$Type <- factor(long_es$Type, levels = long_es_ordered)
 
 ggplot(long_es, aes(x = Type, y = Value, fill = reorder(`Impact category`, Value))) +
-  geom_bar(stat = "identity") +  # Use 'identity' to plot actual values
+  geom_bar(stat = "identity", width = 0.6) +  # Use 'identity' to plot actual values
   labs(x = "",
        y = "Pt per kWh",
        fill = "Impact category") +
   #scale_fill_viridis_d(option = "viridis") +
   scale_fill_brewer(palette = "Blues") +
-  theme_minimal() #+
-  #theme(axis.text.x = element_text(angle = 90, hjust = 1))
+  theme_minimal() +
+  theme(
+        legend.title = element_text(size = 14),  # Title of the legend
+        legend.text = element_text(size = 12),    # Items in the legend
+        plot.margin = unit(c(0.2, 0.5, 0.2, 0.5), "cm"),  # top, right, bottom, left
+        axis.text.x = element_text(angle = 90, hjust = 1, size = 12)
+        )
 ggsave("img/pwrg_solar_es_single_score.png")
 ```
 
@@ -111,7 +116,7 @@ ggplot(data, aes(x = "", y = Value, fill = Component)) +
         legend.title = element_text(size = 14),  # Title of the legend
         legend.text = element_text(size = 12),    # Items in the legend
         plot.margin = unit(c(0.2, 0.5, 0.2, 0.5), "cm")  # top, right, bottom, left
-        )  + # Remove border
+        ) +
   geom_text(aes(label = label), 
             position = position_stack(vjust = 0.5),
             hjust = 0.5,
