@@ -124,11 +124,15 @@ As before, @fig-ef-midpoints provides the individual results for the most releva
 
 # Interpretation and discussion
 
-This chapter discussed the results presented in @sec-results, where it has been shown that the district heating system based on solar thermal energy and seasonal storage compares favorably to other means of heating, but in the given modelling, with limitations as presented in @sec-model-limitation, exhibits higher environmental impact compared to the district heating system based on wood chips as the energy sources. The electricity and the supplemental biomass required were found to be the two top single contributors to the overall results. To understand the saving potential from using less or lower-emitting resources, sensitivity analyses for source of electricity (see @sec-sensitive-elec) and loss coefficients for the heat loss in the seasonal storage unit and the transport pipes (see third research question and @sec-sensitive-loss) are performed.
+This chapter discusses the results introduced in @sec-results. They revealed that the district heating system based on solar thermal energy and seasonal storage compares favorably to other means of heating. However, in the given modelling, with limitations as documented in @sec-model-limitation, it exhibits higher environmental impact compared to the district heating system based on wood chips as the energy sources. The electricity and the supplemental biomass required were found to be the two top single contributors to the overall results. To understand the saving potential from using less or lower-emitting energy resources, sensitivity analyses for source of electricity (see @sec-sensitive-elec) and loss coefficients for the heat loss in the seasonal storage unit and the transport pipes (see third research question and @sec-sensitive-loss) will be presented.
 
 ## Modeling limitations {#sec-model-limitation}
 
-The detailed data of the SimaPro process named *district heat, at consumer, solar thermal, 1MW/MJ/RER U* that was defined for this analysis can be found in @fig-sima-pro-data. Data availability was generally satisfactory with one notable exception for the modelling of the heat pumps used in the system (see @sec-hp for specifications). There are two heat pumps with 630 kW max electrical input power each used in the system, but in the UVEK data the largest sized heat pump has a maximum of 50 kW power. The assumption is that the two large heat pump have the same impact as 25 units of the 50 kW heat pump, likely leading an overestimation of the resource use for minerals and metals.
+The detailed data of the SimaPro process named *district heat, at consumer, solar thermal, 1MW/MJ/RER U* that was defined for this analysis can be found in @fig-sima-pro-data. 
+
+The UVEK data for the other energy sources for district heating (wood chips, heat pump) used a 5% to 10% assumption which means that the solar thermal data with the 20% assumption as described in @sec-loss-coefficients is disadvantaged in the comparison in @fig-es-single-score. The effect of these assumptions on the results will be investigated in @sec-sensitive-loss.
+
+Data availability was generally satisfactory with one notable exception for the modelling of the heat pumps used in the system (see @sec-hp for specifications). There are two heat pumps with 630 kW max electrical input power each used in the system, but in the UVEK data, the largest sized heat pump available has a maximum of 50 kW power. The best possible assumption in this situation was that the two large heat pump have the same impact as 25 units of the 50 kW heat pump, but this is likely leading an overestimation of the resource use for minerals and metals. This is acceptable since with 6.1 %, the heat preparation system which includes the heat pump showed only minor impact on the overall results (see @fig-network-pie).
 
 Worth mentioning is that the UVEK data for the transport system district heat has a lifetime assumption of 30 years whereas the Bracht setup assumes 50 years. This is acceptable since with 6.6 %, the heat transport system showed only minor impact on the overall results (see @fig-network-pie).
 
@@ -139,8 +143,6 @@ Worth mentioning is that the UVEK data for the transport system district heat ha
 This is an additionally performed analysis for the first research question
 
 - Winter electricity
-
-
 - Future production mix (to plan ahead)
 
 *TBD: Add results for a couple of different electricity sources*
@@ -149,7 +151,7 @@ This is an additionally performed analysis for the first research question
 
 Heat is harder to transport than electrical power since even good insulation cannot avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling.
 
-As summarized in @werner2017international, the relevant parameters affecting heat loss in the pipes are the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The cited loss coefficient numbers for pipe loss range between 5% and 35%. The Bracht setup has a long transmission distance of 8800 meters because of the rural setup, and a planned operating temperature of 85 degrees Celsius. Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss is realistic. The open source modelling tool Energy Transition Model @etm2025 suggests 15% as a sensible default for modelling heat loss in the pipes of modern district heating networks based on real world numbers. Note that in the comparison in @fig-es-single-score, the data for the other energy sources for district heating (wood chips, heat pump) used a 5% to 10% assumption which means that the solar thermal data with the 20% assumption is disadvantaged in the comparison.
+As summarized in @werner2017international, the relevant parameters affecting heat loss in the pipes are the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The cited loss coefficient numbers for pipe loss range between 5% and 35%. The Bracht setup has a long transmission distance of 8800 meters because of the rural setup, and a planned operating temperature of 85 degrees Celsius. Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss is realistic. The open source modelling tool Energy Transition Model @etm2025 suggests 15% as a sensible default for modelling heat loss in the pipes of modern district heating networks based on real world numbers. 
 
 *TBD: Add results for lower loss in pipes and lower loss in SSU*
 
