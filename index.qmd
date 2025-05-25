@@ -43,7 +43,7 @@ The research questions are formulated as follows:
 
 (2) How does the STC based system with seasonal heat storage compare to other heating technologies in terms of environmental impact? The comparison will include district heating from other sources that would be available in small communities (such as a heat pump or wood chips), and consumer side heating installations such as oil or gas boilers. The hypothesis is that the STC based system will have a lower environmental impact compared to other district heating setups and to fossil energy based consumer installations.
 
-(3) What is the environmental impact contribution of the seasonal heat storage unit for the production, construction, and use stages in the life cycle? A sensitivity analysis will be performance to assess the benefits of the STC based system with a seasonal heat storage component included under several assumed loss coefficients for the storage component and the transport pipes system. 
+(3) What is the environmental impact contribution of the seasonal heat storage unit in the production, construction, and use stages in the life cycle? A sensitivity analysis will be performance to assess the benefits of the STC based system with a seasonal heat storage component included under several assumed loss coefficients for the storage component and the transport pipes system. The hypothesis is that the seasonal storage component will lower the environmental impact.
 
 # Goal and scope
 
@@ -74,14 +74,14 @@ The planned lifetime for the Bracht plant is 50 years. The assumed individual co
 
 ::: {#tbl-component-lifetimes .table caption="Assumed component lifetimes"}
 | Component                         | Years | Multiplier | Source                 |
-|---------------------------|--------------|--------------|------------------|
+|-----------------------------------|-------|------------|------------------|
 | Solar thermal collector           | 30    | 1.67       | [@grosse2017long]      |
 | Seasonal storage unit             | 30    | 1.67       | [@bracht2022]          |
-| Heat pump                         | 20    | 2.5         | [@wolf2017integration] |
-| Heat buffer storage               | 20    | 2.5         | [@grosse2017long]      |
-| Heat installation facility        | 50    | 1           | [@vdi2012vdi]          |
-| Heat exchange station at consumer | 20    | 2.5         | [@bracht2022]          |
-| Heat transport network            | 50    | 1           | [@bracht2022]          |
+| Heat pump                         | 20    | 2.5        | [@wolf2017integration] |
+| Heat buffer storage               | 20    | 2.5        | [@grosse2017long]      |
+| Heat installation facility        | 50    | 1          | [@vdi2012vdi]          |
+| Heat exchange station at consumer | 20    | 2.5        | [@bracht2022]          |
+| Heat transport network            | 50    | 1          | [@bracht2022]          |
 :::
 
 ## Electrical power requirements and loss coefficient assumptions {#sec-loss-coefficients}
@@ -98,7 +98,7 @@ There is no detailed information how the expected loss was estimated. However, b
 
 For answering the first research question about the relative environmental impact of the additional electricity and the supplemental biomass boiler, the influence of the different components of the solar thermal district heating system on environmental impact was assessed using the Ecological Scarcity 2021 v1.04 method at the single score level with UVEK LCI weighting set. 
 
-![Relative environmental impact of Bracht community district heating network system components using the Ecological Scarcity 2021 v1.04 method at the single score level, using the UVEK LCI weighting set.](img/pwrg_solar_network_pie.png){#fig-network-pie width="80%"}
+![Relative environmental impact of Bracht community district heating network system components using the Ecological Scarcity 2021 v1.04 method at the single score level, using the UVEK LCI weighting set.](img/pwrg_solar_network_pie.png){#fig-network-pie width="70%"}
 
 The results are shown in @fig-network-pie. While the solar thermal collectors contribute two thirds of the energy production (see @fig-bracht-overview), their relative environmental impact amounts to less than 15%. The biomass and electricity (ENTSO-E as discussed in @sec-lci-overview) required in the setup for one third of the energy production contribute two thirds of the environmental impact. This is the combined environmental impact based on the UVEK LCI weighting for the relative importance of the damage categories.
 
@@ -108,7 +108,7 @@ For further detail on the damage categories involved, @fig-ef-network-pie provid
 
 To summarize, the electricity and biomass required to power and supplement the system play the dominant roles with respect to the overall environmental impact.
 
-The electricity use can not be avoided since it is required to run the heat pump. Its impact can be lowered by using green energy, which will be investigated in @sec-sensitive-elec. The opportunities and effects of using less biomass by lowering heat loss coefficients are assessed in @sec-sensitive-loss.
+The electricity use is not avoidable since it is required by the heat pump. Its impact can be lowered by using green energy, which will be investigated in @sec-sensitive-elec. The opportunities and effects of using less biomass by lowering heat loss coefficients are assessed in @sec-sensitive-loss.
 
 ![Comparison of environmental impact of Bracht community district heating network to other energy sources for district heating (wood chips, heatpump), and to other types consumer installations (gas, oil). Analysis based on the Ecological Scarcity 2021 v1.04 method at the single score level, with UVEK LCI weighting set.](img/pwrg_solar_es_single_score.png){#fig-es-single-score width="100%"}
 
