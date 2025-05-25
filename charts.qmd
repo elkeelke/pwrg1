@@ -65,11 +65,9 @@ long_ef_normalized <- long_ef |>
     #`Damage category` = ifelse(`Damage category` == "Resource use, minerals/metals", "RU: minerals, metals", `Damage category`),
     #`Damage category` = ifelse(`Damage category` == "Resource use, fossils", "RU: fossils", `Damage category`),
   )
-
 long_ef_normalized$`Damage category` <- str_wrap(long_ef_normalized$`Damage category`, width = 20)
-
 ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
-  geom_col(width = 0.9) +
+  geom_col(width = 0.6) +
   facet_grid(rows = vars(`Damage category`), switch = "y") +
   labs(
     x = "",
@@ -78,10 +76,15 @@ ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
   theme_minimal() +
   theme(
     strip.placement = "outside",
-    strip.text.y.left = element_text(angle = 90, size = 9, hjust = 0.5, vjust = 0.5), 
+    strip.text.y.left = element_text(angle = 90, size = 12, hjust = 0.5, vjust = 0.5), 
+    strip.switch.pad.grid = unit(1, "cm"),
     plot.margin = margin(20, 0, 20, 0),
     strip.background = element_rect(fill = "grey95", color = "black", linewidth = 0.5),
+    axis.text.x = element_text(size = 12),
+    axis.text.y = element_text(size = 12),
     legend.position = "bottom",
+    legend.title = element_text(size = 14),  # Title of the legend
+    legend.text = element_text(size = 12),    # Items in the legend
   ) +
   scale_fill_brewer(palette = "Greens") +
   coord_flip()
