@@ -145,7 +145,6 @@ ggplot(long_es, aes(x = Type, y = Value, fill = reorder(`Impact category`, Value
   labs(x = "",
        y = "Pt per kWh",
        fill = "Impact category") +
-  #scale_fill_viridis_d(option = "viridis") +
   scale_fill_brewer(palette = "Blues") +
   theme_minimal() +
   theme(
@@ -180,7 +179,6 @@ ggplot(long_es, aes(x = Type, y = Value, fill = reorder(`Impact category`, Value
   labs(x = "",
        y = "Pt per kWh",
        fill = "Impact category") +
-  #scale_fill_viridis_d(option = "viridis") +
   scale_fill_brewer(palette = "Purples") +
   theme_minimal() +
   theme(
@@ -204,8 +202,6 @@ long_ef_normalized <- long_ef |>
   mutate(
     pct = Value / max(Value) * 100,
     Type = ifelse(Type == "DH: Geothermal heat pump", "DH: Geothermal", Type),
-    #`Damage category` = ifelse(`Damage category` == "Resource use, minerals/metals", "RU: minerals, metals", `Damage category`),
-    #`Damage category` = ifelse(`Damage category` == "Resource use, fossils", "RU: fossils", `Damage category`),
   )
 long_ef_normalized$`Damage category` <- str_wrap(long_ef_normalized$`Damage category`, width = 20)
 ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
