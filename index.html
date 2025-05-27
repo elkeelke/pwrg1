@@ -314,7 +314,7 @@ Figure&nbsp;6: Damage assessment using the Environmental Footprint Method, visua
 <p>This chapter discusses the results introduced in <a href="#sec-results" class="quarto-xref">Section&nbsp;6</a>. They revealed that the district heating system based on solar thermal energy and seasonal storage compares favorably to other means of heating. However, in the given modelling, with limitations as documented in <a href="#sec-model-limitation" class="quarto-xref">Section&nbsp;7.1</a>, it exhibits higher environmental impact compared to the district heating system based on wood chips as the energy sources. The electricity and the supplemental biomass required were found to be the two top single contributors to the overall results. To understand the saving potential from using lower-emitting (see <a href="#sec-sensitive-elec" class="quarto-xref">Section&nbsp;7.2</a>) or less energy resources (see third research question and <a href="#sec-sensitive-loss" class="quarto-xref">Section&nbsp;7.3</a>), sensitivity analyses for source of electricity and loss coefficients for the heat loss in the seasonal storage unit and the transport pipes will be performed.</p>
 <section id="sec-model-limitation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-model-limitation">Modeling limitations</h2>
-<p>The detailed data of the SimaPro process named <em>district heat, at consumer, solar thermal, 1MW/MJ/RER U</em> that was defined for this analysis can be found in <a href="#fig-sima-pro-data" class="quarto-xref">Figure&nbsp;9</a>.</p>
+<p>The detailed data of the SimaPro process named <em>district heat, at consumer, solar thermal, 1MW/MJ/RER U</em> that was defined for this analysis can be found in <strong>?@fig-sima-pro-data</strong>.</p>
 <p>The UVEK data for the other energy sources for district heating (wood chips, heat pump) used an 11 % assumption which means that the solar thermal data with the 20% assumption as described in <a href="#sec-loss-coefficients" class="quarto-xref">Section&nbsp;5.2</a> is disadvantaged in the comparison in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a>. The effect of these assumptions on the results will be investigated in <a href="#sec-sensitive-loss" class="quarto-xref">Section&nbsp;7.3</a>.</p>
 <p>Data availability was generally satisfactory with one notable exception for the modelling of the heat pumps used in the system (see <a href="#sec-hp" class="quarto-xref">Section&nbsp;9.1.3</a> for specifications). There are two heat pumps with 630 kW max electrical input power each used in the system, but in the UVEK data, the largest sized heat pump available has a maximum of 50 kW power. The best possible assumption in this situation was that the two large heat pump have the same impact as 25 units of the 50 kW heat pump, but this is likely leading an overestimation of the resource use for minerals and metals. This is acceptable since with 6.1 %, the heat preparation system which includes the heat pump showed only minor impact on the overall results (see <a href="#fig-network-pie" class="quarto-xref">Figure&nbsp;3</a>).</p>
 <p>Worth mentioning is that the UVEK data for the transport system district heat has a lifetime assumption of 30 years whereas the Bracht setup assumes 50 years. This is acceptable since with 6.6 %, the heat transport system showed only minor impact on the overall results (see <a href="#fig-network-pie" class="quarto-xref">Figure&nbsp;3</a>).</p>
@@ -619,7 +619,8 @@ Table&nbsp;4
 </section>
 <section id="sec-sima" class="level2">
 <h2 class="anchored" data-anchor-id="sec-sima">SimaPro Data</h2>
-<p><a href="#tbl-sima-parameters" class="quarto-xref">Table&nbsp;5</a> and <a href="#tbl-sima-calc-parameters" class="quarto-xref">Table&nbsp;6</a> show the parameters and calculated parameters that were defined as helpers for modelling the solar thermal based district heating process in Simpapro. The data for the process itself is shown in <a href="#fig-sima-pro-data" class="quarto-xref">Figure&nbsp;9</a>.</p>
+<p><a href="#tbl-sima-parameters" class="quarto-xref">Table&nbsp;5</a> and <a href="#tbl-sima-calc-parameters" class="quarto-xref">Table&nbsp;6</a> show the parameters and calculated parameters that were defined as helpers for modelling the solar thermal based district heating process in Simpapro.</p>
+<p>The data for the process <em>district heat, at consumer, solar thermal, 1MW/MJ/RER U</em> is kept in an external spreadsheet <a href="https://docs.google.com/spreadsheets/d/11BHntxbclWm44ycV1JyY0AiQ9LamUJ2PbaCSZOzd-VE/edit?gid=311795711#gid=311795711">accessible here</a></p>
 <div id="tbl-sima-parameters" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Parameters defined in SimaPro">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-sima-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -760,16 +761,6 @@ Table&nbsp;6
 </div>
 </figure>
 </div>
-<div id="fig-sima-pro-data" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sima-pro-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/simapro.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sima-pro-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: SimaPro data excerpt.
-</figcaption>
-</figure>
-</div>
 <p>For the comparison, the following SimaPro processes were employed (all of them part of the UVEK dataset):</p>
 <ul>
 <li><em>district heat, at consumer, borehole heat pump, 50kW/MJ/CH U</em></li>
@@ -783,14 +774,14 @@ Figure&nbsp;9: SimaPro data excerpt.
 <p>In this section, the time plan and the meeting notes are documented.</p>
 <section id="time-planning" class="level3">
 <h3 class="anchored" data-anchor-id="time-planning">Time planning</h3>
-<p><a href="#fig-time-plan" class="quarto-xref">Figure&nbsp;10</a> documents the time plan that was followed for this project. The live version can be found <a href="https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303">here</a>. Access is given upon request.</p>
+<p><a href="#fig-time-plan" class="quarto-xref">Figure&nbsp;9</a> documents the time plan that was followed for this project. The live version can be found <a href="https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303">here</a>. Access is given upon request.</p>
 <div id="fig-time-plan" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-time-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/time_plan.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-time-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: Gantt chart used for time planning.
+Figure&nbsp;9: Gantt chart used for time planning.
 </figcaption>
 </figure>
 </div>
