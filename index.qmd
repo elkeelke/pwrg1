@@ -98,13 +98,13 @@ There is no detailed information how the expected loss was estimated. However, b
 
 For answering the first research question about the relative environmental impact of the additional electricity and the supplemental biomass boiler, the influence of the different components of the solar thermal district heating system on environmental impact was assessed using the Ecological Scarcity 2021 v1.04 method at the single score level with UVEK LCI weighting set. 
 
-![Relative environmental impact of Bracht community district heating network system components using the Ecological Scarcity 2021 v1.04 method at the single score level, using the UVEK LCI weighting set.](img/pwrg_solar_network_bar.png){#fig-network-pie width="70%"}
+![Relative environmental impact of Bracht community district heating network system components using the Ecological Scarcity 2021 v1.04 method at the single score level, using the UVEK LCI weighting set.](img/pwrg_solar_network_bar.png){#fig-network-pie width="50%"}
 
 The results are shown in @fig-network-pie. While the solar thermal collectors contribute two thirds of the energy production (see @fig-bracht-overview), their relative environmental impact amounts to less than 15%. The biomass and electricity (ENTSO-E production mix as discussed in @sec-lci-overview) required in the setup for one third of the energy production contribute two thirds of the environmental impact. This is the combined environmental impact based on the UVEK LCI weighting for the relative importance of the damage categories.
 
 For further detail on the damage categories involved, @fig-ef-network-pie provides the results for the most relevant damage categories *Climate change*, *Particulate matter*, *Eutrophication, marine*, *Land use*, *Resource use, minerals and metals* and *Resource use, fossils*, as individual results in each category without the weighing provided by UVEK. It reveals that the biomass required in the setup is the dominant influence in the damage categories land use, particulate matter (PM), and marine eutrophication. Electricity dominates the impact for fossil resource use and climate change. The resource use is most heavily influenced by heat preparation and the solar thermal collectors. The seasonal storage unit impacts climate change and fossil resource use.
 
-![Relative  environmental impact of Bracht community district heating network system components using the Environmental Footprint Method](img/pwrg_solar_ef_network_bar_faceted.png){#fig-ef-network-pie width="100%"}
+![Relative  environmental impact of Bracht community district heating network system components using the Environmental Footprint Method](img/pwrg_solar_ef_network_bar_faceted.png){#fig-ef-network-pie width="80%"}
 
 To summarize, the electricity and biomass required to power and supplement the system play the dominant roles with respect to the overall environmental impact.
 
@@ -127,8 +127,6 @@ As before, @fig-ef-midpoints provides the individual results for the most releva
 This chapter discusses the results introduced in @sec-results. They revealed that the district heating system based on solar thermal energy and seasonal storage compares favorably to other means of heating. However, in the given modelling, with limitations as documented in @sec-model-limitation, it exhibits higher environmental impact compared to the district heating system based on wood chips as the energy sources. The electricity and the supplemental biomass required were found to be the two top single contributors to the overall results. To understand the saving potential from using lower-emitting (see @sec-sensitive-elec) or less energy resources (see third research question and @sec-sensitive-loss), sensitivity analyses for source of electricity and loss coefficients for the heat loss in the seasonal storage unit and the transport pipes will be performed.
 
 ## Modeling limitations {#sec-model-limitation}
-
-The detailed data of the SimaPro process named *district heat, at consumer, solar thermal, 1MW/MJ/RER U* that was defined for this analysis can be found in @fig-sima-pro-data. 
 
 The UVEK data for the other energy sources for district heating (wood chips, heat pump) used an 11 % assumption which means that the solar thermal data with the 20% assumption as described in @sec-loss-coefficients is disadvantaged in the comparison in @fig-es-single-score. The effect of these assumptions on the results will be investigated in @sec-sensitive-loss.
 
@@ -265,7 +263,10 @@ df[] <- lapply(df, function(x) {
 kable(df, format = "latex", escape = TRUE) |> kable-styling(latex-options = c("scale-down"))
 ```
 
-@tbl-sima-parameters and @tbl-sima-calc-parameters show the parameters and calculated parameters that were defined as helpers for modelling the solar thermal based district heating process in Simpapro. The data for the process itself is shown in @fig-sima-pro-data.
+@tbl-sima-parameters and @tbl-sima-calc-parameters show the parameters and calculated parameters that were defined as helpers for modelling the solar thermal based district heating process in Simpapro. 
+
+The data for the process *district heat, at consumer, solar thermal, 1MW/MJ/RER U* is kept in an external spreadsheet [accessible here](https://docs.google.com/spreadsheets/d/11BHntxbclWm44ycV1JyY0AiQ9LamUJ2PbaCSZOzd-VE/edit?gid=311795711#gid=311795711)
+
 
 ::: {#tbl-sima-parameters .table caption="Parameters defined in SimaPro"}
 
@@ -298,8 +299,6 @@ kable(df, format = "latex", escape = TRUE) |> kable-styling(latex-options = c("s
 | SSU-ground-m2	| SSU-bottom-m2 + 4 \* SSU-side-m2	| The total size of the SSU that is touching the ground on the bottom and sides in sqm |
 
 :::
-
-![SimaPro data excerpt.](img/simapro.png){#fig-sima-pro-data width="100%"}
 
 For the comparison, the following SimaPro processes were employed (all of them part of the UVEK dataset):
 

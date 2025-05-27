@@ -75,15 +75,16 @@ ggplot(data, aes(x = Component, y = Value, fill = Component)) +
         axis.ticks = element_blank(),    # Remove axis ticks
         panel.grid = element_blank(),    # Remove grid lines
         panel.border = element_blank(),
-        legend.title = element_text(size = 14),  # Title of the legend
-        legend.text = element_text(size = 12),    # Items in the legend
+        legend.title = element_text(size = 16),  # Title of the legend
+        legend.text = element_text(size = 16),    # Items in the legend
         plot.margin = unit(c(0.2, 0.5, 0.2, 0.5), "cm")  # top, right, bottom, left
         ) +
+  coord_flip() +
   geom_text(aes(label = label), 
             position = position_stack(vjust = 0.5),
             hjust = 0.5,
-            angle = 90,
-            size = 6
+            #angle = 90,
+            size = 7
             ) +  
   scale_fill_brewer(palette = "Reds")
 ggsave("img/pwrg_solar_network_bar.png")
@@ -116,6 +117,9 @@ ggplot(df_ef, aes(ymax = ymax, ymin = ymin, xmax = 4, xmin = 3, fill = Component
         axis.title.y = element_blank(),  # Hide y-axis title        
         axis.ticks = element_blank(),    # Remove axis ticks
         plot.margin = unit(c(0.2, 0.5, 0.2, 0.5), "cm"),  # top, right, bottom, left
+        legend.title = element_text(size = 14),  # Title of the legend
+        legend.text = element_text(size = 14),    # Items in the legend
+        strip.text = element_text(size = 12),
         panel.grid = element_blank(),    # Remove grid lines
         panel.border = element_blank())  + # Remove border
   scale_fill_brewer(palette = "Oranges")
