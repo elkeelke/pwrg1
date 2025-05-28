@@ -14,14 +14,14 @@ library(RColorBrewer)
 library(ggrepel)
 ```
 
-## Pie chart network
+## Bar chart network
 ```{r}
 data <- read_delim("data/PWRG 1_ ES level 1 - Copy of Copy of level1.csv")
 
 data$Component <- factor(data$Component, levels = data$Component[order(data$Value, decreasing = TRUE)])
 
 data$percentage <- data$Value / sum(data$Value) * 100
-data$label <- ifelse(data$percentage >= 15, 
+data$label <- ifelse(data$percentage >= 5, 
                      paste0(data$Component, ": ", round(data$percentage, 1), "%"), 
                      data$label <- ifelse(data$percentage >= 5, 
                                           paste0(round(data$percentage, 1), "%"), 
@@ -30,7 +30,7 @@ data$label <- ifelse(data$percentage >= 15,
 # Create the pie chart without the circle outline
 ggplot(data, aes(x = "", y = Value, fill = Component)) +
   geom_bar(stat = "identity", width = 1) +
-  coord_polar(theta = "y") +  # Converts bar chart to pie chart
+  #coord_polar(theta = "y") +  # Converts bar chart to pie chart
   theme_minimal() +
   theme(axis.text.x = element_blank(),  # Hide x-axis labels
         axis.title.x = element_blank(),  # Hide x-axis title
@@ -48,45 +48,7 @@ ggplot(data, aes(x = "", y = Value, fill = Component)) +
             hjust = 0.5,
             size = 6
             ) +
-  scale_fill_brewer(palette = "Reds")
-ggsave("img/pwrg_solar_network_pie.png")
-```
-
-## Bar chart network
-```{r}
-data <- read_delim("data/PWRG 1_ ES level 1 - Copy of Copy of level1.csv")
-
-data$Component <- factor(data$Component, levels = data$Component[order(data$Value, decreasing = TRUE)])
-
-data$percentage <- data$Value / sum(data$Value) * 100
-data$label <- ifelse(data$percentage >= 15, 
-                     paste0(data$Component, ": ", round(data$percentage, 1), "%"), 
-                     data$label <- ifelse(data$percentage >= 5, 
-                                          paste0(round(data$percentage, 1), "%"), 
-                                          ""))
-
-ggplot(data, aes(x = Component, y = Value, fill = Component)) +
-  geom_bar(stat = "identity") +
-  theme_minimal() +
-  theme(axis.text.x = element_blank(),  # Hide x-axis labels
-        axis.title.x = element_blank(),  # Hide x-axis title
-        axis.text.y = element_blank(),  # Hide y-axis labels
-        axis.title.y = element_blank(),  # Hide y-axis title
-        axis.ticks = element_blank(),    # Remove axis ticks
-        panel.grid = element_blank(),    # Remove grid lines
-        panel.border = element_blank(),
-        legend.title = element_text(size = 16),  # Title of the legend
-        legend.text = element_text(size = 16),    # Items in the legend
-        plot.margin = unit(c(0.2, 0.5, 0.2, 0.5), "cm")  # top, right, bottom, left
-        ) +
-  coord_flip() +
-  geom_text(aes(label = label), 
-            position = position_stack(vjust = 0.5),
-            hjust = 0.5,
-            #angle = 90,
-            size = 7
-            ) +  
-  scale_fill_brewer(palette = "Reds")
+  scale_fill_brewer(palette = "Oranges")
 ggsave("img/pwrg_solar_network_bar.png")
 ```
 
@@ -102,7 +64,7 @@ df_ef <- long_ef_level1 |>
     ymax = cumsum(fraction),
     ymin = lag(ymax, default = 0),
     label_pos = (ymax + ymin) / 2,
-    label = ifelse(fraction >= 0.15, paste0(Component, "\n", round(fraction * 100), "%"), "")
+    label = ifelse(fraction >= 0.1, paste0(Component, " ", round(fraction * 100), "%"), "")
   )
 
 ggplot(df_ef, aes(ymax = ymax, ymin = ymin, xmax = 4, xmin = 3, fill = Component)) +
@@ -122,7 +84,7 @@ ggplot(df_ef, aes(ymax = ymax, ymin = ymin, xmax = 4, xmin = 3, fill = Component
         strip.text = element_text(size = 12),
         panel.grid = element_blank(),    # Remove grid lines
         panel.border = element_blank())  + # Remove border
-  scale_fill_brewer(palette = "Oranges")
+  scale_fill_brewer(palette = "Reds")
 ggsave("img/pwrg_solar_ef_network_bar_faceted.png")
 ```
 
