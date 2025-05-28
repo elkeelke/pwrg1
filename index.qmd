@@ -106,7 +106,7 @@ The energy distribution for heating supply is reported in @fig-bracht-overview a
 *   26 % from biomass sources (approximately 904 MWh), and
 *   6 % from the electricity grid (approximately 209 MWh)
 
-Since detailed methods for the loss estimates used in the Bracht assumptions are not provided in the public documentation, the modelling described in this document assumes a 20% loss coefficient as the default for the heat transmission pipe network. This estimate was chosen based on an initial literature study and previous experience. Given this assumption, the implied thermal loss within the seasonal storage unit would be approximately 50% to align with the reported figures from @bracht2025faq. These assumptions were incorporated into the system model as the default values. More background and a detailed discussion of thermal loss coefficients and their influence on system performance is presented in the sensitivity analysis in @sec-sensitive-loss.
+Since detailed methods for the loss estimates used in the Bracht assumptions are not provided in the public documentation, the modelling described in this document assumes a 20% loss coefficient as the default for the heat transmission pipe network. The relevant literature and further rationale for the choice are presented in @@sec-pipe-loss. Given this assumption, the implied thermal loss within the seasonal storage unit would be approximately 50% to align with the reported figures from @bracht2025faq. These assumptions were incorporated into the system model as the default values. More background and a detailed discussion of thermal loss coefficients and their influence on system performance is presented in the sensitivity analysis in @sec-sensitive-loss.
 
 # Results  {#sec-results}
 
@@ -146,7 +146,7 @@ This chapter discusses the results introduced in @sec-results. They revealed tha
 
 ## Modeling limitations {#sec-model-limitation}
 
-The UVEK data for the other energy sources for district heating (wood chips, heat pump) used an 11 % assumption which means that the solar thermal data with the 20% assumption as described in @sec-loss-coefficients is disadvantaged in the comparison in @fig-es-single-score. The effect of these assumptions on the results will be investigated in @sec-sensitive-loss.
+The UVEK data for the other energy sources for district heating (wood chips, heat pump) used an 11 % assumption which means that the solar thermal data with the 20% assumption as mentioned in @sec-loss-coefficients is disadvantaged in the comparison in @fig-es-single-score. The effect of these assumptions on the results will be investigated in @sec-sensitive-loss.
 
 Data availability was generally satisfactory with one notable exception for the modelling of the heat pumps used in the system (see @sec-hp for specifications). There are two heat pumps with 630 kW max electrical input power each used in the system, but in the UVEK data, the largest sized heat pump available has a maximum of 50 kW power. The best possible assumption in this situation was that the two large heat pump have the same impact as 25 units of the 50 kW heat pump, but this is likely leading an overestimation of the resource use for minerals and metals. This is acceptable since with 6.1 %, the heat preparation system which includes the heat pump showed only minor impact on the overall results (see @fig-network-pie).
 
@@ -173,7 +173,12 @@ Heat is harder to transport than electrical power since even good insulation can
 
 ### Pipe heat loss {#sec-pipe-loss}
 
-As summarized in @werner2017international, the relevant parameters affecting heat loss in the pipes are the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The cited loss coefficient numbers for pipe loss range between 5% and 35%. The Bracht setup has a long transmission distance of 8.800 meters because of the rural setup, and a planned operating temperature of 85 degrees Celsius. Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss for the given modeling is a realistic number. 
+As summarized in @werner2017international, the relevant parameters affecting heat loss in the pipes are the (2) length of the network which depends on the transmission distance relative to demand, the (2) system age, and the (3) operating temperature. The cited relevant loss coefficient numbers range between 5% and 35%. The Bracht setup has a long transmission distance of 8.800 meters because of the rural setup. The supply temperature is planned to be set to 85 °C, which is a high supply temperature that will lead to higher losses. Modern systems can achive lower supply temperatures between 50 and 70 °C @Lund2020DistrictHeating to minimize heat losses. 
+
+The rationale for the chosen default of 20% was that the long transmission distance and the high operating temperature will both affect performance negatively.
+
+Both of these factors affect performance negatively. Therefore, even if the system is brand new and therefore modern, assuming a 20% heat loss for the given modeling is a realistic number. 
+
 However, the open source modelling tool Energy Transition Model @etm2025 suggests 15% as a sensible default for modelling heat loss in the pipes of modern district heating networks based on real world numbers, and the UVEK assumptions for district heating are also lower with 11%. Using the UVEK assumption for the Bracht setup would result in efficiency savings of approximately 300 MWh per year, leading to a reduction from 170 Pt per kWh of heat to 155 Pt per kWh of heat (9% reduction) which is lower environmental impact compared to the district heating with wood chips as the energy source. The main impact factors changed are the *Climate change* and the *Main air pollutants and Particulate Matter (PM)* category.
 
 ### Seasonal storage unit heat loss
@@ -198,7 +203,9 @@ Comparing the Bracht system to other heating technologies, the STC-based distric
 
 Sensitivity analyses were performed to demonstrate the effects of uncertaunties in input data and the potential for reducing environmental impact. Sourcing lower-emitting electricity could mitigate the impact driven by the grid mix. Furthermore, improving heat loss coefficients, particularly reducing the significant heat loss in the seasonal storage unit to a potentially achievable 30%, could allow the system to meet consumer demand without supplemental biomass, leading to a substantial impact reduction of 15 % in the best scenario.
 
-The conclusion is that while the Bracht solar district heating system favorably compares to many conventional and alternative heating technologies in terms of environmental impact, further improvements are necessary to achieve the lowest possible impact. Recommendations include using green energy for the heat pump and reducing heat losses in storage and transport to minimise or eliminate the need for supplemental biomass.
+The conclusion is that while the Bracht solar district heating system favorably compares to many conventional and alternative heating technologies in terms of environmental impact, further improvements are possible to achieve even lower environmental impact. 
+
+Recommendations include using renewable electric energy for the heat pump, and reducing heat losses in storage and transport to minimise, or even completely eliminate, the need for supplemental biomass.
 
 <!-- by considering a lower operating temperature for the system -->
 
