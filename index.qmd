@@ -20,11 +20,11 @@ csl: ieee.csl
 
 # Abstract
 
-A Life Cycle Impact Assessment (LCIA) was conducted for a solar district heating community project in Bracht, Germany, which incorporates solar thermal collectors, a seasonal heat storage unit powered through an electric heat pump, a supplemental biomass boiler as a backup solution for when there is no heat available from the solar based system, and a transport network to supply residential consumers. 
+A Life Cycle Impact Assessment (LCIA) was conducted for a solar district heating community project in Bracht, Germany, which incorporates solar thermal collectors, a seasonal heat storage unit powered through an included electric heat pump, a supplemental biomass boiler as a backup solution for when there is no heat available from the solar based system, and a transport network to supply residential consumers. 
 
-The assessment used standard environmental impact methods to evaluate the system over a 50-year lifetime, based on the energy delivered. Despite supplying the majority of the energy, the solar thermal component contributed less than 15% to the overall environmental impact. Instead, the biomass backup and electricity sourced from the grid accounted for roughly two-thirds of the total impact, even though they provided only one-third of the energy. 
+The assessment used standard environmental impact methods to evaluate the system over a 50-year lifetime, based on the energy delivered. Despite supplying the majority of the energy, the solar thermal component with seasonal storage contributed less than 30% to the overall environmental impact. Instead, the biomass backup and electricity sourced from the grid accounted for roughly two-thirds of the total impact, even though they provided only one-third of the energy. 
 
-The study concludes that while the Bracht system is environmentally favourable compared to many alternatives, further improvements are possible, for example by relying on renewable electric energy for the heat pump and by further minimising heat losses in storage and transport.
+The results are very encouraging. The study concludes that the Bracht system is environmentally favorable compared to many alternatives. However, there remains substantial potential for improvement through optimization of the system’s operating conditions. Two key opportunities include shifting to renewable electricity to power the heat pump and minimizing heat losses during storage and transport. This can be achieved by optimizing settings such as the operating temperature.
 
 # Introduction and related work
 
@@ -32,7 +32,7 @@ Heating is an important topic for energy consumption since it amounts to roughly
 
 Solar thermal collectors (STCs) are devices that absorb solar radiation and convert it into heat. There are different types of solar thermal collectors, including flat plate solar collectors, unglazed water collectors, and evacuated tube solar collectors. They are combined with heat pumps to bridge the gap between solar field produced water temperature and district heating delivery system required temperature @wikipedia2020. According to @iea2024, there are more than 300 large scale district heating systems globally that are powered with STCs, and more than 1200 STC systems that provide industrial process heat.
 
-Solar thermal collectors are a mature technology. In 2023, the total operational solar thermal capacity reached 560 GWth, which covers roughly 800 km2 of collector area @iea2024. STC-provided capacity varies seasonally depending on available sunlight. Sometimes STCs are used only for parts of the year, e.g. to enable turning off a biomass-powered plant in the summer since it would run at extremely low capacity. STCs can be combined with a short term heat storage acting as buffer or a seasonal heat storage tank (e.g. underground hot water basin) to store extra heat from the hot season for the cold season, which incurs heat losses. If space restrictions require such a setup (or if land is cheaper), the geographical location of an STC can be remote from consumers and plants via pipelines (e.g., 4 km in Priština @euroheat2023). However, there is a trade-off since the remote location required laying the necessary pipes underground.
+Solar thermal collectors are a mature technology. In 2023, the total operational solar thermal capacity reached 560 GWth, which covers roughly 800 km2 of collector area @iea2024. STC-provided capacity varies seasonally depending on available sunlight. Sometimes STCs are used only for parts of the year, e.g. to enable turning off a biomass-powered plant in the summer since it would run at extremely low capacity. STCs can be combined with a short term heat storage acting as buffer or a seasonal heat storage tank sometimes referred to as Pit Thermal Energy Storage (PTES) such as an underground hot water basin to store extra heat from the hot season for the cold season. This incurs heat losses. If space restrictions require such a setup (or if land is cheaper), the geographical location of an STC can be remote from consumers and plants via pipelines (e.g., 4 km in Priština @euroheat2023). However, there is a trade-off since the remote location required laying the necessary pipes underground.
 
 In scientific literature, a small number of LCIA case studies for district heating systems exist, e.g. for the systems in Milan @famiglietti2021environmental and Marseille @vauchez2023life. Life Cycle Impact Assessment, in particular the based on the ReCiPe method, has been used to assess the environmental impact of different STC powered district heating configurations by @abokersh2020framework. The outcome was that larger systems that serve many households have a lower environmental impact per energy unit served. In @solano2023life, the authors provide an LCIA study of a STC plant connected to the Geneva district heat network and find that there is no LCI data available for the coupling of large scale solar thermal installations and district heating networks, and provide suggested numbers that could be used to complement district heat production routes.
 
@@ -52,13 +52,15 @@ The research questions were formulated as follows:
 
 The goal and scope definition is a fundamental step in any Life Cycle Impact Assessment (LCIA), as it provides a clear description of the product system under study, its system boundaries, and the definition of a functional unit that reflects the output of the system in a consistent and measurable way. This section outlines the specific goal and scope of the LCIA conducted for the district heating project described in this document.
 
-The focus of the given assessment is a district heating project that has been initiated and is operated by a cooperative consisting of both future household consumers and the local municipal council. The system as despicted in @fig-bracht-overview includes the following key components:
+The focus of the given assessment is a district heating project that has been initiated and is operated by a cooperative consisting of both future household consumers and the local municipal council. The system as depicted in @fig-bracht-overview includes the following key components:
 
 *   solar thermal collector (STC) field,
-*   seasonal storage unit (SSU), sometimes referred to as Pit Thermal Energy Storage (PTES),
-*   heat preparation (HP) component with heat pump powered by electricity from the grid, buffer storage unit, biomass combustion unit serving as a backup heat source when stored heat is unavailable,
+*   seasonal storage unit (SSU),
+*   heat pump (HP) component with heat pump powered by electricity from the grid and a buffer storage unit
+*   biomass combustion unit serving as a backup heat source when stored heat is unavailable,
+*   a facility to house the heat preparation,
 *   heat transport (HT) distribution network that supplies heat to residential consumers, and
-*   receiver units installed in each participating household.
+*   and receiver units installed in each participating household.
 
 There are at least 180 consumer households expected, which is roughly 60% of all households that exist in the local community.
 
@@ -68,7 +70,7 @@ The functional unit is defined to be 1 MegaJoule (MJ) of thermal energy provided
 
 The lifetime of the district heating system is assumed to be 50 years. The system diagram shown in @fig-system-diagram describes the product system and its boundaries.
 
-![System diagram  for the Bracht community district heating network, with functional unit as stated.](img/system_diagram.png){#fig-system-diagram width="80%" fig-border="true"}
+![System diagram  for the Bracht community district heating network.](img/system_diagram.png){#fig-system-diagram width="80%" fig-border="true"}
 
 # Life Cycle Inventory (LCI) {#sec-lci-overview}
 
@@ -112,11 +114,11 @@ Since detailed methods for the loss estimates used in the Bracht assumptions are
 
 The system model, as detailed in @sec-sima, was implemented using SimaPro @SimaPro2024. This model served as the foundation for generating LCIA results using the Environmental Footprint (EF) method @ec2021EF and the Ecological Scarcity 2021 v1.04 method @FOEN2021. The corresponding results derived from these assessments are presented in this section.
 
-![Relative environmental impact of Bracht community district heating system components (Ecological Scarcity 2021, v1.04, UVEK LCI weighting)](img/pwrg_solar_network_bar.png){#fig-network-bar width="50%"}
+![Relative environmental impact for components of Bracht community district heating system  (Ecological Scarcity 2021, v1.04, UVEK LCI weighting)](img/pwrg_solar_network_bar.png){#fig-network-bar width="80%"}
 
 To address the first research question regarding the environmental impact of the additional electricity and the supplemental biomass burnt in the wood boiler, the relative influence of the individual components of the solar thermal district heating system on overall environmental impact was evaluated using the Ecological Scarcity 2021 (version 1.04) method. The assessment was conducted at the single-score level, applying the UVEK LCI weighting set to define the relative importance of the different damage categories. The results are presented in @fig-network-bar. They show that the biomass (27.3 %) and the electricity (35.8 %) together have a very large impact. They are responsible for nearly two-thirds of the environmental impact of the overall system. The solar thermal based part of the system with solar thermal field, seasonal storage, and heat pump is responsible for less than 30 % of the overall environmental impact, although they supply two-thirds of the total energy production (see @fig-bracht-overview). Only one-third of the energy delivered to end consumers originates from the biomass and electricity.
 
-![Relative environmental impact of Bracht community district heating network system components (Environmental Footprint Method)](img/pwrg_solar_ef_network_bar_faceted.png){#fig-ef-network-pie width="70%"}
+![Relative environmental impact of Bracht community district heating network system components (Environmental Footprint Method)](img/pwrg_solar_ef_network_bar_faceted.png){#fig-ef-network-pie width="90%"}
 
 For a more detailed view of the environmental impact by individual damage categories, @fig-ef-network-pie presents the drilled-down individual results for the most relevant impact categories *Climate change*, *Particulate matter*, *Eutrophication (marine)*, *Land use*, *Resource use (minerals and metals)*, and *Resource use (fossils)*. The figure shows that biomass combustion is the dominant contributor to Land use, Particulate matter, and Marine eutrophication. In contrast, electricity use is the primary driver of impacts in *Fossil resource use* and *Climate change*. The environmental impact in the *Minerals and metals resource use* category is most significantly influenced by heat preparation and the solar thermal collectors. The seasonal storage unit contributes notably to the *Climate change* category.
 
