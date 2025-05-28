@@ -35,7 +35,7 @@ For the community project in Bracht, while the economic viability of the project
 
 # Methodology and research questions
 
-The foreground data is collected from various online sources and combined with background data from the Ecoinvent v3 database @wernet2016ecoinvent and from the UVEK LCI database version DQRv2:2025 database @FOEN2025. Environmental impacts are assessed using the mid-point level Environmental Footprint (EF) method @ec2021EF, and the Ecological Scarcity 2021 v1.04 method @FOEN2021 at the single score level with UVEK LCI weighting set. The LCIA is performed using the SimaPro 9.6.0.1 software @SimaPro2024. 
+The foreground data is collected from various online sources and combined with background data from the Ecoinvent v3 database @wernet2016ecoinvent and from the UVEK LCI database version DQRv2:2025 @FOEN2025. Environmental impacts are assessed using the mid-point level Environmental Footprint (EF) method @ec2021EF, and the Ecological Scarcity 2021 v1.04 method @FOEN2021 at the single score level with UVEK LCI weighting set. The LCIA is performed using the SimaPro 9.6.0.1 software @SimaPro2024. 
 
 The research questions are formulated as follows:
 
@@ -47,7 +47,7 @@ The research questions are formulated as follows:
 
 # Goal and scope
 
-The goal and scope definition of an LCA provides a description of the product system and its system boundaries, and a functional unit.
+The goal and scope definition of an LCIA provides a description of the product system and its system boundaries, and a functional unit.
 
 The district heating project that is the topic of this analysis is led by a cooperative comprising future household consumers and the local council. The project setup consists of a solar thermal collector field, a seasonal storage unit also called Pit Thermal Energy Storage (PTES), a heat pump which is using power from the grid, a buffer storage unit, a backup biomass combustion unit that if required can be used as an alternative source of heat (for the cases where there is no availability of heat from neither the solar collector nor the storage), and a distribution network for the customer households (see @fig-bracht-overview). A receiver unit is installed in each participating household. There are at least 180 consumer households expected, which is roughly 60% of all households in the community.
 
@@ -61,50 +61,57 @@ The lifetime of the installation is assumed to be 50 years. The system diagram s
 
 System deconstruction was modeled for the solar thermal collector field and the seasonal storage unit. Disposal (via municipal waste incineration) of the plastic material used for seasonal storage unit sealing and insulation was included in the modelling.
 
-# Life Cycle Inventory {#sec-lci-overview}
+# Life Cycle Inventory (LCI) {#sec-lci-overview}
 
-There is a lot of information available on the project website @bracht2025, which has been used as the source for detailed life cycle inventory information for solar thermal collector field, seasonal storage unit, and heat preparation (heat pump, buffer storage, installation facility, and consumer installations) can be found in the supporting information appendix in @sec-lci. The heat transport network was modeled based on existing UVEK LCI data. 
-The modelling default electricity source was chosen to be the European Network of Transmission System Operators for Electricity (ENTSO-E) production mix @FOEN2025, aiming to make the model representative for a plant located in the European region.
+This section outlines the foundational data used to support system modelling. Extensive project-related information for the Bracht community district heating system is available on the project website @bracht2025. This was used extensively as a key source for detailed LCI data. It provided detailed data on the solar thermal collector field, the seasonal storage unit, and heat preparation systems comprising the heat pump, buffer storage, installation facility, and consumer installations. 
+ 
+The comparison datasets and the heat transport network were modelled based on UVEK LCI data @FOEN2025, an existing resource for conducting LCIAs of energy systems and infrastructure within Switzerland and the broader European context provided by the Swiss Federal Office of Energy (abbreviated in English as SFOE, and in German as UVEK). For electricity input, the modelling assumed the European Network of Transmission System Operators for Electricity (ENTSO-E) production mix, also provided in the UVEK dataset, to ensure the model reflects conditions typical of a plant operating within the European region.
 
-The remainder of this section describes the assumptions for component lifetimes, electricity requirements and loss coefficients.
+Additional LCI details for all components are provided in the Supporting Information appendix (@sec-lci). The detailed specifications and parameters of the resulting system model are described in section @sec-sima. The remainder of this section outlines the key assumptions regarding component lifetimes, expected electricity demand, and thermal loss coefficients.
 
 ## Component lifetimes
 
 The planned lifetime for the Bracht plant is 50 years. The assumed individual component lifetimes and the resulting relevant multipliers are shown in @tbl-component-lifetimes. The assumed individual component lifetimes are in line with the assumptions used in @bracht2022.
 
 ::: {#tbl-component-lifetimes .table caption="Assumed component lifetimes"}
-| Component                         | Years | Multiplier | Source                 |
-|-----------------------------------|-------|------------|------------------|
-| Solar thermal collector           | 30    | 1.67       | [@grosse2017long]      |
-| Seasonal storage unit             | 30    | 1.67       | [@bracht2022]          |
-| Heat pump                         | 20    | 2.5        | [@wolf2017integration] |
-| Heat buffer storage               | 20    | 2.5        | [@grosse2017long]      |
-| Heat installation facility        | 50    | 1          | [@vdi2012vdi]          |
-| Heat exchange station at consumer | 20    | 2.5        | [@bracht2022]          |
-| Heat transport network            | 50    | 1          | [@bracht2022]          |
+| Component                          | Years | Multiplier | Source                 |
+|------------------------------------|-------|------------|------------------|
+| Solar thermal collectors           | 30    | 1.67       | [@grosse2017long]      |
+| Seasonal storage unit              | 30    | 1.67       | [@bracht2022]          |
+| Heat pumps                         | 20    | 2.5        | [@wolf2017integration] |
+| Heat buffer storage                | 20    | 2.5        | [@grosse2017long]      |
+| Heat installation facility         | 50    | 1          | [@vdi2012vdi]          |
+| Heat exchange stations at consumer | 20    | 2.5        | [@bracht2022]          |
+| Heat transport network             | 50    | 1          | [@bracht2022]          |
 :::
 
 ## Electrical power requirements and loss coefficient assumptions {#sec-loss-coefficients}
 
-Several estimations of annual collector output can be found in the relevant performance data from @tuev2021 for the solar thermal collectors used in this project. They are based on geographical location and on the desired output temperature. The geographically closest matching entry is 5.283 kWh per collector per year for the Würzburg location and 75 degrees output. For the given 855 collectors, this leads to an estimate of 4.517 MWh per year.
+Performance data from @tuev2021 provides several estimates of the annual output for the solar thermal collectors used in this project. These estimates vary by geographic location and desired output temperature. The most geographically relevant data point is for Würzburg, with an output of 5.283 kWh per collector per year at a target output temperature of 75 °C. Given a total of 855 collectors, the estimated gross thermal energy production is approximately 4.517 MWh per year.
 
-The Bracht documentation @bracht2025faq states that in total, 2.700 MWh per year are expected to reach consumer households. This means that the assumed loss coefficients for the storage unit and in the pipes together is estimated to amount to a significant factor of 40% loss. 
+According to the project documentation @bracht2025faq, 2.700 MWh per year are expected to reach end-user households. This implies a total system loss of approximately 40%, accounting for thermal losses in the storage unit and distribution piping.
 
-The electrical power is generated to 67% from the solar thermal collectors and stored (2.258 MWh), to 26% from biomass (904 MWh), and to 6% from the grid (209 MWh). This is the percentage distribution included in @fig-bracht-overview. 
+The energy distribution for heating supply is reported in @fig-bracht-overview as follows:
 
-There is no detailed information how the expected loss was estimated. However, based on the published numbers and an assumed 20% loss coefficient in the pipes, the resulting expected loss in the seasonal storage unit can be calculated at 50%. These assumptions were used in the modelling. Further discussion of loss coefficients and a related sensitivity analysis can be found in @sec-sensitive-loss.
+*   67 % from stored solar thermal energy (approximately 2.258 MWh),
+*   26 % from biomass sources (approximately 904 MWh), and
+*   6 % from the electricity grid (approximately 209 MWh)
+
+Since detailed methods for the loss estimates used in the Bracht assumptions are not provided in the public documentation, the modelling described in this document assumes a 20% loss coefficient as the default for the heat transmission pipe network. This estimate was chosen based on an initial literature study and previous experience. Given this assumption, the implied thermal loss within the seasonal storage unit would be approximately 50% to align with the reported figures from @bracht2025faq. These assumptions were incorporated into the system model as the default values. More background and a detailed discussion of thermal loss coefficients and their influence on system performance is presented in the sensitivity analysis in @sec-sensitive-loss.
 
 # Results  {#sec-results}
 
-To address the first research question regarding the relative environmental impact of the additional electricity and the supplemental biomass boiler, the influence of the individual components of the solar thermal district heating system on overall environmental impact was evaluated using the Ecological Scarcity 2021 (version 1.04) method. The assessment was conducted at the single-score level, applying the UVEK LCI weighting set.
+The system model, as detailed in @sec-sima, was implemented using SimaPro version 9.6.0.1 @SimaPro2024. This model served as the foundation for generating LCIA results using two established methodologies: the Environmental Footprint (EF) method @ec2021EF and the Ecological Scarcity 2021 v1.04 method @FOEN2021. The corresponding results derived from these assessments are presented in this section.
 
 ![Relative environmental impact of Bracht community district heating system components (Ecological Scarcity 2021, v1.04, UVEK LCI weighting)](img/pwrg_solar_network_bar.png){#fig-network-pie width="50%"}
 
-The results are presented in @fig-network-pie. Although the solar thermal collectors account for two-thirds of the total energy production (see @fig-bracht-overview), their relative contribution to the overall environmental impact is less than 15%. In contrast, the biomass and electricity sourced from the ENTSO-E production mix as outlined in @sec-lci-overview supply only one-third of the energy but are responsible for approximately two-thirds of the environmental impact. These figures reflect the aggregated environmental impact as calculated using the Ecological Scarcity 2021 method, based on the UVEK LCI weighting set, which defines the relative importance of the different damage categories.
+To address the first research question regarding the environmental impact of the additional electricity and the supplemental biomass burnt in the wood boiler, the relative influence of the individual components of the solar thermal district heating system on overall environmental impact was evaluated using the Ecological Scarcity 2021 (version 1.04) method. The assessment was conducted at the single-score level, applying the UVEK LCI weighting set to define the relative importance of the different damage categories. The results are presented in @fig-network-pie. 
 
-For a more detailed view of the environmental impact by individual damage categories, @fig-ef-network-pie presents the results for the most relevant impact categories *Climate change*, *Particulate matter*, *Eutrophication (marine)*, *Land use*, *Resource use (minerals and metals)*, and *Resource use (fossils)* without applying any weighting. The figure shows that biomass combustion is the dominant contributor to Land use, Particulate matter, and Marine eutrophication. In contrast, electricity use is the primary driver of impacts in *Fossil resource use* and *Climate change*. The environmental impact in the *Minerals and metals resource use* category is most significantly influenced by heat preparation and the solar thermal collectors. The seasonal storage unit contributes notably to the *Climate change* category.
+Although the solar thermal collectors account for two-thirds of the total energy production (see @fig-bracht-overview), their relative contribution to the overall environmental impact is less than 15%. In contrast, the biomass and electricity sourced from the ENTSO-E production mix (as described in @sec-lci-overview) supply only one-third of the energy delivered to end consumers, but are responsible for approximately two-thirds of the environmental impact. 
 
 ![Relative environmental impact of Bracht community district heating network system components (Environmental Footprint Method)](img/pwrg_solar_ef_network_bar_faceted.png){#fig-ef-network-pie width="70%"}
+
+For a more detailed view of the environmental impact by individual damage categories, @fig-ef-network-pie presents the drilled-down individual results for the most relevant impact categories *Climate change*, *Particulate matter*, *Eutrophication (marine)*, *Land use*, *Resource use (minerals and metals)*, and *Resource use (fossils)*. The figure shows that biomass combustion is the dominant contributor to Land use, Particulate matter, and Marine eutrophication. In contrast, electricity use is the primary driver of impacts in *Fossil resource use* and *Climate change*. The environmental impact in the *Minerals and metals resource use* category is most significantly influenced by heat preparation and the solar thermal collectors. The seasonal storage unit contributes notably to the *Climate change* category.
 
 In summary, electricity and biomass used to operate and supplement the system are the primary contributors to the overall environmental impact. Electricity consumption is unavoidable due to the operation of the heat pump. However, its impact can potentially be mitigated by sourcing electricity from renewable sources, an option explored in more detail in @sec-sensitive-elec. Strategies to reduce biomass consumption by improving thermal efficiency, such as lowering heat loss coefficients, are examined in @sec-sensitive-loss.
 
@@ -120,7 +127,7 @@ The lowest environmental impact with 165 Pt per kWh of heat is returned for the 
 
 As before, @fig-ef-midpoints presents the individual results for the most relevant damage categories, comparing them relative to the highest value in each category, which is shown as the longest bar representing 100% relative impact. This analysis confirms the findings from @fig-es-single-score, clearly demonstrating that oil and gas boilers have extremely high impacts in the *Climate change* category which is equivalent to Global warming in the Ecological Scarcity method with relative impacts of 100% and 70%, respectively. Additionally, oil and gas boilers exhibit the highest fossil resource use, at 100% and 80%. 
 
-A clear trade-off exists because each heating technology performs worst in different impact categories. For example, the district heating network using wood chips shows lower climate change impacts but the highest relative impacts in *Marine eutrophication*, *Land use*, and *Particulate matter* (PM). While PM impact was visible in @fig-es-single-score, *Marine eutrophication* and *Land use* impacts were not significant in the single score results. Similarly, solar thermal and geothermal-based district heating systems have the highest relative impacts in Minerals and metals resource use, at 100% and 83%, respectively. These trade-offs imply that selecting a heating technology depends on which environmental impacts are prioritized, highlighting the need to weigh and balance different categories manually or to rely on a single score if applicable.
+A clear trade-off exists because each heating technology performs worst in different impact categories. For example, the district heating network using wood chips shows lower climate change impacts but the highest relative impacts in *Marine eutrophication*, *Land use*, and *Particulate matter* (PM). While PM impact was visible in @fig-es-single-score, *Marine eutrophication* and *Land use* impacts were not significant in the single score results. Similarly, solar thermal and geothermal-based district heating systems have the highest relative impacts in Minerals and metals resource use, at 100% and 83%, respectively. These trade-offs imply that selecting a heating technology depends on which environmental impacts are prioritized for a given use case. This highlights the need to weigh and balance different categories manually, or to rely on a single score method if applicable.
 
 ![Damage assessment using the Environmental Footprint Method, visualized as relative environmental impacts in comparison.](img/pwrg_solar_ef_midpoints_faceted.png){#fig-ef-midpoints width="80%"}
 
