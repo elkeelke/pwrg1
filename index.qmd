@@ -67,7 +67,7 @@ This section outlines the foundational data used to support system modelling. Ex
  
 The comparison datasets and the heat transport network were modelled based on UVEK LCI data @FOEN2025, an existing resource for conducting LCIAs of energy systems and infrastructure within Switzerland and the broader European context provided by the Swiss Federal Office of Energy (abbreviated in English as SFOE, and in German as UVEK). For electricity input, the modelling assumed the European Network of Transmission System Operators for Electricity (ENTSO-E) production mix, also provided in the UVEK dataset, to ensure the model reflects conditions typical of a plant operating within the European region.
 
-Additional LCI details for all components are provided in the Supporting Information appendix (@sec-lci). The detailed specifications and parameters of the resulting system model are described in section @sec-sima. The remainder of this section outlines the key assumptions regarding component lifetimes, expected electricity demand, and thermal loss coefficients.
+Additional LCI details for all components are provided in @sec-lci. The detailed specifications and parameters of the resulting system model are described in @sec-sima. The remainder of this section outlines the key assumptions regarding component lifetimes, expected electricity demand, and thermal loss coefficients.
 
 ## Component lifetimes
 
