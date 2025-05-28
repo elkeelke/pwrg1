@@ -1,6 +1,6 @@
 ---
 title: Life cycle impact assessment for a district heating project with seasonal storage
-subtitle: A case study analysis for a project based in Bracht, Hessen, Germany
+subtitle: A case study analysis for a community project based in Bracht, Rauschenberg, Hessen, Germany
 author: Elke Michlmayr
 format:
   html:
@@ -20,7 +20,11 @@ csl: ieee.csl
 
 # Abstract
 
-A Life Cycle Impact Assessment (LCIA) is performed for a solar district heating community project in Bracht, Rauschenberg, Germany.
+A Life Cycle Impact Assessment (LCIA) was conducted for a solar district heating community project in Bracht, Germany, which incorporates solar thermal collectors, a seasonal heat storage unit powered through an electric heat pump, a supplemental biomass boiler as a backup solution for when there is no heat available from the solar based system, and a transport network to supply residential consumers. 
+
+The assessment used standard environmental impact methods to evaluate the system over a 50-year lifetime, based on the energy delivered. Despite supplying the majority of the energy, the solar thermal component contributed less than 15% to the overall environmental impact. Instead, the biomass backup and electricity sourced from the grid accounted for roughly two-thirds of the total impact, even though they provided only one-third of the energy. 
+
+The study concludes that while the Bracht system is environmentally favourable compared to many alternatives, further improvements are possible, for example by relying on renewable electric energy for the heat pump and by further minimising heat losses in storage and transport.
 
 # Introduction and related work
 
@@ -184,7 +188,7 @@ For scenario *(1 - no changes)*, a 15 % reduction from 170 Pt per kWh of heat to
 
 [^note]: This is coincidentally the same result as in @sec-pipe-loss.
 
-# Conclusion
+# Summary and conclusion
 
 A Life Cycle Impact Assessment was conducted for a solar district heating community project located in Bracht, Rauschenberg, Germany. This project combines solar thermal collectors with a seasonal storage unit to preserve heat produced in summer until the heating period in fall and winter. A heat transport network supplies the thermal energy to 180 residential consumers. The system's energy supply is expected to be 67% from stored solar thermal energy, 26% from biomass, and 6% from the electricity grid. Default modelling assumptions included a 20% heat loss coefficient for the transport network and an implied 50% loss for the seasonal storage unit.
 
