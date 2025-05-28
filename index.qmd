@@ -47,19 +47,25 @@ The research questions are formulated as follows:
 
 # Goal and scope
 
-The goal and scope definition of an LCIA provides a description of the product system and its system boundaries, and a functional unit.
+The goal and scope definition is a fundamental step in any Life Cycle Impact Assessment (LCIA), as it provides a clear description of the product system under study, its system boundaries, and the definition of a functional unit that reflects the output of the system in a consistent and measurable way. This section outlines the specific goal and scope of the LCIA conducted for the district heating project described in this document.
 
-The district heating project that is the topic of this analysis is led by a cooperative comprising future household consumers and the local council. The project setup consists of a solar thermal collector field, a seasonal storage unit also called Pit Thermal Energy Storage (PTES), a heat pump which is using power from the grid, a buffer storage unit, a backup biomass combustion unit that if required can be used as an alternative source of heat (for the cases where there is no availability of heat from neither the solar collector nor the storage), and a distribution network for the customer households (see @fig-bracht-overview). A receiver unit is installed in each participating household. There are at least 180 consumer households expected, which is roughly 60% of all households in the community.
+The focus of the given assessment is a district heating project that has been initiated and is operated by a cooperative consisting of both future household consumers and the local municipal council. The system as despicted in @fig-bracht-overview includes the following key components:
+
+*   solar thermal collector (STC) field,
+*   seasonal storage unit (SSU), sometimes referred to as Pit Thermal Energy Storage (PTES),
+*   heat preparation (HP) component with heat pump powered by electricity from the grid, buffer storage unit, biomass combustion unit serving as a backup heat source when stored heat is unavailable,
+*   heat transport (HT) distribution network that supplies heat to residential consumers, and
+*   receiver units installed in each participating household.
+
+There are at least 180 consumer households expected, which is roughly 60% of all households that exist in the local community.
 
 ![System overview for the Bracht community district heating network. (Source: University of Kassel)](img/bracht_overview.png){#fig-bracht-overview width="75%" fig-border="true"}
 
 The functional unit is defined to be 1 MegaJoule (MJ) of thermal energy provided to the consumer directly at the consumer site during the heating period. Using MJ instead of kilowatt-hours of thermal energy (kWh~th~) ensures consistency with the UVEK processes for other forms of district heating in SimaPro that the comparison will be performed against.
 
-The lifetime of the installation is assumed to be 50 years. The system diagram shown in @fig-system-diagram describes the product system and its boundaries.
+The lifetime of the district heating system is assumed to be 50 years. The system diagram shown in @fig-system-diagram describes the product system and its boundaries.
 
 ![System diagram  for the Bracht community district heating network, with functional unit as stated.](img/system_diagram.png){#fig-system-diagram width="80%" fig-border="true"}
-
-System deconstruction was modeled for the solar thermal collector field and the seasonal storage unit. Disposal (via municipal waste incineration) of the plastic material used for seasonal storage unit sealing and insulation was included in the modelling.
 
 # Life Cycle Inventory (LCI) {#sec-lci-overview}
 
@@ -144,6 +150,8 @@ Data availability was generally satisfactory with one notable exception for the 
 Worth mentioning is that the UVEK data for the transport system district heat has a lifetime assumption of 30 years whereas the Bracht setup assumes 50 years. This is acceptable since with 6.6 %, the heat transport system showed only minor impact on the overall results (see @fig-network-pie).
 
 Note that there was a problem with the weights for the damage category *Water resources, net balance* in the UVEK LCI weighting set that required excluding this category from the analysis. 
+
+System deconstruction was modelled for the major infrastructure components, specifically the solar thermal collector field and the seasonal storage unit. The model includes the disposal of plastic materials used for sealing and insulation in the seasonal storage unit, assuming treatment via municipal waste incineration. For the remaining system components only deconstruction processes were included in the model. Final disposal or material recovery for these components was not considered within the scope of this analysis (also see @fig-system-diagram).
 
 <!-- Biomass: other uses such as CO2 storage or trees growing are prevented -->
 
