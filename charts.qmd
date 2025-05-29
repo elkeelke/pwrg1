@@ -115,9 +115,11 @@ ggplot(long_es, aes(x = Type, y = Value, fill = reorder(`Impact category`, Value
   theme_minimal() +
   theme(
         legend.title = element_text(size = 14),  # Title of the legend
-        legend.text = element_text(size = 12),    # Items in the legend
+        legend.text = element_text(size = 14),    # Items in the legend
         plot.margin = unit(c(0.2, 0.5, 0.2, 0.5), "cm"),  # top, right, bottom, left
-        axis.text.x = element_text(angle = 90, hjust = 1, size = 12)
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 14),
+        axis.title.y = element_text(size = 14),
+        axis.text.y = element_text(size = 14),
         )
 ggsave("img/pwrg_solar_es_single_score.png")
 ```
