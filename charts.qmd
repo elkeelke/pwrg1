@@ -196,3 +196,29 @@ ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
   coord_flip()
 ggsave("img/pwrg_solar_ef_midpoints_faceted.png")
 ```
+
+# Energy winter production CH
+```{r}
+ch <- read_delim("data/Energieperspektiven 2050+ - Sheet3.csv")[1:9, 1:9]
+
+long_ch <- pivot_longer(ch, cols = -c("Type"), names_to = "Year", values_to = "Value")
+
+ggplot(long_ch, aes(x = Year, y = Value, fill = Type)) +
+  geom_col() +
+  theme_minimal() +
+  theme(
+      legend.title = element_text(size = 14),  # Title of the legend
+      legend.text = element_text(size = 14),    # Items in the legend
+      plot.margin = unit(c(0.2, 0.5, 0.2, 0.5), "cm"),  # top, right, bottom, left
+      axis.text.x = element_text(angle = 45, hjust = 1, size = 14),
+      axis.title.y = element_text(size = 14),
+      axis.text.y = element_text(size = 14),
+      ) +
+  labs(
+    x = "",
+    y = "TWh",
+  ) +
+  scale_fill_brewer(palette = "Purples")
+ggsave("img/pwrg_solar_ch_winter.png")
+```
+
