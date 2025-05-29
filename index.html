@@ -125,7 +125,7 @@ window.Quarto = {
 <h1>Abstract</h1>
 <p>A Life Cycle Impact Assessment (LCIA) was conducted for a solar district heating community project in Bracht, Germany, which incorporates solar thermal collectors, a seasonal heat storage unit powered through an included electric heat pump, a supplemental biomass boiler as a backup solution for when there is no heat available from the solar based system, and a transport network to supply residential consumers.</p>
 <p>The assessment used standard environmental impact methods to evaluate the system over a 50-year lifetime, based on the energy delivered. Despite supplying the majority of the energy, the solar thermal component with seasonal storage contributed less than 30% to the overall environmental impact. Instead, the biomass backup and electricity sourced from the grid accounted for roughly two-thirds of the total impact, even though they provided only one-third of the energy.</p>
-<p>The results are encouraging and show that the Bracht system is environmentally favorable compared to many alternatives. However, there remains substantial potential for improvement through optimization of the system’s operating conditions. Two key opportunities include shifting to renewable electricity to power the heat pump and minimizing heat losses during storage and transport. This can be achieved by optimizing settings such as the operating temperature.</p>
+<p>The results are encouraging and show that the Bracht system is environmentally favorable compared to many alternatives. However, there remains substantial potential for improvement through optimization of the system’s operating conditions. Key opportunities include using renewable electric energy for the heat pump, and reducing heat losses in storage and transport to minimize, or even completely eliminate, the need for supplemental biomass. This is achievable by optimizing settings such as the system’s operating temperature.</p>
 </section>
 <section id="introduction-and-related-work" class="level1">
 <h1>Introduction and related work</h1>
@@ -335,14 +335,15 @@ Figure&nbsp;6: Damage assessment using the Environmental Footprint Method, visua
 <p>Data availability was generally satisfactory with one notable exception for the modelling of the heat pumps used in the system (see <a href="#sec-hp" class="quarto-xref">Section&nbsp;9.1.3</a> for specifications). There are two heat pumps with 630 kW max electrical input power each used in the system, but in the UVEK data, the largest sized heat pump available has a maximum of 50 kW power. The best possible assumption in this situation was that the two large heat pump have the same impact as 25 units of the 50 kW heat pump, but this is likely leading an overestimation of the resource use for minerals and metals. This is acceptable since with 6.1 %, the heat preparation system which includes the heat pump showed only minor impact on the overall results (see <a href="#fig-network-bar" class="quarto-xref">Figure&nbsp;3</a>).</p>
 <p>Worth mentioning is that the UVEK data for the transport system district heat has a lifetime assumption of 30 years whereas the Bracht setup assumes 50 years. This is acceptable since with 6.6 %, the heat transport system showed only minor impact on the overall results (see <a href="#fig-network-bar" class="quarto-xref">Figure&nbsp;3</a>).</p>
 <p>Note that there was a problem with the weights for the damage category <em>Water resources, net balance</em> in the UVEK LCI weighting set that required excluding this category from the analysis.</p>
-<p>System deconstruction was modelled for the major infrastructure components, specifically the solar thermal collector field and the seasonal storage unit. The model includes the disposal of plastic materials used for sealing and insulation in the seasonal storage unit, assuming treatment via municipal waste incineration. For the remaining system components only deconstruction processes were included in the model. Final disposal or material recovery for these components was not considered within the scope of this analysis (also see <a href="#fig-system-diagram" class="quarto-xref">Figure&nbsp;2</a>).</p>
+<p>System deconstruction was modelled for the major infrastructure components, specifically the solar thermal collector field and the seasonal storage unit. The model includes the disposal of plastic materials used for sealing and insulation in the seasonal storage unit, assuming treatment via municipal waste incineration. For the remaining system components only deconstruction processes were included in the model. Final disposal or material recovery for these components was not considered within the scope of this analysis (cf.&nbsp;system diagram in <a href="#fig-system-diagram" class="quarto-xref">Figure&nbsp;2</a>).</p>
 <!-- Biomass: other uses such as CO2 storage or trees growing are prevented -->
 </section>
 <section id="sec-sensitive-elec" class="level2">
 <h2 class="anchored" data-anchor-id="sec-sensitive-elec">Sensitivity analysis: Source of electricity</h2>
-<p><a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a> has shown that the dominant environmental impact is from electricity. For the default model, the Electricity (ENTSO-E) production mix <span class="citation" data-cites="FOEN2025"><a href="#ref-FOEN2025" role="doc-biblioref">[13]</a></span> was assumed. It was also assumed that the production mix will stay the same over the lifetime of the plant which is the next 50 years, which is not realistic given the net zero by 2050 plans of the European Union. Also relevant is the fact that electricity will be required during the winter months where there are different production conditions compared to the summer months.</p>
-<p>Surprisingly, no TBD.</p>
-<p>In this section, the effects of the default choice for the modelling as well as potentially achievable savings by using lower-emitting electricity are assessed. The relevant UVEK-supplied data for running storage pumps in Austria, Germany, France, Italy, and Switzerland were used for the analysis. The results are shown in <a href="#fig-elec-sens" class="quarto-xref">Figure&nbsp;7</a>.</p>
+<p>The results as presented in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a> indicate that the dominant environmental impact arises from the electricity demand of the system, which originates from the heat pump. In the default model, the electricity mix was modeled based on the ENTSO-E production mix <span class="citation" data-cites="FOEN2025"><a href="#ref-FOEN2025" role="doc-biblioref">[13]</a></span>. In this section, the effects of the default choice for the modelling as well as potentially achievable savings by using lower-emitting electricity are assessed.</p>
+<p>It is important to note that electricity consumption primarily occurs during the winter months, when production conditions differ significantly from those in the summer.</p>
+<p>It was also assumed that the electricity production mix will remain constant over the 50-year lifetime of the plant. However, this assumption is not realistic in light of the European Union’s commitment to achieving net-zero greenhouse gas emissions by 2050.</p>
+<p>The relevant UVEK-supplied data for running storage pumps in Austria, Germany, France, Italy, and Switzerland were used for the analysis. The results are shown in <a href="#fig-elec-sens" class="quarto-xref">Figure&nbsp;7</a>.</p>
 <!-- Future production mix (to plan ahead) -->
 <div id="fig-elec-sens" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -357,19 +358,71 @@ Figure&nbsp;7: Comparison of environmental impact depending on source of electri
 </section>
 <section id="sec-sensitive-loss" class="level2">
 <h2 class="anchored" data-anchor-id="sec-sensitive-loss">Sensitivity analysis: Loss coefficients</h2>
-<p>Heat is harder to transport than electrical power since even good insulation cannot avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling.</p>
+<p>Heat is harder to transport than electrical power since even good insulation cannot avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling. The impact of changes in these loss coefficients assumptions will be assessed in <a href="#sec-pipe-loss" class="quarto-xref">Section&nbsp;7.3.1</a> and <a href="#sec-ssu-loss" class="quarto-xref">Section&nbsp;7.3.2</a>.</p>
 <section id="sec-pipe-loss" class="level3">
 <h3 class="anchored" data-anchor-id="sec-pipe-loss">Pipe heat loss</h3>
 <p>As summarized in <span class="citation" data-cites="werner2017international"><a href="#ref-werner2017international" role="doc-biblioref">[23]</a></span>, the key parameters affecting heat loss in district heating pipes include the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The relevant heat loss coefficients reported range between 5 % and 35 %. The Bracht setup involves a relatively long transmission distance of 8800 meters due to its rural context. The planned supply temperature of 85 degrees °C is relatively high and will contribute to increased thermal losses. In contrast, modern district heating systems can operate with lower supply temperatures between 50 and 70 degrees °C to minimize heat loss and improve efficiency as noted by <span class="citation" data-cites="lund2020districtheating"><a href="#ref-lund2020districtheating" role="doc-biblioref">[24]</a></span>.</p>
 <p>The rationale behind selecting a default heat loss rate of 20 % for the Bracht setup reflects the combined negative impact of the long transmission distance and high operating temperature on system performance. However, several sources assume lower loss rates. For example, the open source Energy Transition Model <span class="citation" data-cites="etm2025"><a href="#ref-etm2025" role="doc-biblioref">[25]</a></span> suggests a 15 % default loss figure based on real world data for modern district heating networks. The Swiss Federal Office of Energy UVEK assumes an even lower rate of approximately 11 % in its district heating data.</p>
-<p>If the Bracht system were optimized to achieve heat loss rates comparable to the UVEK assumption by lowering the operating temperature, annual efficiency gains of about 300 MWh could be realized currently. This would remove parts of the every requirements planned to be supplied via biomass. This would correspond to a roughly 9 % reduction in ecological impact from 170 Pt per kWh to 155 Pt per kWh of heat produced according to the Ecological Scarcity 2021 version 1.04 method at the single score level with UVEK LCI weighting. The most significant reductions were observed in the <em>Main air pollutants and Particulate Matter (PM)</em> category, primarily due to the reduced combustion of biomass.</p>
+<p>If the Bracht system was optimized to achieve heat loss rates comparable to the UVEK assumption, e.g.&nbsp;by lowering the operating temperature, annual efficiency gains of about 300 MWh could be realized. This would remove one-third of the requirements planned to be supplied via biomass, which would correspond to a 9 % reduction in ecological impact from 170 Pt per kWh to 155 Pt per kWh of heat produced according to the Ecological Scarcity 2021 version 1.04 method at the single score level with UVEK LCI weighting. The most significant reductions can be achieved in the <em>Main air pollutants and Particulate Matter (PM)</em> category, primarily due to the reduced combustion of biomass.</p>
 </section>
-<section id="seasonal-storage-unit-heat-loss" class="level3">
-<h3 class="anchored" data-anchor-id="seasonal-storage-unit-heat-loss">Seasonal storage unit heat loss</h3>
+<section id="sec-ssu-loss" class="level3">
+<h3 class="anchored" data-anchor-id="sec-ssu-loss">Seasonal storage unit heat loss</h3>
 <p>In <span class="citation" data-cites="penttinen2021optimal"><a href="#ref-penttinen2021optimal" role="doc-biblioref">[26]</a></span>, the authors report a 26% loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model <span class="citation" data-cites="etm2025"><a href="#ref-etm2025" role="doc-biblioref">[25]</a></span> suggests 30% as a sensible default for modelling heat loss in the storage unit. Another study <span class="citation" data-cites="xiang2022comprehensive"><a href="#ref-xiang2022comprehensive" role="doc-biblioref">[27]</a></span> provides a comprehensive review and finds that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover.</p>
-<p>Given these reference numbers from literature, the 50% loss assumption for Bracht is on the conservative side. For the sensitivity analysis, the assumption made is that it can be lowered to 30% based on two different scenarios: (A) without any changes in the setup but an understanding that the original assumptions were not accurate, and (B) by using twice the cover for the top of seasonal storage unit and therefore better insulation. The sides and the bottom of the seasonal storage unit remain unchanged.</p>
-<p>In both scenarios, a higher amount of energy is supplied from the seasonal storage unit (3.160 MWh). That consequently results in an increase of electrical energy requirements for the heat pump. A rough estimate of the heightened energy requirements was performed based on using the same factor between energy from the seasonal storage unit and energy from electricity as in the original assumptions (see <a href="#sec-loss-coefficients" class="quarto-xref">Section&nbsp;5.2</a>): 209 MWh divided by 2.258 MWh, which returns a 9 % electricity requirement factor. This results in a 293 MWh electricity demand for the heat pump. With an assumed 20% heat loss in the pipes as in the default assumptions, a remaining amount of 2.764 MWh of energy is available for consumers. This meets the consumer heating demands of 2.700 MWh and therefore, no supplemental energy from biomass is required.</p>
-<p>For scenario <em>(A - no changes)</em>, a 15 % reduction from 170 Pt per kWh of heat to 146 Pt per kWh of heat can be achieved. For scenario <em>(B - double cover)</em>, a 9 % reduction to 155<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Pt per kWh of heat can be achieved.</p>
+<p>Given these reference numbers from literature, the 50% loss assumption that was used for the Bracht plant is on the conservative side. For the sensitivity analysis, the assumption made is that it can potentially be lowered to 30% based on two different scenarios: (A) without any changes in the setup but an understanding that the original assumptions were not accurate, and (B) by using twice the cover for the top of seasonal storage unit and therefore better insulation. The sides and the bottom of the seasonal storage unit remain unchanged. Both scenarios were modeled to learn about the implications on the results.</p>
+<p>In both scenarios, a significantly higher amount of energy is available from the seasonal storage unit because of the lower heat loss as shown in <a href="#tbl-loss" class="quarto-xref">Table&nbsp;2</a>. In the original scenario, out of the 4.517 MWh produced by the solar thermal collectors, an amount of 2.259 MWh remains available from the seasonal storage unit after subtracting the assumed losses. With less loss the availability increases significantly, to 3.162 MWh. The difference of 900 MWh is equal to the contribution that was expected to be supplied via biomass combustion in the default model.</p>
+<div id="tbl-loss" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="SSU heat loss">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-loss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2
+</figcaption>
+<div aria-describedby="tbl-loss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 18%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Scenario</th>
+<th>Dimension</th>
+<th>Value</th>
+<th>Assumed loss</th>
+<th>Electricity requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>all</td>
+<td>Produced</td>
+<td>4.517 MWh</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>default</td>
+<td>Available</td>
+<td>2.259 MWh</td>
+<td>50%</td>
+<td>209 MWh (Factor 0.092)</td>
+</tr>
+<tr class="odd">
+<td>(A) and (B)</td>
+<td>Available</td>
+<td>3.162 MWh</td>
+<td>30%</td>
+<td>293 MWh</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>That consequently results in an increase of electrical energy requirements for the heat pump. A rough estimate of the heightened energy requirements was performed based on using the same factor between energy from the seasonal storage unit and energy from electricity as in the original assumptions (see <a href="#sec-loss-coefficients" class="quarto-xref">Section&nbsp;5.2</a>): 209 MWh divided by 2.258 MWh, which returns a 9 % electricity requirement factor. This corresponds to a COP of 11.</p>
+<p>This results in a 293 MWh electricity demand for the heat pump. With an assumed 20% heat loss in the pipes as in the default assumptions, a remaining amount of 2.764 MWh of energy is available for consumers. This meets the consumer heating demands of 2.700 MWh and therefore, no supplemental energy from biomass is required.</p>
+<p>For scenario <em>(A - update assumptions)</em>, the result was that a 15 % reduction from 170 Pt per kWh of heat to 146 Pt per kWh of heat can be achieved. For scenario <em>(B - double cover)</em>, a 9 % reduction to 155<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Pt per kWh of heat can be achieved.</p>
 </section>
 </section>
 </section>
@@ -378,8 +431,8 @@ Figure&nbsp;7: Comparison of environmental impact depending on source of electri
 <p>A Life Cycle Impact Assessment was conducted for a solar district heating community project located in Bracht, Rauschenberg, Germany. This project combines solar thermal collectors with a seasonal storage unit to preserve heat produced in summer until the heating period in fall and winter. A heat transport network supplies the thermal energy to 180 residential consumers. The system’s energy supply is expected to be 67% from stored solar thermal energy, 26% from biomass, and 6% from the electricity grid. Default modelling assumptions included a 20% heat loss coefficient for the transport network and an implied 50% loss for the seasonal storage unit.</p>
 <p>Results indicate that biomass and grid electricity are the primary contributors to the overall environmental impact, accounting for approximately two-thirds of the total, despite supplying only one-third of the energy delivered. The solar thermal collectors contribute less than 15% to the overall environmental impact. Analysis by damage categories shows biomass combustion significantly contributes to land use, particulate matter, and marine eutrophication, while electricity use is the main driver for fossil resource use and climate change.</p>
 <p>Comparing the Bracht system to other heating technologies, the STC-based district heating system with seasonal storage shows the second lowest environmental impact at approximately 170 Pt per kilowatt-hour (kWh) of heat, based on analysis using the Ecological Scarcity 2021 single score method. This is similar to district heating using wood chips (165 Pt/kWh), lower than a geothermal heat pump district heating system (225 Pt/kWh), and significantly lower than gas boilers (281 Pt/kWh) and oil boilers (430 Pt/kWh).</p>
-<p>Sensitivity analyses were performed to demonstrate the effects of uncertainties in input data and the potential for reducing environmental impact. Sourcing lower-emitting electricity could mitigate the impact driven by the grid mix. Furthermore, improving heat loss coefficients, particularly reducing the significant heat loss in the seasonal storage unit to a potentially achievable 30%, could allow the system to meet consumer demand without supplemental biomass, leading to a substantial impact reduction of 15 % in the best scenario.</p>
-<p>The conclusion is that while the Bracht solar district heating system favorably compares to many conventional and alternative heating technologies in terms of environmental impact, further improvements are possible to achieve even lower environmental impact. Recommendations include using renewable electric energy for the heat pump, and reducing heat losses in storage and transport to minimize, or even completely eliminate, the need for supplemental biomass.</p>
+<p>Sensitivity analyses were performed to demonstrate the effects of uncertainties in input data and the potential for reducing environmental impact.</p>
+<p>The conclusion is that while the Bracht solar district heating system favorably compares to many conventional and alternative heating technologies in terms of environmental impact, further improvements are possible to achieve even lower environmental impact. Sourcing lower-emitting electricity for the heat pump operation would mitigate the impact driven by the grid mix. Furthermore, improving heat loss coefficients, particularly reducing the significant heat loss in the seasonal storage unit, could allow the system to meet consumer demand without any combustion of supplemental biomass over the winter heating period.</p>
 </section>
 <section id="supporting-information" class="level1">
 <h1>Supporting information</h1>
@@ -389,11 +442,11 @@ Figure&nbsp;7: Comparison of environmental impact depending on source of electri
 <p>There are several components described in the following sections: solar thermal collector, seasonal storage unit, and heat preparation.</p>
 <section id="solar-thermal-collector-stc" class="level3">
 <h3 class="anchored" data-anchor-id="solar-thermal-collector-stc">Solar thermal collector (STC)</h3>
-<p>The relevant data for the solar thermal collector can be found in <a href="#tbl-component-stc" class="quarto-xref">Table&nbsp;2</a>.</p>
+<p>The relevant data for the solar thermal collector can be found in <a href="#tbl-component-stc" class="quarto-xref">Table&nbsp;3</a>.</p>
 <div id="tbl-component-stc" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Sources for solar thermal collector specification">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-component-stc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2
+Table&nbsp;3
 </figcaption>
 <div aria-describedby="tbl-component-stc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -458,7 +511,7 @@ Table&nbsp;2
 </section>
 <section id="seasonal-storage-unit-ssu" class="level3">
 <h3 class="anchored" data-anchor-id="seasonal-storage-unit-ssu">Seasonal storage unit (SSU)</h3>
-<p>The relevant data for the seasonal storage unit can be found in <a href="#tbl-component-ssu" class="quarto-xref">Table&nbsp;3</a>. A picture of the floating cover can be found in <a href="#fig-floating-cover" class="quarto-xref">Figure&nbsp;8</a>.</p>
+<p>The relevant data for the seasonal storage unit can be found in <a href="#tbl-component-ssu" class="quarto-xref">Table&nbsp;4</a>. A picture of the floating cover can be found in <a href="#fig-floating-cover" class="quarto-xref">Figure&nbsp;8</a>.</p>
 <div id="fig-floating-cover" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-floating-cover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -472,7 +525,7 @@ Figure&nbsp;8: Floating cover profile. Source: Bracht community.
 <div id="tbl-component-ssu" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Sources for seasonal storage unit specification">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-component-ssu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3
+Table&nbsp;4
 </figcaption>
 <div aria-describedby="tbl-component-ssu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -582,11 +635,11 @@ Table&nbsp;3
 </section>
 <section id="sec-hp" class="level3">
 <h3 class="anchored" data-anchor-id="sec-hp">Heat preparation (HP)</h3>
-<p>The relevant data for the heat preparation unit can be found in <a href="#tbl-component-hp" class="quarto-xref">Table&nbsp;4</a>.</p>
+<p>The relevant data for the heat preparation unit can be found in <a href="#tbl-component-hp" class="quarto-xref">Table&nbsp;5</a>.</p>
 <div id="tbl-component-hp" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Sources for seasonal storage unit specification">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-component-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;4
+Table&nbsp;5
 </figcaption>
 <div aria-describedby="tbl-component-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -642,12 +695,12 @@ Table&nbsp;4
 </section>
 <section id="sec-sima" class="level2">
 <h2 class="anchored" data-anchor-id="sec-sima">SimaPro Data</h2>
-<p><a href="#tbl-sima-parameters" class="quarto-xref">Table&nbsp;5</a> and <a href="#tbl-sima-calc-parameters" class="quarto-xref">Table&nbsp;6</a> show the parameters and calculated parameters that were defined as helpers for modelling the solar thermal based district heating process in Simpapro.</p>
+<p><a href="#tbl-sima-parameters" class="quarto-xref">Table&nbsp;6</a> and <a href="#tbl-sima-calc-parameters" class="quarto-xref">Table&nbsp;7</a> show the parameters and calculated parameters that were defined as helpers for modelling the solar thermal based district heating process in Simpapro.</p>
 <p>The data for the process <em>district heat, at consumer, solar thermal, 1MW/MJ/RER U</em> is kept in an external spreadsheet <a href="https://docs.google.com/spreadsheets/d/11BHntxbclWm44ycV1JyY0AiQ9LamUJ2PbaCSZOzd-VE/edit?gid=311795711#gid=311795711">accessible here</a>.</p>
 <div id="tbl-sima-parameters" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Parameters defined in SimaPro">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-sima-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5
+Table&nbsp;6
 </figcaption>
 <div aria-describedby="tbl-sima-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -747,7 +800,7 @@ Table&nbsp;5
 <div id="tbl-sima-calc-parameters" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Calculated parameters defined in SimaPro">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-sima-calc-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6
+Table&nbsp;7
 </figcaption>
 <div aria-describedby="tbl-sima-calc-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
