@@ -173,18 +173,26 @@ In the absense of ready-to-use data, approximations based on the Swiss Federal O
 
 ![Expected production mix for winter period (6 months) for Switzerland from 2025 to 2060 (Source: Swiss Federal Office for Energy).](img/pwrg_solar_ch_winter.png){#fig-ch-winter-prod width="90%"}
 
-In the absence of readily available data, estimates derived from the Swiss Federal Office of Energy’s Energy Perspectives 2050+ report (@bfe2022energieperspektiven) and its accompanying resources (charts @bfe2022energieperspektivencharts, tables @bfe2020dataset) provide the most reliable alternative. These include projections of the expected winter electricity production mix at five-year intervals from 2025 to 2060 as depicted in @fig-ch-winter-prod.
+In the absence of readily available data, estimates derived from the Swiss Federal Office of Energy’s Energy Perspectives 2050+ report (@bfe2022energieperspektiven) and its accompanying resources (charts @bfe2022energieperspektivencharts, tables @bfe2020dataset) provide the most reliable alternative. These include projections of the expected winter electricity production mix at five-year intervals from 2025 to 2060 as depicted in @fig-ch-winter-prod. Based on this data the expected energy mix over the lifetime of the Bracht plant can be assumed as shown in @tbl-ch-projection. Since there is no projection after 2060, the 2060 numbers were used for the years 2060 to 2075.
 
-(1) Recherche
-(Fokus) Vorhersagen Energieperspektiven des BA für Energie (CH)
-Separate Datensätze machen
-(Alternative) Europa
-World Energy Outlook
-(2) Alternative: Statt Ländern die Technologien verwenden (PV nein, Wind, Wasser)
-Schneller 
-Erneuerbare zusammen gruppieren und andere (Kohle, Kernkraft und Gas)
-Mehr Interpretation notwendig (da nicht realistisch)
+::: {#tbl-ch-projection .table caption="Expected energy mix over the lifetime of the Bracht plant"}
+| Type                        | %      | MWh     |
+|-----------------------------|--------|---------|
+| Hydro (with storage pumps)  | 41.81% | 87.4    |
+| Nuclear	                    | 3.45%	 | 7.2     |
+| Net imports	                | 22.38% | 46.8    |
+| PV	                        | 20.30% | 42.4    |
+| Wind	                      | 4.59%  | 9.6     |
+| Fossil (CHP and standalone)	| 1.73%  | 3.6     | 
+| Geothermal	                | 1.42%  | 3.0     |
+| From municipal waste	      | 0.92%  | 1.9     |
+| Other	                      | 1.70%  | 3.6     |
+| Biogas	                    | 1.18%  | 2.5     |
+| Biomasse	                  | 0.26%  | 0.5     |
+| From waste water	          | 0.26%  | 0.5     |
+:::
 
+TBD: Add the relevant breakdown to Simapro instead of using ENTSO-E
 
 ## Sensitivity analysis: Loss coefficients {#sec-sensitive-loss}
 
