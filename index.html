@@ -358,11 +358,88 @@ Figure&nbsp;7: Expected production mix for winter period (6 months) for Switzerl
 </figcaption>
 </figure>
 </div>
-<p>In the absence of readily available data, estimates derived from the Swiss Federal Office of Energy’s Energy Perspectives 2050+ report (<span class="citation" data-cites="bfe2022energieperspektiven"><a href="#ref-bfe2022energieperspektiven" role="doc-biblioref">[24]</a></span>) and its accompanying resources (charts <span class="citation" data-cites="bfe2022energieperspektivencharts"><a href="#ref-bfe2022energieperspektivencharts" role="doc-biblioref">[25]</a></span>, tables <span class="citation" data-cites="bfe2020dataset"><a href="#ref-bfe2020dataset" role="doc-biblioref">[26]</a></span>) provide the most reliable alternative. These include projections of the expected winter electricity production mix at five-year intervals from 2025 to 2060 as depicted in <a href="#fig-ch-winter-prod" class="quarto-xref">Figure&nbsp;7</a>.</p>
-<ol type="1">
-<li>Recherche (Fokus) Vorhersagen Energieperspektiven des BA für Energie (CH) Separate Datensätze machen (Alternative) Europa World Energy Outlook</li>
-<li>Alternative: Statt Ländern die Technologien verwenden (PV nein, Wind, Wasser) Schneller Erneuerbare zusammen gruppieren und andere (Kohle, Kernkraft und Gas) Mehr Interpretation notwendig (da nicht realistisch)</li>
-</ol>
+<p>In the absence of readily available data, estimates derived from the Swiss Federal Office of Energy’s Energy Perspectives 2050+ report (<span class="citation" data-cites="bfe2022energieperspektiven"><a href="#ref-bfe2022energieperspektiven" role="doc-biblioref">[24]</a></span>) and its accompanying resources (charts <span class="citation" data-cites="bfe2022energieperspektivencharts"><a href="#ref-bfe2022energieperspektivencharts" role="doc-biblioref">[25]</a></span>, tables <span class="citation" data-cites="bfe2020dataset"><a href="#ref-bfe2020dataset" role="doc-biblioref">[26]</a></span>) provide the most reliable alternative. These include projections of the expected winter electricity production mix at five-year intervals from 2025 to 2060 as depicted in <a href="#fig-ch-winter-prod" class="quarto-xref">Figure&nbsp;7</a>. Based on this data the expected energy mix over the lifetime of the Bracht plant can be assumed as shown in <a href="#tbl-ch-projection" class="quarto-xref">Table&nbsp;2</a>. Since there is no projection after 2060, the 2060 numbers were used for the years 2060 to 2075.</p>
+<div id="tbl-ch-projection" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Expected energy mix over the lifetime of the Bracht plant">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-ch-projection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2
+</figcaption>
+<div aria-describedby="tbl-ch-projection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>%</th>
+<th>MWh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hydro (with storage pumps)</td>
+<td>41.81%</td>
+<td>87.4</td>
+</tr>
+<tr class="even">
+<td>Nuclear</td>
+<td>3.45%</td>
+<td>7.2</td>
+</tr>
+<tr class="odd">
+<td>Net imports</td>
+<td>22.38%</td>
+<td>46.8</td>
+</tr>
+<tr class="even">
+<td>PV</td>
+<td>20.30%</td>
+<td>42.4</td>
+</tr>
+<tr class="odd">
+<td>Wind</td>
+<td>4.59%</td>
+<td>9.6</td>
+</tr>
+<tr class="even">
+<td>Fossil (CHP and standalone)</td>
+<td>1.73%</td>
+<td>3.6</td>
+</tr>
+<tr class="odd">
+<td>Geothermal</td>
+<td>1.42%</td>
+<td>3.0</td>
+</tr>
+<tr class="even">
+<td>From municipal waste</td>
+<td>0.92%</td>
+<td>1.9</td>
+</tr>
+<tr class="odd">
+<td>Other</td>
+<td>1.70%</td>
+<td>3.6</td>
+</tr>
+<tr class="even">
+<td>Biogas</td>
+<td>1.18%</td>
+<td>2.5</td>
+</tr>
+<tr class="odd">
+<td>Biomasse</td>
+<td>0.26%</td>
+<td>0.5</td>
+</tr>
+<tr class="even">
+<td>From waste water</td>
+<td>0.26%</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>TBD: Add the relevant breakdown to Simapro instead of using ENTSO-E</p>
 </section>
 <section id="sec-sensitive-loss" class="level2">
 <h2 class="anchored" data-anchor-id="sec-sensitive-loss">Sensitivity analysis: Loss coefficients</h2>
@@ -378,11 +455,11 @@ Figure&nbsp;7: Expected production mix for winter period (6 months) for Switzerl
 <h3 class="anchored" data-anchor-id="sec-ssu-loss">Seasonal storage unit heat loss</h3>
 <p>In <span class="citation" data-cites="penttinen2021optimal"><a href="#ref-penttinen2021optimal" role="doc-biblioref">[30]</a></span>, the authors report a 26% loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model <span class="citation" data-cites="etm2025"><a href="#ref-etm2025" role="doc-biblioref">[29]</a></span> suggests 30% as a sensible default for modelling heat loss in the storage unit. Another study <span class="citation" data-cites="xiang2022comprehensive"><a href="#ref-xiang2022comprehensive" role="doc-biblioref">[31]</a></span> provides a comprehensive review and finds that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover.</p>
 <p>Given these reference numbers from literature, the 50% loss assumption that was used for the Bracht plant is on the conservative side. For the sensitivity analysis, the assumption made is that it can potentially be lowered to 30% based on two different scenarios: (A) without any changes in the setup but an understanding that the original assumptions were not accurate, and (B) by using twice the cover for the top of seasonal storage unit and therefore better insulation. The sides and the bottom of the seasonal storage unit remain unchanged.</p>
-<p>In both scenarios, a significantly higher amount of energy is available from the seasonal storage unit because of the lower heat loss as shown in <a href="#tbl-loss" class="quarto-xref">Table&nbsp;2</a>. In the original scenario, out of the 4.517 MWh produced by the solar thermal collectors, an amount of 2.259 MWh remains available from the seasonal storage unit after accounting for assumed losses. When heat losses are reduced, the available energy increases substantially to 3.162 MWh. The difference of 900 MWh is equal in size to the contribution that was expected to be supplied via biomass combustion in the default model. Therefore, the opportunity exists to lower the environmental impact of the system by removing the parts that stem from biomass. These have a significant impact as shown in <a href="#sec-results" class="quarto-xref">Section&nbsp;6</a>.</p>
+<p>In both scenarios, a significantly higher amount of energy is available from the seasonal storage unit because of the lower heat loss as shown in <a href="#tbl-loss" class="quarto-xref">Table&nbsp;3</a>. In the original scenario, out of the 4.517 MWh produced by the solar thermal collectors, an amount of 2.259 MWh remains available from the seasonal storage unit after accounting for assumed losses. When heat losses are reduced, the available energy increases substantially to 3.162 MWh. The difference of 900 MWh is equal in size to the contribution that was expected to be supplied via biomass combustion in the default model. Therefore, the opportunity exists to lower the environmental impact of the system by removing the parts that stem from biomass. These have a significant impact as shown in <a href="#sec-results" class="quarto-xref">Section&nbsp;6</a>.</p>
 <div id="tbl-loss" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="SSU heat loss">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-loss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2
+Table&nbsp;3
 </figcaption>
 <div aria-describedby="tbl-loss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -429,7 +506,7 @@ Table&nbsp;2
 </div>
 </figure>
 </div>
-<p>However, the higher availability of energy in the seasonal storage unit results in a modified heat supply curve and in heightened electrical energy requirements for the heat pump since it will be used more extensively in the system instead of the biomass boiler. An in-depth analysis of the implications would require additional modelling tools such as <span class="citation" data-cites="polysun"><a href="#ref-polysun" role="doc-biblioref">[32]</a></span>, which is out of scope for the given work. As a simplification, a rough estimate of the heightened energy requirements was carried based the factor between energy from the seasonal storage unit and energy from electricity from the original assumptions (see <a href="#tbl-loss" class="quarto-xref">Table&nbsp;2</a>): 209 MWh divided by 2.258 MWh, which returns a 9.2 % electricity requirement factor. Note that this corresponds to a COP of 11 which is indicative for a highly performant system. This was considered plausible, because the initially very high temperature in the seasonal storage unit (85 degrees °C) at begin of the heating periods means that the heat pump will not be required to bridge the temperature gap until the temperature are falling to lower levels. The rough estimate based on the electricity requirement factor as described results in a 293 MWh electricity demand for the heat pump (40 % increase).</p>
+<p>However, the higher availability of energy in the seasonal storage unit results in a modified heat supply curve and in heightened electrical energy requirements for the heat pump since it will be used more extensively in the system instead of the biomass boiler. An in-depth analysis of the implications would require additional modelling tools such as <span class="citation" data-cites="polysun"><a href="#ref-polysun" role="doc-biblioref">[32]</a></span>, which is out of scope for the given work. As a simplification, a rough estimate of the heightened energy requirements was carried based the factor between energy from the seasonal storage unit and energy from electricity from the original assumptions (see <a href="#tbl-loss" class="quarto-xref">Table&nbsp;3</a>): 209 MWh divided by 2.258 MWh, which returns a 9.2 % electricity requirement factor. Note that this corresponds to a COP of 11 which is indicative for a highly performant system. This was considered plausible, because the initially very high temperature in the seasonal storage unit (85 degrees °C) at begin of the heating periods means that the heat pump will not be required to bridge the temperature gap until the temperature are falling to lower levels. The rough estimate based on the electricity requirement factor as described results in a 293 MWh electricity demand for the heat pump (40 % increase).</p>
 <p>Both scenarios were modeled in SimaPro to learn about the implications on environmental impact. The ENTSO-E production mix was assumed. For scenario (A) with update assumptions, a 15 % reduction from 170 Pt per kWh of heat to 146 Pt per kWh of heat can be achieved. For scenario (B) with a doubled insulating cover for the seasonal storage unit, a 9 % reduction to 155<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Pt per kWh of heat can be achieved. This confirms the environmental impact savings potential of potential operating conditions improvements.</p>
 </section>
 </section>
@@ -451,11 +528,11 @@ Table&nbsp;2
 <p>There are several components described in the following sections: solar thermal collector, seasonal storage unit, and heat preparation.</p>
 <section id="solar-thermal-collector-stc" class="level3">
 <h3 class="anchored" data-anchor-id="solar-thermal-collector-stc">Solar thermal collector (STC)</h3>
-<p>The relevant data for the solar thermal collector can be found in <a href="#tbl-component-stc" class="quarto-xref">Table&nbsp;3</a>.</p>
+<p>The relevant data for the solar thermal collector can be found in <a href="#tbl-component-stc" class="quarto-xref">Table&nbsp;4</a>.</p>
 <div id="tbl-component-stc" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Sources for solar thermal collector specification">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-component-stc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3
+Table&nbsp;4
 </figcaption>
 <div aria-describedby="tbl-component-stc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -520,7 +597,7 @@ Table&nbsp;3
 </section>
 <section id="seasonal-storage-unit-ssu" class="level3">
 <h3 class="anchored" data-anchor-id="seasonal-storage-unit-ssu">Seasonal storage unit (SSU)</h3>
-<p>The relevant data for the seasonal storage unit can be found in <a href="#tbl-component-ssu" class="quarto-xref">Table&nbsp;4</a>. A picture of the floating cover can be found in <a href="#fig-floating-cover" class="quarto-xref">Figure&nbsp;8</a>.</p>
+<p>The relevant data for the seasonal storage unit can be found in <a href="#tbl-component-ssu" class="quarto-xref">Table&nbsp;5</a>. A picture of the floating cover can be found in <a href="#fig-floating-cover" class="quarto-xref">Figure&nbsp;8</a>.</p>
 <div id="fig-floating-cover" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-floating-cover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -534,7 +611,7 @@ Figure&nbsp;8: Floating cover profile. Source: Bracht community.
 <div id="tbl-component-ssu" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Sources for seasonal storage unit specification">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-component-ssu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;4
+Table&nbsp;5
 </figcaption>
 <div aria-describedby="tbl-component-ssu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -644,11 +721,11 @@ Table&nbsp;4
 </section>
 <section id="sec-hp" class="level3">
 <h3 class="anchored" data-anchor-id="sec-hp">Heat preparation (HP)</h3>
-<p>The relevant data for the heat preparation unit can be found in <a href="#tbl-component-hp" class="quarto-xref">Table&nbsp;5</a>.</p>
+<p>The relevant data for the heat preparation unit can be found in <a href="#tbl-component-hp" class="quarto-xref">Table&nbsp;6</a>.</p>
 <div id="tbl-component-hp" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Sources for seasonal storage unit specification">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-component-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5
+Table&nbsp;6
 </figcaption>
 <div aria-describedby="tbl-component-hp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -704,12 +781,12 @@ Table&nbsp;5
 </section>
 <section id="sec-sima" class="level2">
 <h2 class="anchored" data-anchor-id="sec-sima">SimaPro Data</h2>
-<p><a href="#tbl-sima-parameters" class="quarto-xref">Table&nbsp;6</a> and <a href="#tbl-sima-calc-parameters" class="quarto-xref">Table&nbsp;7</a> show the parameters and calculated parameters that were defined as helpers for modelling the solar thermal based district heating process in Simpapro.</p>
+<p><a href="#tbl-sima-parameters" class="quarto-xref">Table&nbsp;7</a> and <a href="#tbl-sima-calc-parameters" class="quarto-xref">Table&nbsp;8</a> show the parameters and calculated parameters that were defined as helpers for modelling the solar thermal based district heating process in Simpapro.</p>
 <p>The data for the process <em>district heat, at consumer, solar thermal, 1MW/MJ/RER U</em> is kept in an external spreadsheet <a href="https://docs.google.com/spreadsheets/d/11BHntxbclWm44ycV1JyY0AiQ9LamUJ2PbaCSZOzd-VE/edit?gid=311795711#gid=311795711">accessible here</a>.</p>
 <div id="tbl-sima-parameters" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Parameters defined in SimaPro">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-sima-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6
+Table&nbsp;7
 </figcaption>
 <div aria-describedby="tbl-sima-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -809,7 +886,7 @@ Table&nbsp;6
 <div id="tbl-sima-calc-parameters" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Calculated parameters defined in SimaPro">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-sima-calc-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7
+Table&nbsp;8
 </figcaption>
 <div aria-describedby="tbl-sima-calc-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
