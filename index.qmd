@@ -169,28 +169,28 @@ To grasp an understanding of the effect of winter conditions on environmental im
 
 While attempting to assess the impact of future grid decarbonization, it became apparent that no ready-to-use data set is currently available that could be directly applied to the analysis. Such data would be highly relevant for a wide range of assessments, including the one presented in this study. This gap highlights the need for further research and data development to support robust evaluations of future electricity grid scenarios. 
 
-![Expected production mix for winter period (6 months) for Switzerland from 2025 to 2060 (Source: Swiss Federal Office for Energy).](img/pwrg_solar_ch_winter.png){#fig-ch-winter-prod width="90%"}
+![Expected production mix for winter period (6 months) in Switzerland from 2025 to 2060 (Source: Swiss Federal Office for Energy).](img/pwrg_solar_ch_winter.png){#fig-ch-winter-prod width="80%"}
 
-In the absence of readily available data, estimates derived from the Swiss Federal Office of Energy’s Energy Perspectives 2050+ report (@bfe2022energieperspektiven) and its accompanying resources (charts @bfe2022energieperspektivencharts, tables @bfe2020dataset) provide the most reliable alternative. These sources provide projections of the expected winter electricity production mix at five-year intervals from 2025 to 2060, as illustrated in @fig-ch-winter-prod. Based on this data, the anticipated energy mix over the operational lifetime of the Bracht plant is summarized in @tbl-ch-projection. Since no projections are available beyond 2060, the values from 2060 were assumed to remain constant through 2075.
+In the absence of readily available data, estimates derived from the Swiss Federal Office of Energy’s Energy Perspectives 2050+ report (@bfe2022energieperspektiven) and its accompanying resources (charts @bfe2022energieperspektivencharts, tables @bfe2020dataset) provide the most reliable alternative. These sources provide projections of the expected winter electricity production mix at five-year intervals from 2025 to 2060, as illustrated in @fig-ch-winter-prod. Based on this data, the anticipated energy mix over the operational lifetime of the Bracht plant was estimated as summarized in @tbl-ch-projection. Since no projections are available beyond 2060, the values from 2060 were assumed to remain constant through 2075.
 
 ::: {#tbl-ch-projection .table caption="Expected energy mix over the lifetime of the Bracht plant"}
-| Type                        | %      | MWh     |
-|-----------------------------|--------|---------|
-| Hydro (with storage pumps)  | 41.81% | 87.4    |
-| Nuclear	                    | 3.45%	 | 7.2     |
-| Net imports	                | 22.38% | 46.8    |
-| PV	                        | 20.30% | 42.4    |
-| Wind	                      | 4.59%  | 9.6     |
-| Fossil (CHP and standalone)	| 1.73%  | 3.6     | 
-| Geothermal	                | 1.42%  | 3.0     |
-| From municipal waste	      | 0.92%  | 1.9     |
-| Other	                      | 1.70%  | 3.6     |
-| Biogas	                    | 1.18%  | 2.5     |
-| Biomasse	                  | 0.26%  | 0.5     |
-| From waste water	          | 0.26%  | 0.5     |
+| Type                        | %       | MWh     |
+|-----------------------------|---------|---------|
+| Hydro (with storage pumps)  | 41.81 % | 87.4    |
+| Net imports	                | 22.38 % | 46.8    |
+| PV	                        | 20.30 % | 42.4    |
+| Wind	                      | 4.59 %  | 9.6     |
+| Nuclear	                    | 3.45 %	| 7.2     |
+| Fossil (CHP and standalone)	| 1.73 %  | 3.6     | 
+| Other	                      | 1.70 %  | 3.6     |
+| Geothermal	                | 1.42 %  | 3.0     |
+| From municipal waste	      | 0.92 %  | 1.9     |
+| Biogas	                    | 1.18 %  | 2.5     |
+| Biomasse	                  | 0.26 %  | 0.5     |
+| From waste water	          | 0.26 %  | 0.5     |
 :::
 
-TBD: Add the relevant breakdown to Simapro instead of using ENTSO-E
+TBD: Add the relevant breakdown to Simapro instead of using ENTSO-E and put the result here. IPCC?
 
 ## Sensitivity analysis: Loss coefficients {#sec-sensitive-loss}
 
