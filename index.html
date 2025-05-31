@@ -152,17 +152,8 @@ window.Quarto = {
 <section id="sec-goal" class="level1">
 <h1>Goal and scope</h1>
 <p>The goal and scope definition is a fundamental step in any life cycle Iimpact assessment (LCIA), as it provides a clear description of the product system under study, its system boundaries, and the definition of a functional unit that reflects the output of the system in a consistent and measurable way.</p>
-<div id="fig-bracht-overview" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-bracht-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/bracht_overview.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bracht-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: System overview for the Bracht community district heating network. (Source: University of Kassel)
-</figcaption>
-</figure>
-</div>
-<p>For the present LCIA, the specific goals are to address the research questions outlined in Section <a href="#sec-metho" class="quarto-xref">Section&nbsp;3</a>. The scope of the assessment encompasses a district heating project initiated and operated by a cooperative composed of future household consumers and the local municipal council. As illustrated in Figure <a href="#fig-bracht-overview" class="quarto-xref">Figure&nbsp;1</a>, the system includes the following key components:</p>
+<p>![System overview for the Bracht community district heating network.(img/bracht_overview.png){#fig-bracht-overview width=“80%”}</p>
+<p>For the present LCIA, the specific goals are to address the research questions outlined in Section <a href="#sec-metho" class="quarto-xref">Section&nbsp;3</a>. The scope of the assessment encompasses a district heating project initiated and operated by a cooperative composed of future household consumers and the local municipal council. As illustrated in Figure <strong>?@fig-bracht-overview</strong>, the system includes the following key components:</p>
 <ul>
 <li>solar thermal collector (STC) field,</li>
 <li>seasonal storage unit (SSU),</li>
@@ -173,14 +164,14 @@ Figure&nbsp;1: System overview for the Bracht community district heating network
 <li>and receiver units installed in each participating household.</li>
 </ul>
 <p>The lifetime of the district heating system is assumed to be 50 years. There are at least 180 consumer households expected, which is roughly 60% of all households that exist in the local community. The plant is currently under construction and on track to be operational for the 2025 winter heating period.</p>
-<p>The system diagram shown in <a href="#fig-system-diagram" class="quarto-xref">Figure&nbsp;2</a> describes the product system and its boundaries. The functional unit is defined to be 1 MegaJoule (MJ) of thermal energy provided to the consumer directly at the consumer site during the heating period. Using MJ instead of kilowatt-hours of thermal energy (kWh<sub>th</sub>) ensures consistency with the UVEK processes for other forms of district heating in SimaPro that the comparison will be performed against.</p>
+<p>The system diagram shown in <a href="#fig-system-diagram" class="quarto-xref">Figure&nbsp;1</a> describes the product system and its boundaries. The functional unit is defined to be 1 MegaJoule (MJ) of thermal energy provided to the consumer directly at the consumer site during the heating period. Using MJ instead of kilowatt-hours of thermal energy (kWh<sub>th</sub>) ensures consistency with the UVEK processes for other forms of district heating in SimaPro that the comparison will be performed against.</p>
 <div id="fig-system-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-border="true">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-system-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/system_diagram.png" class="img-fluid figure-img" style="width:80.0%" data-fig-border="true">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-system-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: System diagram for the Bracht community district heating network.
+Figure&nbsp;1: System diagram for the Bracht community district heating network.
 </figcaption>
 </figure>
 </div>
@@ -267,7 +258,7 @@ Table&nbsp;1
 <h2 class="anchored" data-anchor-id="sec-loss-coefficients">Electrical power requirements and loss coefficient assumptions</h2>
 <p>Performance data from <span class="citation" data-cites="tuev2021"><a href="#ref-tuev2021" role="doc-biblioref">[21]</a></span> provides several estimates of the annual output for the solar thermal collectors used in this project. These estimates vary by geographic location and desired output temperature. The most geographically relevant data point is for Würzburg, with an output of 5.283 kWh per collector per year at a target output temperature of 75 degrees Celsius (°C). Given a total of 855 collectors, the estimated gross thermal energy production is approximately 4.517 MWh per year.</p>
 <p>According to the project documentation <span class="citation" data-cites="bracht2025faq"><a href="#ref-bracht2025faq" role="doc-biblioref">[22]</a></span>, 2.700 MWh per year are expected to reach end-user households. This implies a total system loss of approximately 40%, accounting for thermal losses in the storage unit and distribution piping.</p>
-<p>The energy distribution for heating supply for the Bracht plant is reported in <span class="citation" data-cites="epp2024high"><a href="#ref-epp2024high" role="doc-biblioref"><strong>epp2024high?</strong></a></span> as follows:</p>
+<p>The energy distribution for heating supply for the Bracht plant is reported in <span class="citation" data-cites="epp2024high"><a href="#ref-epp2024high" role="doc-biblioref">[23]</a></span> as follows:</p>
 <ul>
 <li>67 % from stored solar thermal energy (approximately 2.258 MWh),</li>
 <li>26 % from biomass sources (approximately 904 MWh), and</li>
@@ -285,36 +276,36 @@ Table&nbsp;1
 <img src="img/pwrg_solar_network_bar.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-network-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Relative environmental impact for components of Bracht community district heating system (Ecological Scarcity 2021, v1.04, UVEK LCI weighting)
+Figure&nbsp;2: Relative environmental impact for components of Bracht community district heating system (Ecological Scarcity 2021, v1.04, UVEK LCI weighting)
 </figcaption>
 </figure>
 </div>
-<p>To address the first research question regarding the environmental impact of the additional electricity and the supplemental biomass burnt in the wood boiler, the relative influence of the individual components of the solar thermal district heating system on overall environmental impact was evaluated using the Ecological Scarcity 2021 (v1.04) method. The assessment was conducted at the single-score level, applying the UVEK LCI weighting set to define the relative importance of the different damage categories. The results are presented in <a href="#fig-network-bar" class="quarto-xref">Figure&nbsp;3</a>. They show that the biomass (27.3 %) and the electricity (35.8 %) together have a very large impact. They are responsible for nearly two-thirds of the environmental impact of the overall system. The solar thermal based part of the system with solar thermal field, seasonal storage, and heat pump is responsible for less than 30 % of the overall environmental impact, although they supply two-thirds of the total energy production (see <a href="#fig-bracht-overview" class="quarto-xref">Figure&nbsp;1</a>). Only one-third of the energy delivered to end consumers originates from the biomass and electricity.</p>
-<p>For a more detailed view of the environmental impact by individual damage categories, <a href="#fig-ef-network-bar" class="quarto-xref">Figure&nbsp;4</a> presents the drilled-down individual results for the most relevant impact categories <em>Climate change</em>, <em>Particulate matter</em>, <em>Eutrophication (marine)</em>, <em>Land use</em>, <em>Resource use (minerals and metals)</em>, and <em>Resource use (fossils)</em>. The figure shows that biomass combustion is the dominant contributor to Land use, Particulate matter, and Marine eutrophication. In contrast, electricity use is the primary driver of impacts in <em>Fossil resource use</em> and <em>Climate change</em>. The environmental impact in the <em>Minerals and metals resource use</em> category is most significantly influenced by heat preparation and the solar thermal collectors. The seasonal storage unit contributes notably to the <em>Climate change</em> category.</p>
+<p>To address the first research question regarding the environmental impact of the additional electricity and the supplemental biomass burnt in the wood boiler, the relative influence of the individual components of the solar thermal district heating system on overall environmental impact was evaluated using the Ecological Scarcity 2021 (v1.04) method. The assessment was conducted at the single-score level, applying the UVEK LCI weighting set to define the relative importance of the different damage categories. The results are presented in <a href="#fig-network-bar" class="quarto-xref">Figure&nbsp;2</a>. They show that the biomass (27.3 %) and the electricity (35.8 %) together have a very large impact. They are responsible for nearly two-thirds of the environmental impact of the overall system. The solar thermal based part of the system with solar thermal field, seasonal storage, and heat pump is responsible for less than 30 % of the overall environmental impact, although they supply two-thirds of the total energy production (see <strong>?@fig-bracht-overview</strong>). Only one-third of the energy delivered to end consumers originates from the biomass and electricity.</p>
+<p>For a more detailed view of the environmental impact by individual damage categories, <a href="#fig-ef-network-bar" class="quarto-xref">Figure&nbsp;3</a> presents the drilled-down individual results for the most relevant impact categories <em>Climate change</em>, <em>Particulate matter</em>, <em>Eutrophication (marine)</em>, <em>Land use</em>, <em>Resource use (minerals and metals)</em>, and <em>Resource use (fossils)</em>. The figure shows that biomass combustion is the dominant contributor to Land use, Particulate matter, and Marine eutrophication. In contrast, electricity use is the primary driver of impacts in <em>Fossil resource use</em> and <em>Climate change</em>. The environmental impact in the <em>Minerals and metals resource use</em> category is most significantly influenced by heat preparation and the solar thermal collectors. The seasonal storage unit contributes notably to the <em>Climate change</em> category.</p>
 <div id="fig-ef-network-bar" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ef-network-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/pwrg_solar_ef_network_bar_faceted.png" class="img-fluid figure-img" style="width:90.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ef-network-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Relative environmental impact of Bracht community district heating network system components (Environmental Footprint Method). TBD: Heat preparation -&gt; heat pump
+Figure&nbsp;3: Relative environmental impact of Bracht community district heating network system components (Environmental Footprint Method). TBD: Heat preparation -&gt; heat pump
 </figcaption>
 </figure>
 </div>
 <p>In summary, electricity and biomass used to operate and supplement the system are the primary contributors to the overall environmental impact. Electricity consumption is unavoidable due to the operation of the heat pump. However, its impact can potentially be mitigated by sourcing electricity from renewable sources instead of the ENTSO-E production mix (as described in <a href="#sec-lci-overview" class="quarto-xref">Section&nbsp;5</a>), an option explored in more detail in <a href="#sec-sensitive-elec" class="quarto-xref">Section&nbsp;7.2</a>. Strategies to reduce biomass consumption by improving thermal efficiency, such as lowering heat loss coefficients, are examined in <a href="#sec-sensitive-loss" class="quarto-xref">Section&nbsp;7.3</a>.</p>
-<p>To address the second research question, the environmental impact of heat generated by the solar thermal collector based district heating system with seasonal heat storage was compared to that of other heating technologies. The results, presented in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a>, show a comparison of the environmental impacts of STC-based district heating with other district heating (DH) options commonly available in small communities, such as systems powered by wood chips (biomass) or geothermal heat pumps. Additionally, the analysis includes consumer-side heating installations (CI), such as oil and gas boilers. The assessment was conducted using the Ecological Scarcity 2021 (v1.04) method at the single-score level, applying the UVEK LCI weighting set. Results are expressed in environmental impact points (Pt) per kilowatt-hour (kWh) of heat delivered.</p>
+<p>To address the second research question, the environmental impact of heat generated by the solar thermal collector based district heating system with seasonal heat storage was compared to that of other heating technologies. The results, presented in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;4</a>, show a comparison of the environmental impacts of STC-based district heating with other district heating (DH) options commonly available in small communities, such as systems powered by wood chips (biomass) or geothermal heat pumps. Additionally, the analysis includes consumer-side heating installations (CI), such as oil and gas boilers. The assessment was conducted using the Ecological Scarcity 2021 (v1.04) method at the single-score level, applying the UVEK LCI weighting set. Results are expressed in environmental impact points (Pt) per kilowatt-hour (kWh) of heat delivered.</p>
 <div id="fig-es-single-score" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-es-single-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/pwrg_solar_es_single_score.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-es-single-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Comparison of environmental impact of Bracht community district heating network to other energy sources for district heating such as wood chips and heat pump, and to consumer installations such as gas and oil burners (Ecological Scarcity 2021 v1.04, UVEK LCI weighting). Results in ascending order: district heating based on wood chips 165 Pt per kWh, as the energy source, Bracht solar thermal based district heating 170 Pt per kWh, district heating based on geothermal heat pump 225 Pt per kWh, gas based consumer installation 281 Pt per kWh, oil based consumer installation 430 Pt per kWh.
+Figure&nbsp;4: Comparison of environmental impact of Bracht community district heating network to other energy sources for district heating such as wood chips and heat pump, and to consumer installations such as gas and oil burners (Ecological Scarcity 2021 v1.04, UVEK LCI weighting). Results in ascending order: district heating based on wood chips 165 Pt per kWh, as the energy source, Bracht solar thermal based district heating 170 Pt per kWh, district heating based on geothermal heat pump 225 Pt per kWh, gas based consumer installation 281 Pt per kWh, oil based consumer installation 430 Pt per kWh.
 </figcaption>
 </figure>
 </div>
-<p>The result is that the heat produced by the Bracht plant with 170 Pt per kWh of heat shows the second lowest environmental impact compared to the other heating technologies. The largest contributor is the <em>Global warming</em> category, dominantly caused by the electricity required (ENTSO-E production mix as discussed in <a href="#sec-lci-overview" class="quarto-xref">Section&nbsp;5</a>) and to a lesser extent by the seasonal storage unit and the solar thermal collectors (cf. <a href="#fig-ef-network-bar" class="quarto-xref">Figure&nbsp;4</a>).</p>
-<p>The results indicate that heat produced by the Bracht plant, with an environmental impact of approximately 170 Pt per kilowatt-hour, exhibits the second lowest impact among the heating technologies assessed. The dominant contributor to this impact is the <em>Global warming</em> category, primarily driven by electricity consumption, based on the ENTSO-E production mix as detailed in <a href="#sec-lci-overview" class="quarto-xref">Section&nbsp;5</a>, and to a lesser extent by the seasonal storage unit and the solar thermal collectors (see <a href="#fig-ef-network-bar" class="quarto-xref">Figure&nbsp;4</a>).</p>
+<p>The result is that the heat produced by the Bracht plant with 170 Pt per kWh of heat shows the second lowest environmental impact compared to the other heating technologies. The largest contributor is the <em>Global warming</em> category, dominantly caused by the electricity required (ENTSO-E production mix as discussed in <a href="#sec-lci-overview" class="quarto-xref">Section&nbsp;5</a>) and to a lesser extent by the seasonal storage unit and the solar thermal collectors (cf. <a href="#fig-ef-network-bar" class="quarto-xref">Figure&nbsp;3</a>).</p>
+<p>The results indicate that heat produced by the Bracht plant, with an environmental impact of approximately 170 Pt per kilowatt-hour, exhibits the second lowest impact among the heating technologies assessed. The dominant contributor to this impact is the <em>Global warming</em> category, primarily driven by electricity consumption, based on the ENTSO-E production mix as detailed in <a href="#sec-lci-overview" class="quarto-xref">Section&nbsp;5</a>, and to a lesser extent by the seasonal storage unit and the solar thermal collectors (see <a href="#fig-ef-network-bar" class="quarto-xref">Figure&nbsp;3</a>).</p>
 <p>The lowest environmental impact with 165 Pt per kWh of heat is returned for the district heating system based on wood chips as the energy source, even with the impact on main air pollutants and particulate matter (PM) having a significant impact on the overall results for this setup. The district heating system based on a geothermal heat pump as the energy source has the third lowest impact with 225 Pt per kWh of heat, to the largest extent from impact on radioactive waste to deposit. Gas and oil based consumer installations fare significantly worse with 281 Pt and 430 Pt per kWh of heat, dominantly from impact on climate change.</p>
 <div id="fig-ef-midpoints" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -322,44 +313,44 @@ Figure&nbsp;5: Comparison of environmental impact of Bracht community district h
 <img src="img/pwrg_solar_ef_midpoints_faceted.png" class="img-fluid figure-img" style="width:90.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ef-midpoints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Damage assessment using the Environmental Footprint Method, visualized as relative environmental impacts in comparison.
+Figure&nbsp;5: Damage assessment using the Environmental Footprint Method, visualized as relative environmental impacts in comparison.
 </figcaption>
 </figure>
 </div>
-<p>As before, <a href="#fig-ef-midpoints" class="quarto-xref">Figure&nbsp;6</a> presents the individual results for the most relevant damage categories, comparing them relative to the highest value in each category, which is shown as the longest bar representing 100% relative impact. This analysis confirms the findings from <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a>, clearly demonstrating that oil and gas boilers have extremely high impacts in the <em>Climate change</em> category which is equivalent to Global warming in the Ecological Scarcity method with relative impacts of 100% and 70%, respectively. Additionally, oil and gas boilers exhibit the highest fossil resource use, at 100% and 80%. A clear trade-off exists because each heating technology performs worst in different impact categories. For example, the district heating network using wood chips shows lower climate change impacts but the highest relative impacts in <em>Marine eutrophication</em>, <em>Land use</em>, and <em>Particulate matter</em> (PM). While PM impact was visible in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a>, <em>Marine eutrophication</em> and <em>Land use</em> impacts were not significant in the single score results. Similarly, solar thermal and geothermal-based district heating systems have the highest relative impacts in Minerals and metals resource use, at 100% and 83%, respectively. These trade-offs imply that selecting a heating technology depends on which environmental impacts are prioritized for a given use case. This highlights the need to weigh and balance different categories manually, or to rely on a single score method if applicable.</p>
+<p>As before, <a href="#fig-ef-midpoints" class="quarto-xref">Figure&nbsp;5</a> presents the individual results for the most relevant damage categories, comparing them relative to the highest value in each category, which is shown as the longest bar representing 100% relative impact. This analysis confirms the findings from <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;4</a>, clearly demonstrating that oil and gas boilers have extremely high impacts in the <em>Climate change</em> category which is equivalent to Global warming in the Ecological Scarcity method with relative impacts of 100% and 70%, respectively. Additionally, oil and gas boilers exhibit the highest fossil resource use, at 100% and 80%. A clear trade-off exists because each heating technology performs worst in different impact categories. For example, the district heating network using wood chips shows lower climate change impacts but the highest relative impacts in <em>Marine eutrophication</em>, <em>Land use</em>, and <em>Particulate matter</em> (PM). While PM impact was visible in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;4</a>, <em>Marine eutrophication</em> and <em>Land use</em> impacts were not significant in the single score results. Similarly, solar thermal and geothermal-based district heating systems have the highest relative impacts in Minerals and metals resource use, at 100% and 83%, respectively. These trade-offs imply that selecting a heating technology depends on which environmental impacts are prioritized for a given use case. This highlights the need to weigh and balance different categories manually, or to rely on a single score method if applicable.</p>
 </section>
 <section id="sec-inter" class="level1">
 <h1>Interpretation and discussion</h1>
 <p>This chapter discusses the results introduced in <a href="#sec-results" class="quarto-xref">Section&nbsp;6</a>. They revealed that the district heating system based on solar thermal energy and seasonal storage compares favorably to other means of heating. However, in the given modelling, with limitations as documented in <a href="#sec-model-limitation" class="quarto-xref">Section&nbsp;7.1</a>, it exhibits higher environmental impact compared to the district heating system based on wood chips as the energy sources. The electricity and the supplemental biomass required were found to be the two top single contributors to the overall results. To understand the saving potential from using lower-emitting (see <a href="#sec-sensitive-elec" class="quarto-xref">Section&nbsp;7.2</a>) or less energy resources (see third research question and <a href="#sec-sensitive-loss" class="quarto-xref">Section&nbsp;7.3</a>), sensitivity analyses for source of electricity and loss coefficients for the heat loss in the seasonal storage unit and the transport pipes were performed.</p>
 <section id="sec-model-limitation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-model-limitation">Modelling limitations</h2>
-<p>Data availability was generally satisfactory with one notable exception for the modelling of the heat pumps used in the system (see <a href="#sec-hp" class="quarto-xref">Section&nbsp;9.1.3</a> for specifications). There are two heat pumps with 630 kW max electrical input power each used in the system, but in the UVEK data, the largest sized heat pump available has a maximum of 50 kW power. The best possible assumption in this situation was that the two large heat pump have the same impact as 25 units of the 50 kW heat pump, but this is likely leading an overestimation of the resource use for minerals and metals. This is acceptable since with 6.1 %, the heat preparation system which includes the heat pump showed only minor impact on the overall results (see <a href="#fig-network-bar" class="quarto-xref">Figure&nbsp;3</a>).</p>
-<p>The UVEK data for the other energy sources for district heating (wood chips, heat pump) used an 11 % assumption for transport pipe heat loss, which means that the solar thermal data with a 20% assumption as mentioned in <a href="#sec-loss-coefficients" class="quarto-xref">Section&nbsp;5.2</a> was disadvantaged in the comparison in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a>. The effect of these assumptions on the results will be investigated in <a href="#sec-sensitive-loss" class="quarto-xref">Section&nbsp;7.3</a>.</p>
-<p>Worth mentioning is that the UVEK data for the transport system district heat has a lifetime assumption of 30 years whereas the Bracht setup assumes 50 years. However, this is acceptable since the heat transport system showed only minor impact of 6.6 % on the overall results (see <a href="#fig-network-bar" class="quarto-xref">Figure&nbsp;3</a>).</p>
+<p>Data availability was generally satisfactory with one notable exception for the modelling of the heat pumps used in the system (see <a href="#sec-hp" class="quarto-xref">Section&nbsp;9.1.3</a> for specifications). There are two heat pumps with 630 kW max electrical input power each used in the system, but in the UVEK data, the largest sized heat pump available has a maximum of 50 kW power. The best possible assumption in this situation was that the two large heat pump have the same impact as 25 units of the 50 kW heat pump, but this is likely leading an overestimation of the resource use for minerals and metals. This is acceptable since with 6.1 %, the heat preparation system which includes the heat pump showed only minor impact on the overall results (see <a href="#fig-network-bar" class="quarto-xref">Figure&nbsp;2</a>).</p>
+<p>The UVEK data for the other energy sources for district heating (wood chips, heat pump) used an 11 % assumption for transport pipe heat loss, which means that the solar thermal data with a 20% assumption as mentioned in <a href="#sec-loss-coefficients" class="quarto-xref">Section&nbsp;5.2</a> was disadvantaged in the comparison in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;4</a>. The effect of these assumptions on the results will be investigated in <a href="#sec-sensitive-loss" class="quarto-xref">Section&nbsp;7.3</a>.</p>
+<p>Worth mentioning is that the UVEK data for the transport system district heat has a lifetime assumption of 30 years whereas the Bracht setup assumes 50 years. However, this is acceptable since the heat transport system showed only minor impact of 6.6 % on the overall results (see <a href="#fig-network-bar" class="quarto-xref">Figure&nbsp;2</a>).</p>
 <p>There was a problem with the weights for the damage category <em>Water resources, net balance</em> in the UVEK LCI weighting set that required excluding this category from the analysis.</p>
-<p>System deconstruction was modeled for the major infrastructure components, specifically the solar thermal collector field and the seasonal storage unit. The model includes the disposal of plastic materials used for sealing and insulation in the seasonal storage unit, assuming treatment via municipal waste incineration. For the remaining system components, only the deconstruction processes were included in the model. Final disposal or material recovery for these components was not considered within the scope of this analysis (cf.&nbsp;system diagram in <a href="#fig-system-diagram" class="quarto-xref">Figure&nbsp;2</a>).</p>
+<p>System deconstruction was modeled for the major infrastructure components, specifically the solar thermal collector field and the seasonal storage unit. The model includes the disposal of plastic materials used for sealing and insulation in the seasonal storage unit, assuming treatment via municipal waste incineration. For the remaining system components, only the deconstruction processes were included in the model. Final disposal or material recovery for these components was not considered within the scope of this analysis (cf.&nbsp;system diagram in <a href="#fig-system-diagram" class="quarto-xref">Figure&nbsp;1</a>).</p>
 </section>
 <section id="sec-sensitive-elec" class="level2">
 <h2 class="anchored" data-anchor-id="sec-sensitive-elec">Sensitivity analysis: Source of electricity</h2>
-<p>The results as presented in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;5</a> indicate that the dominant environmental impact arises from the electricity demand of the system, which originates from the heat pump. In the default model, the electricity mix was modeled based on the ENTSO-E production mix <span class="citation" data-cites="FOEN2025"><a href="#ref-FOEN2025" role="doc-biblioref">[13]</a></span>. This includes a built-in assumption that the electricity production mix will remain constant over the lifetime of the plant. In this section, the effects of the default choice for the modelling as well as potentially achievable savings by using lower-emitting electricity are assessed.</p>
+<p>The results as presented in <a href="#fig-es-single-score" class="quarto-xref">Figure&nbsp;4</a> indicate that the dominant environmental impact arises from the electricity demand of the system, which originates from the heat pump. In the default model, the electricity mix was modeled based on the ENTSO-E production mix <span class="citation" data-cites="FOEN2025"><a href="#ref-FOEN2025" role="doc-biblioref">[13]</a></span>. This includes a built-in assumption that the electricity production mix will remain constant over the lifetime of the plant. In this section, the effects of the default choice for the modelling as well as potentially achievable savings by using lower-emitting electricity are assessed.</p>
 <p>There are two specific aspects of the given use case that need to be considered:</p>
 <ul>
 <li>Electricity consumption primarily occurs during the winter months, when electricity production conditions differ significantly from those in the summer months (e.g., reduced output of photovoltaic systems).</li>
 <li>The plant is assumed to have a lifetime of 50 years, which means it is expected to be decommissioned around 2075. Given the European Union’s commitment to achieving net-zero greenhouse gas emissions by 2050, significant changes in the environmental impact of electric energy can be anticipated over the plant’s operational period.</li>
 </ul>
 <!--To grasp an understanding of the effect of winter conditions on environmental impact of the grid mix, the relevant UVEK-supplied data for operation of storage pumps for hydro plants in winter in several European countries based on energy production technology shares originating from the ENTSO-E Transparency Platform @entsoe_transparency was analysed. Note that these data sets are not directly applicable since the use case is different, but can be used to provide first insights into environmental impact of winter electricity production mix. The relevant data for Germany and Switzerland was used for the analysis. The results show an improvement from 170 Pt per kWh of heat when assuming the ENTSO-E production mix to 166 Pt per kWh of heat for Germany and 145 Pt per kWh of heat for Switzerland based on analysis using the Ecological Scarcity 2021 (v1.04) method. While the exact numbers are not representative, the main insight gathered is that producing winter energy under equal or lower environmental impact than the ENTSO-E production mix is generally feasible in Germany and Switzerland.-->
-<p>While attempting to assess the impact of future grid decarbonization, it became apparent that no readily available dataset exists with projections about the future energy grid in Europe that could be directly applied for the analysis. Consequently, the remainder of this section focuses on the planned future for the Swiss energy grid. The most reliable sources of information are provided by the Swiss Federal Office of Energy’s Energy Perspectives 2050+ report <span class="citation" data-cites="bfe2022energieperspektiven"><a href="#ref-bfe2022energieperspektiven" role="doc-biblioref">[23]</a></span> and its accompanying resources including charts <span class="citation" data-cites="bfe2022energieperspektivencharts"><a href="#ref-bfe2022energieperspektivencharts" role="doc-biblioref">[24]</a></span> and data tables <span class="citation" data-cites="bfe2020dataset"><a href="#ref-bfe2020dataset" role="doc-biblioref">[25]</a></span>). Particularly relevant are the projections for the expected winter electricity production mix at five-year intervals from 2025 to 2060, as depicted in <a href="#fig-ch-winter-prod" class="quarto-xref">Figure&nbsp;7</a>.</p>
+<p>While attempting to assess the impact of future grid decarbonization, it became apparent that no readily available dataset exists with projections about the future energy grid in Europe that could be directly applied for the analysis. Consequently, the remainder of this section focuses on the planned future for the Swiss energy grid. The most reliable sources of information are provided by the Swiss Federal Office of Energy’s Energy Perspectives 2050+ report <span class="citation" data-cites="bfe2022energieperspektiven"><a href="#ref-bfe2022energieperspektiven" role="doc-biblioref">[24]</a></span> and its accompanying resources including charts <span class="citation" data-cites="bfe2022energieperspektivencharts"><a href="#ref-bfe2022energieperspektivencharts" role="doc-biblioref">[25]</a></span> and data tables <span class="citation" data-cites="bfe2020dataset"><a href="#ref-bfe2020dataset" role="doc-biblioref">[26]</a></span>). Particularly relevant are the projections for the expected winter electricity production mix at five-year intervals from 2025 to 2060, as depicted in <a href="#fig-ch-winter-prod" class="quarto-xref">Figure&nbsp;6</a>.</p>
 <div id="fig-ch-winter-prod" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch-winter-prod-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/pwrg_solar_ch_winter.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch-winter-prod-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Expected production mix for winter period (6 months) in Switzerland from 2025 to 2060 (Source: Swiss Federal Office for Energy).
+Figure&nbsp;6: Expected production mix for winter period (6 months) in Switzerland from 2025 to 2060 (Source: Swiss Federal Office for Energy).
 </figcaption>
 </figure>
 </div>
-<p>Based on this data, the anticipated energy mix over the operational lifetime of the Bracht plant was calculated as summarized in <a href="#tbl-ch-projection" class="quarto-xref">Table&nbsp;2</a>. Since no projections are available beyond 2060, the values from 2060 were assumed to remain constant through 2075. Detailed information about the origin and type for Switzerland’s imported electricity during the winter was missing from the primary dataset. Therefore, an additional dataset from the World Bank <span class="citation" data-cites="WorldBankWITS2023"><a href="#ref-WorldBankWITS2023" role="doc-biblioref">[26]</a></span> was used to determine the country-wise distribution of electricity imports. According to this dataset, electricity imports in 2023 originated primarily from France (60.2%), Germany (23.1%), Austria (14.4%), and Italy (2.3%). The low voltage production mix in these countries was assumed for modelling. There was no specific data for geothermal and waste water based electricity. These were substituted with hydro power based electricity, due to its comparable environmental impact profile.</p>
+<p>Based on this data, the anticipated energy mix over the operational lifetime of the Bracht plant was calculated as summarized in <a href="#tbl-ch-projection" class="quarto-xref">Table&nbsp;2</a>. Since no projections are available beyond 2060, the values from 2060 were assumed to remain constant through 2075. Detailed information about the origin and type for Switzerland’s imported electricity during the winter was missing from the primary dataset. Therefore, an additional dataset from the World Bank <span class="citation" data-cites="WorldBankWITS2023"><a href="#ref-WorldBankWITS2023" role="doc-biblioref">[27]</a></span> was used to determine the country-wise distribution of electricity imports. According to this dataset, electricity imports in 2023 originated primarily from France (60.2%), Germany (23.1%), Austria (14.4%), and Italy (2.3%). The low voltage production mix in these countries was assumed for modelling. There was no specific data for geothermal and waste water based electricity. These were substituted with hydro power based electricity, due to its comparable environmental impact profile.</p>
 <div id="tbl-ch-projection" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Expected energy mix over the lifetime of the Bracht plant">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-ch-projection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -448,14 +439,14 @@ Table&nbsp;2
 <p>Heat is harder to transport than electrical power since even good insulation cannot avoid losses of radiating heat. There are two main areas where heat losses occur in the setup: in the pipes, and in the seasonal storage unit. Therefore, the loss coefficients assumed for the pipes and for the storage unit are highly relevant to the modelling. The impact of changes in these loss coefficients assumptions will be assessed in <a href="#sec-pipe-loss" class="quarto-xref">Section&nbsp;7.3.1</a> and <a href="#sec-ssu-loss" class="quarto-xref">Section&nbsp;7.3.2</a>.</p>
 <section id="sec-pipe-loss" class="level3">
 <h3 class="anchored" data-anchor-id="sec-pipe-loss">Pipe heat loss</h3>
-<p>As summarized in <span class="citation" data-cites="werner2017international"><a href="#ref-werner2017international" role="doc-biblioref">[27]</a></span>, the key parameters affecting heat loss in district heating pipes include the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The relevant heat loss coefficients reported range between 5 % and 35 %. The Bracht setup involves a relatively long transmission distance of 8800 meters due to its rural context. The planned supply temperature of 85 degrees °C is relatively high and will contribute to increased thermal losses. In contrast, modern district heating systems can operate with lower supply temperatures between 50 and 70 degrees °C to minimize heat loss and improve efficiency as noted by <span class="citation" data-cites="lund2020districtheating"><a href="#ref-lund2020districtheating" role="doc-biblioref">[28]</a></span>.</p>
-<p>The rationale behind selecting a default heat loss rate of 20 % for the Bracht setup reflects the combined negative impact of the long transmission distance and high operating temperature on system performance. However, several sources assume lower loss rates. For example, the open source Energy Transition Model <span class="citation" data-cites="etm2025"><a href="#ref-etm2025" role="doc-biblioref">[29]</a></span> suggests a 15 % default loss figure based on real world data for modern district heating networks. The Swiss Federal Office of Energy UVEK assumes an even lower rate of approximately 11 % in its district heating data.</p>
+<p>As summarized in <span class="citation" data-cites="werner2017international"><a href="#ref-werner2017international" role="doc-biblioref">[28]</a></span>, the key parameters affecting heat loss in district heating pipes include the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The relevant heat loss coefficients reported range between 5 % and 35 %. The Bracht setup involves a relatively long transmission distance of 8800 meters due to its rural context. The planned supply temperature of 85 degrees °C is relatively high and will contribute to increased thermal losses. In contrast, modern district heating systems can operate with lower supply temperatures between 50 and 70 degrees °C to minimize heat loss and improve efficiency as noted by <span class="citation" data-cites="lund2020districtheating"><a href="#ref-lund2020districtheating" role="doc-biblioref">[29]</a></span>.</p>
+<p>The rationale behind selecting a default heat loss rate of 20 % for the Bracht setup reflects the combined negative impact of the long transmission distance and high operating temperature on system performance. However, several sources assume lower loss rates. For example, the open source Energy Transition Model <span class="citation" data-cites="etm2025"><a href="#ref-etm2025" role="doc-biblioref">[30]</a></span> suggests a 15 % default loss figure based on real world data for modern district heating networks. The Swiss Federal Office of Energy UVEK assumes an even lower rate of approximately 11 % in its district heating data.</p>
 <p>If the Bracht system was optimized to achieve heat loss rates comparable to the UVEK assumption, e.g.&nbsp;by lowering the operating temperature, annual efficiency gains of about 300 MWh could be realized. This would remove one-third of the requirements planned to be supplied via biomass, which would correspond to a 9 % reduction in ecological impact from 170 Pt per kWh to 155 Pt per kWh of heat produced according to the Ecological Scarcity 2021 (v1.04) method at the single score level with UVEK LCI weighting. The most significant reductions can be achieved in the <em>Main air pollutants and Particulate Matter (PM)</em> category, primarily due to the reduced combustion of biomass.</p>
 <!-- Biomass: other uses such as CO2 storage or trees growing are prevented -->
 </section>
 <section id="sec-ssu-loss" class="level3">
 <h3 class="anchored" data-anchor-id="sec-ssu-loss">Seasonal storage unit heat loss</h3>
-<p>In <span class="citation" data-cites="penttinen2021optimal"><a href="#ref-penttinen2021optimal" role="doc-biblioref">[30]</a></span>, the authors report a 26 % loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model <span class="citation" data-cites="etm2025"><a href="#ref-etm2025" role="doc-biblioref">[29]</a></span> suggests 30 % as a sensible default for modelling heat loss in the storage unit. Another study <span class="citation" data-cites="xiang2022comprehensive"><a href="#ref-xiang2022comprehensive" role="doc-biblioref">[31]</a></span> provides a comprehensive review and finds that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover.</p>
+<p>In <span class="citation" data-cites="penttinen2021optimal"><a href="#ref-penttinen2021optimal" role="doc-biblioref">[31]</a></span>, the authors report a 26 % loss of heat production in the storage unit amounted to of heat production. The Energy Transition Model <span class="citation" data-cites="etm2025"><a href="#ref-etm2025" role="doc-biblioref">[30]</a></span> suggests 30 % as a sensible default for modelling heat loss in the storage unit. Another study <span class="citation" data-cites="xiang2022comprehensive"><a href="#ref-xiang2022comprehensive" role="doc-biblioref">[32]</a></span> provides a comprehensive review and finds that 30% to 50% heat loss are common for Pit Thermal Energy Storage and that the majority of losses are caused by floating cover.</p>
 <p>Given these reference numbers from literature, the 50 % loss assumption that was used for the Bracht plant is on the conservative side. For the sensitivity analysis, the assumption made is that it can potentially be lowered to 30% based on two different scenarios: (A) without any changes in the setup but an understanding that the original assumptions were not accurate, and (B) by using twice the cover for the top of seasonal storage unit and therefore better insulation. The sides and the bottom of the seasonal storage unit remain unchanged.</p>
 <p>In both scenarios, a significantly higher amount of energy is available from the seasonal storage unit because of the lower heat loss as shown in <a href="#tbl-loss" class="quarto-xref">Table&nbsp;3</a>. In the original scenario, out of the 4.517 MWh produced by the solar thermal collectors, an amount of 2.259 MWh remains available from the seasonal storage unit after accounting for assumed losses. When heat losses are reduced, the available energy increases substantially to 3.162 MWh. The difference of 900 MWh is equal in size to the contribution that was expected to be supplied via biomass combustion in the default model. Therefore, the opportunity exists to lower the environmental impact of the system by removing the parts that stem from biomass. These have a significant impact as shown in <a href="#sec-results" class="quarto-xref">Section&nbsp;6</a>.</p>
 <div id="tbl-loss" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="SSU heat loss">
@@ -508,7 +499,7 @@ Table&nbsp;3
 </div>
 </figure>
 </div>
-<p>However, the higher availability of energy in the seasonal storage unit results in a modified heat supply curve and in heightened electrical energy requirements for the heat pump since it will be used more extensively in the system instead of the biomass boiler. An in-depth analysis of the implications would require additional modelling tools such as <span class="citation" data-cites="polysun"><a href="#ref-polysun" role="doc-biblioref">[32]</a></span>, which is out of scope for the given work. As a simplification, a rough estimate of the heightened energy requirements was carried based the factor between energy from the seasonal storage unit and energy from electricity from the original assumptions (see <a href="#tbl-loss" class="quarto-xref">Table&nbsp;3</a>): 209 MWh divided by 2.258 MWh, which returns a 9.2 % electricity requirement factor. Note that this corresponds to a COP of 11 which is indicative for a highly performant system. This was considered plausible, because the initially very high temperature in the seasonal storage unit (85 degrees °C) at begin of the heating periods means that the heat pump will not be required to bridge the temperature gap until the temperature are falling to lower levels. The rough estimate based on the electricity requirement factor as described results in a 293 MWh electricity demand for the heat pump (40 % increase).</p>
+<p>However, the higher availability of energy in the seasonal storage unit results in a modified heat supply curve and in heightened electrical energy requirements for the heat pump since it will be used more extensively in the system instead of the biomass boiler. An in-depth analysis of the implications would require additional modelling tools such as <span class="citation" data-cites="polysun"><a href="#ref-polysun" role="doc-biblioref">[33]</a></span>, which is out of scope for the given work. As a simplification, a rough estimate of the heightened energy requirements was carried based the factor between energy from the seasonal storage unit and energy from electricity from the original assumptions (see <a href="#tbl-loss" class="quarto-xref">Table&nbsp;3</a>): 209 MWh divided by 2.258 MWh, which returns a 9.2 % electricity requirement factor. Note that this corresponds to a COP of 11 which is indicative for a highly performant system. This was considered plausible, because the initially very high temperature in the seasonal storage unit (85 degrees °C) at begin of the heating periods means that the heat pump will not be required to bridge the temperature gap until the temperature are falling to lower levels. The rough estimate based on the electricity requirement factor as described results in a 293 MWh electricity demand for the heat pump (40 % increase).</p>
 <p>Both scenarios were modeled in SimaPro to learn about the implications on environmental impact. Like in the default model, the ENTSO-E production mix was assumed. For scenario (A) with updated assumptions, a 15 % reduction from 170 Pt per kWh of heat to 146 Pt per kWh of heat can be achieved. For scenario (B) with a doubled insulating cover for the seasonal storage unit, a 9 % reduction to 155<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Pt per kWh of heat can be achieved. This confirms the environmental impact savings potential of operating conditions improvements.</p>
 </section>
 </section>
@@ -554,17 +545,17 @@ Table&nbsp;4
 <tr class="odd">
 <td>Size</td>
 <td>11’638 <span class="math inline">\(m^2\)</span> (855 x 13.6 <span class="math inline">\(m^2\)</span>)</td>
-<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[33]</a></span></td>
+<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[34]</a></span></td>
 </tr>
 <tr class="even">
 <td>Type</td>
 <td>Flat-plate collectors Vitosol 100-F XF13 Viessmann</td>
-<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[33]</a></span> <span class="citation" data-cites="viessmann2021"><a href="#ref-viessmann2021" role="doc-biblioref">[34]</a></span> <span class="citation" data-cites="tuev2021"><a href="#ref-tuev2021" role="doc-biblioref">[21]</a></span></td>
+<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[34]</a></span> <span class="citation" data-cites="viessmann2021"><a href="#ref-viessmann2021" role="doc-biblioref">[35]</a></span> <span class="citation" data-cites="tuev2021"><a href="#ref-tuev2021" role="doc-biblioref">[21]</a></span></td>
 </tr>
 <tr class="odd">
 <td>Land use</td>
 <td>23.500 <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[33]</a></span></td>
+<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[34]</a></span></td>
 </tr>
 <tr class="even">
 <td>Mounting infrastructure material</td>
@@ -599,14 +590,14 @@ Table&nbsp;4
 </section>
 <section id="seasonal-storage-unit-ssu" class="level3">
 <h3 class="anchored" data-anchor-id="seasonal-storage-unit-ssu">Seasonal storage unit (SSU)</h3>
-<p>The relevant data for the seasonal storage unit can be found in <a href="#tbl-component-ssu" class="quarto-xref">Table&nbsp;5</a>. A picture of the floating cover can be found in <a href="#fig-floating-cover" class="quarto-xref">Figure&nbsp;8</a>.</p>
+<p>The relevant data for the seasonal storage unit can be found in <a href="#tbl-component-ssu" class="quarto-xref">Table&nbsp;5</a>. A picture of the floating cover can be found in <a href="#fig-floating-cover" class="quarto-xref">Figure&nbsp;7</a>.</p>
 <div id="fig-floating-cover" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-floating-cover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/floating_cover.jpg" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-floating-cover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Floating cover profile. Source: Bracht community.
+Figure&nbsp;7: Floating cover profile. Source: Bracht community.
 </figcaption>
 </figure>
 </div>
@@ -633,47 +624,47 @@ Table&nbsp;5
 <tr class="odd">
 <td>Volume</td>
 <td>26’600 <span class="math inline">\(m^3\)</span></td>
-<td><a href="#fig-bracht-overview" class="quarto-xref">Figure&nbsp;1</a></td>
+<td><strong>?@fig-bracht-overview</strong></td>
 </tr>
 <tr class="even">
 <td>Resource: water</td>
 <td>26’600 <span class="math inline">\(m^3\)</span> filled from local source</td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[35]</a></span></td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[36]</a></span></td>
 </tr>
 <tr class="odd">
 <td>Cover layer 1, 10</td>
 <td>Polyethylen (HDPE) sealing membranes 1.5 mm, 1.5 kg / <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[35]</a></span>, estimated weight</td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[36]</a></span>, estimated weight</td>
 </tr>
 <tr class="even">
 <td>Cover layer 2, 9</td>
 <td>Fleece (0.1 kg / <span class="math inline">\(m^2\)</span>) laminated plastic grid (HDPE, 0.5 kg / <span class="math inline">\(m^2\)</span>)</td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[35]</a></span>, estimated weight</td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[36]</a></span>, estimated weight</td>
 </tr>
 <tr class="odd">
 <td>Cover layer 3</td>
 <td>Foam glass, 8.33 kg / <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[35]</a></span></td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[36]</a></span></td>
 </tr>
 <tr class="even">
 <td>Cover layer 4</td>
 <td>Polyurethane (bauder foam): 3.125 kg / <span class="math inline">\(m\^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[35]</a></span></td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[36]</a></span></td>
 </tr>
 <tr class="odd">
 <td>Cover layer 5, 7, 8</td>
 <td>Airing gap made of plastic grid, 0.5 kg / <span class="math inline">\(m^2\)</span> each</td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[35]</a></span>, estimated weight</td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[36]</a></span>, estimated weight</td>
 </tr>
 <tr class="even">
 <td>Cover layer 6</td>
 <td>Polystyrene (XPS), 3 kg / <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[35]</a></span></td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[36]</a></span></td>
 </tr>
 <tr class="odd">
 <td>Floating cover dimensions</td>
 <td>70 m x 70 m = 4900 <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025ground"><a href="#ref-bracht2025ground" role="doc-biblioref">[36]</a></span></td>
+<td><span class="citation" data-cites="bracht2025ground"><a href="#ref-bracht2025ground" role="doc-biblioref">[37]</a></span></td>
 </tr>
 <tr class="even">
 <td>Floating cover weight</td>
@@ -683,12 +674,12 @@ Table&nbsp;5
 <tr class="odd">
 <td>Ground liner</td>
 <td>Polyethylen (HDPE), 2.5mm, 2.5 kg / <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[35]</a></span>, estimated weight</td>
+<td><span class="citation" data-cites="bracht2025floating"><a href="#ref-bracht2025floating" role="doc-biblioref">[36]</a></span>, estimated weight</td>
 </tr>
 <tr class="even">
 <td>Ground liner dimensions</td>
 <td>Bottom 20 m x 20 m, vertical height 15 m, surface area on each of the four sides 5250 <span class="math inline">\(m^2\)</span></td>
-<td><span class="citation" data-cites="bracht2025ground"><a href="#ref-bracht2025ground" role="doc-biblioref">[36]</a></span></td>
+<td><span class="citation" data-cites="bracht2025ground"><a href="#ref-bracht2025ground" role="doc-biblioref">[37]</a></span></td>
 </tr>
 <tr class="odd">
 <td>Ground liner weight</td>
@@ -713,7 +704,7 @@ Table&nbsp;5
 <tr class="odd">
 <td>Required construction process</td>
 <td>Excavator 26.600 <span class="math inline">\(m^3\)</span></td>
-<td><a href="#fig-bracht-overview" class="quarto-xref">Figure&nbsp;1</a></td>
+<td><strong>?@fig-bracht-overview</strong></td>
 </tr>
 </tbody>
 </table>
@@ -747,7 +738,7 @@ Table&nbsp;6
 <tr class="odd">
 <td>Heat pump</td>
 <td>2x Carrier Aquaforce 61XWH-ZE (630 kW max electrical input power)</td>
-<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[33]</a></span> <span class="citation" data-cites="carrier2025floating"><a href="#ref-carrier2025floating" role="doc-biblioref">[37]</a></span></td>
+<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[34]</a></span> <span class="citation" data-cites="carrier2025floating"><a href="#ref-carrier2025floating" role="doc-biblioref">[38]</a></span></td>
 </tr>
 <tr class="even">
 <td>Electricity requirements</td>
@@ -757,17 +748,17 @@ Table&nbsp;6
 <tr class="odd">
 <td>Buffer storage</td>
 <td>ca. 200 <span class="math inline">\(m^3\)</span> = 200’000 l</td>
-<td><a href="#fig-bracht-overview" class="quarto-xref">Figure&nbsp;1</a></td>
+<td><strong>?@fig-bracht-overview</strong></td>
 </tr>
 <tr class="even">
 <td>Biomass boiler</td>
 <td>Mawera boiler with 700 kW thermal power</td>
-<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[33]</a></span></td>
+<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[34]</a></span></td>
 </tr>
 <tr class="odd">
 <td>Controller</td>
 <td>Vitocontrol 200-M</td>
-<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[33]</a></span> <span class="citation" data-cites="viessmann2025"><a href="#ref-viessmann2025" role="doc-biblioref">[38]</a></span></td>
+<td><span class="citation" data-cites="viessmann2024"><a href="#ref-viessmann2024" role="doc-biblioref">[34]</a></span> <span class="citation" data-cites="viessmann2025"><a href="#ref-viessmann2025" role="doc-biblioref">[39]</a></span></td>
 </tr>
 <tr class="even">
 <td>Heat installation facility</td>
@@ -958,14 +949,14 @@ Table&nbsp;8
 <p>In this section, the time plan and the meeting notes are documented.</p>
 <section id="time-planning" class="level3">
 <h3 class="anchored" data-anchor-id="time-planning">Time planning</h3>
-<p><a href="#fig-time-plan" class="quarto-xref">Figure&nbsp;9</a> documents the time plan that was followed for this project. The live version can be found <a href="https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303">here</a>. Access is given upon request.</p>
+<p><a href="#fig-time-plan" class="quarto-xref">Figure&nbsp;8</a> documents the time plan that was followed for this project. The live version can be found <a href="https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303">here</a>. Access is given upon request.</p>
 <div id="fig-time-plan" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-time-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/time_plan.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-time-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Gantt chart used for time planning.
+Figure&nbsp;8: Gantt chart used for time planning.
 </figcaption>
 </figure>
 </div>
@@ -1049,55 +1040,58 @@ Figure&nbsp;9: Gantt chart used for time planning.
 <div id="ref-bracht2025faq" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[22] </div><div class="csl-right-inline">City of Rauschenberg, <span>“<span class="nocase">Solarwärme Bracht eG, FAQ und häufig gestellte Fragen</span>.”</span> <a href="https://www.solarwaerme-bracht.de/faq/" class="uri">https://www.solarwaerme-bracht.de/faq/</a>, 2025.</div>
 </div>
+<div id="ref-epp2024high" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[23] </div><div class="csl-right-inline">B. Epp, <span>“High solar heat fraction solutions supported by heat pumps,”</span> <em>Solarthermalworld.org</em>, 2024, Available: <a href="https://solarthermalworld.org/news/high-solar-heat-fraction-solutions-supported-by-heat-pumps/">https://solarthermalworld.org/news/high-solar-heat-fraction-solutions-supported-by-heat-pumps/</a></div>
+</div>
 <div id="ref-bfe2022energieperspektiven" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[23] </div><div class="csl-right-inline">Bundesamt für Energie (BFE), <span>“Energieperspektiven 2050+,”</span> Bundesamt für Energie, 2020. Available: <a href="https://www.bfe.admin.ch/bfe/de/home/politik/energieperspektiven-2050-plus.html">https://www.bfe.admin.ch/bfe/de/home/politik/energieperspektiven-2050-plus.html</a></div>
+<div class="csl-left-margin">[24] </div><div class="csl-right-inline">Bundesamt für Energie (BFE), <span>“Energieperspektiven 2050+,”</span> Bundesamt für Energie, 2020. Available: <a href="https://www.bfe.admin.ch/bfe/de/home/politik/energieperspektiven-2050-plus.html">https://www.bfe.admin.ch/bfe/de/home/politik/energieperspektiven-2050-plus.html</a></div>
 </div>
 <div id="ref-bfe2022energieperspektivencharts" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[24] </div><div class="csl-right-inline">Bundesamt für Energie (BFE), <span>“Energieperspektiven 2050+: Entwicklung der stromproduktion,”</span> Bundesamt für Energie, 2020. Available: <a href="https://www.uvek-gis.admin.ch/BFE/storymaps/AP_Energieperspektiven/index3.html?lang=de&amp;selectedSzenario=ZB&amp;selectedVariant=AJB&amp;selectedNuclear=50">https://www.uvek-gis.admin.ch/BFE/storymaps/AP_Energieperspektiven/index3.html?lang=de&amp;selectedSzenario=ZB&amp;selectedVariant=AJB&amp;selectedNuclear=50</a></div>
+<div class="csl-left-margin">[25] </div><div class="csl-right-inline">Bundesamt für Energie (BFE), <span>“Energieperspektiven 2050+: Entwicklung der stromproduktion,”</span> Bundesamt für Energie, 2020. Available: <a href="https://www.uvek-gis.admin.ch/BFE/storymaps/AP_Energieperspektiven/index3.html?lang=de&amp;selectedSzenario=ZB&amp;selectedVariant=AJB&amp;selectedNuclear=50">https://www.uvek-gis.admin.ch/BFE/storymaps/AP_Energieperspektiven/index3.html?lang=de&amp;selectedSzenario=ZB&amp;selectedVariant=AJB&amp;selectedNuclear=50</a></div>
 </div>
 <div id="ref-bfe2020dataset" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[25] </div><div class="csl-right-inline">Swiss Federal Office of Energy (SFOE), <span>“Energy perspectives 2050+: Scenario results ZERO basis (ZIP dataset).”</span> <a href="https://www.bfe.admin.ch/bfe/de/home/politik/energieperspektiven-2050-plus.exturl.html/aHR0cHM6Ly9wdWJkYi5iZmUuYWRtaW4uY2gvZGUvcHVibGljYX/Rpb24vZG93bmxvYWQvMTA0MzQ=.html" class="uri">https://www.bfe.admin.ch/bfe/de/home/politik/energieperspektiven-2050-plus.exturl.html/aHR0cHM6Ly9wdWJkYi5iZmUuYWRtaW4uY2gvZGUvcHVibGljYX/Rpb24vZG93bmxvYWQvMTA0MzQ=.html</a>, 2020.</div>
+<div class="csl-left-margin">[26] </div><div class="csl-right-inline">Swiss Federal Office of Energy (SFOE), <span>“Energy perspectives 2050+: Scenario results ZERO basis (ZIP dataset).”</span> <a href="https://www.bfe.admin.ch/bfe/de/home/politik/energieperspektiven-2050-plus.exturl.html/aHR0cHM6Ly9wdWJkYi5iZmUuYWRtaW4uY2gvZGUvcHVibGljYX/Rpb24vZG93bmxvYWQvMTA0MzQ=.html" class="uri">https://www.bfe.admin.ch/bfe/de/home/politik/energieperspektiven-2050-plus.exturl.html/aHR0cHM6Ly9wdWJkYi5iZmUuYWRtaW4uY2gvZGUvcHVibGljYX/Rpb24vZG93bmxvYWQvMTA0MzQ=.html</a>, 2020.</div>
 </div>
 <div id="ref-WorldBankWITS2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[26] </div><div class="csl-right-inline">World Bank, <span>“Switzerland - electricity imports (product code 271600) in 2023.”</span> World Integrated Trade Solution (WITS), World Bank, 2023. Available: <a href="https://wits.worldbank.org/trade/comtrade/en/country/CHE/year/2023/tradeflow/Imports/partner/ALL/product/271600">https://wits.worldbank.org/trade/comtrade/en/country/CHE/year/2023/tradeflow/Imports/partner/ALL/product/271600</a></div>
+<div class="csl-left-margin">[27] </div><div class="csl-right-inline">World Bank, <span>“Switzerland - electricity imports (product code 271600) in 2023.”</span> World Integrated Trade Solution (WITS), World Bank, 2023. Available: <a href="https://wits.worldbank.org/trade/comtrade/en/country/CHE/year/2023/tradeflow/Imports/partner/ALL/product/271600">https://wits.worldbank.org/trade/comtrade/en/country/CHE/year/2023/tradeflow/Imports/partner/ALL/product/271600</a></div>
 </div>
 <div id="ref-werner2017international" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[27] </div><div class="csl-right-inline">S. Werner, <span>“International review of district heating and cooling,”</span> <em>Energy</em>, vol. 137, pp. 617–631, 2017.</div>
+<div class="csl-left-margin">[28] </div><div class="csl-right-inline">S. Werner, <span>“International review of district heating and cooling,”</span> <em>Energy</em>, vol. 137, pp. 617–631, 2017.</div>
 </div>
 <div id="ref-lund2020districtheating" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[28] </div><div class="csl-right-inline">H. Lund <em>et al.</em>, <span>“District heating and cooling: Review of technology and potential enhancements,”</span> <em>Energy</em>, vol. 68, pp. 1–11, 2020, doi: <a href="https://doi.org/10.1016/j.energy.2014.05.045">10.1016/j.energy.2014.05.045</a>.</div>
+<div class="csl-left-margin">[29] </div><div class="csl-right-inline">H. Lund <em>et al.</em>, <span>“District heating and cooling: Review of technology and potential enhancements,”</span> <em>Energy</em>, vol. 68, pp. 1–11, 2020, doi: <a href="https://doi.org/10.1016/j.energy.2014.05.045">10.1016/j.energy.2014.05.045</a>.</div>
 </div>
 <div id="ref-etm2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[29] </div><div class="csl-right-inline">Quintel, <span>“<span>Energy Transition Model (ETM)</span>.”</span> <a href="https://energytransitionmodel.com/scenario/supply/heat_ht/transport-and-distribution-losses" class="uri">https://energytransitionmodel.com/scenario/supply/heat_ht/transport-and-distribution-losses</a>, 2025.</div>
+<div class="csl-left-margin">[30] </div><div class="csl-right-inline">Quintel, <span>“<span>Energy Transition Model (ETM)</span>.”</span> <a href="https://energytransitionmodel.com/scenario/supply/heat_ht/transport-and-distribution-losses" class="uri">https://energytransitionmodel.com/scenario/supply/heat_ht/transport-and-distribution-losses</a>, 2025.</div>
 </div>
 <div id="ref-penttinen2021optimal" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[30] </div><div class="csl-right-inline">P. Penttinen, J. Vimpari, and S. Junnila, <span>“Optimal seasonal heat storage in a district heating system with waste incineration,”</span> <em>Energies</em>, vol. 14, no. 12, p. 3522, 2021.</div>
+<div class="csl-left-margin">[31] </div><div class="csl-right-inline">P. Penttinen, J. Vimpari, and S. Junnila, <span>“Optimal seasonal heat storage in a district heating system with waste incineration,”</span> <em>Energies</em>, vol. 14, no. 12, p. 3522, 2021.</div>
 </div>
 <div id="ref-xiang2022comprehensive" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[31] </div><div class="csl-right-inline">Y. Xiang, Z. Xie, S. Furbo, D. Wang, M. Gao, and J. Fan, <span>“A comprehensive review on pit thermal energy storage: Technical elements, numerical approaches and recent applications,”</span> <em>Journal of Energy Storage</em>, vol. 55, p. 105716, 2022.</div>
+<div class="csl-left-margin">[32] </div><div class="csl-right-inline">Y. Xiang, Z. Xie, S. Furbo, D. Wang, M. Gao, and J. Fan, <span>“A comprehensive review on pit thermal energy storage: Technical elements, numerical approaches and recent applications,”</span> <em>Journal of Energy Storage</em>, vol. 55, p. 105716, 2022.</div>
 </div>
 <div id="ref-polysun" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[32] </div><div class="csl-right-inline">V. S. AG, <span>“Polysun simulation software.”</span> <a href="https://www.velasolaris.com" class="uri">https://www.velasolaris.com</a>, Winterthur, Switzerland, 2012.</div>
+<div class="csl-left-margin">[33] </div><div class="csl-right-inline">V. S. AG, <span>“Polysun simulation software.”</span> <a href="https://www.velasolaris.com" class="uri">https://www.velasolaris.com</a>, Winterthur, Switzerland, 2012.</div>
 </div>
 <div id="ref-viessmann2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[33] </div><div class="csl-right-inline">Viessmann Climate Solutions, <span>“<span class="nocase">Energiewende: Solarthermie und Erdspeicher decken rund 70 Prozent des Wärmebedarfs im hessischen Bracht</span>.”</span> <a href="https://www.viessmann-climatesolutions.com/de/newsroom/unternehmen/erstes-klimaneutrales-mit-solarwaerme-versorgtes-dorf.html" class="uri">https://www.viessmann-climatesolutions.com/de/newsroom/unternehmen/erstes-klimaneutrales-mit-solarwaerme-versorgtes-dorf.html</a>, 2024.</div>
+<div class="csl-left-margin">[34] </div><div class="csl-right-inline">Viessmann Climate Solutions, <span>“<span class="nocase">Energiewende: Solarthermie und Erdspeicher decken rund 70 Prozent des Wärmebedarfs im hessischen Bracht</span>.”</span> <a href="https://www.viessmann-climatesolutions.com/de/newsroom/unternehmen/erstes-klimaneutrales-mit-solarwaerme-versorgtes-dorf.html" class="uri">https://www.viessmann-climatesolutions.com/de/newsroom/unternehmen/erstes-klimaneutrales-mit-solarwaerme-versorgtes-dorf.html</a>, 2024.</div>
 </div>
 <div id="ref-viessmann2021" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[34] </div><div class="csl-right-inline">Viessmann Climate Solutions, <span>“<span class="nocase">Großflächen-Solarthermie für die Nah- und Fernwärme</span>.”</span> <a href="https://energiekonsens.de/media/pages/media/6a0997554c-1640096559/2-viessmann-nah-und-fernwaerme-mit-solarthermie.pdf" class="uri">https://energiekonsens.de/media/pages/media/6a0997554c-1640096559/2-viessmann-nah-und-fernwaerme-mit-solarthermie.pdf</a>, 2021.</div>
+<div class="csl-left-margin">[35] </div><div class="csl-right-inline">Viessmann Climate Solutions, <span>“<span class="nocase">Großflächen-Solarthermie für die Nah- und Fernwärme</span>.”</span> <a href="https://energiekonsens.de/media/pages/media/6a0997554c-1640096559/2-viessmann-nah-und-fernwaerme-mit-solarthermie.pdf" class="uri">https://energiekonsens.de/media/pages/media/6a0997554c-1640096559/2-viessmann-nah-und-fernwaerme-mit-solarthermie.pdf</a>, 2021.</div>
 </div>
 <div id="ref-bracht2025floating" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[35] </div><div class="csl-right-inline">City of Rauschenberg, <span>“<span class="nocase">Solarwärme Bracht eG, Genossenschaftsunterlagen: Floating Cover</span>.”</span> <a href="https://www.solarwaerme-bracht.de/unterlagen-der-genossenschaft/" class="uri">https://www.solarwaerme-bracht.de/unterlagen-der-genossenschaft/</a>, 2025.</div>
+<div class="csl-left-margin">[36] </div><div class="csl-right-inline">City of Rauschenberg, <span>“<span class="nocase">Solarwärme Bracht eG, Genossenschaftsunterlagen: Floating Cover</span>.”</span> <a href="https://www.solarwaerme-bracht.de/unterlagen-der-genossenschaft/" class="uri">https://www.solarwaerme-bracht.de/unterlagen-der-genossenschaft/</a>, 2025.</div>
 </div>
 <div id="ref-bracht2025ground" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[36] </div><div class="csl-right-inline">Top Agrar, <span>“<span class="nocase">Hessisches Dorf baut riesiges Wasserbecken für eigene Solarthermieanlage</span>.”</span> <a href="https://www.topagrar.com/energie/news/hessisches-dorf-baut-riesiges-wasserbecken-fur-eigene-solarthermieanlage-20010847.html
+<div class="csl-left-margin">[37] </div><div class="csl-right-inline">Top Agrar, <span>“<span class="nocase">Hessisches Dorf baut riesiges Wasserbecken für eigene Solarthermieanlage</span>.”</span> <a href="https://www.topagrar.com/energie/news/hessisches-dorf-baut-riesiges-wasserbecken-fur-eigene-solarthermieanlage-20010847.html
 " class="uri">https://www.topagrar.com/energie/news/hessisches-dorf-baut-riesiges-wasserbecken-fur-eigene-solarthermieanlage-20010847.html
 </a>, 2025.</div>
 </div>
 <div id="ref-carrier2025floating" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[37] </div><div class="csl-right-inline">Carrier Klimatisierungs- und Heizsysteme - Deutschland, <span>“<span class="nocase">AquaForce - Hochtemperatur Wasser/Wasser-Wärmepumpe mit Kältemittel HFO R-1234ze</span>.”</span> <a href="https://www.carrier.com/commercial/de/de/produkte/heizung/wasser-wasser-waermepumpen/61xwhze/" class="uri">https://www.carrier.com/commercial/de/de/produkte/heizung/wasser-wasser-waermepumpen/61xwhze/</a>, 2025.</div>
+<div class="csl-left-margin">[38] </div><div class="csl-right-inline">Carrier Klimatisierungs- und Heizsysteme - Deutschland, <span>“<span class="nocase">AquaForce - Hochtemperatur Wasser/Wasser-Wärmepumpe mit Kältemittel HFO R-1234ze</span>.”</span> <a href="https://www.carrier.com/commercial/de/de/produkte/heizung/wasser-wasser-waermepumpen/61xwhze/" class="uri">https://www.carrier.com/commercial/de/de/produkte/heizung/wasser-wasser-waermepumpen/61xwhze/</a>, 2025.</div>
 </div>
 <div id="ref-viessmann2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[38] </div><div class="csl-right-inline">Viessmann Climate Solutions, <span>“<span class="nocase">Regelungsprogramm für Mittel- und Großkessel</span>.”</span> <a href="https://www.viessmann.de/de/loesungen/gewerbe-und-industrie/regelung-mittelkessel-grosskessel.html" class="uri">https://www.viessmann.de/de/loesungen/gewerbe-und-industrie/regelung-mittelkessel-grosskessel.html</a>, 2025.</div>
+<div class="csl-left-margin">[39] </div><div class="csl-right-inline">Viessmann Climate Solutions, <span>“<span class="nocase">Regelungsprogramm für Mittel- und Großkessel</span>.”</span> <a href="https://www.viessmann.de/de/loesungen/gewerbe-und-industrie/regelung-mittelkessel-grosskessel.html" class="uri">https://www.viessmann.de/de/loesungen/gewerbe-und-industrie/regelung-mittelkessel-grosskessel.html</a>, 2025.</div>
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
