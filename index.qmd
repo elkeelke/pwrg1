@@ -58,15 +58,15 @@ The following chapters will cover all the necessary stages of the LCIA: goal and
 
 # Goal and scope {#sec-goal}
 
-The goal and scope definition is a fundamental step in any life cycle Iimpact assessment (LCIA), as it provides a clear description of the product system under study, its system boundaries, and the definition of a functional unit that reflects the output of the system in a consistent and measurable way. 
+The goal and scope definition is a fundamental step in any life cycle impact assessment (LCIA), as it provides a clear description of the product system under study, its system boundaries, and the definition of a functional unit that reflects the output of the system in a consistent and measurable way. 
 
-![System overview for the Bracht community district heating network.(img/bracht_overview.png){#fig-bracht-overview width="80%"}
+![System overview for the Bracht community district heating network.](img/bracht_overview.png){#fig-bracht-overview width="80%"}
 
 For the present LCIA, the specific goals are to address the research questions outlined in Section @sec-metho. The scope of the assessment encompasses a district heating project initiated and operated by a cooperative composed of future household consumers and the local municipal council. As illustrated in Figure @fig-bracht-overview, the system includes the following key components:
 
 *   solar thermal collector (STC) field,
 *   seasonal storage unit (SSU),
-*   heat pump (HP) component with heat pump powered by electricity from the grid and a buffer storage unit
+*   heat pump component powered with electricity from the grid and a buffer storage unit
 *   biomass combustion unit serving backup heat when stored heat is unavailable,
 *   a facility to house the heat pump and the biomass combustion unit,
 *   heat transport (HT) distribution network that supplies to residential consumers, and
@@ -303,7 +303,7 @@ The relevant data for the seasonal storage unit can be found in @tbl-component-s
 | Required construction process | Excavator 26.600 $m^3$ | [@fig-bracht-overview] |
 :::
 
-### Heat preparation (HP)  {#sec-hp}
+### Heat preparation {#sec-hp}
 
 The relevant data for the heat preparation unit can be found in @tbl-component-hp.
 
