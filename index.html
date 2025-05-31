@@ -166,7 +166,7 @@ Figure&nbsp;1: System overview for the Bracht community district heating network
 <ul>
 <li>solar thermal collector (STC) field,</li>
 <li>seasonal storage unit (SSU),</li>
-<li>heat pump (HP) component with heat pump powered by electricity from the grid and a buffer storage unit</li>
+<li>heat pump component powered with electricity from the grid and a buffer storage unit</li>
 <li>biomass combustion unit serving backup heat when stored heat is unavailable,</li>
 <li>a facility to house the heat pump and the biomass combustion unit,</li>
 <li>heat transport (HT) distribution network that supplies to residential consumers, and</li>
@@ -297,7 +297,7 @@ Figure&nbsp;3: Relative environmental impact for components of Bracht community 
 <img src="img/pwrg_solar_ef_network_bar_faceted.png" class="img-fluid figure-img" style="width:90.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ef-network-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Relative environmental impact of Bracht community district heating network system components (Environmental Footprint Method). TBD: Heat preparation -&gt; heat pump
+Figure&nbsp;4: Relative environmental impact of Bracht community district heating network system components (Environmental Footprint Method).
 </figcaption>
 </figure>
 </div>
@@ -309,7 +309,7 @@ Figure&nbsp;4: Relative environmental impact of Bracht community district heatin
 <img src="img/pwrg_solar_es_single_score.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-es-single-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Comparison of environmental impact of Bracht community district heating network to other energy sources for district heating such as wood chips and heat pump, and to consumer installations such as gas and oil burners (Ecological Scarcity 2021 v1.04, UVEK LCI weighting). Results in ascending order: district heating based on wood chips 165 Pt per kWh, as the energy source, Bracht solar thermal based district heating 170 Pt per kWh, district heating based on geothermal heat pump 225 Pt per kWh, gas based consumer installation 281 Pt per kWh, oil based consumer installation 430 Pt per kWh.
+Figure&nbsp;5: Comparison of environmental impact of Bracht community district heating network to other energy sources for district heating such as wood chips and heat pump, and to consumer installations such as gas and oil burners (Ecological Scarcity 2021 v1.04, UVEK LCI weighting). The eesults in ascending order: district heating based on wood chips 165 Pt per kWh, Bracht solar thermal based district heating 170 Pt per kWh, district heating based on geothermal heat pump 225 Pt per kWh, gas based consumer installation 281 Pt per kWh, oil based consumer installation 430 Pt per kWh.
 </figcaption>
 </figure>
 </div>
@@ -722,7 +722,7 @@ Table&nbsp;5
 </div>
 </section>
 <section id="sec-hp" class="level3">
-<h3 class="anchored" data-anchor-id="sec-hp">Heat preparation (HP)</h3>
+<h3 class="anchored" data-anchor-id="sec-hp">Heat preparation</h3>
 <p>The relevant data for the heat preparation unit can be found in <a href="#tbl-component-hp" class="quarto-xref">Table&nbsp;6</a>.</p>
 <div id="tbl-component-hp" class="table quarto-float quarto-figure quarto-figure-center anchored" data-caption="Sources for seasonal storage unit specification">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -781,8 +781,9 @@ Table&nbsp;6
 </div>
 </section>
 </section>
-<section id="datasets" class="level2">
-<h2 class="anchored" data-anchor-id="datasets">Datasets</h2>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>In this section the data that was created for the model is documented.</p>
 <section id="sec-sima" class="level3">
 <h3 class="anchored" data-anchor-id="sec-sima">SimaPro data</h3>
 <p><a href="#tbl-sima-parameters" class="quarto-xref">Table&nbsp;7</a> and <a href="#tbl-sima-calc-parameters" class="quarto-xref">Table&nbsp;8</a> show the parameters and calculated parameters that were defined as helpers for modelling the solar thermal based district heating process in Simpapro.</p>
@@ -946,26 +947,36 @@ Table&nbsp;8
 </section>
 <section id="results-data" class="level3">
 <h3 class="anchored" data-anchor-id="results-data">Results data</h3>
-<p>The data for producing the charts for this reports is kept in a spread sheet accessible <a href="">here</a></p>
+<p>The data for producing the charts for this report is kept in a spreadsheet accessible <a href="https://docs.google.com/spreadsheets/d/1Ghai0-kHUOZTMoKDRJ7uO3ejAa72vN2kFpBa4IFHCks/edit?gid=0#gid=0">here</a></p>
 </section>
 </section>
 <section id="supplemental-charts" class="level2">
 <h2 class="anchored" data-anchor-id="supplemental-charts">Supplemental charts</h2>
-<p>In this section, the charts for the damage categories that are less relevant for the given use case are presented. TBD</p>
+<p>In this section, supplemental charts are presented for completeness reasons. <a href="#fig-ef-midpoints-others" class="quarto-xref">Figure&nbsp;9</a> complements <a href="#fig-ef-midpoints" class="quarto-xref">Figure&nbsp;6</a> with the results for the damage categories that were considered less relevant for the use case.</p>
+<div id="fig-ef-midpoints-others" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ef-midpoints-others-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pwrg_solar_ef_midpoints_faceted_others.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ef-midpoints-others-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Damage assessment using the Environmental Footprint Method, visualized as relative environmental impacts in comparison.
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="sec-project" class="level2">
 <h2 class="anchored" data-anchor-id="sec-project">Project organization</h2>
 <p>In this section, the time plan and the meeting notes are documented.</p>
 <section id="time-planning" class="level3">
 <h3 class="anchored" data-anchor-id="time-planning">Time planning</h3>
-<p><a href="#fig-time-plan" class="quarto-xref">Figure&nbsp;9</a> documents the time plan that was followed for this project. The live version can be found <a href="https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303">here</a>. Access is given upon request.</p>
+<p><a href="#fig-time-plan" class="quarto-xref">Figure&nbsp;10</a> documents the time plan that was followed for this project. The live version can be found <a href="https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303">here</a>. Access is given upon request.</p>
 <div id="fig-time-plan" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-time-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/time_plan.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-time-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Gantt chart used for time planning.
+Figure&nbsp;10: Gantt chart used for time planning.
 </figcaption>
 </figure>
 </div>
