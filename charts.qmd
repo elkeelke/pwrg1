@@ -197,7 +197,7 @@ ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
 ggsave("img/pwrg_solar_ef_midpoints_faceted.png")
 ```
 
-## EF midpoints faceted bar chart showing relative impact (all)
+## EF midpoints faceted bar chart showing relative impact (other categories)
 ```{r}
 ef <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 6 final.csv")[1:15, ]
 

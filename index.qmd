@@ -122,7 +122,7 @@ It is noted that the distribution totals 99 instead of 100, likely due to roundi
 
 The system model, as detailed in @sec-sima, was implemented using SimaPro @SimaPro2024. This model served as the foundation for generating LCIA results using the Environmental Footprint (EF) method @ec2021EF and the Ecological Scarcity 2021 (v1.04) method @FOEN2021. The corresponding results derived from these assessments are presented in this section.
 
-![Relative environmental impact for components of Bracht community district heating system  (Ecological Scarcity 2021, v1.04, UVEK LCI weighting)](img/pwrg_solar_network_bar.png){#fig-network-bar width="80%"}
+![Relative environmental impact for components of Bracht community district heating system  (Ecological Scarcity 2021, v1.04, UVEK LCI weighting)](img/pwrg_solar_network_bar.png){#fig-network-bar width="60%"}
 
 To address the first research question regarding the environmental impact of the additional electricity and the supplemental biomass burnt in the wood boiler, the relative influence of the individual components of the solar thermal district heating system on overall environmental impact was evaluated using the Ecological Scarcity 2021 (v1.04) method. The assessment was conducted at the single-score level, applying the UVEK LCI weighting set to define the relative importance of the different damage categories. The results are presented in @fig-network-bar. They show that the biomass (27.3 %) and the electricity (35.8 %) together have a very large impact. They are responsible for nearly two-thirds of the environmental impact of the overall system. The solar thermal based part of the system with solar thermal field, seasonal storage, and heat pump is responsible for less than 30 % of the overall environmental impact, although they supply two-thirds of the total energy production (see @fig-bracht-overview). Only one-third of the energy delivered to end consumers originates from the biomass and electricity.
 
@@ -378,7 +378,7 @@ The loss coefficients and energy requirements numbers were calculated in spreads
 
 ### Results data 
 
-The data for producing the charts for this reports is kept in a spread sheet accessible [here](https://docs.google.com/spreadsheets/d/1Ghai0-kHUOZTMoKDRJ7uO3ejAa72vN2kFpBa4IFHCks/edit?gid=0#gid=0)
+The data for producing the charts for this report is kept in a spreadsheet accessible [here](https://docs.google.com/spreadsheets/d/1Ghai0-kHUOZTMoKDRJ7uO3ejAa72vN2kFpBa4IFHCks/edit?gid=0#gid=0)
 
 ## Supplemental charts
 
