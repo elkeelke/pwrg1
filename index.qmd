@@ -20,7 +20,7 @@ csl: ieee.csl
 
 # Abstract
 
-A life cycle impact assessment (LCIA) was conducted for a solar district heating community project currently under construction in Bracht, Germany. The setup incorporates solar thermal collectors, a seasonal heat storage unit powered through an included electric heat pump, a supplemental biomass boiler as a backup solution for when there is no heat available from the solar based system, and a transport network to supply residential consumers. 
+A life cycle impact assessment (LCIA) was conducted for a solar district heating community project currently under construction in Bracht, Germany. It incorporates solar thermal collectors, a seasonal heat storage unit powered through an included electric heat pump, a supplemental biomass boiler as a backup solution for when there is no heat available from the solar based system, and a transport network to supply residential consumers. 
 
 The assessment used standard environmental impact methods such as the Ecological Scarcity method to evaluate the system over a 50-year lifetime. Despite supplying the majority of the energy, the solar thermal component with seasonal storage contributed less than 30% to the overall environmental impact. The supplemental biomass and the required electricity sourced from the grid accounted for roughly two-thirds of the total impact, even though they provided only one-third of the energy. 
 
@@ -28,9 +28,7 @@ The results are encouraging and show that the Bracht system is environmentally f
 
 # Introduction and related work
 
-Heating is a key contributor to energy consumption, accounting for roughly half of all energy used in the EU, with 60% of that energy still generated from fossil fuels @euroheat2023. District heating is a system in which a central heating plant supplies heat to multiple households through a network of pipes. District heating works in two main ways: it either utilizes surplus heat from sources such as waste incineration plants to provide heating for residential areas and service centers @sfoe2020, or it relies on dedicated energy sources such as biomass or solar thermal collectors. There are approximately 6,000 district heating systems operating across the EU @euroheat2023. Process heating follows a similar setup but is designed for industrial applications, which typically require higher temperatures. 
-
-Studies such as @jeandaux2021life have shown that using a centralized heating system with a heat distribution network results in a lower environmental impact compared to standalone heating units installed at each consumer’s site.
+Heating is a key contributor to energy consumption, accounting for roughly half of all energy used in the EU, with 60% of that energy still generated from fossil fuels @euroheat2023. District heating is a system in which a central heating plant supplies heat to multiple households through a network of pipes. It works in two main ways, either by utilizing surplus heat from sources such as waste incineration plants to provide heating for residential areas and service centers @sfoe2020, or by relying on dedicated energy sources such as biomass or solar thermal collectors. There are approximately 6,000 district heating systems operating across the EU @euroheat2023. Process heating uses a similar setup but is designed for industrial applications, which typically require higher temperatures. Studies such as @jeandaux2021life have shown that using a centralized heating system with a heat distribution network results in a lower environmental impact compared to standalone heating units installed at each consumer’s site.
 
 Solar thermal collectors (STCs) are devices that absorb solar radiation and convert it into heat. There are several types of STCs, including flat plate collectors, unglazed water collectors, and evacuated tube collectors. These systems are often combined with heat pumps to bridge the temperature gap between the water produced by the solar field and the temperature required by the district heating delivery system @wikipedia2020. According to @iea2024, there are more than 300 large-scale district heating systems worldwide powered by STCs, and over 1.200 STC systems that provide industrial process heat.
 
@@ -116,13 +114,15 @@ The energy distribution for heating supply for the Bracht plant is reported in @
 *   26 % from biomass sources (approximately 904 MWh), and
 *   6 % from the electricity grid (approximately 209 MWh)
 
-It is noted that the distribution totals 99 instead of 100, likely due to rounding, but since this is information from the original source and the difference is small, it was adopted without modification. Since detailed methods for the loss estimates used in the Bracht assumptions are not provided in the public documentation, the modelling described in this document assumes a 20% loss coefficient as the default for the heat transmission pipe network. The relevant literature and further rationale for the choice are presented in @sec-pipe-loss. Given this assumption, the implied thermal loss within the seasonal storage unit would be approximately 50% to align with the reported figures from @bracht2025faq. These assumptions were incorporated into the system model as the default values. More background and a detailed discussion of thermal loss coefficients and their influence on system performance is presented in the sensitivity analysis in @sec-sensitive-loss.
+It is noted that the distribution totals 99 instead of 100, likely due to rounding, but since this is information from the original source and the difference is small, it was adopted without modification. 
+
+Since detailed methods for the loss estimates used in the Bracht assumptions were not provided in the public documentation, the modelling described in this document assumes a 20% loss coefficient as the default for the heat transmission pipe network. The relevant literature and further rationale for the choice are presented in @sec-pipe-loss. Given this assumption, the implied thermal loss within the seasonal storage unit would be approximately 50% to align with the reported figures from @bracht2025faq. These assumptions were incorporated into the system model as the default values. More background and a detailed discussion of thermal loss coefficients and their influence on system performance is presented in the sensitivity analysis in @sec-sensitive-loss.
 
 # Results {#sec-results}
 
 The system model, as detailed in @sec-sima, was implemented using SimaPro @SimaPro2024. This model served as the foundation for generating LCIA results using the Environmental Footprint (EF) method @ec2021EF and the Ecological Scarcity 2021 (v1.04) method @FOEN2021. The corresponding results derived from these assessments are presented in this section.
 
-![Relative environmental impact for components of Bracht community district heating system  (Ecological Scarcity 2021, v1.04, UVEK LCI weighting)](img/pwrg_solar_network_bar.png){#fig-network-bar width="60%"}
+![Relative environmental impact for components of Bracht community district heating system  (Ecological Scarcity 2021, v1.04, UVEK LCI weighting)](img/pwrg_solar_network_bar.png){#fig-network-bar width="50%"}
 
 To address the first research question regarding the environmental impact of the additional electricity and the supplemental biomass burnt in the wood boiler, the relative influence of the individual components of the solar thermal district heating system on overall environmental impact was evaluated using the Ecological Scarcity 2021 (v1.04) method. The assessment was conducted at the single-score level, applying the UVEK LCI weighting set to define the relative importance of the different damage categories. The results are presented in @fig-network-bar. They show that the biomass (27.3 %) and the electricity (35.8 %) together have a very large impact. They are responsible for nearly two-thirds of the environmental impact of the overall system. The solar thermal based part of the system with solar thermal field, seasonal storage, and heat pump is responsible for less than 30 % of the overall environmental impact, although they supply two-thirds of the total energy production (see @fig-bracht-overview). Only one-third of the energy delivered to end consumers originates from the biomass and electricity.
 
@@ -320,7 +320,7 @@ The relevant data for the heat preparation unit can be found in @tbl-component-h
 
 ## Data
 
-In this section the data that was created for the model is documented.
+In this section, the data that was created for the model is documented.
 
 ### SimaPro data {#sec-sima}
 
@@ -374,11 +374,11 @@ For the electricity sensitivity analysis, the following SimaPro processes were e
 
 ### Loss coefficients and energy requirements
 
-The loss coefficients and energy requirements numbers were calculated in spreadsheet accessible [here](https://docs.google.com/spreadsheets/d/1UTKZtQ1wE8QxeNJFWMrw3FbvYS9aZiGvNbqz4s6s35Y/edit?gid=0#gid=0) .
+The loss coefficients and energy requirements numbers were calculated in a spreadsheet accessible [here](https://docs.google.com/spreadsheets/d/1UTKZtQ1wE8QxeNJFWMrw3FbvYS9aZiGvNbqz4s6s35Y/edit?gid=0#gid=0).
 
 ### Results data 
 
-The data for producing the charts for this report is kept in a spreadsheet accessible [here](https://docs.google.com/spreadsheets/d/1Ghai0-kHUOZTMoKDRJ7uO3ejAa72vN2kFpBa4IFHCks/edit?gid=0#gid=0)
+The data for producing the charts for this report is kept in a spreadsheet accessible [here](https://docs.google.com/spreadsheets/d/1Ghai0-kHUOZTMoKDRJ7uO3ejAa72vN2kFpBa4IFHCks/edit?gid=0#gid=0).
 
 ## Supplemental charts
 
@@ -392,7 +392,7 @@ In this section, the time plan and the meeting notes are documented.
 
 ### Time planning
 
-@fig-time-plan documents the time plan that was followed for this project. The live version can be found [here](https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303). Access is given upon request.
+@fig-time-plan documents the time plan that was followed for this project. The live version can be found [here](https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303).
 
 ![Gantt chart used for time planning.](img/time_plan.png){#fig-time-plan width="100%"}
 
