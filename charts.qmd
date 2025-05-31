@@ -16,7 +16,7 @@ library(ggrepel)
 
 ## Bar chart network
 ```{r}
-data <- read_delim("data/PWRG 1_ ES level 1 - Copy of Copy of level1.csv")
+data <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 3 final.csv")
 
 data$Component <- factor(data$Component, levels = data$Component[order(data$Value, decreasing = TRUE)])
 
@@ -54,7 +54,7 @@ ggsave("img/pwrg_solar_network_bar.png")
 
 ## Bar chart facet network
 ```{r}
-ef_level1 <- read_delim("data/EF level 1.csv")[1:7, ]
+ef_level1 <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 4 final.csv")[1:7, ]
 long_ef_level1 <- pivot_longer(ef_level1, cols = -c("Component"), names_to = "Damage category", values_to = "Value")
 
 df_ef <- long_ef_level1 |>
@@ -90,7 +90,7 @@ ggsave("img/pwrg_solar_ef_network_bar_faceted.png")
 
 ## ES single score bar chart
 ```{r}
-es <- read_delim("data/PWRG results solar - ES single score.csv")[1:7, ]
+es <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 5 final.csv")[1:7, ]
 
 long_es <- pivot_longer(es, cols = -c("Impact category"), names_to = "Type", values_to = "Value")
 
