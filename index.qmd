@@ -318,7 +318,9 @@ The relevant data for the heat preparation unit can be found in @tbl-component-h
 | Heat installation facility | 50 $m^2$ | Own assumption |
 :::
 
-## Datasets
+## Data
+
+In this section the data that was created for the model is documented.
 
 ### SimaPro data {#sec-sima}
 
@@ -380,7 +382,9 @@ The data for producing the charts for this reports is kept in a spread sheet acc
 
 ## Supplemental charts
 
-In this section, the charts for the damage categories that are less relevant for the given use case are presented. TBD
+In this section, supplemental charts are presented for completeness reasons. @fig-ef-midpoints-others complements @fig-ef-midpoints with the results for the damage categories that were considered less relevant for the use case.
+
+![Damage assessment using the Environmental Footprint Method, visualized as relative environmental impacts in comparison.](img/pwrg_solar_ef_midpoints_faceted_others.png){#fig-ef-midpoints-others width="90%"}
 
 ## Project organization {#sec-project}
 

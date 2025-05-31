@@ -124,7 +124,7 @@ ggplot(long_es, aes(x = Type, y = Value, fill = reorder(`Impact category`, Value
 ggsave("img/pwrg_solar_es_single_score.png")
 ```
 
-## Sensitivity
+## Sensitivity (not in use)
 ```{r}
 es <- read_delim("data/PWRG results solar - electricity sensitivity - edit.csv")[1:7, ]
 
@@ -160,7 +160,7 @@ ggsave("img/pwrg_elec_sens.png")
 
 ## EF midpoints faceted bar chart showing relative impact
 ```{r}
-ef <- read_delim("data/PWRG results solar - EF damage assessment.csv")[1:15, ]
+ef <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 6 final.csv")[1:15, ]
 
 long_ef <- pivot_longer(ef, cols = -c("Damage category", "Unit"), names_to = "Type", values_to = "Value")
 
@@ -192,14 +192,53 @@ ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
     legend.title = element_text(size = 14),  # Title of the legend
     legend.text = element_text(size = 12),    # Items in the legend
   ) +
-  scale_fill_brewer(palette = "Greens") +
+  scale_fill_brewer(palette = "Purples") +
   coord_flip()
 ggsave("img/pwrg_solar_ef_midpoints_faceted.png")
 ```
 
+## EF midpoints faceted bar chart showing relative impact (all)
+```{r}
+ef <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 6 final.csv")[1:15, ]
+
+long_ef <- pivot_longer(ef, cols = -c("Damage category", "Unit"), names_to = "Type", values_to = "Value")
+
+long_ef_normalized <- long_ef |>
+  filter(!`Damage category` %in% c("Climate change", "Particulate matter", "Eutrophication, marine", "Land use", "Resource use, minerals/metals", "Resource use, fossils")) |>  
+  group_by(`Damage category`) |>
+  mutate(
+    pct = Value / max(Value) * 100,
+    Type = ifelse(Type == "DH: Geothermal heat pump", "DH: Geothermal", Type),
+  )
+long_ef_normalized$`Damage category` <- str_wrap(long_ef_normalized$`Damage category`, width = 20)
+ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
+  geom_col(width = 0.6) +
+  facet_grid(rows = vars(`Damage category`), switch = "y") +
+  labs(
+    x = "",
+    y = "Relative impact in %",
+  ) +
+  theme_minimal() +
+  theme(
+    strip.placement = "outside",
+    strip.text.y.left = element_text(angle = 90, size = 8, hjust = 0.5, vjust = 0.5), 
+    strip.switch.pad.grid = unit(0.5, "cm"),
+    plot.margin = margin(20, 0, 20, 0),
+    strip.background = element_rect(color = "black", linewidth = 0.5),
+    axis.text.x = element_text(size = 12),
+    axis.text.y = element_text(size = 12),
+    legend.position = "bottom",
+    legend.title = element_text(size = 14),  # Title of the legend
+    legend.text = element_text(size = 12),    # Items in the legend
+  ) +
+  scale_fill_brewer(palette = "Purples") +
+  coord_flip()
+ggsave("img/pwrg_solar_ef_midpoints_faceted_others.png")
+```
+
 # Energy winter production CH
 ```{r}
-ch <- read_delim("data/Energieperspektiven 2050+ - Sheet3.csv")[1:9, 1:9]
+ch <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 7 final.csv")[1:9, 1:9]
 
 long_ch <- pivot_longer(ch, cols = -c("Type"), names_to = "Year", values_to = "Value")
 
@@ -218,7 +257,7 @@ ggplot(long_ch, aes(x = Year, y = Value, fill = Type)) +
     x = "",
     y = "TWh",
   ) +
-  scale_fill_brewer(palette = "Purples")
+  scale_fill_brewer(palette = "Greens")
 ggsave("img/pwrg_solar_ch_winter.png")
 ```
 
