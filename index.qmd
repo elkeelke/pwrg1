@@ -67,7 +67,7 @@ For the present LCIA, the specific goals are to address the research questions o
 *   heat pump component powered with electricity from the grid and a buffer storage unit
 *   biomass combustion unit serving backup heat when stored heat is unavailable,
 *   a facility to house the heat pump and the biomass combustion unit,
-*   heat transport (HT) distribution network that supplies to residential consumers, and
+*   heat transport distribution network that supplies to residential consumers, and
 *   and receiver units installed in each participating household.
 
 The lifetime of the district heating system is assumed to be 50 years. There are at least 180 consumer households expected, which is roughly 60% of all households that exist in the local community. The plant is currently under construction and on track to be operational for the 2025 winter heating period. 
@@ -124,7 +124,7 @@ The system model, as detailed in @sec-sima, was implemented using SimaPro @SimaP
 
 ![Relative environmental impact for components of Bracht community district heating system  (Ecological Scarcity 2021, v1.04, UVEK LCI weighting)](img/pwrg_solar_network_bar.png){#fig-network-bar width="40%"}
 
-To address the first research question regarding the environmental impact of the additional electricity and the supplemental biomass burnt in the wood boiler, the relative influence of the individual components of the solar thermal district heating system on overall environmental impact was evaluated using the Ecological Scarcity 2021 (v1.04) method. The assessment was conducted at the single-score level, applying the UVEK LCI weighting set to define the relative importance of the different damage categories. The results are presented in @fig-network-bar. They show that the biomass (27.3 %) and the electricity (35.8 %) together have a very large impact. They are responsible for nearly two-thirds of the environmental impact of the overall system. The solar thermal based part of the system with solar thermal field, seasonal storage, and heat pump is responsible for less than 30 % of the overall environmental impact, although they supply two-thirds of the total energy production (see @fig-bracht-overview). Only one-third of the energy delivered to end consumers originates from the biomass and electricity.
+To address the first research question regarding the environmental impact of the additional electricity and the supplemental biomass burnt in the wood boiler, the relative influence of the individual components of the solar thermal district heating system on overall environmental impact was evaluated using the Ecological Scarcity 2021 (v1.04) method. The assessment was conducted at the single-score level, applying the UVEK LCI weighting set to define the relative importance of the different damage categories. The results are presented in @fig-network-bar. They show that the biomass (27.3 %) and the electricity (35.8 %) together have a very large impact. They are responsible for nearly two-thirds of the environmental impact of the overall system. The solar thermal based part of the system with solar thermal field, seasonal storage, and heat pump is responsible for less than 30 % of the overall environmental impact, although they supply two-thirds of the total energy production (see @epp2024high). Only one-third of the energy delivered to end consumers originates from the biomass and electricity.
 
 For a more detailed view of the environmental impact by individual damage categories, @fig-ef-network-bar presents the drilled-down individual results for the most relevant impact categories *Climate change*, *Particulate matter*, *Eutrophication (marine)*, *Land use*, *Resource use (minerals and metals)*, and *Resource use (fossils)*. The figure shows that biomass combustion is the dominant contributor to Land use, Particulate matter, and Marine eutrophication. In contrast, electricity use is the primary driver of impacts in *Fossil resource use* and *Climate change*. The environmental impact in the *Minerals and metals resource use* category is most significantly influenced by heat preparation and the solar thermal collectors. The seasonal storage unit contributes notably to the *Climate change* category.
 
@@ -254,7 +254,7 @@ Furthermore, improving heat loss coefficients, particularly reducing the signifi
 
 # Appendix and supporting information
 
-This section documents the supporting information related to the life cycle inventory in @sec-lci, the exact data used for process modelling in SimaPro in @sec-sima, and the project organization in @sec-project. 
+This section documents the supporting information related to the life cycle inventory in @sec-lci, the data used for  modelling in @sec-data, supplemental charts in @sec-charts, and the project organization in @sec-project. 
 
 ## Life cycle inventory {#sec-lci}
 
@@ -286,7 +286,7 @@ The relevant data for the seasonal storage unit can be found in @tbl-component-s
 ::: {#tbl-component-ssu .table caption="Sources for seasonal storage unit specification"}
 | Dimension | Value | Source |
 |-----------------|--------------------------------------|-----------------|
-| Volume | 26'600 $m^3$ | [@fig-bracht-overview] |
+| Volume | 26'600 $m^3$ | [@epp2024high] |
 | Resource: water | 26'600 $m^3$ filled from local source | [@bracht2025floating] |
 | Cover layer 1, 10 | Polyethylen (HDPE) sealing membranes 1.5 mm, 1.5 kg / $m^2$ | [@bracht2025floating], estimated weight |
 | Cover layer 2, 9 | Fleece (0.1 kg / $m^2$) laminated plastic grid (HDPE, 0.5 kg / $m^2$) | [@bracht2025floating], estimated weight |
@@ -302,7 +302,7 @@ The relevant data for the seasonal storage unit can be found in @tbl-component-s
 | Production country | China | Assumption |
 | Transport per container ship | 8000 km | Assumption |
 | Transport per lorry | 1000 km | Assumption |
-| Required construction process | Excavator 26.600 $m^3$ | [@fig-bracht-overview] |
+| Required construction process | Excavator 26.600 $m^3$ | [@epp2024high] |
 :::
 
 ### Heat preparation {#sec-hp}
@@ -314,13 +314,13 @@ The relevant data for the heat preparation unit can be found in @tbl-component-h
 |----------------|----------------------------------------|----------------|
 | Heat pump | 2x Carrier Aquaforce 61XWH-ZE (630 kW max electrical input power) | [@viessmann2024] [@carrier2025floating] |
 | Electricity requirements | 209 MWh per year | Own calculation, see @sec-loss-coefficients |
-| Buffer storage | ca. 200 $m^3$ = 200'000 l | [@fig-bracht-overview] |
+| Buffer storage | ca. 200 $m^3$ = 200'000 l | [@epp2024high] |
 | Biomass boiler | Mawera boiler with 700 kW thermal power | [@viessmann2024] |
 | Controller | Vitocontrol 200-M | [@viessmann2024] [@viessmann2025] |
 | Heat installation facility | 50 $m^2$ | Own assumption |
 :::
 
-## Data
+## Data {#sec-data}
 
 In this section, the data that was created for the model is documented.
 
@@ -382,7 +382,7 @@ The loss coefficients and energy requirements numbers were calculated in a sprea
 
 The data for producing the charts for this report is kept in a spreadsheet accessible [here](https://docs.google.com/spreadsheets/d/1Ghai0-kHUOZTMoKDRJ7uO3ejAa72vN2kFpBa4IFHCks/edit?gid=0#gid=0).
 
-## Supplemental charts
+## Supplemental charts {#sec-charts}
 
 In this section, supplemental charts are presented for completeness reasons. @fig-ef-midpoints-others complements @fig-ef-midpoints with the results for the damage categories that were considered less relevant for the use case.
 
