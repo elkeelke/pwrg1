@@ -44,7 +44,7 @@ For the community district heating project in Bracht, the economic viability in 
 
 # Methodology and research questions {#sec-metho}
 
-The LCIA was performed using the SimaPro 9.6.0.1 software @SimaPro2024. The foreground data was collected from various online sources and combined with background data from the Ecoinvent v3 database @wernet2016ecoinvent and the UVEK LCI database version DQRv2:2025 @FOEN2025. The environmental impacts were assessed using the mid-point level Environmental Footprint (EF) method @ec2021EF and the Ecological Scarcity 2021 (v1.04) method @FOEN2021 at the single score level with UVEK LCI weighting set. 
+The LCIA was performed using the SimaPro 9.6.0.1 software @SimaPro2024. The foreground data was collected from various online sources and combined with background data from the Ecoinvent v3 database @wernet2016ecoinvent and the UVEK LCI database version DQRv2:2025 @FOEN2025. The environmental impacts were assessed using the mid-point level Environmental Footprint (EF) method @ec2021EF, the Ecological Scarcity 2021 (v1.04) method @FOEN2021 at the single score level with UVEK LCI weighting set, and the IPCC 2021 GWP100 methodology @IPCC_2021_WGI_Annex_III.
 
 The research questions were formulated as follows:
 
@@ -144,13 +144,13 @@ The results indicate that heat produced by the Bracht plant, with an environment
 
 The lowest environmental impact with 165 Pt per kWh of heat is returned for the district heating system based on wood chips as the energy source, even with the impact on main air pollutants and particulate matter (PM) having a significant impact on the overall results for this setup.  The district heating system based on a geothermal heat pump as the energy source has the third lowest impact with 225 Pt per kWh of heat, to the largest extent from impact on radioactive waste to deposit. Gas and oil based consumer installations fare significantly worse with 281 Pt and 430 Pt per kWh of heat, dominantly from impact on climate change.
 
-![Damage assessment using the Environmental Footprint Method, visualized as relative environmental impacts in comparison.](img/pwrg_solar_ef_midpoints_faceted.png){#fig-ef-midpoints width="90%"}
+![Damage assessment for the most relevant categories using the Environmental Footprint Method, visualized as relative environmental impacts in comparison. See @fig-ef-midpoints-others for the results for categories omitted in the given chart.](img/pwrg_solar_ef_midpoints_faceted.png){#fig-ef-midpoints width="90%"}
 
 As before, @fig-ef-midpoints presents the individual results for the most relevant damage categories, comparing them relative to the highest value in each category, which is shown as the longest bar representing 100% relative impact. This analysis confirms the findings from @fig-es-single-score, clearly demonstrating that oil and gas boilers have extremely high impacts in the *Climate change* category which is equivalent to Global warming in the Ecological Scarcity method. The relative impacts are 100% and 70%, respectively. Additionally, oil and gas boilers exhibit the highest fossil resource use, at 100% and 80%. A clear trade-off exists because each heating technology performs worst in different impact categories. For example, the district heating network using wood chips shows lower climate change impacts but the highest relative impacts in *Terrestrial eutrophication*, *Land use*, and *Particulate matter* (PM). While PM impact was visible in @fig-es-single-score, *Terrestrial eutrophication* and *Land use* impacts were not significant in the single score results. Similarly, solar thermal and geothermal-based district heating systems have the highest relative impacts in Minerals and metals resource use, at 100% and 83%, respectively. These trade-offs imply that selecting a heating technology depends on which environmental impacts are prioritized for a given use case. This highlights the need to weigh and balance different categories manually, or to rely on a single score method if applicable.
 
 # Interpretation and discussion {#sec-inter} 
 
-This chapter discusses the results introduced in @sec-results. They revealed that the district heating system based on solar thermal energy and seasonal storage compares favorably to other means of heating. However, in the given modelling, with limitations as documented in @sec-model-limitation, it exhibits higher environmental impact compared to the district heating system based on wood chips as the energy sources. The electricity and the supplemental biomass required were found to be the two top single contributors to the overall results. To understand the saving potential from using lower-emitting (see @sec-sensitive-elec) or less energy resources (see third research question and @sec-sensitive-loss), sensitivity analyses for source of electricity and loss coefficients for the heat loss in the seasonal storage unit and the transport pipes were performed.
+This chapter discusses the results introduced in @sec-results. They revealed that the district heating system based on solar thermal energy and seasonal storage compares favorably to other means of heating. However, in the given modelling, with limitations as documented in @sec-model-limitation, it exhibits higher environmental impact compared to the district heating system based on wood chips as the energy source. The electricity and the supplemental biomass required were found to be the two top single contributors to the overall results. To understand the saving potential from using lower-emitting (see @sec-sensitive-elec) or less energy resources (see third research question and @sec-sensitive-loss), sensitivity analyses for source of electricity and loss coefficients for the heat loss in the seasonal storage unit and the transport pipes were performed. The combined results from both sensitivity analyses are summarized in @sec-combined.
 
 ## Modelling limitations {#sec-model-limitation}
 
@@ -237,6 +237,14 @@ However, the higher availability of energy in the seasonal storage unit results 
 Both scenarios were modeled in SimaPro to learn about the implications on environmental impact. Like in the default model, the ENTSO-E production mix was assumed. For scenario (A) with updated assumptions, a 15 % reduction from 170 Pt per kWh of heat to 146 Pt per kWh of heat can be achieved. For scenario (B) with a doubled insulating cover for the seasonal storage unit, a 9 % reduction to 155[^note] Pt per kWh of heat can be achieved. This confirms the environmental impact savings potential of operating conditions improvements.
 
 [^note]: This is coincidentally the exact same result as already obtained in @sec-pipe-loss.
+
+## Combined results from sensitivity analysis {#sec-combined}
+
+As discussed in the previous sections, two main opportunities for optimization have been identified: (1) using renewable energy to operate the heat pump and (2) reducing heat losses in the system to decrease the need for supplemental biomass. However, improving insulation leads to increased electricity demand for the heat pump which in turn amplifies the benefits of using renewable energy.
+
+Given the interdependence of these two factors, this section presents the combined results. The analysis is based on the IPCC 2021 GWP100 methodology, with outcomes expressed in grams of CO₂-equivalents per kWh, to enable comparison with widely recognized tools such as @electricitymaps. However, it is important to note that heat and electricity are different energy forms, which should be considered when interpreting direct comparisons. As the results for wind and hydro power were nearly identical, hydro was excluded from this analysis for the sake of clarity. Scenario (A) from @sec-ssu-loss was chosen for the comparison as the representative scenario for heat loss optimization. The results are presented in @fig-combined. The chart reveals that, according to the IPCC methodology, scenario (A) performs worse than the baseline due to increased electricity demand met by the ENTSO-E production mix. However, this impact can be mitigated by using wind energy, which in turn yields the best results among the scenarios compared by bringing down the numbers substantially, from 72 g CO₂-eq for the ENTSO-E based baseline to 31 g CO₂-eq for the heat loss optimized scenario together with renewable energy from wind.
+
+![Environmental impact in grams of CO₂-eq per kWh of heat (IPCC 2021 GWP100).](img/pwrg_ipcc.png){#fig-combined width="80%"}
 
 # Summary and conclusion
 
@@ -400,6 +408,6 @@ In this section, the time plan and the meeting notes are documented.
 
 ### Meeting notes
 
-The notes for the meetings can be found [here](https://docs.google.com/document/d/1ckpCeTboJK6gfoXQi750jMr5Y85-x3PROEDG1IKEM4E/edit?tab=t.0#heading=h.ibakwauq0483). Access is given upon request.
+The notes for the meetings can be found [here](https://docs.google.com/document/d/1ckpCeTboJK6gfoXQi750jMr5Y85_x3PROEDG1IKEM4E/edit?tab=t.0#heading=h.ibakwauq0483). Access is given upon request. Contact in case of permission issues: Elke Michlmayr.
 
 # References

@@ -257,7 +257,33 @@ ggplot(long_ch, aes(x = Year, y = Value, fill = Type)) +
     x = "",
     y = "TWh",
   ) +
-  scale_fill_brewer(palette = "Greens")
+  scale_fill_brewer(palette = "PuBu")
 ggsave("img/pwrg_solar_ch_winter.png")
 ```
 
+# IPCC
+```{r}
+ch <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 8 final.csv")
+
+long_ch <- pivot_longer(ch, cols = -c("Damage category", "Unit"), names_to = "Scenario", values_to = "Value")
+
+long_ch$Scenario <- factor(long_ch$Scenario, levels = c("ENTSO-E", "Heat loss optimized with ENTSO-E", "CH future energy mix", "CH wind", "Heat loss optimized with CH wind"))
+
+ggplot(long_ch, aes(x = Scenario, y = Value * 1000, fill = Scenario)) +
+  geom_col() +
+  theme_minimal() +
+  theme(
+      legend.title = element_text(size = 14),  # Title of the legend
+      legend.text = element_text(size = 14),    # Items in the legend
+      plot.margin = unit(c(0.2, 0.5, 0.2, 0.5), "cm"),  # top, right, bottom, left
+      axis.text.x = element_text(angle = 45, hjust = 1, size = 14),
+      axis.title.y = element_text(size = 14),
+      axis.text.y = element_text(size = 14),
+      ) +
+  labs(
+    x = "",
+    y = expression(""*CO[2]*"-eq in grams per kWh of heat"),
+  ) +
+  scale_fill_brewer(palette = "YlGn")
+ggsave("img/pwrg_ipcc.png")
+```
