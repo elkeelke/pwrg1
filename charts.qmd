@@ -165,7 +165,7 @@ ef <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 6 fin
 long_ef <- pivot_longer(ef, cols = -c("Damage category", "Unit"), names_to = "Type", values_to = "Value")
 
 long_ef_normalized <- long_ef |>
-  filter(`Damage category` %in% c("Climate change", "Particulate matter", "Eutrophication, marine", "Land use", "Resource use, minerals/metals", "Resource use, fossils")) |>  
+  filter(`Damage category` %in% c("Climate change", "Particulate matter", "Eutrophication, terrestrial", "Land use", "Resource use, minerals/metals", "Resource use, fossils")) |>  
   group_by(`Damage category`) |>
   mutate(
     pct = Value / max(Value) * 100,
@@ -204,7 +204,7 @@ ef <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 6 fin
 long_ef <- pivot_longer(ef, cols = -c("Damage category", "Unit"), names_to = "Type", values_to = "Value")
 
 long_ef_normalized <- long_ef |>
-  filter(!`Damage category` %in% c("Climate change", "Particulate matter", "Eutrophication, marine", "Land use", "Resource use, minerals/metals", "Resource use, fossils")) |>  
+  filter(!`Damage category` %in% c("Climate change", "Particulate matter", "Eutrophication, terrestrial", "Land use", "Resource use, minerals/metals", "Resource use, fossils")) |>  
   group_by(`Damage category`) |>
   mutate(
     pct = Value / max(Value) * 100,
