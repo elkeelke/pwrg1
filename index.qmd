@@ -1,5 +1,5 @@
 ---
-title: Life cycle impact assessment for a district heating project with seasonal storage
+title: Life cycle assessment for a district heating project with seasonal storage
 subtitle: A case study analysis for a community project based in Bracht, Rauschenberg, Hessen, Germany
 author: Elke Michlmayr
 format:
@@ -20,7 +20,7 @@ csl: apa-no-ampersand.csl
 
 # Abstract
 
-A life cycle impact assessment (LCIA) was conducted for a solar district heating community project under construction in Bracht, Germany. It incorporates solar thermal collectors, a seasonal heat storage unit powered through an included electric heat pump, a supplemental biomass boiler as a backup solution for when there is no heat available from the solar based system, and a district heating network to supply residential consumers. 
+A life cycle assessment (LCA) was conducted for a solar district heating community project under construction in Bracht, Germany. It incorporates solar thermal collectors, a seasonal heat storage unit powered through an included electric heat pump, a supplemental biomass boiler as a backup solution for when there is no heat available from the solar based system, and a district heating network to supply residential consumers. 
 
 The assessment used standard environmental impact methods such as the Ecological Scarcity method to evaluate the system over a 50-year lifetime. Despite supplying the majority of the energy, the solar thermal component with seasonal storage contributed less than 30% to the overall environmental impact. The supplemental biomass and the required electricity sourced from the grid accounted for roughly two-thirds of the total impact, even though they provided only one-third of the energy. 
 
@@ -38,29 +38,15 @@ STCs can be combined with short-term heat storage that acts as a buffer, or with
 
 If space limitations or land costs require it, STCs can be installed at a distance from consumers and heat plants, with pipelines connecting them. An example is Priština, where the distance is around 4 km @euroheat2023. This introduces a trade-off, as the remote location requires laying additional underground piping.
 
-In scientific literature, only a small number of LCIA case studies for district heating systems exist, such as those for the systems in Milan @famiglietti2021environmental and Marseille @vauchez2023life. Life cycle impact assessment, particularly based on the ReCiPe method, has been used to evaluate the environmental impact of different STC-powered district heating configurations in @abokersh2020framework. The findings indicate that larger systems serving many households tend to have a lower environmental impact per unit of energy delivered. In @solano2023life, the authors present an LCIA study of a STC plant connected to the Geneva district heating network.
+In scientific literature, only a small number of LCA case studies for district heating systems exist, such as those for the systems in Milan @famiglietti2021environmental and Marseille @vauchez2023life. Life cycle assessment, particularly based on the ReCiPe method, has been used to evaluate the environmental impact of different STC-powered district heating configurations in @abokersh2020framework. The findings indicate that larger systems serving many households tend to have a lower environmental impact per unit of energy delivered. In @solano2023life, the authors present an LCA study of a STC plant connected to the Geneva district heating network.
 
 For the community district heating project in Bracht, the economic viability in comparison to conventional energetic renovation measures has been assessed in a previous study @kelch2024comparison. However, the environmental impact of the project has not yet been examined in detail. This gap forms the focus of the present study.
 
-# Methodology and research questions {#sec-metho}
-
-The LCIA was performed using the SimaPro 9.6.0.1 software @SimaPro2024. The foreground data was collected from various online sources and combined with background data from the Ecoinvent v3 database @wernet2016ecoinvent and the UVEK LCI database version DQRv2:2025 @FOEN2025. The environmental impacts were assessed using the mid-point level Environmental Footprint (EF) method @ec2021EF, the Ecological Scarcity 2021 (v1.04) method @FOEN2021 at the single score level with UVEK LCI weighting set, and the IPCC 2021 GWP100 methodology @IPCC_2021_WGI_Annex_III.
-
-The research questions were formulated as follows:
-
-1.  What is the relevance of the additional electricity required in the setup and the supplemental biomass boiler with respect to the overall environmental impact? The hypothesis is that the additional electricity and biomass required will amount to a sizable part of the overall environmental impact.
-2.  How does the STC based system with seasonal heat storage compare to other heating technologies in terms of environmental impact? The comparison will include district heating from other sources that would be available in small communities (such as a heat pump or wood chips), and consumer side heating installations such as oil or gas boilers. The hypothesis is that the STC based system will have a lower environmental impact compared to other district heating setups and to fossil energy based consumer installations.
-3.  What is the environmental impact contribution of the seasonal heat storage unit in the production, construction, and use stages in the life cycle? A sensitivity analysis will be performed to assess the benefits of the STC based system with a seasonal heat storage component included under several assumed loss coefficients for the storage component and the district heating pipe system. The hypothesis is that the seasonal storage component will lower the environmental impact.
-
-The following chapters will cover all the necessary stages of the LCIA: goal and scope definition in @sec-goal, inventory analysis in @sec-lci-overview, impact assessment in @sec-results, and interpretation in @sec-inter.
-
 # Goal and scope {#sec-goal}
 
-The goal and scope definition is a fundamental step in any life cycle impact assessment (LCIA), as it provides a clear description of the product system under study, its system boundaries, and the definition of a functional unit that reflects the output of the system in a consistent and measurable way. 
+The goal and scope definition is a fundamental step in any life cycle assessment (LCA), as it provides a clear description of the product system under study, its system boundaries, and the definition of a functional unit that reflects the output of the system in a consistent and measurable way. This goal and scope definition will be provided in this chapter. The following chapters will cover the remaining stages of the LCA: life cycle inventory analysis (LCI) in @sec-lci-overview, life cycle impact assessment (LCIA) in @sec-results, and result interpretation in @sec-inter. 
 
-![System overview for the Bracht community district heating network.](img/bracht_overview.png){#fig-bracht-overview width="80%"}
-
-For the present LCIA, the specific goals are to address the research questions outlined in @sec-metho. The scope of the assessment encompasses a district heating project initiated and operated by a cooperative composed of future household consumers and the local municipal council. As illustrated in @fig-bracht-overview, the system includes the following key components:
+The scope of the assessment encompasses a district heating project initiated and operated by a cooperative composed of future household consumers and the local municipal council. As illustrated in @fig-bracht-overview, the system includes the following key components:
 
 *   solar thermal collector (STC) field,
 *   seasonal storage unit (SSU),
@@ -70,17 +56,41 @@ For the present LCIA, the specific goals are to address the research questions o
 *   district heating distribution network that supplies to residential consumers,
 *   and receiver units installed in each participating household.
 
-The lifetime of the district heating system is assumed to be 50 years. There are at least 180 consumer households expected, which is roughly 60% of all households that exist in the local community. The plant is currently under construction and on track to be operational for the 2025 winter heating period. 
+The lifetime of the district heating system is assumed to be 50 years. There are at least 180 consumer households expected, which is roughly 60% of all households that exist in the local community. The plant is currently under construction and on track to be operational for the 2025 winter heating period.
 
-The system diagram shown in @fig-system-diagram describes the product system and its boundaries. The functional unit is defined to be 1 MegaJoule (MJ) of thermal energy provided to the consumer directly at the consumer site during the heating period. Using MJ instead of kilowatt-hours of thermal energy (kWh~th~) ensures consistency with the UVEK processes for other forms of district heating in SimaPro that the comparison will be performed against.
+For the present LCA, the specific goals are to address the following research questions:
 
-![System diagram  for the Bracht community district heating network.](img/system_diagram.png){#fig-system-diagram width="80%" fig-border="true"}
+1.  What is the relevance of the additional electricity required in the setup and the supplemental biomass boiler with respect to the overall environmental impact? The hypothesis is that the additional electricity and biomass required will amount to a sizable part of the overall environmental impact.
+2.  How does the STC based system with seasonal heat storage compare to other heating technologies in terms of environmental impact? The comparison will include district heating from other sources that would be available in small communities (such as a heat pump or wood chips), and consumer side heating installations such as oil or gas boilers. The hypothesis is that the STC based system will have a lower environmental impact compared to other district heating setups and to fossil energy based consumer installations.
+3.  What is the environmental impact contribution of the seasonal heat storage unit in the production, construction, and use stages in the life cycle? A sensitivity analysis will be performed to assess the benefits of the STC based system with a seasonal heat storage component included under several assumed loss coefficients for the storage component and the district heating pipe system. The hypothesis is that the seasonal storage component will lower the environmental impact.
+
+## Functional unit
+
+The functional unit is defined to be 1 MegaJoule (MJ) of thermal energy provided to the consumer directly at the consumer site during the heating period. Using MJ instead of kilowatt-hours of thermal energy (kWh~th~) ensures consistency with the UVEK processes for other forms of district heating in SimaPro that the comparison will be performed against.
+
+## System boundary
+
+The system diagram shown in @fig-system-diagram describes the product system and its boundaries. 
+
+![System diagram for the Bracht community district heating network.](img/system_diagram.png){#fig-system-diagram width="80%" fig-border="true"}
+
+## Databases, software, and data sources
+
+The LCA was performed using the SimaPro 9.6.0.1 software @SimaPro2024. The foreground data was collected from various online sources and combined with background data from the Ecoinvent v3 database @wernet2016ecoinvent and the UVEK LCI database version DQRv2:2025 @FOEN2025. 
+
+## Selected LCIA methods
+
+The environmental impacts were assessed using the mid-point level Environmental Footprint (EF) method @ec2021EF, the Ecological Scarcity 2021 (v1.04) method @FOEN2021 at the single score level with UVEK LCI weighting set, and the IPCC 2021 GWP100 methodology @IPCC_2021_WGI_Annex_III.
+
+## Allocation
+
+The cut-off approach @iso14044_cutoff was employed.
 
 # Life cycle inventory (LCI) {#sec-lci-overview}
 
 This section outlines the foundational data used to support system modelling. Extensive project-related information for the Bracht community district heating system is available on the project website @bracht2025. This was used as a key source for detailed LCI data. It provided detailed data on the solar thermal collector field, the seasonal storage unit, and heat preparation systems comprising the heat pump, buffer storage, installation facility, and consumer installations. 
  
-The comparison datasets and the district heating network were modelled based on UVEK LCI data @FOEN2025, an existing resource for conducting LCIAs of energy systems and infrastructure within Switzerland and the broader European context provided by the Swiss Federal Office of Energy (abbreviated in English as SFOE, and in German as UVEK). For electricity input, the modelling assumed the European Network of Transmission System Operators for Electricity (ENTSO-E) production mix, also provided in the UVEK dataset, to ensure the model reflects conditions typical of a plant operating within the European region.
+The comparison datasets and the district heating network were modelled based on UVEK LCI data @FOEN2025, an existing resource for conducting LCAs of energy systems and infrastructure within Switzerland and the broader European context provided by the Swiss Federal Office of Energy (abbreviated in English as SFOE, and in German as UVEK). For electricity input, the modelling assumed the European Network of Transmission System Operators for Electricity (ENTSO-E) production mix, also provided in the UVEK dataset, to ensure the model reflects conditions typical of a plant operating within the European region.
 
 Additional LCI details for all components are provided in @sec-lci. Detailed specifications and parameters of the resulting system model are described in @sec-sima. The remainder of this section outlines the key assumptions regarding component lifetimes, expected electricity demand, and thermal loss coefficients.
 
@@ -120,7 +130,7 @@ Since detailed methods for the loss estimates used in the Bracht assumptions wer
 
 # Results {#sec-results}
 
-The system model, as detailed in @sec-sima, was implemented using SimaPro @SimaPro2024. This model served as the foundation for generating LCIA results using the Environmental Footprint (EF) method @ec2021EF and the Ecological Scarcity 2021 (v1.04) method @FOEN2021. The corresponding results derived from these assessments are presented in this section.
+The system model, as detailed in @sec-sima, was implemented using SimaPro @SimaPro2024. This model served as the foundation for generating LCA results using the Environmental Footprint (EF) method @ec2021EF and the Ecological Scarcity 2021 (v1.04) method @FOEN2021. The corresponding results derived from these assessments are presented in this section.
 
 ![Relative environmental impact for components of Bracht community district heating system  (Ecological Scarcity 2021, v1.04, UVEK LCI weighting)](img/pwrg_solar_network_bar.png){#fig-network-bar width="40%"}
 
@@ -246,7 +256,7 @@ Given the interdependence of these two factors, this section presents the combin
 
 # Summary and conclusion
 
-A Life cycle impact assessment was conducted for a solar district heating community project located in Bracht, Rauschenberg, Germany. This project combines solar thermal collectors with a seasonal storage unit to preserve heat produced in summer until the heating period in fall and winter. A district heating distribution network supplies the thermal energy to 180 residential consumers. The system's energy supply is expected to be to the largest share from stored solar thermal energy, partly from biomass, and partly from the electricity grid. Default modelling assumptions included a 20 % heat loss coefficient for the district heating network and an implied 50 % loss for the seasonal storage unit.
+A Life cycle assessment was conducted for a solar district heating community project located in Bracht, Rauschenberg, Germany. This project combines solar thermal collectors with a seasonal storage unit to preserve heat produced in summer until the heating period in fall and winter. A district heating distribution network supplies the thermal energy to 180 residential consumers. The system's energy supply is expected to be to the largest share from stored solar thermal energy, partly from biomass, and partly from the electricity grid. Default modelling assumptions included a 20 % heat loss coefficient for the district heating network and an implied 50 % loss for the seasonal storage unit.
 
 Results indicate that biomass and grid electricity are the primary contributors to the overall environmental impact, accounting for approximately two-thirds of the total, despite supplying only one-third of the energy delivered. The solar thermal collectors contribute less than 15 % to the overall environmental impact. Analysis by damage categories shows biomass combustion significantly contributes to land use, particulate matter, and terrestrial eutrophication, while electricity use is the main driver for fossil resource use and climate change. 
 
