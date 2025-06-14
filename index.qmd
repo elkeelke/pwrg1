@@ -26,27 +26,25 @@ The assessment used standard environmental impact methods such as the Ecological
 
 The results are encouraging and show that the Bracht system is environmentally favorable compared to many alternatives. However, substantial potential for improvement through optimization of the system’s operating conditions remains. The key opportunities include using renewable electric energy for the heat pump, and reducing heat losses in storage and district heating network to minimize, or even completely eliminate, the need for supplemental biomass. This is achievable by optimizing settings such as the system's operating temperature.
 
-# Introduction and related work
+# Introduction
 
-Heating is a key contributor to energy consumption, accounting for roughly half of all energy used in the EU, with 60% of that energy still generated from fossil fuels @euroheat2023. District heating is a system in which a central heating plant supplies heat to multiple households through a network of pipes. It works in two main ways, either by utilizing surplus heat from sources such as waste incineration plants to provide heating for residential areas and service centers @sfoe2020, or by relying on dedicated energy sources such as biomass or solar thermal collectors. There are approximately 6,000 district heating systems operating across the EU @euroheat2023. Process heating uses a similar setup but is designed for industrial applications, which typically require higher temperatures. Studies such as @jeandaux2021life have shown that using a centralized heating system with a heat distribution network results in a lower environmental impact compared to standalone heating units installed at each consumer’s site.
+Heating is a key contributor to energy consumption, accounting for roughly half of all energy used in the EU, with 60% of that energy still generated from fossil fuels as stated by @euroheat2023. District heating is a system in which a central heating plant supplies heat to multiple households through a network of pipes. It works in two main ways, either by utilizing surplus heat from sources such as waste incineration plants to provide heating for residential areas and service centers as described by @sfoe2020, or by relying on dedicated energy sources such as biomass or solar thermal collectors. There are approximately 6,000 district heating systems operating across the EU according to @euroheat2023. Process heating uses a similar setup but is designed for industrial applications, which typically require higher temperatures. Studies such as @jeandaux2021life have shown that using a centralized heating system with a heat distribution network results in a lower environmental impact compared to standalone heating units installed at each consumer’s site.
 
-Solar thermal collectors (STCs) are devices that absorb solar radiation and convert it into heat. There are several types of STCs, including flat plate collectors, unglazed water collectors, and evacuated tube collectors. These systems are often combined with heat pumps to bridge the temperature gap between the water produced by the solar field and the temperature required by the district heating delivery system @wikipedia2020. According to @iea2024, there are more than 300 large-scale district heating systems worldwide powered by STCs, and over 1.200 STC systems that provide industrial process heat.
+Solar thermal collectors (STCs) are devices that absorb solar radiation and convert it into heat. There are several types of STCs, including flat plate collectors, unglazed water collectors, and evacuated tube collectors. These systems are often combined with heat pumps to bridge the temperature gap between the water produced by the solar field and the temperature required by the district heating delivery system as explained in @wikipedia2020. According to @iea2024, there are more than 300 large-scale district heating systems worldwide powered by STCs, and over 1.200 STC systems that provide industrial process heat.
 
-Solar thermal collectors are a mature technology. In 2023, the total operational solar thermal capacity reached 560 GWth, covering roughly 800 km² of collector area @iea2024. STC-provided capacity varies seasonally depending on available sunlight. In some cases, STCs are used only during certain parts of the year, for example to allow a biomass-powered plant to shut down during summer when it would otherwise operate at extremely low capacity.
+Solar thermal collectors are a mature technology. In 2023, the total operational solar thermal capacity reached 560 GWth, covering roughly 800 km² of collector area as documented by @iea2024. STC-provided capacity varies seasonally depending on available sunlight. In some cases, STCs are used only during certain parts of the year, for example to allow a biomass-powered plant to shut down during summer when it would otherwise operate at extremely low capacity.
 
 STCs can be combined with short-term heat storage that acts as a buffer, or with seasonal heat storage tanks, sometimes referred to as pit thermal energy storage (PTES). These include underground hot water basins that store excess heat from the warm season for use in the cold season. However, this setup involves heat losses.
 
-If space limitations or land costs require it, STCs can be installed at a distance from consumers and heat plants, with pipelines connecting them. An example is Priština, where the distance is around 4 km @euroheat2023. This introduces a trade-off, as the remote location requires laying additional underground piping.
+If space limitations or land costs require it, STCs can be installed at a distance from consumers and heat plants, with pipelines connecting them. An example is Priština, where the distance is around 4 km as detailed by @euroheat2023. This introduces a trade-off, as the remote location requires laying additional underground piping.
 
-In scientific literature, only a small number of LCA case studies for district heating systems exist, such as those for the systems in Milan @famiglietti2021environmental and Marseille @vauchez2023life. Life cycle assessment, particularly based on the ReCiPe method, has been used to evaluate the environmental impact of different STC-powered district heating configurations in @abokersh2020framework. The findings indicate that larger systems serving many households tend to have a lower environmental impact per unit of energy delivered. In @solano2023life, the authors present an LCA study of a STC plant connected to the Geneva district heating network.
-
-For the community district heating project in Bracht, the economic viability in comparison to conventional energetic renovation measures has been assessed in a previous study @kelch2024comparison. However, the environmental impact of the project has not yet been examined in detail. This gap forms the focus of the present study.
+For the community district heating project in Bracht, the economic viability in comparison to conventional energetic renovation measures has been assessed in a previous study by @kelch2024comparison. However, the environmental impact of the project has not yet been examined in detail. This gap forms the focus of the present study. The following chapters will cover the remaining stages of the LCA: goal and scope definition in @sec-goal, life cycle inventory analysis (LCI) in @sec-lci-overview, life cycle impact assessment (LCIA) in @sec-results, and result interpretation in @sec-inter.
 
 # Goal and scope {#sec-goal}
 
-The goal and scope definition is a fundamental step in any life cycle assessment (LCA), as it provides a clear description of the product system under study, its system boundaries, and the definition of a functional unit that reflects the output of the system in a consistent and measurable way. This goal and scope definition will be provided in this chapter. The following chapters will cover the remaining stages of the LCA: life cycle inventory analysis (LCI) in @sec-lci-overview, life cycle impact assessment (LCIA) in @sec-results, and result interpretation in @sec-inter. 
+The goal and scope definition is a fundamental step in any life cycle assessment (LCA), as it provides a clear description of the product system under study, its system boundaries, and the definition of a functional unit that reflects the output of the system in a consistent and measurable way. 
 
-The scope of the assessment encompasses a district heating project initiated and operated by a cooperative composed of future household consumers and the local municipal council. As illustrated in @fig-bracht-overview, the system includes the following key components:
+The scope of the assessment encompasses a district heating project initiated and operated by a cooperative composed of future household consumers and the local municipal council. The system includes the following key components:
 
 *   solar thermal collector (STC) field,
 *   seasonal storage unit (SSU),
@@ -76,21 +74,21 @@ The system diagram shown in @fig-system-diagram describes the product system and
 
 ## Databases, software, and data sources
 
-The LCA was performed using the SimaPro 9.6.0.1 software @SimaPro2024. The foreground data was collected from various online sources and combined with background data from the Ecoinvent v3 database @wernet2016ecoinvent and the UVEK LCI database version DQRv2:2025 @FOEN2025. 
+The LCA was performed using the SimaPro 9.6.0.1 software by @SimaPro2024. The foreground data was collected from various online sources and combined with background data from the Ecoinvent v3 database by @wernet2016ecoinvent and the UVEK LCI database version DQRv2:2025 by the @FOEN2025. 
 
 ## Selected LCIA methods
 
-The environmental impacts were assessed using the mid-point level Environmental Footprint (EF) method @ec2021EF, the Ecological Scarcity 2021 (v1.04) method @FOEN2021 at the single score level with UVEK LCI weighting set, and the IPCC 2021 GWP100 methodology @IPCC_2021_WGI_Annex_III.
+The environmental impacts were assessed using the mid-point level Environmental Footprint (EF) method by the @ec2021EF, the Ecological Scarcity 2021 (v1.04) method by the @FOEN2021 at the single score level with UVEK LCI weighting set, and the IPCC 2021 GWP100 methodology by @IPCC_2021_WGI_Annex_III.
 
 ## Allocation
 
-The cut-off approach @iso14044_cutoff was employed.
+The cut-off approach as defined by the @iso14044_cutoff was employed.
 
 # Life cycle inventory (LCI) {#sec-lci-overview}
 
-This section outlines the foundational data used to support system modelling. Extensive project-related information for the Bracht community district heating system is available on the project website @bracht2025. This was used as a key source for detailed LCI data. It provided detailed data on the solar thermal collector field, the seasonal storage unit, and heat preparation systems comprising the heat pump, buffer storage, installation facility, and consumer installations. 
+This section outlines the foundational data used to support system modelling. Extensive project-related information for the Bracht community district heating system is available on the project website published by the @bracht2025. This was used as a key source for detailed LCI data. It provided detailed data on the solar thermal collector field, the seasonal storage unit, and heat preparation systems comprising the heat pump, buffer storage, installation facility, and consumer installations. 
  
-The comparison datasets and the district heating network were modelled based on UVEK LCI data @FOEN2025, an existing resource for conducting LCAs of energy systems and infrastructure within Switzerland and the broader European context provided by the Swiss Federal Office of Energy (abbreviated in English as SFOE, and in German as UVEK). For electricity input, the modelling assumed the European Network of Transmission System Operators for Electricity (ENTSO-E) production mix, also provided in the UVEK dataset, to ensure the model reflects conditions typical of a plant operating within the European region.
+The comparison datasets and the district heating network were modelled based on UVEK LCI data by the @FOEN2025, an existing resource for conducting LCAs of energy systems and infrastructure within Switzerland and the broader European context provided by the Swiss Federal Office of Energy (abbreviated in English as SFOE, and in German as UVEK). For electricity input, the modelling assumed the European Network of Transmission System Operators for Electricity (ENTSO-E) production mix, also provided in the UVEK dataset, to ensure the model reflects conditions typical of a plant operating within the European region.
 
 Additional LCI details for all components are provided in @sec-lci. Detailed specifications and parameters of the resulting system model are described in @sec-sima. The remainder of this section outlines the key assumptions regarding component lifetimes, expected electricity demand, and thermal loss coefficients.
 
@@ -116,7 +114,7 @@ The planned lifetime for the Bracht plant is 50 years. The assumed individual co
 
 Performance data from @tuev2021 provides several estimates of the annual output for the solar thermal collectors used in this project. These estimates vary by geographic location and desired output temperature. The most geographically relevant data point is for Würzburg, with an output of 5.283 kWh per collector per year at a target output temperature of 75 degrees Celsius (°C). Given a total of 855 collectors, the estimated gross thermal energy production is approximately 4.517 MWh per year.
 
-According to the project documentation @bracht2025faq, 2.700 MWh per year are expected to reach end-user households. This implies a total system loss of approximately 40%, accounting for thermal losses in the storage unit and distribution piping.
+According to the project documentation by the @bracht2025faq, 2.700 MWh per year are expected to reach end-user households. This implies a total system loss of approximately 40%, accounting for thermal losses in the storage unit and distribution piping.
 
 The energy distribution for heating supply for the Bracht plant is reported in @epp2024high as follows:
 
@@ -253,6 +251,10 @@ As discussed in the previous sections, two main opportunities for optimization h
 Given the interdependence of these two factors, this section presents the combined results. The analysis is based on the IPCC 2021 GWP100 methodology @IPCC_2021_WGI_Annex_III, with outcomes expressed in grams of CO₂-equivalents per kWh, to enable comparison with widely recognized tools such as @electricitymaps. However, it is important to note that heat and electricity are different energy forms, which should be considered when interpreting direct comparisons. As the results for wind and hydro power were nearly identical, hydro was excluded from this analysis for the sake of clarity. Scenario (A) from @sec-ssu-loss was chosen for the comparison as the representative scenario for heat loss optimization. The results are presented in @fig-combined. The chart reveals that, according to the IPCC methodology, scenario (A) performs worse than the baseline due to increased electricity demand met by the ENTSO-E production mix. However, this impact can be mitigated by using wind energy, which in turn yields the best results among the scenarios compared by bringing down the numbers substantially, from 72 g CO₂-eq for the ENTSO-E based baseline to 31 g CO₂-eq for the heat loss optimized scenario together with renewable energy from wind.
 
 ![Environmental impact in grams of CO₂-eq per kWh of heat (IPCC 2021 GWP100).](img/pwrg_ipcc.png){#fig-combined width="80%"}
+
+# Related work
+ 
+In scientific literature, only a small number of LCA case studies for district heating systems exist, such as those for the systems in Milan by @famiglietti2021environmental and Marseille by @vauchez2023life. Life cycle assessment, particularly based on the ReCiPe method, has been used to evaluate the environmental impact of different STC-powered district heating configurations in @abokersh2020framework. The findings indicate that larger systems serving many households tend to have a lower environmental impact per unit of energy delivered. In @solano2023life, the authors present an LCA study of a STC plant connected to the Geneva district heating network.
 
 # Summary and conclusion
 
