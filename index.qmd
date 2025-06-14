@@ -348,7 +348,7 @@ In this section, the data that was created for the model is documented.
 
 @tbl-sima-parameters and @tbl-sima-calc-parameters show the parameters and calculated parameters that were defined as helpers for modelling the solar thermal based district heating process in Simpapro. 
 
-The data for the process *district heat, at consumer, solar thermal, 1MW/MJ/RER U* is kept in an external spreadsheet [accessible here](https://docs.google.com/spreadsheets/d/11BHntxbclWm44ycV1JyY0AiQ9LamUJ2PbaCSZOzd-VE/edit?gid=311795711#gid=311795711). The data for the sensitivity analysis process can be found in a separate tab [accessible here](https://docs.google.com/spreadsheets/d/11BHntxbclWm44ycV1JyY0AiQ9LamUJ2PbaCSZOzd-VE/edit?gid=564209798#gid=564209798).
+The data for the process *district heat, at consumer, solar thermal, 1MW/MJ/RER U* is kept in an external spreadsheet [accessible here](https://docs.google.com/spreadsheets/d/11BHntxbclWm44ycV1JyY0AiQ9LamUJ2PbaCSZOzd-VE/edit?gid=1249156911#gid=1249156911). The input data for the adapted processes created for the electricity sensitivity analysis can be found in a separate tab [accessible here](https://docs.google.com/spreadsheets/d/11BHntxbclWm44ycV1JyY0AiQ9LamUJ2PbaCSZOzd-VE/edit?gid=564209798#gid=564209798).
 
 ::: {#tbl-sima-parameters .table caption="Parameters defined in SimaPro"}
 
