@@ -22,15 +22,14 @@ data$Component <- factor(data$Component, levels = data$Component[order(data$Valu
 
 data$percentage <- data$Value / sum(data$Value) * 100
 data$label <- ifelse(data$percentage >= 5, 
-                     paste0(data$Component, ": ", round(data$percentage, 1), "%"), 
+                     paste0(round(data$percentage, 0), "%"), 
                      data$label <- ifelse(data$percentage >= 5, 
                                           paste0(round(data$percentage, 1), "%"), 
                                           ""))
 
 # Create the pie chart without the circle outline
-ggplot(data, aes(x = "", y = Value, fill = Component)) +
+ggplot(data, aes(x = Component, y = Value, fill = Component)) +
   geom_bar(stat = "identity", width = 1) +
-  #coord_polar(theta = "y") +  # Converts bar chart to pie chart
   theme_minimal() +
   theme(axis.text.x = element_blank(),  # Hide x-axis labels
         axis.title.x = element_blank(),  # Hide x-axis title
@@ -39,13 +38,15 @@ ggplot(data, aes(x = "", y = Value, fill = Component)) +
         axis.ticks = element_blank(),    # Remove axis ticks
         panel.grid = element_blank(),    # Remove grid lines
         panel.border = element_blank(),
-        legend.title = element_text(size = 14),  # Title of the legend
-        legend.text = element_text(size = 12),    # Items in the legend
+        legend.title = element_text(size = 16),  # Title of the legend
+        legend.text = element_text(size = 14),    # Items in the legend
         plot.margin = unit(c(0.2, 0.5, 0.2, 0.5), "cm")  # top, right, bottom, left
         ) +
   geom_text(aes(label = label), 
-            position = position_stack(vjust = 0.5),
-            hjust = 0.5,
+            angle = 90,
+            vjust = 0.5,
+            y = 0,
+            hjust = -1,
             size = 6
             ) +
   scale_fill_brewer(palette = "Oranges")
@@ -109,7 +110,7 @@ long_es$Type <- factor(long_es$Type, levels = long_es_ordered)
 ggplot(long_es, aes(x = Type, y = Value, fill = reorder(`Impact category`, Value))) +
   geom_bar(stat = "identity", width = 0.6) +  # Use 'identity' to plot actual values
   labs(x = "",
-       y = "Pt per kWh",
+       y = "Pt per MJ",
        fill = "Impact category") +
   scale_fill_brewer(palette = "Blues") +
   theme_minimal() +
