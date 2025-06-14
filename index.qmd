@@ -114,21 +114,23 @@ The planned lifetime for the Bracht plant is 50 years. The assumed individual co
 
 Performance data from @tuev2021 provides several estimates of the annual output for the solar thermal collectors used in this project. These estimates vary by geographic location and desired output temperature. The most geographically relevant data point is for Würzburg, with an output of 5.283 kWh per collector per year at a target output temperature of 75 degrees Celsius (°C). Given a total of 855 collectors, the estimated gross thermal energy production is approximately 4.517 MWh per year.
 
-According to the project documentation by the @bracht2025faq, 2.700 MWh per year are expected to reach end-user households. This implies a total system loss of approximately 40%, accounting for thermal losses in the storage unit and distribution piping.
+According to the project documentation by the @bracht2025faq, 2.700 MWh per year are expected to reach end-user households. This implies a total system loss of approximately 40% in total, accounting for thermal losses in two places: in the storage unit, and in the heat distribution network. 
 
-The energy distribution for heating supply for the Bracht plant is reported in @epp2024high as follows:
+Since detailed methods for the loss estimates used in the Bracht assumptions were not provided in the public documentation, the modelling described in this document assumes a 20% loss coefficient as the default for the heat transmission pipe network. The relevant literature and further rationale for the choice are presented in @sec-pipe-loss. Given this assumption, the implied thermal loss within the seasonal storage unit would be approximately 50% to align with the reported figures from @bracht2025faq.
 
-*   67 % from stored solar thermal energy (approximately 2.258 MWh),
-*   26 % from biomass sources (approximately 904 MWh), and
-*   6 % from the electricity grid (approximately 209 MWh)
+Consequently, roughly half of the solar thermal collector production of 4.517 MWh per year, which amounts to 2.258 MWh per year, is available for consumption from the seasonal storage unit. The available heat will be augmented with extra energy from biomass (26 %) and from the electricity grid (6 %) as reported in @epp2024high. The total amount of energy supplied to the district heating network is approximately 3.370 MWh per year: 
 
-It is noted that the distribution totals 99 instead of 100, likely due to rounding, but since this is information from the original source and the difference is small, it was adopted without modification. 
+*   67 % from stored solar thermal energy (approximately 2.260 MWh),
+*   26 % from biomass sources (approximately 900 MWh), and
+*   6 % from the electricity grid (approximately 210 MWh)
 
-Since detailed methods for the loss estimates used in the Bracht assumptions were not provided in the public documentation, the modelling described in this document assumes a 20% loss coefficient as the default for the heat transmission pipe network. The relevant literature and further rationale for the choice are presented in @sec-pipe-loss. Given this assumption, the implied thermal loss within the seasonal storage unit would be approximately 50% to align with the reported figures from @bracht2025faq. These assumptions were incorporated into the system model as the default values. More background and a detailed discussion of thermal loss coefficients and their influence on system performance is presented in the sensitivity analysis in @sec-sensitive-loss.
+After discounting district heating network losses, this will amount to a delivery of 2.700 MWh per year at consumers. It is noted that the distribution totals 99 instead of 100, likely due to rounding, but since this is information from the original source and the difference is small, it was adopted without modification. 
+
+The loss assumptions as described in this chapter were incorporated into the system model as the default values. More background and a detailed discussion of thermal loss coefficients and their influence on system performance is presented in the sensitivity analysis in @sec-sensitive-loss.
 
 # Results {#sec-results}
 
-The system model, as detailed in @sec-sima, was implemented using SimaPro @SimaPro2024. This model served as the foundation for generating LCA results using the Environmental Footprint (EF) method @ec2021EF and the Ecological Scarcity 2021 (v1.04) method @FOEN2021. The corresponding results derived from these assessments are presented in this section.
+The system model, as detailed in @sec-sima, was implemented using SimaPro by @SimaPro2024. This model served as the foundation for generating LCA results using the Environmental Footprint (EF) method by the @ec2021EF and the Ecological Scarcity 2021 (v1.04) method by the @FOEN2021. The corresponding results derived from these assessments are presented in this section.
 
 ![Relative environmental impact for components of Bracht community district heating system  (Ecological Scarcity 2021, v1.04, UVEK LCI weighting)](img/pwrg_solar_network_bar.png){#fig-network-bar width="40%"}
 
@@ -150,7 +152,7 @@ The results are expressed in environmental impact points (Pt) per kilowatt-hour 
 
 The lowest environmental impact with 165 Pt per kWh of heat is returned for the district heating system based on wood chips as the energy source, even with the impact on main air pollutants and particulate matter (PM) having a significant impact on the overall results for this setup.  The district heating system based on a geothermal heat pump as the energy source has the third lowest impact with 225 Pt per kWh of heat, to the largest extent from impact on radioactive waste to deposit. Gas and oil based consumer installations fare significantly worse with 281 Pt and 430 Pt per kWh of heat, dominantly from impact on climate change.
 
-As before, @fig-ef-midpoints presents the individual results for the most relevant damage categories, comparing them relative to the highest value in each category, which is shown as the longest bar representing 100% relative impact. This analysis confirms the findings from @fig-es-single-score, clearly demonstrating that oil and gas boilers have extremely high impacts in the *Climate change* category with 100% and 70%, respectively. Additionally, the oil and gas boilers exhibit the highest fossil resource use, at 100% and 80%. A clear trade-off exists because each heating technology performs worst in different impact categories. For example, the district heating network using wood chips shows lower climate change impacts but the highest relative impacts in *Terrestrial eutrophication*, *Land use*, and *Particulate matter* (PM). While PM impact was visible in @fig-es-single-score, *Terrestrial eutrophication* and *Land use* impacts were not significant in the single score results. Similarly, solar thermal and geothermal-based district heating systems have the highest relative impacts in Minerals and metals resource use, at 100% and 83%, respectively. These trade-offs imply that selecting a heating technology depends on which environmental impacts are prioritized for a given use case. This highlights the need to weigh and balance different categories manually, or to rely on a single score method if applicable.
+As before, @fig-ef-midpoints presents the individual results for the most relevant damage categories, comparing them relative to the highest value in each category, which is shown as the longest bar representing 100% relative impact. This analysis confirms the findings from @fig-es-single-score, clearly demonstrating that oil and gas boilers have extremely high impacts in the *Climate change* category with 100% and 70%, respectively. Additionally, the oil and gas boilers exhibit the highest fossil resource use, at 100% and 80%. A clear trade-off exists because each heating technology performs worst in different impact categories. For example, the district heating network using wood chips shows lower climate change impacts but the highest relative impacts in *Terrestrial eutrophication*, *Land use*, and *Particulate matter* (PM). While PM impact was visible in @fig-es-single-score, *Terrestrial eutrophication* and *Land use* impacts were not significant in the single score results. Similarly, solar thermal and geothermal-based district heating systems have the highest relative impacts in *Minerals and metals resource use*, at 100% and 83%, respectively. These trade-offs imply that selecting a heating technology depends on which environmental impacts are prioritized for a given use case. This highlights the need to weigh and balance different categories manually, or to rely on a single score method if applicable.
 
 ![Damage assessment for the most relevant categories using the Environmental Footprint Method, visualized as relative environmental impacts in comparison. See @fig-ef-midpoints-others for the results for categories omitted in the given chart.](img/pwrg_solar_ef_midpoints_faceted.png){#fig-ef-midpoints width="90%"}
 
@@ -412,9 +414,7 @@ In this section, the time plan and the meeting notes are documented.
 
 ### Time planning
 
-@fig-time-plan documents the time plan that was followed for this project. The live version can be found [here](https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303).
-
-![Gantt chart used for time planning.](img/time_plan.png){#fig-time-plan width="100%"}
+The time plan that was followed for this project can be found [here](https://docs.google.com/spreadsheets/d/1GXiuAFEArfoSObDDMjL8yixMMKVGG254yvQUYm0Jduc/edit?gid=1314943303#gid=1314943303).
 
 ### Meeting notes
 
