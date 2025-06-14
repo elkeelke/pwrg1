@@ -15,7 +15,7 @@ execute:
   message: false
 lang: en
 bibliography: bibliography.bib
-csl: ieee.csl
+csl: apa-no-ampersand.csl
 ---
 
 # Abstract
