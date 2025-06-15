@@ -238,17 +238,19 @@ long_ch$Scenario <- factor(long_ch$Scenario, levels = c("ENTSO-E energy mix", "H
 
 # Define baseline
 baseline_category <- "ENTSO-E energy mix"
-baseline_value <- long_ch |> filter(Scenario == baseline_category) %>% pull(value)
+baseline_value <- long_ch |> filter(Scenario == baseline_category) |> pull(Value)
 
 # Calculate percentage change from baseline
 long_ch <- long_ch |>
   mutate(
-    pct_change = (value - baseline_value) / baseline_value * 100,
-    label = ifelse(category == baseline_category, "Baseline", sprintf("%+.1f%%", pct_change))
+    pct_change = (Value - baseline_value) / baseline_value * 100,
+    label = ifelse(Scenario == baseline_category, "Baseline", sprintf("%+.f%%", pct_change))
   )
 
 ggplot(long_ch, aes(x = Scenario, y = Value, fill = Scenario)) +
   geom_col() +
+  geom_text(aes(label = label), vjust = -0.5) +
+  geom_hline(yintercept = baseline_value, linetype = "dashed", color = "black", size = 0.8) +
   theme_minimal() +
   theme(
       legend.title = element_text(size = 14),  # Title of the legend
@@ -264,40 +266,5 @@ ggplot(long_ch, aes(x = Scenario, y = Value, fill = Scenario)) +
   ) +
   scale_fill_brewer(palette = "YlGn")
 ggsave("img/combined.png")
-```
-
-```{r}
-library(ggplot2)
-library(dplyr)
-
-# Sample data
-data <- data.frame(
-  category = c("A", "B", "C", "D"),
-  value = c(100, 120, 80, 110)
-)
-
-# Define baseline (e.g., category A)
-baseline_category <- "A"
-baseline_value <- data %>% filter(category == baseline_category) %>% pull(value)
-
-# Calculate percentage change from baseline
-data <- data %>%
-  mutate(
-    pct_change = (value - baseline_value) / baseline_value * 100,
-    label = ifelse(category == baseline_category, "Baseline", sprintf("%+.1f%%", pct_change))
-  )
-
-# Plot
-ggplot(data, aes(x = category, y = value, fill = category)) +
-  geom_bar(stat = "identity") +
-  geom_text(aes(label = label), vjust = -0.5) +
-  geom_hline(yintercept = baseline_value, linetype = "dashed", color = "black", size = 0.8) +
-  annotate("text", x = Inf, y = baseline_value, label = paste("Baseline =", baseline_value),
-           hjust = 1.1, vjust = -0.5, color = "black", size = 3.5) +
-  theme_minimal() +
-  labs(title = "Bar Chart with Percentage Change from Baseline",
-       y = "Value",
-       x = "Category")
-
 ```
 
