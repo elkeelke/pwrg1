@@ -255,7 +255,7 @@ ggplot(long_ch, aes(x = Scenario, y = Value, fill = Scenario)) +
   theme(
       legend.title = element_text(size = 14),  # Title of the legend
       legend.text = element_text(size = 14),    # Items in the legend
-      plot.margin = unit(c(0.2, 0.5, 0.2, 0.5), "cm"),  # top, right, bottom, left
+      plot.margin = unit(c(0.5, 0.5, 0.2, 0.5), "cm"),  # top, right, bottom, left
       axis.text.x = element_blank(),  # Hide x-axis labels
       axis.title.y = element_text(size = 14),
       axis.text.y = element_text(size = 14),
