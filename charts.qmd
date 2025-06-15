@@ -16,7 +16,7 @@ library(ggrepel)
 
 ## Bar chart network
 ```{r}
-data <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 3 final.csv")
+data <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 2 final.csv")
 
 data$Component <- factor(data$Component, levels = data$Component[order(data$Value, decreasing = TRUE)])
 
@@ -55,7 +55,7 @@ ggsave("img/pwrg_solar_network_bar.png")
 
 ## Bar chart facet network
 ```{r}
-ef_level1 <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 4 final.csv")[1:7, ]
+ef_level1 <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 3 final.csv")[1:7, ]
 long_ef_level1 <- pivot_longer(ef_level1, cols = -c("Component"), names_to = "Damage category", values_to = "Value")
 
 df_ef <- long_ef_level1 |>
@@ -91,7 +91,7 @@ ggsave("img/pwrg_solar_ef_network_bar_faceted.png")
 
 ## ES single score bar chart
 ```{r}
-es <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 5 final.csv")[1:7, ]
+es <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 4 final.csv")[1:7, ]
 
 long_es <- pivot_longer(es, cols = -c("Impact category"), names_to = "Type", values_to = "Value")
 
@@ -125,43 +125,9 @@ ggplot(long_es, aes(x = Type, y = Value, fill = reorder(`Impact category`, Value
 ggsave("img/pwrg_solar_es_single_score.png")
 ```
 
-## Sensitivity (not in use)
-```{r}
-es <- read_delim("data/PWRG results solar - electricity sensitivity - edit.csv")[1:7, ]
-
-long_es <- pivot_longer(es, cols = -c("Impact category"), names_to = "Type", values_to = "Value")
-
-long_es <- long_es |>
-  mutate(
-    Type = ifelse(Type == "DH: Geothermal heat pump", "DH: Geothermal", Type),
-  )
-
-long_es_ordered <- long_es |>
-  group_by(Type) |>
-  summarise(total = sum(Value)) |>
-  arrange(total) |>
-  pull(Type)
-long_es$Type <- factor(long_es$Type, levels = long_es_ordered)
-
-ggplot(long_es, aes(x = Type, y = Value, fill = reorder(`Impact category`, Value))) +
-  geom_bar(stat = "identity", width = 0.6) +  # Use 'identity' to plot actual values
-  labs(x = "",
-       y = "Pt per kWh",
-       fill = "Impact category") +
-  scale_fill_brewer(palette = "Purples") +
-  theme_minimal() +
-  theme(
-        legend.title = element_text(size = 14),  # Title of the legend
-        legend.text = element_text(size = 12),    # Items in the legend
-        plot.margin = unit(c(0.2, 0.5, 0.2, 0.5), "cm"),  # top, right, bottom, left
-        axis.text.x = element_text(angle = 90, hjust = 1, size = 12)
-        )
-ggsave("img/pwrg_elec_sens.png")
-```
-
 ## EF midpoints faceted bar chart showing relative impact
 ```{r}
-ef <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 6 final.csv")[1:15, ]
+ef <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 5 final.csv")[1:15, ]
 
 long_ef <- pivot_longer(ef, cols = -c("Damage category", "Unit"), names_to = "Type", values_to = "Value")
 
@@ -200,7 +166,7 @@ ggsave("img/pwrg_solar_ef_midpoints_faceted.png")
 
 ## EF midpoints faceted bar chart showing relative impact (other categories)
 ```{r}
-ef <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 6 final.csv")[1:15, ]
+ef <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 5 final.csv")[1:15, ]
 
 long_ef <- pivot_longer(ef, cols = -c("Damage category", "Unit"), names_to = "Type", values_to = "Value")
 
@@ -239,7 +205,7 @@ ggsave("img/pwrg_solar_ef_midpoints_faceted_others.png")
 
 # Energy winter production CH
 ```{r}
-ch <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 7 final.csv")[1:9, 1:9]
+ch <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 6 final.csv")[1:9, 1:9]
 
 long_ch <- pivot_longer(ch, cols = -c("Type"), names_to = "Year", values_to = "Value")
 
@@ -262,29 +228,76 @@ ggplot(long_ch, aes(x = Year, y = Value, fill = Type)) +
 ggsave("img/pwrg_solar_ch_winter.png")
 ```
 
-# IPCC
+# Combined
 ```{r}
-ch <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 8 final.csv")
+ch <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 7 final.csv")
 
 long_ch <- pivot_longer(ch, cols = -c("Damage category", "Unit"), names_to = "Scenario", values_to = "Value")
 
-long_ch$Scenario <- factor(long_ch$Scenario, levels = c("ENTSO-E", "Heat loss optimized with ENTSO-E", "CH future energy mix", "CH wind", "Heat loss optimized with CH wind"))
+long_ch$Scenario <- factor(long_ch$Scenario, levels = c("ENTSO-E energy mix", "Heat loss optimized with ENTSO-E", "CH future energy mix", "CH wind energy", "Heat loss optimized with CH wind energy"))
 
-ggplot(long_ch, aes(x = Scenario, y = Value * 1000, fill = Scenario)) +
+# Define baseline
+baseline_category <- "ENTSO-E energy mix"
+baseline_value <- long_ch |> filter(Scenario == baseline_category) %>% pull(value)
+
+# Calculate percentage change from baseline
+long_ch <- long_ch |>
+  mutate(
+    pct_change = (value - baseline_value) / baseline_value * 100,
+    label = ifelse(category == baseline_category, "Baseline", sprintf("%+.1f%%", pct_change))
+  )
+
+ggplot(long_ch, aes(x = Scenario, y = Value, fill = Scenario)) +
   geom_col() +
   theme_minimal() +
   theme(
       legend.title = element_text(size = 14),  # Title of the legend
       legend.text = element_text(size = 14),    # Items in the legend
       plot.margin = unit(c(0.2, 0.5, 0.2, 0.5), "cm"),  # top, right, bottom, left
-      axis.text.x = element_text(angle = 45, hjust = 1, size = 14),
+      axis.text.x = element_blank(),  # Hide x-axis labels
       axis.title.y = element_text(size = 14),
       axis.text.y = element_text(size = 14),
       ) +
   labs(
     x = "",
-    y = expression(""*CO[2]*"-eq in grams per kWh of heat"),
+    y = expression("Pt per MJ of heat"),
   ) +
   scale_fill_brewer(palette = "YlGn")
-ggsave("img/pwrg_ipcc.png")
+ggsave("img/combined.png")
 ```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+# Sample data
+data <- data.frame(
+  category = c("A", "B", "C", "D"),
+  value = c(100, 120, 80, 110)
+)
+
+# Define baseline (e.g., category A)
+baseline_category <- "A"
+baseline_value <- data %>% filter(category == baseline_category) %>% pull(value)
+
+# Calculate percentage change from baseline
+data <- data %>%
+  mutate(
+    pct_change = (value - baseline_value) / baseline_value * 100,
+    label = ifelse(category == baseline_category, "Baseline", sprintf("%+.1f%%", pct_change))
+  )
+
+# Plot
+ggplot(data, aes(x = category, y = value, fill = category)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = label), vjust = -0.5) +
+  geom_hline(yintercept = baseline_value, linetype = "dashed", color = "black", size = 0.8) +
+  annotate("text", x = Inf, y = baseline_value, label = paste("Baseline =", baseline_value),
+           hjust = 1.1, vjust = -0.5, color = "black", size = 3.5) +
+  theme_minimal() +
+  labs(title = "Bar Chart with Percentage Change from Baseline",
+       y = "Value",
+       x = "Category")
+
+```
+
