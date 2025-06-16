@@ -78,7 +78,7 @@ The LCA was performed using the SimaPro 9.6.0.1 software by @SimaPro2024. The fo
 
 ## Selected LCIA methods
 
-The environmental impacts were assessed using the mid-point level Environmental Footprint (EF) method by the @ec2021EF, and the Ecological Scarcity 2021 (v1.04) method by the @FOEN2021 at the single score level with UVEK LCI weighting set.
+The environmental impacts were assessed using the mid-point level Environmental Footprint (EF) 3.1 method by the @ec2021EF, and the Ecological Scarcity 2021 (v1.04) method by the @FOEN2021 at the single score level with UVEK LCI weighting set.
 
 ## Allocation
 
@@ -130,7 +130,7 @@ The loss assumptions as described in this chapter were incorporated into the sys
 
 # Results {#sec-results}
 
-The system model, as detailed in @sec-sima, was implemented using SimaPro by @SimaPro2024. This model served as the foundation for generating LCA results using the Environmental Footprint (EF) method by the @ec2021EF and the Ecological Scarcity 2021 (v1.04) method by the @FOEN2021. The results derived from these assessments are presented in this section.
+The system model, as detailed in @sec-sima, was implemented using SimaPro by @SimaPro2024. This model served as the foundation for generating LCA results using the Environmental Footprint (EF) 3.1 method by the @ec2021EF and the Ecological Scarcity 2021 (v1.04) method by the @FOEN2021. The results derived from these assessments are presented in this section.
 
 ![Relative environmental impact for components of Bracht community district heating system  (Ecological Scarcity 2021, v1.04, UVEK LCI weighting)](img/pwrg_solar_network_bar.png){#fig-network-bar width="60%"}
 
@@ -138,7 +138,7 @@ To address the first research question regarding the environmental impact of the
 
 For a more detailed view of the environmental impact by individual damage categories, @fig-ef-network-bar presents the drilled-down individual results for the most relevant impact categories *Climate change*, *Particulate matter*, *Eutrophication (terrestrial)*, *Land use*, *Resource use (minerals and metals)*, and *Resource use (fossils)*. The figure shows that biomass combustion is the dominant contributor to land use, particulate matter, and terrestrial eutrophication. In contrast, electricity use is the primary driver of impacts for fossil resource use and climate change. The environmental impact for minerals and metals resource use is most significantly influenced by heat preparation and the solar thermal collectors. The seasonal storage unit is not dominant for any damage category, but some contributions are visible to climate change and fossil resource use. Similar effects can be seen for the solar thermal collector.
 
-![Relative environmental impact of Bracht community district heating network system components for the six most relevant damage categories (Environmental Footprint Method).](img/pwrg_solar_ef_network_bar_faceted.png){#fig-ef-network-bar width="80%"}
+![Relative environmental impact of Bracht community district heating network system components for the six most relevant damage categories (Environmental Footprint 3.1 method, version 3.1).](img/pwrg_solar_ef_network_bar_faceted.png){#fig-ef-network-bar width="80%"}
 
 In summary, the electricity and biomass used to operate and supplement the system are the primary contributors to the overall environmental impact. Electricity consumption is unavoidable due to the operation of the heat pump. However, its impact can potentially be mitigated by sourcing electricity from renewable sources instead of the ENTSO-E production mix (as described in @sec-lci-overview), an option explored in more detail in @sec-sensitive-elec. Strategies to reduce biomass consumption by improving thermal efficiency, such as lowering heat loss coefficients, are examined in @sec-sensitive-loss.
 
@@ -154,7 +154,7 @@ The lowest environmental impact with 46 Pt per MJ of heat is returned for the di
 
 As before, @fig-ef-midpoints presents the individual results for the most relevant damage categories, comparing them relative to the highest value in each category, which is shown as the longest bar representing 100% relative impact. This analysis confirms the findings from @fig-es-single-score, clearly demonstrating that oil and gas boilers have extremely high impacts in the *Climate change* category with 100% and 70%, respectively. Additionally, the oil and gas boilers exhibit the highest fossil resource use, at 100% and 80%. A clear trade-off exists because each heating technology performs worst in different impact categories. For example, the district heating network using wood chips shows lower climate change impacts but the highest relative impacts in *Terrestrial eutrophication*, *Land use*, and *Particulate matter* (PM). While PM impact was visible in @fig-es-single-score, *Terrestrial eutrophication* and *Land use* impacts were not significant in the single score results. Similarly, solar thermal and geothermal-based district heating systems have the highest relative impacts in *Minerals and metals resource use*, at 100% and 83%, respectively. These trade-offs imply that selecting a heating technology depends on which environmental impacts are prioritized for a given use case. This highlights the need to weigh and balance different categories manually, or to rely on a single score method if applicable.
 
-![Damage assessment for the most relevant categories using the Environmental Footprint Method, visualized as relative environmental impacts in comparison. See @fig-ef-midpoints-others for the results for categories omitted in the given chart.](img/pwrg_solar_ef_midpoints_faceted.png){#fig-ef-midpoints width="90%"}
+![Damage assessment for the most relevant categories using the Environmental Footprint 3.1 method, visualized as relative environmental impacts in comparison. See @fig-ef-midpoints-others for the results for categories omitted in the given chart.](img/pwrg_solar_ef_midpoints_faceted.png){#fig-ef-midpoints width="90%"}
 
 # Interpretation and discussion {#sec-inter} 
 
@@ -252,13 +252,21 @@ As discussed in the previous sections, two main opportunities for optimization h
 
 As the results for wind and hydro power were nearly identical in the previous section, hydro was excluded from this analysis for the sake of clarity. Scenario (A) from @sec-ssu-loss was chosen for the comparison as the representative scenario for heat loss optimization. As before, the Ecological Scarcity 2021 (v1.04) method was employed. 
 
-The optimization potential results are presented in @fig-combined. As already shown, optimizing heat loss in the seasonal storage unit can lower the impact from 47 Pt per MJ of heat to 40 Pt per MJ of heat (15 % reduction). The impact when operating the plant using the future energy mix in Switzerland (CH) is estimated to an average of 36 Pt per MJ of heat (23 % reduction). When using Swiss wind energy, the impact will be lowered to 31 Pt per MJ of heat (34 % reduction). The best result can be achived by combining heat loss optimization with Swiss wind energy power to operate the heat pump, which reduces environmental impact by 61 %.
+The optimization potential results are presented in @fig-combined. As already shown, optimizing heat loss in the seasonal storage unit can lower the impact from 47 Pt per MJ of heat to 40 Pt per MJ of heat (15 % reduction). The impact when operating the plant using the future energy mix in Switzerland (CH) is estimated to an average of 36 Pt per MJ of heat (23 % reduction). When using Swiss wind energy, the impact will be lowered to 31 Pt per MJ of heat (34 % reduction). The best result with 18 Pt per MJ of heat can be achived by combining heat loss optimization with Swiss wind energy power to operate the heat pump, which reduces environmental impact by 61 %.
 
 ![Environmental impact in Pt per MJ of heat (Ecological Scarcity 2021 v1.04, UVEK LCI weighting).](img/combined.png){#fig-combined width="80%"}
 
-# Related work
+# Related work TBD
  
-In scientific literature, only a small number of LCA case studies for district heating systems exist, such as those for the systems in Milan by @famiglietti2021environmental and Marseille by @vauchez2023life. Life cycle assessment, particularly based on the ReCiPe method, has been used to evaluate the environmental impact of different STC-powered district heating configurations in @abokersh2020framework. The findings indicate that larger systems serving many households tend to have a lower environmental impact per unit of energy delivered. In @solano2023life, the authors present an LCA study of a STC plant connected to the Geneva district heating network.
+Compare with actual numbers 
+ 
+In scientific literature, a small number of LCA case studies for district heating systems exist.
+
+@famiglietti2021environmental performed a life cycle assessment for a district heating extension to include a large new development in Milan to understand if it would be a better choice compared in individual heat pumps using using the Environmental Footprint 3.0 method. The results indicated that based on the district heating network energy source used in 2021 the environmental impact in the climate change damage category would be 208 gCO2-eq per kWh~th~, which was higher than the one for individual heat pumps. In comparison, the result for the climate change damage category assessed using the Environmental Footprint 3.1 method for the Bracht plant was 201 gCO2-eq per kWh~th~. With the renewable sources planned to provide energy to the Milan in 2030, the impact would be comparable for both options with 89 gCO2-eq per kWh~th~ for district heating vs. 81 gCO2-eq per kWh~th~ for heat pumps. In this given study we also found that using reneable energy sources for operating the system can achieve large reductions in impact. 
+
+Marseille by @vauchez2023life. 
+
+Life cycle assessment, particularly based on the ReCiPe method, has been used to evaluate the environmental impact of different STC-powered district heating configurations in @abokersh2020framework. The findings indicate that larger systems serving many households tend to have a lower environmental impact per unit of energy delivered. In @solano2023life, the authors present an LCA study of a STC plant connected to the Geneva district heating network.
 
 # Summary and conclusion
 
@@ -408,7 +416,7 @@ The data for producing the charts for this report is kept in a spreadsheet acces
 
 In this section, supplemental charts are presented for completeness reasons. @fig-ef-midpoints-others complements @fig-ef-midpoints with the results for the damage categories that were considered less relevant for the use case.
 
-![Damage assessment using the Environmental Footprint Method, visualized as relative environmental impacts in comparison.](img/pwrg_solar_ef_midpoints_faceted_others.png){#fig-ef-midpoints-others width="90%"}
+![Damage assessment using the Environmental Footprint 3.1 method, visualized as relative environmental impacts in comparison.](img/pwrg_solar_ef_midpoints_faceted_others.png){#fig-ef-midpoints-others width="90%"}
 
 ## Project organization {#sec-project}
 
