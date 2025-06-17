@@ -185,7 +185,7 @@ There are two specific aspects of the given use case that need to be considered:
 
 While attempting to assess the impact of future grid decarbonization, it became apparent that no readily available dataset exists with projections about the future energy grid in Europe that could be directly applied for the analysis. Consequently, the remainder of this section focuses on the planned future for the Swiss energy grid. The most reliable sources of information are provided by @bfe2022energieperspektiven (charts: @bfe2022energieperspektivencharts; data tables: @bfe2020dataset). Particularly relevant are the projections for the expected winter electricity production mix at five-year intervals from 2025 to 2060, as depicted in @fig-ch-winter-prod. 
 
-![Expected production mix for winter period (6 months) in Switzerland from 2025 to 2060 (Source: Swiss Federal Office for Energy).](img/pwrg_solar_ch_winter.png){#fig-ch-winter-prod width="80%"}
+![Expected production mix for winter period (6 months) in Switzerland from 2025 to 2060 (Source: Swiss Federal Office for Energy).](img/pwrg_solar_ch_winter.png){#fig-ch-winter-prod width="70%"}
 
 Based on this data, the anticipated energy mix over the operational lifetime of the Bracht plant was calculated as summarized in @tbl-ch-projection. Since no projections are available beyond 2060, the values from 2060 were assumed to remain constant through 2075. Detailed information about the origin and type for Switzerland’s imported electricity during the winter was missing from the primary dataset. To address this, an additional dataset from the World Bank @WorldBankWITS2023 was employed to determine the country-wise distribution of electricity imports. According to this dataset, electricity imports in 2023 originated primarily from France (60.2%), Germany (23.1%), Austria (14.4%), and Italy (2.3%). The low voltage production mix in these countries was assumed for modelling. There was no specific data for geothermal and waste water based electricity available. These were substituted with hydro power based electricity, due to its comparable environmental impact profile. 
 
@@ -216,7 +216,7 @@ Heat is harder to transport than electrical power since even good insulation can
 
 ### Pipe heat loss {#sec-pipe-loss}
 
-As summarized in @werner2017international, the key parameters affecting heat loss in district heating pipes include the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The relevant heat loss coefficients reported range between 5 % and 35 %. The Bracht setup involves a relatively long transmission distance of 8800 meters due to its rural context. The planned supply temperature of 85 degrees °C is relatively high and will contribute to increased thermal losses. In contrast, modern district heating systems can operate with lower supply temperatures between 50 and 70 degrees °C to minimize heat loss and improve efficiency @lund2020districtheating.
+As summarized in @werner2017international, the key parameters affecting heat loss in district heating pipes include the length of the network which depends on the transmission distance relative to demand, the system age, and the operating temperature. The relevant heat loss coefficients reported range between 5 % and 35 %. The Bracht setup involves a relatively long transmission distance of 8800 meters due to its rural context. The supply temperature of 85 degrees °C is relatively high, which will contribute to increased thermal losses. In contrast, modern district heating systems can operate with lower supply temperatures between 50 and 70 degrees °C to minimize heat loss and improve efficiency as described by @lund2020districtheating.
 
 The rationale behind selecting a default heat loss rate of 20 % for the Bracht setup reflects the combined negative impact of the long transmission distance and high operating temperature on system performance. However, several sources assume lower loss rates. For example, the open source Energy Transition Model @etm2025 suggests a 15 % default loss figure based on real world data for modern district heating networks. The Swiss Federal Office of Energy UVEK assumes an even lower rate of approximately 11 % in its district heating data.
 
@@ -270,7 +270,7 @@ The findings indicate that larger systems serving many households tend to have a
 
 In @solano2023life, the authors present an LCA study of a STC plant connected to the Geneva district heating network.
 
-# Summary and conclusion TBD
+# Summary and conclusion
 
 A Life Cycle Assessment (LCA) was conducted for a solar district heating community project located in Bracht, Rauschenberg, Germany. This project combines solar thermal collectors with a seasonal storage unit to preserve heat produced in summer until the heating period in fall and winter. A district heating distribution network supplies the thermal energy to 180 residential consumers. The system's energy supply is expected to be to the largest share from stored solar thermal energy, partly from biomass, and partly from the electricity grid. Default modelling assumptions included a 20 % heat loss coefficient for the district heating network and an implied 50 % loss for the seasonal storage unit.
 
