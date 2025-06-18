@@ -432,6 +432,6 @@ The notes for the meetings can be found [here](https://docs.google.com/document/
 
 # Acknowledgements
 
-Thanks to René Itten for supervising this work and for the valuable feedback on earlier versions of the paper, which significantly improved the final outcome. Thanks also to Michael Götz for providing access to the UVEK LCI database used in this analysis.
+Thanks to René Itten for supervising this work and for the valuable feedback on earlier versions of the paper, which significantly improved the final outcome. Thanks also to Michael Götz for providing access to the UVEK LCI database used in this study. Finally, thanks to Daija Angeli for highlighting the importance of considering the future energy mix in the electricity sensitivity analysis.
 
 # References
