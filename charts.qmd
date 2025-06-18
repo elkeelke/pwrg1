@@ -140,7 +140,7 @@ long_ef_normalized <- long_ef |>
   )
 long_ef_normalized$`Damage category` <- str_wrap(long_ef_normalized$`Damage category`, width = 20)
 ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
-  geom_col(width = 0.6) +
+  geom_col(width = 0.7) +
   facet_grid(rows = vars(`Damage category`), switch = "y") +
   labs(
     x = "",
@@ -149,12 +149,12 @@ ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
   theme_minimal() +
   theme(
     strip.placement = "outside",
-    strip.text.y.left = element_text(angle = 90, size = 7, hjust = 0.5, vjust = 0.5), 
+    strip.text.y.left = element_text(angle = 90, size = 6, hjust = 0.5, vjust = 0.5), 
     strip.switch.pad.grid = unit(0.5, "cm"),
     plot.margin = margin(20, 0, 20, 0),
     strip.background = element_rect(color = "black", linewidth = 0.5),
-    axis.text.x = element_text(size = 12),
-    axis.text.y = element_text(size = 12),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
     legend.position = "none",
     legend.title = element_blank(),  # Title of the legend
     legend.text = element_blank(),    # Items in the legend
@@ -179,7 +179,7 @@ long_ef_normalized <- long_ef |>
   )
 long_ef_normalized$`Damage category` <- str_wrap(long_ef_normalized$`Damage category`, width = 20)
 ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
-  geom_col(width = 0.6) +
+  geom_col(width = 0.7) +
   facet_grid(rows = vars(`Damage category`), switch = "y") +
   labs(
     x = "",
