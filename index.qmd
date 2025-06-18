@@ -430,4 +430,8 @@ The time plan that was followed for this project can be found [here](https://doc
 
 The notes for the meetings can be found [here](https://docs.google.com/document/d/1ckpCeTboJK6gfoXQi750jMr5Y85_x3PROEDG1IKEM4E/edit?tab=t.0#heading=h.ibakwauq0483). Access is given upon request. Contact in case of permission issues: Elke Michlmayr.
 
+# Acknowledgements
+
+Thanks to René Itten for supervising this work and for the valuable feedback on earlier versions of the paper, which significantly improved the final outcome. Thanks also to Michael Götz for providing access to the UVEK LCI database used in this analysis.
+
 # References
