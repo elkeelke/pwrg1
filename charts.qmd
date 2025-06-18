@@ -194,9 +194,9 @@ ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
     strip.background = element_rect(color = "black", linewidth = 0.5),
     axis.text.x = element_text(size = 12),
     axis.text.y = element_text(size = 12),
-    legend.position = "bottom",
-    legend.title = element_text(size = 14),  # Title of the legend
-    legend.text = element_text(size = 12),    # Items in the legend
+    legend.position = "none",
+    legend.title = element_blank(),  # Title of the legend
+    legend.text = element_blank(),    # Items in the legend
   ) +
   scale_fill_brewer(palette = "Purples") +
   coord_flip()

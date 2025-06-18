@@ -416,7 +416,7 @@ The data for producing the charts for this report is kept in a spreadsheet acces
 
 In this section, supplemental charts are presented for completeness reasons. @fig-ef-midpoints-others complements @fig-ef-midpoints with the results for the damage categories that were considered less relevant for the use case.
 
-![Damage assessment using the Environmental Footprint 3.1 method, visualized as relative environmental impacts in comparison.](img/pwrg_solar_ef_midpoints_faceted_others.png){#fig-ef-midpoints-others width="90%"}
+![Damage assessment using the Environmental Footprint 3.1 method, visualized as relative environmental impacts in comparison.](img/pwrg_solar_ef_midpoints_faceted_others.png){#fig-ef-midpoints-others width="100%"}
 
 ## Project organization {#sec-project}
 
@@ -432,6 +432,6 @@ The notes for the meetings can be found [here](https://docs.google.com/document/
 
 # Acknowledgements
 
-Thanks to René Itten for supervising this work and for the valuable feedback on earlier versions of the paper, which significantly improved the final outcome. Thanks also to Michael Götz for providing access to the UVEK LCI database used in this study. Thanks to Nils Ratnaweera for teaching me how to create charts with ggplot and how to use Git(hub), Quarto and Markdown. And last but not least, thanks to Daija Angeli for highlighting the importance of considering the future energy mix in the electricity sensitivity analysis.
+Thanks to René Itten for supervising this work and for the valuable feedback on earlier versions of the paper, which significantly improved the final outcome. Thanks also to Michael Götz for providing the UVEK LCI database used in this study. Thanks to Nils Ratnaweera for teaching me how to create charts with ggplot and how to use Git(hub), Quarto and Markdown. And last but not least, thanks to Daija Angeli for highlighting the importance of considering the future energy mix in the electricity sensitivity analysis.
 
 # References
