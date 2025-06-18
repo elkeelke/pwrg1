@@ -42,25 +42,25 @@ For the community district heating project in Bracht, the economic viability in 
 
 # Goal and scope {#sec-goal}
 
-The goal and scope definition is a fundamental step in any life cycle assessment (LCA), as it provides a clear description of the product system under study, its system boundaries, and the definition of a functional unit that reflects the output of the system in a consistent and measurable way. 
+The goal and scope definition is a fundamental step in any life cycle assessment (LCA), as it provides a clear description of the product system under study, its system boundaries, and a definition of the functional unit that reflects the output of the system in a consistent and measurable way. 
 
 The scope of the assessment encompasses a district heating project initiated and operated by a cooperative composed of future household consumers and the local municipal council. The system includes the following key components:
 
 *   solar thermal collector (STC) field,
 *   seasonal storage unit (SSU),
-*   heat pump component powered with electricity from the grid with buffer storage unit,
+*   heat pump component powered by electricity from the grid with buffer storage unit,
 *   biomass combustion unit serving backup heat when stored heat is unavailable,
 *   facility to house the heat pump and the biomass combustion unit,
-*   district heating distribution network that supplies to residential consumers,
+*   district heating distribution network that supplies heat to residential consumers,
 *   and receiver units installed in each participating household.
 
-The lifetime of the district heating system is assumed to be 50 years. There are at least 180 consumer households expected, which is roughly 60% of all households that exist in the local community. The plant is currently under construction and on track to be operational for the 2025 winter heating period.
+The lifetime of the district heating system is assumed to be 50 years. At least 180 households are expected to join the community district heating as paying consumers, which is roughly 60% of all households that exist in the local community. The plant is currently under construction and on track to be operational for the 2025 winter heating period.
 
 For the present LCA, the specific goals are to address the following research questions:
 
 1.  What is the relevance of the additional electricity required in the setup and the supplemental biomass boiler with respect to the overall environmental impact? The hypothesis is that the additional electricity and biomass required will amount to a sizable part of the overall environmental impact.
-2.  How does the STC based system with seasonal heat storage compare to other heating technologies in terms of environmental impact? The comparison will include district heating from other sources that would be available in small communities (such as a heat pump or wood chips), and consumer side heating installations such as oil or gas boilers. The hypothesis is that the STC based system will have a lower environmental impact compared to other district heating setups and to fossil energy based consumer installations.
-3.  What is the environmental impact contribution of the seasonal heat storage unit in the production, construction, and use stages in the life cycle? A sensitivity analysis will be performed to assess the benefits of the STC based system with a seasonal heat storage component included under several assumed loss coefficients for the storage component and the district heating pipe system. The hypothesis is that the seasonal storage component will lower the environmental impact.
+2.  How does the STC-based system with seasonal heat storage compare to other heating technologies in terms of environmental impact? The comparison will include district heating from other sources that would be available in small communities (such as heat pumps or wood chips), and consumer side heating installations such as oil or gas boilers. The hypothesis is that the STC-based system will have a lower environmental impact compared to other district heating setups and to fossil energy based consumer installations.
+3.  What is the environmental impact contribution of the seasonal heat storage unit in the production, construction, and use stages in the life cycle? A sensitivity analysis will be performed to assess the benefits of the STC-based system with a seasonal heat storage component included under several assumed loss coefficients for the storage component and the district heating pipe system. The hypothesis is that the seasonal storage component will lower the environmental impact.
 
 ## Functional unit
 
