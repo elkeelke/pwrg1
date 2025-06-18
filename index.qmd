@@ -20,11 +20,11 @@ csl: apa-no-ampersand.csl
 
 # Abstract
 
-A life cycle assessment (LCA) was conducted for a solar district heating community project under construction in Bracht, Germany. It incorporates solar thermal collectors, a seasonal heat storage unit powered through an included electric heat pump, a supplemental biomass boiler as a backup solution for when there is no heat available from the solar based system, and a district heating network to supply residential consumers. 
+A life cycle assessment (LCA) was conducted for a solar district heating community project under construction in Bracht, Germany. The system incorporates solar thermal collectors, a seasonal heat storage unit powered by an integrated electric heat pump, a supplemental biomass boiler as a backup solution for periods when no heat is available from the solar-based system, and a district heating network to supply residential consumers.
 
-The assessment used standard environmental impact methods such as the Ecological Scarcity method to evaluate the system over a 50-year lifetime. Despite supplying the majority of the energy, the solar thermal component with seasonal storage contributed less than 30% to the overall environmental impact. The supplemental biomass and the required electricity sourced from the grid accounted for roughly two-thirds of the total impact, even though they provided only one-third of the energy. 
+The assessment used standard environmental impact methods such as the Ecological Scarcity method to evaluate the system over a 50-year lifetime. Despite supplying the majority of the energy, the solar thermal component with seasonal storage contributed less than 30% to the overall environmental impact. The supplemental biomass and the required electricity sourced from the grid accounted for roughly two-thirds of the total impact, even though they provided only one-third of the energy.
 
-The results are encouraging and show that the Bracht system is environmentally favorable compared to many alternatives. However, substantial potential for improvement through optimization of the system’s operating conditions remains. The key opportunities include using renewable electric energy for the heat pump, and reducing heat losses in storage and district heating network to minimize, or even completely eliminate, the need for supplemental biomass. This is achievable by optimizing settings such as the system's operating temperature.
+The results are encouraging and show that the Bracht system is environmentally favorable compared to many alternatives. However, substantial potential for improvement remains through optimization of the system’s operating conditions. Key opportunities include using renewable electricity for the heat pump and reducing heat losses in storage and the district heating network to minimize—or even completely eliminate—the need for supplemental biomass. This is achievable by optimizing settings such as the system's operating temperature.
 
 # Introduction
 
@@ -264,11 +264,11 @@ In scientific literature, while several LCA case studies for district heating sy
 
 @vauchez2023life analysed several options for a district heating network case study for Marseille with a focus on the heat transmission part of the system (instead of the energy source and seasonal storage, which was the focus of this study). Their findings revealed significant differences in the environmental impacts of the materials used for the pipe system. Polyethylene foam was found to have the lowest environmental impact for the insulation materials evaluated.
 
-Life cycle assessment, particularly based on the ReCiPe method, has been used to evaluate the environmental impact of different solar thermal collector powered district heating configurations in @abokersh2020framework. 
+Life cycle assessment has been used to evaluate the environmental impact of different solar thermal collector powered district heating configurations with seasonal storage in @abokersh2020framework. The study aimed at identifying the optimal number of large multi apartment buildings (10, 25, 50, 100) to connect as to the system as district heat consumers for a new plant planned in Madrid, and found that larger systems serving many households tend to have a lower environmental impact per unit of energy delivered. The analysis relied on the ReCiPe method by @Huijbregts2017 at the single score level to compare the different sizing options relatively to each other, which makes it infeasible to compare with the results returned in the given study because the metrics are not the same.
 
-The findings indicate that larger systems serving many households tend to have a lower environmental impact per unit of energy delivered. 
+Life cycle assessment was used to evaluate the environmental impact of various solar thermal collector–powered district heating configurations with seasonal storage in @abokersh2020framework. The study aimed to identify the optimal number of large multi-apartment buildings (10, 25, 50, 100) to connect to the system as district heat consumers for a new plant planned in Madrid. It found that larger systems serving more households generally result in a lower environmental impact per unit of energy delivered. The analysis employed the ReCiPe method at the single-score level, as described by @Huijbregts2017, to compare different system sizes relative to each other. However, this approach makes direct comparison with the present study's results infeasible, as the metrics used are not aligned and  no absolute numbers are included in @abokersh2020framework.
 
-In @solano2023life, the authors present an LCA study of a STC plant connected to the Geneva district heating network.
+In @solano2023life, the authors present an LCA study of a solar thermal collector powered plant connected to the Geneva district heating network.
 
 # Summary and conclusion
 
