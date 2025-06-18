@@ -149,7 +149,7 @@ ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
   theme_minimal() +
   theme(
     strip.placement = "outside",
-    strip.text.y.left = element_text(angle = 90, size = 6, hjust = 0.5, vjust = 0.5), 
+    strip.text.y.left = element_text(angle = 90, size = 7, hjust = 0.5, vjust = 0.5), 
     strip.switch.pad.grid = unit(0.5, "cm"),
     plot.margin = margin(20, 0, 20, 0),
     strip.background = element_rect(color = "black", linewidth = 0.5),
@@ -188,7 +188,7 @@ ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
   theme_minimal() +
   theme(
     strip.placement = "outside",
-    strip.text.y.left = element_text(angle = 90, size = 5, hjust = 0.5, vjust = 0.5), 
+    strip.text.y.left = element_text(angle = 90, size = 7, hjust = 0.5, vjust = 0.5), 
     strip.switch.pad.grid = unit(0.5, "cm"),
     plot.margin = margin(20, 0, 20, 0),
     strip.background = element_rect(color = "black", linewidth = 0.5),
