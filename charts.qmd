@@ -149,15 +149,15 @@ ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
   theme_minimal() +
   theme(
     strip.placement = "outside",
-    strip.text.y.left = element_text(angle = 90, size = 8, hjust = 0.5, vjust = 0.5), 
+    strip.text.y.left = element_text(angle = 90, size = 7, hjust = 0.5, vjust = 0.5), 
     strip.switch.pad.grid = unit(0.5, "cm"),
     plot.margin = margin(20, 0, 20, 0),
     strip.background = element_rect(color = "black", linewidth = 0.5),
     axis.text.x = element_text(size = 12),
     axis.text.y = element_text(size = 12),
-    legend.position = "bottom",
-    legend.title = element_text(size = 14),  # Title of the legend
-    legend.text = element_text(size = 12),    # Items in the legend
+    legend.position = "none",
+    legend.title = element_blank(),  # Title of the legend
+    legend.text = element_blank(),    # Items in the legend
   ) +
   scale_fill_brewer(palette = "Purples") +
   coord_flip()
@@ -188,12 +188,12 @@ ggplot(long_ef_normalized, aes(x = Type, y = pct, fill = Type)) +
   theme_minimal() +
   theme(
     strip.placement = "outside",
-    strip.text.y.left = element_text(angle = 90, size = 8, hjust = 0.5, vjust = 0.5), 
+    strip.text.y.left = element_text(angle = 90, size = 5, hjust = 0.5, vjust = 0.5), 
     strip.switch.pad.grid = unit(0.5, "cm"),
     plot.margin = margin(20, 0, 20, 0),
     strip.background = element_rect(color = "black", linewidth = 0.5),
-    axis.text.x = element_text(size = 12),
-    axis.text.y = element_text(size = 12),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
     legend.position = "none",
     legend.title = element_blank(),  # Title of the legend
     legend.text = element_blank(),    # Items in the legend
