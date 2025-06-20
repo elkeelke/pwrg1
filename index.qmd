@@ -7,6 +7,8 @@ format:
     code-fold: true
   pdf:
     number-sections: true
+    include-in-header: titlepage.tex
+    keep-tex: true
     mainfont: "Georgia"
     sansfont: "Helvetica"
     monofont: "Courier New"
