@@ -20,13 +20,14 @@ bibliography: bibliography.bib
 csl: apa-no-ampersand.csl
 ---
 
-# Abstract
-
+```{=latex}
+\section*{Abstract}
 A life cycle assessment (LCA) was conducted for a solar district heating community project under construction in Bracht, Germany. The system incorporates solar thermal collectors, a seasonal heat storage unit powered by an integrated electric heat pump, a supplemental biomass boiler as a backup solution for periods when no heat is available from the solar-based system, and a district heating network to supply residential consumers.
 
-The assessment used standard environmental impact methods such as the Ecological Scarcity method to evaluate the system over a 50-year lifetime. Despite supplying the majority of the energy, the solar thermal component with seasonal storage contributed less than 30% to the overall environmental impact. The supplemental biomass and the required electricity sourced from the grid accounted for roughly two-thirds of the total impact, even though they provided only one-third of the energy.
+The assessment used standard environmental impact methods, such as the Ecological Scarcity method and the Environmental Footprint method, to evaluate the system over a 50-year lifetime. Despite supplying the majority of the energy, the solar thermal component with seasonal storage contributed less than 30\% to the overall environmental impact. The supplemental biomass and the required electricity sourced from the grid accounted for roughly two-thirds of the total impact, even though they provided only one-third of the energy.
 
 The results are encouraging and show that the Bracht system is environmentally favorable compared to many alternatives. However, substantial potential for improvement remains through optimization of the system’s operating conditions. Key opportunities include using renewable electricity for the heat pump and reducing heat losses in storage and the district heating network to minimize, or even completely eliminate, the need for supplemental biomass. This is achievable by optimizing settings such as the system's operating temperature.
+```
 
 # Introduction
 
@@ -34,17 +35,23 @@ Heating is a key contributor to energy consumption, accounting for roughly half 
 
 Solar thermal collectors (STCs) are devices that absorb solar radiation and convert it into heat. There are several types of STCs, including flat plate collectors, unglazed water collectors, and evacuated tube collectors. These systems are often combined with heat pumps to bridge the temperature gap between the water produced by the solar field and the temperature required by the district heating delivery system as explained in @wikipedia2020. According to @iea2024, there are more than 300 large-scale district heating systems worldwide powered by STCs, and over 1.200 STC systems that provide industrial process heat.
 
-Solar thermal collectors are a mature technology. In 2023, the total operational solar thermal capacity reached 560 GW~th~, covering roughly 800 km² of collector area as documented by @iea2024. STC-provided capacity varies seasonally depending on available sunlight. In some cases, STCs are used only during certain parts of the year, for example to allow a biomass-powered plant to shut down during summer when it would otherwise operate at extremely low capacity.
+Solar thermal collectors are a mature technology. In 2023, the total operational solar thermal capacity reached 560 GW~th~, covering roughly 800 km² of collector area as documented by @iea2024. STC-provided capacity varies seasonally depending on available sunlight. In some cases, STCs are used only during certain times of the year, for example to allow a biomass-powered plant to shut down during summer when it would otherwise operate at extremely low capacity.
 
 STCs can be combined with short-term heat storage that acts as a buffer, or with seasonal heat storage tanks, sometimes referred to as pit thermal energy storage (PTES). These include underground hot water basins that store excess heat from the warm season for use in the cold season. However, this setup involves heat losses.
 
-If space limitations or land costs require it, STCs can be installed at a distance from consumers and heat plants, with pipelines connecting them. An example is Priština, where the distance is around 4 km as detailed by @euroheat2023. This introduces a trade-off, as the remote location requires laying additional underground piping.
+If space limitations or land costs require it, STCs can be installed at a distance from consumers and heat plants, with pipelines connecting them. An example can be found in Priština, where the distance is around 4 km as detailed by @euroheat2023. This introduces a trade-off between land costs and pipeline construction cost, as the remote location requires laying additional underground piping.
 
-For the community district heating project in Bracht, the economic viability in comparison to conventional energetic renovation measures has been assessed in a previous study by @kelch2024comparison. However, the environmental impact of the project has not yet been examined in detail. This gap forms the focus of the present study. The following chapters will cover the remaining stages of the LCA: goal and scope definition in @sec-goal, life cycle inventory analysis (LCI) in @sec-lci-overview, life cycle impact assessment (LCIA) in @sec-results, and result interpretation in @sec-inter.
+For the community district heating project in Bracht, the economic viability in comparison to conventional energetic renovation measures has been assessed in a previous study by @kelch2024comparison. However, the environmental impact of the project has not yet been examined in detail. Therefore, the aim of this study is to assess the environmental impact of the community district heating project. The following chapters will cover the remaining stages of the LCA: goal and scope definition in @sec-goal, life cycle inventory analysis (LCI) in @sec-lci-overview, life cycle impact assessment (LCIA) in @sec-results, and result interpretation in @sec-inter.
 
 # Goal and scope {#sec-goal}
 
 The goal and scope definition is a fundamental step in any life cycle assessment (LCA), as it provides a clear description of the product system under study, its system boundaries, and a definition of the functional unit that reflects the output of the system in a consistent and measurable way. 
+
+The overall goal of this study is to assess the environmental impact of the solar thermal collector based community district heating project with seasonal storage in Bract. The specific goals are to address the following research questions:
+
+1.  What is the relevance of the additional electricity required in the setup and the supplemental biomass boiler with respect to the overall environmental impact? The hypothesis is that the additional electricity and biomass required will amount to a sizable part of the overall environmental impact.
+2.  What are the impacts of the STC, and how does the STC-based system with seasonal heat storage compare to other heating technologies in terms of environmental impact? The comparison will include district heating from other sources that would be available in small communities (such as heat pumps or wood chips), and consumer side heating installations such as oil or gas boilers. The hypothesis is that the STC-based system will have a lower environmental impact compared to other district heating setups and to fossil energy based consumer installations.
+3.  What is the environmental impact contribution of the seasonal heat storage unit in the production, construction, and use stages in the life cycle? A sensitivity analysis will be performed to assess the benefits of the STC-based system with a seasonal heat storage component included under several assumed loss coefficients for the storage component and the district heating pipe system. The hypothesis is that the seasonal storage component will lower the environmental impact.
 
 The scope of the assessment encompasses a district heating project initiated and operated by a cooperative composed of future household consumers and the local municipal council. The system includes the following key components:
 
@@ -58,15 +65,9 @@ The scope of the assessment encompasses a district heating project initiated and
 
 The lifetime of the district heating system is assumed to be 50 years. At least 180 households are expected to join the community district heating as paying consumers, which is roughly 60% of all households that exist in the local community. The plant is currently under construction and on track to be operational for the 2025 winter heating period.
 
-For the present LCA, the specific goals are to address the following research questions:
-
-1.  What is the relevance of the additional electricity required in the setup and the supplemental biomass boiler with respect to the overall environmental impact? The hypothesis is that the additional electricity and biomass required will amount to a sizable part of the overall environmental impact.
-2.  How does the STC-based system with seasonal heat storage compare to other heating technologies in terms of environmental impact? The comparison will include district heating from other sources that would be available in small communities (such as heat pumps or wood chips), and consumer side heating installations such as oil or gas boilers. The hypothesis is that the STC-based system will have a lower environmental impact compared to other district heating setups and to fossil energy based consumer installations.
-3.  What is the environmental impact contribution of the seasonal heat storage unit in the production, construction, and use stages in the life cycle? A sensitivity analysis will be performed to assess the benefits of the STC-based system with a seasonal heat storage component included under several assumed loss coefficients for the storage component and the district heating pipe system. The hypothesis is that the seasonal storage component will lower the environmental impact.
-
 ## Functional unit
 
-The functional unit is defined as 1 megajoule (MJ) of thermal energy delivered to the consumer directly at the point of use during the heating period. Using MJ instead of kilowatt-hours of thermal energy (kWh~th~) ensures consistency with the UVEK processes for other forms of district heating in SimaPro, against which the comparison will be performed.
+The functional unit is defined as 1 megajoule (MJ) of thermal energy delivered to the consumer directly at the point of use during the heating period. Using MJ instead of kilowatt-hours of thermal energy (kWh~th~) ensures consistency with the processes in the UVEK database for other forms of district heating, against which the comparison will be performed using the SimaPro software.
 
 ## System boundary
 
@@ -88,7 +89,7 @@ The cut-off approach as defined by the @iso14044_cutoff was employed.
 
 # Life cycle inventory {#sec-lci-overview}
 
-This section outlines the foundational data used to support system modelling. Extensive project-related information for the Bracht community district heating system is available on the project website published by the @bracht2025. This was used as a key source for detailed LCI data. It provided detailed data on the solar thermal collector field, the seasonal storage unit, and heat preparation systems comprising the heat pump, buffer storage, installation facility, and consumer installations. 
+This section outlines the foundational data used to support system modelling. Extensive project-related information for the Bracht community district heating system is available on the project website published by the @bracht2025. This provided detailed data on the solar thermal collector field, the seasonal storage unit, and heat preparation systems comprising the heat pump, buffer storage, installation facility, and consumer installations. 
  
 The comparison datasets and the district heating network were modelled based on UVEK LCI data by the @FOEN2025, an existing resource for conducting LCAs of energy systems and infrastructure within Switzerland and the broader European context provided by the Swiss Federal Office of Energy (abbreviated in English as SFOE, and in German as UVEK). For electricity input, the modelling assumed the European Network of Transmission System Operators for Electricity (ENTSO-E) production mix, also provided in the UVEK dataset, to ensure the model reflects conditions typical of a plant operating within the European region.
 
@@ -96,7 +97,7 @@ Additional LCI details for all components are provided in @sec-lci. Detailed spe
 
 ## Component lifetimes
 
-The planned lifetime for the Bracht plant is 50 years. The assumed individual component lifetimes and the resulting relevant multipliers are shown in @tbl-component-lifetimes. The assumed individual component lifetimes are in line with the assumptions used in @bracht2022.
+The planned lifetime for the Bracht plant is 50 years. The assumed individual component lifetimes and the resulting relevant multipliers are shown in @tbl-component-lifetimes. The assumed individual component lifetimes are based on the assumptions used in @bracht2022.
 
 ::: {.table #tbl-component-lifetimes caption="Assumed component lifetimes"}
 
@@ -432,8 +433,10 @@ The time plan that was followed for this project can be found [here](https://doc
 
 The notes for the meetings can be found [here](https://docs.google.com/document/d/1ckpCeTboJK6gfoXQi750jMr5Y85_x3PROEDG1IKEM4E/edit?tab=t.0#heading=h.ibakwauq0483). Access is given upon request. Contact in case of permission issues: Elke Michlmayr.
 
-# Acknowledgements
+```{=latex}
+\section*{Acknowledgements}
 
 Thanks to René Itten for supervising this work and for the valuable feedback on earlier versions of the paper, which significantly improved the final outcome. Thanks also to Michael Götz for providing the UVEK LCI database used in this study. Thanks to Nils Ratnaweera for teaching me how to create charts with ggplot and how to use Git(hub), Quarto and Markdown. And last but not least, thanks to Daija Angeli for highlighting the importance of considering the future energy mix in the electricity sensitivity analysis.
+```
 
 # References
