@@ -254,9 +254,9 @@ As discussed in the previous sections, two main opportunities for optimization h
 
 As the results for wind and hydro power were nearly identical in the previous section, hydro was excluded from this analysis for the sake of clarity. Scenario (A) from @sec-ssu-loss was chosen for the comparison as the representative scenario for heat loss optimization.
 
-The optimization potential results are presented in @fig-combined. As already shown, optimizing heat loss in the seasonal storage unit can lower the impact from 47 Pt per MJ of heat to 40 Pt per MJ of heat (15 % reduction). The impact when operating the plant using the future energy mix in Switzerland (CH) is estimated at an average of 36 Pt per MJ of heat (23 % reduction). When using Swiss wind energy, the impact will be lowered to 31 Pt per MJ of heat (34 % reduction). The best result with 18 Pt per MJ of heat can be achieved by combining heat loss optimization with Swiss wind energy to operate the heat pumps, which reduces environmental impact by 61 %.
+![Environmental impact in Pt per MJ of heat (Ecological Scarcity 2021 v1.04, UVEK LCI weighting).](img/combined.png){#fig-combined width="70%"}
 
-![Environmental impact in Pt per MJ of heat (Ecological Scarcity 2021 v1.04, UVEK LCI weighting).](img/combined.png){#fig-combined width="80%"}
+The optimization potential results are presented in @fig-combined. As already shown, optimizing heat loss in the seasonal storage unit can lower the impact from 47 Pt per MJ of heat to 40 Pt per MJ of heat (15 % reduction). The impact when operating the plant using the future energy mix in Switzerland (CH) is estimated at an average of 36 Pt per MJ of heat (23 % reduction). When using Swiss wind energy, the impact will be lowered to 31 Pt per MJ of heat (34 % reduction). The best result with 18 Pt per MJ of heat can be achieved by combining heat loss optimization with Swiss wind energy to operate the heat pumps, which reduces environmental impact by 61 %.
 
 # Related work
  
