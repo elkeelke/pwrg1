@@ -323,7 +323,7 @@ The relevant data for the seasonal storage unit can be found in @tbl-component-s
 | Cover layer 1, 10 | Polyethylen (HDPE) sealing membranes 1.5 mm, 1.5 kg / $m^2$ | @bracht2025floating, estimated weight |
 | Cover layer 2, 9 | Fleece (0.1 kg / $m^2$) laminated plastic grid (HDPE, 0.5 kg / $m^2$) | @bracht2025floating, estimated weight |
 | Cover layer 3 | Foam glass, 8.33 kg / $m^2$ | @bracht2025floating |
-| Cover layer 4 | Polyurethane (bauder foam): 3.125 kg / $m\^2$ | @bracht2025floating |
+| Cover layer 4 | Polyurethane (bauder foam): 3.125 kg / $m^2$ | @bracht2025floating |
 | Cover layer 5, 7, 8 | Airing gap made of plastic grid, 0.5 kg / $m^2$ each | @bracht2025floating, estimated weight |
 | Cover layer 6 | Polystyrene (XPS), 3 kg / $m^2$ | @bracht2025floating |
 | Floating cover dimensions | 70 m x 70 m = 4900 $m^2$ | @bracht2025ground |
