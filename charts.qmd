@@ -98,6 +98,7 @@ long_es <- pivot_longer(es, cols = -c("Impact category"), names_to = "Type", val
 long_es <- long_es |>
   mutate(
     Type = ifelse(Type == "DH: Geothermal heat pump", "DH: Geothermal", Type),
+    Type = ifelse(Type == "DH: Solar thermal", "Bracht plant", Type),
   )
 
 long_es_ordered <- long_es |>
@@ -124,6 +125,42 @@ ggplot(long_es, aes(x = Type, y = Value, fill = reorder(`Impact category`, Value
         )
 ggsave("img/pwrg_solar_es_single_score.png")
 ```
+
+## ES single score bar chart for presentation
+```{r}
+es <- read_delim("data/PWRG 1 Elke Michlmayr_ Result data for charts - Fig 4 final.csv")[1:7, ]
+
+long_es <- pivot_longer(es, cols = -c("Impact category"), names_to = "Type", values_to = "Value")
+
+long_es <- long_es |>
+  mutate(
+    Type = ifelse(Type == "DH: Geothermal heat pump", "DH: Geothermal", Type),
+  )
+
+long_es_ordered <- long_es |>
+  group_by(Type) |>
+  summarise(total = sum(Value)) |>
+  arrange(total) |>
+  pull(Type)
+long_es$Type <- factor(long_es$Type, levels = long_es_ordered)
+
+ggplot(long_es, aes(x = Type, y = Value, fill = Type)) +
+  geom_bar(stat = "identity", width = 0.6) +  # Use 'identity' to plot actual values
+  labs(x = "",
+       y = "Pt per MJ") +
+  scale_fill_brewer(palette = "Blues") +
+  theme_minimal() +
+  theme(
+        legend.title = element_text(size = 14),  # Title of the legend
+        legend.text = element_text(size = 14),    # Items in the legend
+        plot.margin = unit(c(0.2, 0.5, 0.2, 0.5), "cm"),  # top, right, bottom, left
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 14),
+        axis.title.y = element_text(size = 14),
+        axis.text.y = element_text(size = 14),
+        )
+ggsave("img/pwrg_solar_es_single_score_total.png")
+```
+
 
 ## EF midpoints faceted bar chart showing relative impact
 ```{r}
