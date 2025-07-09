@@ -101,15 +101,14 @@ The planned lifetime for the Bracht plant is 50 years. The assumed individual co
 
 ::: {.table #tbl-component-lifetimes caption="Assumed component lifetimes"}
 
-| Component                          | Lifetime (Years) | Multiplier | Source                 |
-|------------------------------------|------------------|------------|------------------------|
-| Solar thermal collectors           | 30               | 1.67       | @grosse2017long      |
-| Seasonal storage unit              | 30               | 1.67       | @bracht2022          |
-| Heat pumps                         | 20               | 2.5        | @wolf2017integration |
-| Heat buffer storage                | 20               | 2.5        | @grosse2017long      |
-| Heat installation facility         | 50               | 1          | @vdi2012vdi          |
-| Heat exchange stations at consumer | 20               | 2.5        | @bracht2022          |
-| District heating network           | 50               | 1          | @bracht2022          |
+| Component                                             | Lifetime (Years) | Multiplier | Source                 |
+|-------------------------------------------------------|------------------|------------|------------------------|
+| Solar thermal collectors (field)                      | 30               | 1.67       | @grosse2017long      |
+| Seasonal storage                                      | 30               | 1.67       | @bracht2022          |
+| Heat pumps and buffer storage                         | 20               | 2.5        | @wolf2017integration, @grosse2017long |
+| District heating network (heat transmission)          | 50               | 1          | @bracht2022          |
+| Heat exchange stations at consumer                    | 20               | 2.5        | @bracht2022          |
+| Heat installation facility                            | 50               | 1          | @vdi2012vdi          |
 
 :::
 
